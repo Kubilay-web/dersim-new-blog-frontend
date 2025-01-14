@@ -1,0 +1,17 @@
+.accordion__button.-is-active .icon {
+  transform: rotate(45deg);
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.accordion__button .icon {
+  flex-shrink: 0;
+  margin-right: 1em;
+  transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+.section--bg-white .icon--chevron,
+.section--bg-white .icon--plus {
+  stroke: #fff;
+}
+.icon--plus {
+  height: 26px;
+  width: 26px;
+}
