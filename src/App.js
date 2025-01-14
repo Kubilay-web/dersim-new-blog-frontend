@@ -198,7 +198,7 @@ function App() {
         path="/collection/desire-love-and-identity"
         element={<LoveIdentity />}
       />
-      <Route path="/collection/animals" element={<Animals />} />
+      <Route path="/collection/animals" element={<Animalsz />} />
       <Route
         path="/blog/beyond-sand-and-spices-introduction-silk-roads"
         element={<BeyondSand />}
