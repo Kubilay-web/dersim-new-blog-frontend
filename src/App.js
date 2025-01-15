@@ -82,20 +82,6 @@ import Admin from "./pages/Admin/Admin";
 import Masterplan from "./pages/Masterplan/Masterplan";
 
 function App() {
-  useEffect(() => {
-    // JavaScript hata yönetimini başlat
-    window.onerror = function (message, source, lineno, colno, error) {
-      console.log("Hata gizlendi:", message);
-      // Ekranda hiçbir şey gösterilmesin, true döndürerek varsayılan hata mesajını engelle
-      return true;
-    };
-
-    // Cleanup: component unmount olduğunda hata yönetimini sıfırlamak
-    return () => {
-      window.onerror = null; // Hata yöneticisini kaldır
-    };
-  }, []); // [] bağımsız bir etkidir, yani sadece ilk render'da çalışır.
-
   return (
     <Routes>
       <Route path="/" element={<Home />} />

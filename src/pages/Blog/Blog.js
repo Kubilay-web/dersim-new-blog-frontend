@@ -1,27 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import axios from "axios";
 import { Helmet } from "react-helmet";
 
 const Blog = () => {
+  const URL = process.env.REACT_APP_BACKEND_URL;
+
+  const [blogs, setBlogs] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(0);
+  const [totalBlogs, setTotalBlogs] = useState(0);
+  const [limit] = useState(10);
+
+  // Fetch blog posts with pagination
+  const fetchBlogs = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${URL}/api/blogs`, {
+        params: {
+          category: selectedCategory,
+          page,
+          limit,
+        },
+      });
+      setBlogs(response.data.blogs);
+      setTotalBlogs(response.data.totalBlogs);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch blogs when category or page changes
+    fetchBlogs();
+  }, [selectedCategory, page]);
+
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+  };
+
+  // Pagination UI
+  const totalPages = Math.ceil(totalBlogs / limit);
+
   return (
     <div>
       <div>
         <Helmet>
           <script src="/js-general/jquery.min.js" type="text/javascript" />
-          <script src="/js-general/uc.js" type="text/javascript" />
           <script
-            src="/js-general/js_AHW1Gd1in6RiZJasw3hcMl6NiLhRChyCxmU4q_j0Uf4.js"
-            type="text/javascript"
-          />
-          {/* <script
             src="/js-general/js_SPkMj3SpZ70JzzRSNrXpOjN64UdICR25YexAv-ckrcM.js"
             type="text/javascript"
-          /> */}
-          {/* <script
-            src="/js-general/js_pABANkSbqWMhrKeJdO0pEwp3sSzvvIDFe6svQ2xqh_Y.js"
-            type="text/javascript"
-          /> */}
+          />
         </Helmet>
         <meta charSet="utf-8" />
         <style
@@ -456,6 +489,7 @@ const Blog = () => {
                                   Dersim Museum.
                                 </p>
                               </div>
+
                               <div className="listing-dropdown listing-inline filter">
                                 <div
                                   className="facet-inactive block-facets-ajax js-facet-block-id-blogcategory block-facet--links filters__filter | js-dropdown-container"
@@ -478,6 +512,7 @@ const Blog = () => {
                                       <use xlinkHref="#sprite-icon-chevron" />
                                     </svg>
                                   </button>
+
                                   <div
                                     className="filters__panel filters__panel--horizontal | js-dropdown-item"
                                     id="dropdown-content-block-blogcategory"
@@ -490,17 +525,26 @@ const Blog = () => {
                                         data-drupal-facet-alias="blog_category"
                                         className="facet-inactive js-facets-links item-list__links"
                                       >
+                                        {/* All option */}
                                         <li
                                           className="facet-item facets-reset"
-                                          aria-current="true"
+                                          aria-current={
+                                            selectedCategory === "all"
+                                              ? "true"
+                                              : "false"
+                                          }
                                         >
                                           <a
-                                            href="/blog?facets_query="
-                                            rel="nofollow"
-                                            className="is-active"
-                                            data-drupal-facet-item-id="blog-category-reset-all"
-                                            data-drupal-facet-item-value="reset_all"
-                                            data-drupal-facet-item-count={265}
+                                            href="#"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              setSelectedCategory("all");
+                                            }}
+                                            className={
+                                              selectedCategory === "all"
+                                                ? "is-active"
+                                                : ""
+                                            }
                                           >
                                             <span>
                                               <span className="facet-item__value">
@@ -514,17 +558,26 @@ const Blog = () => {
                                               >
                                                 <use xlinkHref="#sprite-icon-plus" />
                                               </svg>
-                                              <span className="facet-item__status js-facet-deactivate" />
                                             </span>
                                           </a>
                                         </li>
+
+                                        {/* Curator's Corner */}
                                         <li className="facet-item">
                                           <a
-                                            href="/blog?f%5B0%5D=blog_category%3A640"
-                                            rel="nofollow"
-                                            data-drupal-facet-item-id="blog-category-640"
-                                            data-drupal-facet-item-value={640}
-                                            data-drupal-facet-item-count={10}
+                                            href="#"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              setSelectedCategory(
+                                                "Curator's Corner"
+                                              );
+                                            }}
+                                            className={
+                                              selectedCategory ===
+                                              "Curator's Corner"
+                                                ? "is-active"
+                                                : ""
+                                            }
                                           >
                                             <span>
                                               <span className="facet-item__value">
@@ -533,13 +586,23 @@ const Blog = () => {
                                             </span>
                                           </a>
                                         </li>
+
+                                        {/* Exhibitions and events */}
                                         <li className="facet-item">
                                           <a
-                                            href="/blog?f%5B0%5D=blog_category%3A641"
-                                            rel="nofollow"
-                                            data-drupal-facet-item-id="blog-category-641"
-                                            data-drupal-facet-item-value={641}
-                                            data-drupal-facet-item-count={107}
+                                            href="#"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              setSelectedCategory(
+                                                "Exhibitions and events"
+                                              );
+                                            }}
+                                            className={
+                                              selectedCategory ===
+                                              "Exhibitions and events"
+                                                ? "is-active"
+                                                : ""
+                                            }
                                           >
                                             <span>
                                               <span className="facet-item__value">
@@ -548,13 +611,23 @@ const Blog = () => {
                                             </span>
                                           </a>
                                         </li>
+
+                                        {/* Museum stories */}
                                         <li className="facet-item">
                                           <a
-                                            href="/blog?f%5B0%5D=blog_category%3A642"
-                                            rel="nofollow"
-                                            data-drupal-facet-item-id="blog-category-642"
-                                            data-drupal-facet-item-value={642}
-                                            data-drupal-facet-item-count={86}
+                                            href="#"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              setSelectedCategory(
+                                                "Museum stories"
+                                              );
+                                            }}
+                                            className={
+                                              selectedCategory ===
+                                              "Museum stories"
+                                                ? "is-active"
+                                                : ""
+                                            }
                                           >
                                             <span>
                                               <span className="facet-item__value">
@@ -563,13 +636,20 @@ const Blog = () => {
                                             </span>
                                           </a>
                                         </li>
+
+                                        {/* News */}
                                         <li className="facet-item">
                                           <a
-                                            href="/blog?f%5B0%5D=blog_category%3A643"
-                                            rel="nofollow"
-                                            data-drupal-facet-item-id="blog-category-643"
-                                            data-drupal-facet-item-value={643}
-                                            data-drupal-facet-item-count={17}
+                                            href="#"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              setSelectedCategory("News");
+                                            }}
+                                            className={
+                                              selectedCategory === "News"
+                                                ? "is-active"
+                                                : ""
+                                            }
                                           >
                                             <span>
                                               <span className="facet-item__value">
@@ -578,13 +658,23 @@ const Blog = () => {
                                             </span>
                                           </a>
                                         </li>
+
+                                        {/* Objects in focus */}
                                         <li className="facet-item">
                                           <a
-                                            href="/blog?f%5B0%5D=blog_category%3A644"
-                                            rel="nofollow"
-                                            data-drupal-facet-item-id="blog-category-644"
-                                            data-drupal-facet-item-value={644}
-                                            data-drupal-facet-item-count={44}
+                                            href="#"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              setSelectedCategory(
+                                                "Objects in focus"
+                                              );
+                                            }}
+                                            className={
+                                              selectedCategory ===
+                                              "Objects in focus"
+                                                ? "is-active"
+                                                : ""
+                                            }
                                           >
                                             <span>
                                               <span className="facet-item__value">
@@ -593,13 +683,20 @@ const Blog = () => {
                                             </span>
                                           </a>
                                         </li>
+
+                                        {/* Podcasts */}
                                         <li className="facet-item">
                                           <a
-                                            href="/blog?f%5B0%5D=blog_category%3A645"
-                                            rel="nofollow"
-                                            data-drupal-facet-item-id="blog-category-645"
-                                            data-drupal-facet-item-value={645}
-                                            data-drupal-facet-item-count={1}
+                                            href="#"
+                                            onClick={(e) => {
+                                              e.preventDefault();
+                                              setSelectedCategory("Podcasts");
+                                            }}
+                                            className={
+                                              selectedCategory === "Podcasts"
+                                                ? "is-active"
+                                                : ""
+                                            }
                                           >
                                             <span>
                                               <span className="facet-item__value">
@@ -616,6 +713,68 @@ const Blog = () => {
                             </div>
                           </div>
                         </header>
+
+                        <div className="blog-list">
+                          {loading ? (
+                            <p>Loading blogs...</p>
+                          ) : blogs.length === 0 ? (
+                            <p>No blogs found in this category.</p>
+                          ) : (
+                            <div className="l-grid horizontal l-grid--3-col">
+                              {blogs.map((blog) => (
+                                <div
+                                  key={blog._id}
+                                  className="l-grid__item col-1"
+                                >
+                                  <div className="teaser teaser--has-meta-top">
+                                    <div className="teaser__wrapper">
+                                      <div className="teaser__image-container">
+                                        <div className="media media-teaser_landscape media-image js-media">
+                                          <img
+                                            loading="eager"
+                                            className="lazyload"
+                                            width={750}
+                                            height={422}
+                                            src="/images/Blog/image-02.jpg"
+                                            alt={blog.title}
+                                          />
+                                        </div>
+                                      </div>
+
+                                      <div className="teaser__content">
+                                        <div className="teaser__content-push">
+                                          <div className="teaser__meta teaser__meta--top">
+                                            <div className="teaser__meta-item">
+                                              <span>
+                                                Exhibitions and events / 29
+                                                November 2024
+                                              </span>
+                                            </div>
+                                          </div>
+                                          <h3 className="teaser__title">
+                                            <a
+                                              href={`/blog/${blog.slug}`}
+                                              className="teaser__anchor"
+                                            >
+                                              <span>{blog.title}</span>
+                                            </a>
+                                          </h3>
+                                          <div className="teaser__summary">
+                                            {blog.content}
+                                          </div>
+                                        </div>
+                                        <span className="teaser__button | button button--chevron">
+                                          Read more
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
                         <div>
                           <div className="paragraph paragraph--type--slice-views paragraph--view-mode--default section section--slice-views section--bg-black section--no-padding-top">
                             <div className="container">
@@ -698,6 +857,7 @@ const Blog = () => {
                                                 />
                                               </div>
                                             </div>
+
                                             <div className="teaser__content">
                                               <div className="teaser__content-push">
                                                 <div className="teaser__meta teaser__meta--top">
@@ -1327,7 +1487,128 @@ const Blog = () => {
                                         </div>
                                       </div>
                                     </div>
+
                                     <div className="pager-container">
+                                      <nav
+                                        className="pager"
+                                        aria-labelledby="pagination-heading"
+                                      >
+                                        <h4
+                                          id="pagination-heading"
+                                          className="visually-hidden"
+                                        >
+                                          Pagination
+                                        </h4>
+                                        {selectedCategory === "all" &&
+                                          totalBlogs > limit && ( // Sayfalama sadece 'all' kategorisinde görünsün
+                                            <ul className="pager__items js-pager__items">
+                                              {/* Önceki sayfa */}
+                                              <li className="pager__item pager__item--previous">
+                                                <a
+                                                  href={`?page=${page - 1}`}
+                                                  className="pager__button"
+                                                  title="Go to previous page"
+                                                  onClick={(e) => {
+                                                    e.preventDefault(); // Sayfa değişiminde tam sayfa yenilemesini engelle
+                                                    if (page > 0) {
+                                                      handlePageChange(
+                                                        page - 1
+                                                      );
+                                                    }
+                                                  }}
+                                                >
+                                                  <span className="visually-hidden">
+                                                    Previous page
+                                                  </span>
+                                                  <span aria-hidden="true">
+                                                    ‹ Previous
+                                                  </span>
+                                                </a>
+                                              </li>
+
+                                              {Array.from({
+                                                length: totalPages,
+                                              }).map((_, index) => (
+                                                <li
+                                                  key={index}
+                                                  className={`pager__item pager__item--page ${
+                                                    page === index
+                                                      ? "is-active"
+                                                      : ""
+                                                  }`}
+                                                >
+                                                  <a
+                                                    href={`?page=${index}`}
+                                                    className="pager__button"
+                                                    title={`Go to page ${
+                                                      index + 1
+                                                    }`}
+                                                    onClick={(e) => {
+                                                      e.preventDefault(); // Sayfa değişiminde tam sayfa yenilemesini engelle
+                                                      handlePageChange(index);
+                                                    }}
+                                                  >
+                                                    <span className="visually-hidden">
+                                                      Page
+                                                    </span>
+                                                    {index + 1}
+                                                  </a>
+                                                </li>
+                                              ))}
+
+                                              {/* Sonraki sayfa */}
+                                              <li className="pager__item pager__item--next">
+                                                <a
+                                                  href={`?page=${page + 1}`}
+                                                  className="pager__button"
+                                                  title="Go to next page"
+                                                  onClick={(e) => {
+                                                    e.preventDefault(); // Sayfa değişiminde tam sayfa yenilemesini engelle
+                                                    if (page < totalPages - 1) {
+                                                      handlePageChange(
+                                                        page + 1
+                                                      );
+                                                    }
+                                                  }}
+                                                >
+                                                  <span className="visually-hidden">
+                                                    Next page
+                                                  </span>
+                                                  <span aria-hidden="true">
+                                                    Next ›
+                                                  </span>
+                                                </a>
+                                              </li>
+
+                                              {/* Son sayfa */}
+                                              <li className="pager__item pager__item--last">
+                                                <a
+                                                  href={`?page=${
+                                                    totalPages - 1
+                                                  }`}
+                                                  className="pager__button"
+                                                  title="Go to last page"
+                                                  onClick={(e) => {
+                                                    e.preventDefault(); // Sayfa değişiminde tam sayfa yenilemesini engelle
+                                                    handlePageChange(
+                                                      totalPages - 1
+                                                    );
+                                                  }}
+                                                >
+                                                  <span className="visually-hidden">
+                                                    Last page
+                                                  </span>
+                                                  <span aria-hidden="true">
+                                                    Last »
+                                                  </span>
+                                                </a>
+                                              </li>
+                                            </ul>
+                                          )}
+                                      </nav>
+                                    </div>
+
+                                    {/* <div className="pager-container">
                                       <nav
                                         className="pager"
                                         aria-labelledby="pagination-heading"
@@ -1485,7 +1766,7 @@ const Blog = () => {
                                           </li>
                                         </ul>
                                       </nav>
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </div>
                               </div>
