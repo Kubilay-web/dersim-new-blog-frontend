@@ -90,7 +90,7 @@ function Admin() {
                 handlePageChange("blog-manage"); // Blog yönetimi sayfasına geç
               }}
             >
-              <i className="fas fa-fw fa-tachometer-alt"></i>
+              <i className="fas fa-fw fa-blog"></i>
               <span>Blogs</span>
             </a>
           </li>
