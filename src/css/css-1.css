@@ -137,7 +137,7 @@ span.footer-pre__top-link {
 .blog-list {
   grid-template-columns: repeat(3, 1fr); /* Üçlü kolon düzeni */
   gap: 20px; /* Kolonlar arasındaki boşluk */
-  margin: 0 3rem 2rem 3rem; /* Ekranın her iki tarafından 3rem boşluk */
+  margin: 0 3rem 3rem 3rem; /* Ekranın her iki tarafından 3rem boşluk */
 }
 
 @media (max-width: 768px) {
