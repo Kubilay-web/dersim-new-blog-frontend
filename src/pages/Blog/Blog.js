@@ -745,12 +745,10 @@ const Blog = () => {
                                         <div className="teaser__content-push">
                                           <div className="teaser__meta teaser__meta--top">
                                             <div className="teaser__meta-item">
-                                              <span>
-                                                Exhibitions and events / 29
-                                                November 2024
-                                              </span>
+                                              <span>{blog.category}</span>
                                             </div>
                                           </div>
+
                                           <h3 className="teaser__title">
                                             <a
                                               href={`/blog/${blog.slug}`}
@@ -759,6 +757,7 @@ const Blog = () => {
                                               <span>{blog.title}</span>
                                             </a>
                                           </h3>
+
                                           <div className="teaser__summary">
                                             {blog.content}
                                           </div>

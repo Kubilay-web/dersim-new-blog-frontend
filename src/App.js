@@ -80,6 +80,7 @@ import ExhibitionEvents from "./pages/ExhibitionEvents/ExhibitionEvents";
 import VisitMember from "./pages/VisitMember/VisitMember";
 import Admin from "./pages/Admin/Admin";
 import Masterplan from "./pages/Masterplan/Masterplan";
+import BlogDetail from "./components/BlogDetail/BlogDetail";
 
 function App() {
   return (
@@ -237,6 +238,8 @@ function App() {
 
       <Route path="/admin" element={<Admin />} />
       <Route path="/about-us/masterplan" element={<Masterplan />} />
+
+      <Route path="/blog/:slug" element={<BlogDetail />} />
     </Routes>
   );
 }
