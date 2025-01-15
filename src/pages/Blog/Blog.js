@@ -895,7 +895,7 @@ const Blog = () => {
                                                       index + 1
                                                     }`}
                                                     onClick={(e) => {
-                                                      e.preventDefault(); // Sayfa değişiminde tam sayfa yenilemesini engelle
+                                                      e.preventDefault();
                                                       handlePageChange(index);
                                                     }}
                                                   >
