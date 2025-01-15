@@ -11,6 +11,16 @@ const BlogManage = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
+    // Bootstrap CSS dosyasını dahil et
+    const bootstrapCss = document.createElement("link");
+    bootstrapCss.href =
+      "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
+    bootstrapCss.rel = "stylesheet";
+    bootstrapCss.integrity =
+      "sha384-pzjw8f+ua7Kw1TIq0ffW4dt8yW7Y7B9S3xa9IT6x67vsE9S4Z0eGaxQtzcf1W1jI";
+    bootstrapCss.crossOrigin = "anonymous";
+    document.head.appendChild(bootstrapCss);
+
     fetchBlogs();
   }, []);
 
@@ -53,68 +63,90 @@ const BlogManage = () => {
   };
 
   return (
-    <div className="blog-manage">
-      <form onSubmit={handleCreateBlog} className="blog-form">
-        <div className="form-group">
-          <label htmlFor="title">Başlık:</label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Blog başlığını girin..."
-            required
-          />
-        </div>
+    <div className="container py-5">
+      <div className="row">
+        <div className="col-md-8 offset-md-2">
+          <h2 className="text-center mb-4">Blog Yönetimi</h2>
 
-        <div className="form-group">
-          <label htmlFor="content">İçerik:</label>
-          <textarea
-            id="content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            placeholder="Blog içeriğini girin..."
-            required
-          />
-        </div>
+          <form onSubmit={handleCreateBlog} className="mb-5">
+            <div className="form-group">
+              <label htmlFor="title" className="font-weight-bold">
+                Başlık:
+              </label>
+              <input
+                type="text"
+                id="title"
+                className="form-control"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Blog başlığını girin..."
+                required
+              />
+            </div>
 
-        <div className="form-group">
-          <label htmlFor="category">Kategori:</label>
-          <input
-            type="text"
-            id="category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            placeholder="Kategori girin..."
-            required
-          />
-        </div>
+            <div className="form-group">
+              <label htmlFor="content" className="font-weight-bold">
+                İçerik:
+              </label>
+              <textarea
+                id="content"
+                className="form-control"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                placeholder="Blog içeriğini girin..."
+                required
+              />
+            </div>
 
-        <div className="form-group">
-          <label htmlFor="image">Resim:</label>
-          <input
-            type="file"
-            id="image"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-        </div>
+            <div className="form-group">
+              <label htmlFor="category" className="font-weight-bold">
+                Kategori:
+              </label>
+              <input
+                type="text"
+                id="category"
+                className="form-control"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                placeholder="Kategori girin..."
+                required
+              />
+            </div>
 
-        <button type="submit" className="submit-btn">
-          Blog Oluştur
-        </button>
-      </form>
+            <div className="form-group">
+              <label htmlFor="image" className="font-weight-bold">
+                Resim:
+              </label>
+              <input
+                type="file"
+                id="image"
+                className="form-control-file"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
+            </div>
 
-      <h2>Mevcut Bloglar</h2>
-      <div className="blog-list">
-        {blogs.map((blog) => (
-          <div key={blog._id} className="blog-item">
-            <h3>{blog.title}</h3>
-            <p>{blog.content}</p>
-            {blog.image && (
-              <img src={blog.image} alt={blog.title} className="blog-image" />
-            )}
+            <button type="submit" className="btn btn-primary btn-block">
+              Blog Oluştur
+            </button>
+          </form>
+
+          <h3 className="text-center">Mevcut Bloglar</h3>
+          <div className="list-group">
+            {blogs.map((blog) => (
+              <div key={blog._id} className="list-group-item mb-3">
+                <h4>{blog.title}</h4>
+                <p>{blog.content}</p>
+                {blog.image && (
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="img-fluid rounded"
+                  />
+                )}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
