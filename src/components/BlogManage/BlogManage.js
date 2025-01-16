@@ -9,18 +9,10 @@ const BlogManage = () => {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState(null);
   const [blogs, setBlogs] = useState([]);
+  const [editMode, setEditMode] = useState(false);
+  const [editBlogId, setEditBlogId] = useState(null);
 
   useEffect(() => {
-    // Bootstrap CSS dosyasını dahil et
-    const bootstrapCss = document.createElement("link");
-    bootstrapCss.href =
-      "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
-    bootstrapCss.rel = "stylesheet";
-    bootstrapCss.integrity =
-      "sha384-pzjw8f+ua7Kw1TIq0ffW4dt8yW7Y7B9S3xa9IT6x67vsE9S4Z0eGaxQtzcf1W1jI";
-    bootstrapCss.crossOrigin = "anonymous";
-    document.head.appendChild(bootstrapCss);
-
     fetchBlogs();
   }, []);
 
@@ -34,8 +26,8 @@ const BlogManage = () => {
     }
   };
 
-  // Blog oluştur
-  const handleCreateBlog = async (e) => {
+  // Blog oluştur veya güncelle
+  const handleCreateOrUpdateBlog = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -47,28 +39,71 @@ const BlogManage = () => {
     }
 
     try {
-      await axios.post(`${URL}/api/blogs`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      fetchBlogs(); // Blogları yeniden yükle
-      setTitle("");
-      setContent("");
-      setCategory("");
-      setImage(null); // Formu sıfırla
+      if (editMode) {
+        // Blog güncelle
+        await axios.put(`${URL}/api/blogs/${editBlogId}`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        setEditMode(false);
+        setEditBlogId(null);
+      } else {
+        // Blog oluştur
+        await axios.post(`${URL}/api/blogs`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+      }
+      fetchBlogs();
+      resetForm();
     } catch (error) {
-      console.error("Error creating blog", error);
+      console.error(
+        editMode ? "Error updating blog" : "Error creating blog",
+        error
+      );
     }
+  };
+
+  // Blogu sil
+  const handleDeleteBlog = async (id) => {
+    const confirmDelete = window.confirm(
+      "Bu blogu silmek istediğinizden emin misiniz?"
+    );
+    if (!confirmDelete) return;
+
+    try {
+      await axios.delete(`${URL}/api/blogs/${id}`);
+      fetchBlogs(); // Blogları yeniden yükle
+    } catch (error) {
+      console.error("Error deleting blog", error);
+    }
+  };
+
+  // Blogu düzenleme moduna al
+  const handleEditBlog = (blog) => {
+    setTitle(blog.title);
+    setContent(blog.content);
+    setCategory(blog.category);
+    setImage(null); // Görseli yeniden seçmek gerekebilir
+    setEditBlogId(blog._id);
+    setEditMode(true);
+  };
+
+  // Formu sıfırla
+  const resetForm = () => {
+    setTitle("");
+    setContent("");
+    setCategory("");
+    setImage(null);
   };
 
   return (
     <div className="container py-5">
       <div className="row">
         <div className="col-md-8 offset-md-2">
-          <h2 className="text-center mb-4">Blog Yönetimi</h2>
-
-          <form onSubmit={handleCreateBlog} className="mb-5">
+          <form onSubmit={handleCreateOrUpdateBlog} className="mb-5">
             <div className="form-group">
               <label htmlFor="title" className="font-weight-bold">
                 Başlık:
@@ -126,7 +161,7 @@ const BlogManage = () => {
             </div>
 
             <button type="submit" className="btn btn-primary btn-block">
-              Blog Oluştur
+              {editMode ? "Blog Güncelle" : "Blog Oluştur"}
             </button>
           </form>
 
@@ -140,9 +175,23 @@ const BlogManage = () => {
                   <img
                     src={blog.image}
                     alt={blog.title}
-                    className="img-fluid rounded"
+                    className="img-fluid rounded mb-3"
                   />
                 )}
+                <div className="d-flex justify-content-between">
+                  <button
+                    className="btn btn-warning btn-sm"
+                    onClick={() => handleEditBlog(blog)}
+                  >
+                    Düzenle
+                  </button>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => handleDeleteBlog(blog._id)}
+                  >
+                    Sil
+                  </button>
+                </div>
               </div>
             ))}
           </div>

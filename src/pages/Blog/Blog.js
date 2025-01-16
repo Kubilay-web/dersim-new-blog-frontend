@@ -121,20 +121,6 @@ const Blog = () => {
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="theme-color" content="#000000" />
         <meta name="application-name" content="Dersim Museum" />
-        {/* Facebook domain verification */}
-        <meta
-          name="facebook-domain-verification"
-          content="8rxgufrjnmm08rnfosf5ers9d1q7a5"
-        />
-        {/* End Facebook domain verification */}
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          &lt;iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MW5VCK"
-          height="0" width="0"
-          style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -735,7 +721,7 @@ const Blog = () => {
                                             className="lazyload"
                                             width={750}
                                             height={422}
-                                            src="/images/Blog/image-02.jpg"
+                                            src={blog.image}
                                             alt={blog.title}
                                           />
                                         </div>

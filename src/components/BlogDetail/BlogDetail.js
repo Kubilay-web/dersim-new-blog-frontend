@@ -116,12 +116,6 @@ const BlogDetail = () => {
           media="print"
           href="css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -494,21 +488,22 @@ const BlogDetail = () => {
                         <picture>
                           {/*[if IE 9]><video style="display: none;"><![endif]*/}
                           <source
-                            srcSet="images/Volunteers-blog-hero-1920x1080_2.jpg 1x"
+                            src={blog.image}
                             media="all and (min-width: 1440px)"
                             type="image/jpeg"
                             width={1600}
                             height={900}
                           />
+
                           <source
-                            srcSet="images/Volunteers-blog-hero-1920x1080_1.jpg 1x"
+                            src={blog.image}
                             media="all and (min-width: 1024px)"
                             type="image/jpeg"
                             width={1300}
                             height={731}
                           />
                           <source
-                            srcSet="images/Volunteers-blog-hero-1920x1080_3.jpg 1x"
+                            src={blog.image}
                             media="all and (min-width: 768px)"
                             type="image/jpeg"
                             width={1000}
@@ -520,8 +515,7 @@ const BlogDetail = () => {
                             width={750}
                             height={750}
                             data-focal-position="center center"
-                            src="images/Volunteers-blog-hero-1920x1080.jpg"
-                            alt="Matthew wears a black tshirt and points at hieroglyphs on a large ancient Egyptian sculpture."
+                            src={blog.image}
                           />
                         </picture>
                       </div>
@@ -1511,30 +1505,11 @@ const BlogDetail = () => {
                                           className="lazyload"
                                           width={750}
                                           height={422}
-                                          data-src="/sites/default/files/styles/16_9_media_small/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&itok=ima7ja4O"
                                           data-sizes="auto"
-                                          data-srcset="/sites/default/files/styles/16_9_media_tiny/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&itok=MsJ0lUgN 400w, /sites/default/files/styles/16_9_media_small/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&itok=ima7ja4O 750w, /sites/default/files/styles/16_9_media_medium/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&itok=acVsKku0 1000w, /sites/default/files/styles/16_9_media_large/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&itok=ouTDiGTj 1300w, /sites/default/files/styles/16_9_media_huge/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&itok=mjP9_2HY 1600w"
+                                          src={blog.image}
                                           data-focal-position="center center"
                                           alt="A sailboat with full mast moves through the pale blue water around charcoal and teal coloured headlands"
                                         />
-                                        <noscript>
-                                          &lt;img loading="eager"
-                                          srcset="/sites/default/files/styles/16_9_media_tiny/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&amp;itok=MsJ0lUgN
-                                          400w,
-                                          /sites/default/files/styles/16_9_media_small/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&amp;itok=ima7ja4O
-                                          750w,
-                                          /sites/default/files/styles/16_9_media_medium/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&amp;itok=acVsKku0
-                                          1000w,
-                                          /sites/default/files/styles/16_9_media_large/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&amp;itok=ouTDiGTj
-                                          1300w,
-                                          /sites/default/files/styles/16_9_media_huge/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&amp;itok=mjP9_2HY
-                                          1600w" width="750" height="422"
-                                          data-src="/sites/default/files/styles/16_9_media_small/public/2024-12/Whats-on-blog-hero-Hiroshige-1920x1080.jpg?h=d1cb525d&amp;itok=ima7ja4O"
-                                          data-sizes="auto" alt="A sailboat with
-                                          full mast moves through the pale blue
-                                          water around charcoal and teal
-                                          coloured headlands" /&gt;
-                                        </noscript>
                                       </div>
                                     </div>
                                     <div className="teaser__content">
