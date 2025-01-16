@@ -23512,19 +23512,10 @@
         for (var n = 0, i = new Array(t); n < t; n++) i[n] = e[n];
         return i;
       }
-      t()($s).on("click", function (e) {
+
+      t()("[data-js-prevent-default-hyperlink]").on("click", function (e) {
         e.preventDefault();
-        var n = t()("#email").val();
-        t()("#return_page_footer").val(
-          "https://emails.britishmuseum.org/k/Dersim-Museum/sign_up_form_from_website_box?email=" +
-            n
-        ),
-          Rs.parsley(js).validate(),
-          Rs.submit();
-      }),
-        t()("[data-js-prevent-default-hyperlink]").on("click", function (e) {
-          e.preventDefault();
-        });
+      });
       var qs = Vs(document.querySelectorAll("[data-js-before-after-slider]")),
         Hs = Vs(document.querySelectorAll("[data-js-before-image]")),
         Ys = Vs(document.querySelectorAll("[data-js-resizer]")),
