@@ -81,6 +81,7 @@ import VisitMember from "./pages/VisitMember/VisitMember";
 import Admin from "./pages/Admin/Admin";
 import Masterplan from "./pages/Masterplan/Masterplan";
 import BlogDetail from "./components/BlogDetail/BlogDetail";
+import Shop from "./pages/Shop/Shop";
 
 function App() {
   return (
