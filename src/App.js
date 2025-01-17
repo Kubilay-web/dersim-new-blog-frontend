@@ -82,165 +82,225 @@ import Admin from "./pages/Admin/Admin";
 import Masterplan from "./pages/Masterplan/Masterplan";
 import BlogDetail from "./components/BlogDetail/BlogDetail";
 
+import NavbarCommerce from "./components/NavbarCommerce/NavbarCommerce";
+import CartCommerce from "./components/CartCommerce/CartCommerce";
+import HomeCommerce from "./components/HomeCommerce/HomeCommerce";
+import Checkout from "./components/Checkout/Checkout";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/visit" element={<Visit />} />
-      <Route path="/visit/family-visits" element={<FamilyVisit />} />
-      <Route path="/visit/group-visits" element={<GroupVisit />} />
-      <Route path="/visit/audio-app" element={<AudioApp />} />
-      <Route path="/visit/out-hours-tours" element={<OutTours />} />
-      <Route path="/visit/tours-and-talks" element={<TourAndTalk />} />
-      <Route path="/visit/object-trails" element={<ObjectTrail />} />
-      <Route path="/visit/accessibility-museum" element={<Accessibility />} />
-      <Route path="/visit/food-and-drink" element={<FoodDrink />} />
-      <Route path="/visit/late-opening-on-fridays" element={<LateOpen />} />
-      <Route path="/visit/museum-map" element={<MuseumMap />} />
-      <Route path="/exhibitions-events" element={<Exhibition />} />
-      <Route path="/collection" element={<Collection />} />
-      <Route path="/collection/galleries" element={<CollectionGalery />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/the-british-museum-podcast" element={<Podcast />} />
+    <div>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/visit" element={<Visit />} />
+        <Route path="/visit/family-visits" element={<FamilyVisit />} />
+        <Route path="/visit/group-visits" element={<GroupVisit />} />
+        <Route path="/visit/audio-app" element={<AudioApp />} />
+        <Route path="/visit/out-hours-tours" element={<OutTours />} />
+        <Route path="/visit/tours-and-talks" element={<TourAndTalk />} />
+        <Route path="/visit/object-trails" element={<ObjectTrail />} />
+        <Route path="/visit/accessibility-museum" element={<Accessibility />} />
+        <Route path="/visit/food-and-drink" element={<FoodDrink />} />
+        <Route path="/visit/late-opening-on-fridays" element={<LateOpen />} />
+        <Route path="/visit/museum-map" element={<MuseumMap />} />
+        <Route path="/exhibitions-events" element={<Exhibition />} />
+        <Route path="/collection" element={<Collection />} />
+        <Route path="/collection/galleries" element={<CollectionGalery />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/the-british-museum-podcast" element={<Podcast />} />
 
-      <Route path="/learn" element={<Learn />} />
-      <Route path="/learn/schools" element={<LearnSchool />} />
-      <Route path="/learn/communities" element={<Communities />} />
-      <Route path="/learn/adult-learning" element={<AdultLearning />} />
-      <Route path="/learn/young-people" element={<YoungPeople />} />
-      <Route path="/membership" element={<Membership />} />
-      <Route path="/membership/young-friends" element={<YoungFriend />} />
-      <Route path="/membership/existing-members" element={<ExistingMember />} />
+        <Route path="/learn" element={<Learn />} />
+        <Route path="/learn/schools" element={<LearnSchool />} />
+        <Route path="/learn/communities" element={<Communities />} />
+        <Route path="/learn/adult-learning" element={<AdultLearning />} />
+        <Route path="/learn/young-people" element={<YoungPeople />} />
+        <Route path="/membership" element={<Membership />} />
+        <Route path="/membership/young-friends" element={<YoungFriend />} />
+        <Route
+          path="/membership/existing-members"
+          element={<ExistingMember />}
+        />
 
-      <Route path="/support-us/donate" element={<Donate />} />
-      <Route path="/support-us/corporate-support" element={<Corporate />} />
-      <Route path="/support-us/patrons" element={<Patrons />} />
-      <Route
-        path="/support-us/supporter-case-studies"
-        element={<CaseStudies />}
-      />
-      <Route path="/support-us/volunteer" element={<Volunteer />} />
-      <Route path="/support-us/existing-patrons" element={<ExistPatron />} />
-      <Route path="/support-us/leave-legacy" element={<LeaveLegacy />} />
-      <Route
-        path="/support-us/american-friends-british-museum"
-        element={<DersimMuseum />}
-      />
-      <Route path="/search" element={<Search />} />
-      <Route path="/about-us" element={<AboutUs />} />
-      <Route path="/about-us/governance" element={<Govarnance />} />
-      <Route path="/about-us/dersim-museum-story" element={<Story />} />
-      <Route path="/about-us/jobs" element={<Jobs />} />
-      <Route path="/about-us/press" element={<Press />} />
-      <Route path="/about-us/contact-us" element={<Contact />} />
-      <Route path="/our-work" element={<OurWork />} />
-      <Route path="/our-work/departments" element={<Departments />} />
-      <Route path="/our-work/national" element={<National />} />
-      <Route path="/our-work/international" element={<International />} />
-      <Route
-        path="/our-work/how-borrow-dersim-museum-objects"
-        element={<Borrow />}
-      />
-      <Route path="/research" element={<Research />} />
-      <Route path="/research/projects" element={<Projects />} />
-      <Route
-        path="/research/dersim-museum-publications"
-        element={<Publications />}
-      />
-      <Route
-        path="/scientific-study-dersim-museum-collection"
-        element={<Science />}
-      />
-      <Route path="/commercial" element={<Commercial />} />
-      <Route path="/commercial/commercial-hire" element={<Hire />} />
-      <Route path="/commercial/filming" element={<Filming />} />
-      <Route path="/commercial/licensing" element={<Licensing />} />
-      <Route
-        path="/commercial/dersim-museum-press"
-        element={<CommercialPress />}
-      />
-      <Route path="/commercial/travel-trade-tours" element={<Travel />} />
-      <Route path="/resources" element={<Resources />} />
-      <Route path="/resources/study-rooms" element={<Study />} />
-      <Route path="/resources/library-and-archive" element={<Library />} />
-      <Route path="/exhibitions/silk-roads" element={<SilkRoad />} />
-      <Route
-        path="/exhibitions/hew-locke-what-have-we-here"
-        element={<HewLocke />}
-      />
+        <Route path="/support-us/donate" element={<Donate />} />
+        <Route path="/support-us/corporate-support" element={<Corporate />} />
+        <Route path="/support-us/patrons" element={<Patrons />} />
+        <Route
+          path="/support-us/supporter-case-studies"
+          element={<CaseStudies />}
+        />
+        <Route path="/support-us/volunteer" element={<Volunteer />} />
+        <Route path="/support-us/existing-patrons" element={<ExistPatron />} />
+        <Route path="/support-us/leave-legacy" element={<LeaveLegacy />} />
+        <Route
+          path="/support-us/american-friends-british-museum"
+          element={<DersimMuseum />}
+        />
+        <Route path="/search" element={<Search />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about-us/governance" element={<Govarnance />} />
+        <Route path="/about-us/dersim-museum-story" element={<Story />} />
+        <Route path="/about-us/jobs" element={<Jobs />} />
+        <Route path="/about-us/press" element={<Press />} />
+        <Route path="/about-us/contact-us" element={<Contact />} />
+        <Route path="/our-work" element={<OurWork />} />
+        <Route path="/our-work/departments" element={<Departments />} />
+        <Route path="/our-work/national" element={<National />} />
+        <Route path="/our-work/international" element={<International />} />
+        <Route
+          path="/our-work/how-borrow-dersim-museum-objects"
+          element={<Borrow />}
+        />
+        <Route path="/research" element={<Research />} />
+        <Route path="/research/projects" element={<Projects />} />
+        <Route
+          path="/research/dersim-museum-publications"
+          element={<Publications />}
+        />
+        <Route
+          path="/scientific-study-dersim-museum-collection"
+          element={<Science />}
+        />
+        <Route path="/commercial" element={<Commercial />} />
+        <Route path="/commercial/commercial-hire" element={<Hire />} />
+        <Route path="/commercial/filming" element={<Filming />} />
+        <Route path="/commercial/licensing" element={<Licensing />} />
+        <Route
+          path="/commercial/dersim-museum-press"
+          element={<CommercialPress />}
+        />
+        <Route path="/commercial/travel-trade-tours" element={<Travel />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/resources/study-rooms" element={<Study />} />
+        <Route path="/resources/library-and-archive" element={<Library />} />
+        <Route path="/exhibitions/silk-roads" element={<SilkRoad />} />
+        <Route
+          path="/exhibitions/hew-locke-what-have-we-here"
+          element={<HewLocke />}
+        />
 
-      <Route path="/exhibitions/picasso-printmaker" element={<PrintMaker />} />
-      <Route
-        path="/exhibitions/hew-locke-what-have-we-here#inside-the-exhibition"
-        element={<ExhibitionLocke />}
-      />
+        <Route
+          path="/exhibitions/picasso-printmaker"
+          element={<PrintMaker />}
+        />
+        <Route
+          path="/exhibitions/hew-locke-what-have-we-here#inside-the-exhibition"
+          element={<ExhibitionLocke />}
+        />
 
-      <Route
-        path="/blog/how-cook-medieval-feast-11-recipes-middle-ages"
-        element={<CookMedieval />}
-      />
+        <Route
+          path="/blog/how-cook-medieval-feast-11-recipes-middle-ages"
+          element={<CookMedieval />}
+        />
 
-      <Route path="/collection/egypt" element={<Egypt />} />
-      <Route
-        path="/collection/desire-love-and-identity"
-        element={<LoveIdentity />}
-      />
-      <Route path="/collection/animals" element={<Animals />} />
-      <Route
-        path="/blog/beyond-sand-and-spices-introduction-silk-roads"
-        element={<BeyondSand />}
-      />
+        <Route path="/collection/egypt" element={<Egypt />} />
+        <Route
+          path="/collection/desire-love-and-identity"
+          element={<LoveIdentity />}
+        />
+        <Route path="/collection/animals" element={<Animals />} />
+        <Route
+          path="/blog/beyond-sand-and-spices-introduction-silk-roads"
+          element={<BeyondSand />}
+        />
 
-      <Route
-        path="/blog/far-home-travelling-silk-roads"
-        element={<FarHome />}
-      />
+        <Route
+          path="/blog/far-home-travelling-silk-roads"
+          element={<FarHome />}
+        />
 
-      <Route
-        path="/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
-        element={<SriLanka />}
-      />
+        <Route
+          path="/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
+          element={<SriLanka />}
+        />
 
-      <Route
-        path="/blog/footsteps-history-travelling-silk-roads-today"
-        element={<FootSteps />}
-      />
+        <Route
+          path="/blog/footsteps-history-travelling-silk-roads-today"
+          element={<FootSteps />}
+        />
 
-      <Route
-        path="/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
-        element={<LittleFeet />}
-      />
+        <Route
+          path="/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
+          element={<LittleFeet />}
+        />
 
-      <Route
-        path="/events/deaf-led-bsl-tour-silk-roads"
-        element={<DeafLed />}
-      />
+        <Route
+          path="/events/deaf-led-bsl-tour-silk-roads"
+          element={<DeafLed />}
+        />
 
-      <Route path="/events/istanbul-nexus-silk-roads" element={<Nexus />} />
-      <Route
-        path="/events/little-feet-explore-silk-roads-10-Feb"
-        element={<LittleFeetExplore />}
-      />
-      <Route
-        path="/exhibitions/admonitions-instructress-court-ladies"
-        element={<Admonitions />}
-      />
+        <Route path="/events/istanbul-nexus-silk-roads" element={<Nexus />} />
+        <Route
+          path="/events/little-feet-explore-silk-roads-10-Feb"
+          element={<LittleFeetExplore />}
+        />
+        <Route
+          path="/exhibitions/admonitions-instructress-court-ladies"
+          element={<Admonitions />}
+        />
 
-      <Route
-        path="/exhibitions-events/members-exclusive"
-        element={<ExhibitionEvents />}
-      />
+        <Route
+          path="/exhibitions-events/members-exclusive"
+          element={<ExhibitionEvents />}
+        />
 
-      <Route
-        path="/membership/visiting-as-a-member"
-        element={<VisitMember />}
-      />
+        <Route
+          path="/membership/visiting-as-a-member"
+          element={<VisitMember />}
+        />
 
-      <Route path="/admin" element={<Admin />} />
-      <Route path="/about-us/masterplan" element={<Masterplan />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/about-us/masterplan" element={<Masterplan />} />
 
-      <Route path="/blog/:slug" element={<BlogDetail />} />
-    </Routes>
+        <Route path="/blog/:slug" element={<BlogDetail />} />
+
+        <Route path="/sign-in" element={<Login />} />
+        <Route path="/sign-up" element={<Register />} />
+
+        <Route
+          path="/cart"
+          element={
+            <>
+              <NavbarCommerce />
+              <CartCommerce />
+            </>
+          }
+        />
+
+        <Route
+          path="/cart/:id"
+          element={
+            <>
+              <NavbarCommerce />
+              <CartCommerce />
+            </>
+          }
+        />
+
+        <Route
+          path="/shop"
+          element={
+            <>
+              <NavbarCommerce />
+              <HomeCommerce />
+            </>
+          }
+        />
+
+        <Route
+          path="/checkout"
+          element={
+            <>
+              <Checkout />
+            </>
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
