@@ -85,7 +85,7 @@ const Checkout = () => {
             category1: item.category1 || "Other",
             category2: item.category2 || "Other",
             itemType: item.itemType || "PHYSICAL",
-            price: item.price || 0,
+            price: item.price * item.cartQuantity, // Fiyatı miktarla çarp
           }))
         : [],
     cartTotalAmount: cart.cartTotalAmount || 0,
