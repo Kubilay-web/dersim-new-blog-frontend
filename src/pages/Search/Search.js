@@ -1,8 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const Search = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [pages, setPages] = useState([]); // Dinamik içerikler için state
+
+  // Sayfa verilerini API'den veya dinamik kaynaktan al
+  useEffect(() => {
+    const fetchPages = async () => {
+      const response = await fetch("http://localhost:5000/api/pages"); // API URL'si
+      const data = await response.json();
+      setPages(data);
+    };
+
+    fetchPages();
+  }, []);
+
+  // Arama işlemi
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+    filterResults(event.target.value);
+  };
+
+  const filterResults = (query) => {
+    if (!query) {
+      setSearchResults([]);
+      return;
+    }
+
+    const filteredPages = pages.filter(
+      (page) =>
+        page.content.toLowerCase().includes(query.toLowerCase()) ||
+        page.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    setSearchResults(filteredPages);
+  };
+
   return (
     <div>
       <div>
@@ -55,12 +91,6 @@ const Search = () => {
           media="print"
           href="/sites/default/files/css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css?delta=1&language=en&theme=numiko&include=eJxtyUEKxCAMQNELWT1THIOGRg2JaentC90Uymz-4n27bGFPGQzD8E77TJVnBt5sXUyjfvWnJMu2hlBQ_88goFAVpFkq6gIcX4k-xDOTNSzhIDwtPY19Fme8AenXOGM"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -488,7 +518,7 @@ const Search = () => {
                                             <div className="js-form-type-textfield form-item-search-api-fulltext js-form-item-search-api-fulltext">
                                               <label
                                                 htmlFor="global-keyword-search"
-                                                className
+                                                className="visually-hidden"
                                               >
                                                 Keyword
                                               </label>
@@ -503,7 +533,13 @@ const Search = () => {
                                                 maxLength={128}
                                                 required
                                                 placeholder="What are you looking for? e.g. Egyptian galleries..."
-                                                aria-expanded="false"
+                                                aria-expanded={
+                                                  searchResults.length > 0
+                                                    ? "true"
+                                                    : "false"
+                                                }
+                                                value={searchTerm}
+                                                onChange={handleSearch}
                                               />
                                               <button
                                                 type="submit"
@@ -522,171 +558,40 @@ const Search = () => {
                                                 </svg>
                                               </button>
                                             </div>
-                                            <ul
-                                              id="autocomplete-options"
-                                              role="listbox"
-                                              className="c-autocomplete__options"
-                                              style={{ display: "none" }}
-                                            >
-                                              <li
-                                                id="0e491fd1-50da-40bb-ac2c-80fc75b8d667"
-                                                aria-selected="false"
-                                                className="c-autocomplete__option"
-                                                role="option"
+
+                                            {searchResults.length > 0 && (
+                                              <ul
+                                                id="autocomplete-options"
+                                                role="listbox"
+                                                className="c-autocomplete__options"
+                                                style={{ display: "block" }}
                                               >
-                                                <span
-                                                  target="/collection/china"
-                                                  className="text-color-inherit"
+                                                {searchResults.map((page) => (
+                                                  <li
+                                                    key={page.path}
+                                                    className="c-autocomplete__option"
+                                                    role="option"
+                                                  >
+                                                    <a
+                                                      href={page.path}
+                                                      className="text-color-inherit"
+                                                    >
+                                                      <span>{page.title}</span>
+                                                    </a>
+                                                  </li>
+                                                ))}
+                                                <li
+                                                  id="autocomplete-view-all-results"
+                                                  className="c-autocomplete__view-all"
+                                                  role="option"
+                                                  tabIndex={-1}
                                                 >
-                                                  <span>
-                                                    <strong />C<strong />h
-                                                    <strong />i<strong />n
-                                                    <strong />a<strong />
+                                                  <span className="c-autocomplete__view-all-text">
+                                                    View all results
                                                   </span>
-                                                </span>
-                                              </li>
-                                              <li
-                                                id="7bbf7016-c0e2-4e14-8150-c0378f791038"
-                                                aria-selected="false"
-                                                className="c-autocomplete__option"
-                                                role="option"
-                                              >
-                                                <span
-                                                  target="/learn/schools/ages-7-11/ancient-egypt/general-guide-egyptian-galleries"
-                                                  className="text-color-inherit"
-                                                >
-                                                  <span>
-                                                    <strong />G<strong />e
-                                                    <strong />n<strong />e
-                                                    <strong />r<strong />a
-                                                    <strong />l<strong />{" "}
-                                                    <strong />g<strong />u
-                                                    <strong />i<strong />d
-                                                    <strong />e<strong />{" "}
-                                                    <strong />t<strong />o
-                                                    <strong /> <strong />t
-                                                    <strong />h<strong />e
-                                                    <strong /> <strong />E
-                                                    <strong />g<strong />y
-                                                    <strong />p<strong />t
-                                                    <strong />i<strong />a
-                                                    <strong />n<strong />{" "}
-                                                    <strong />g<strong />a
-                                                    <strong />l<strong />l
-                                                    <strong />e<strong />r
-                                                    <strong />i<strong />e
-                                                    <strong />s<strong />
-                                                  </span>
-                                                </span>
-                                              </li>
-                                              <li
-                                                id="77fd902c-7bfd-4bb5-9a8e-89747b21fd04"
-                                                aria-selected="false"
-                                                className="c-autocomplete__option"
-                                                role="option"
-                                              >
-                                                <span
-                                                  target="/learn/schools/ages-7-11/ancient-greece/visit-resource-greek-everyday-life"
-                                                  className="text-color-inherit"
-                                                >
-                                                  <span>
-                                                    <strong />V<strong />i
-                                                    <strong />s<strong />i
-                                                    <strong />t<strong />{" "}
-                                                    <strong />r<strong />e
-                                                    <strong />s<strong />o
-                                                    <strong />u<strong />r
-                                                    <strong />c<strong />e
-                                                    <strong />:<strong />{" "}
-                                                    <strong />G<strong />r
-                                                    <strong />e<strong />e
-                                                    <strong />k<strong />{" "}
-                                                    <strong />e<strong />v
-                                                    <strong />e<strong />r
-                                                    <strong />y<strong />d
-                                                    <strong />a<strong />y
-                                                    <strong /> <strong />l
-                                                    <strong />i<strong />f
-                                                    <strong />e<strong />
-                                                  </span>
-                                                </span>
-                                              </li>
-                                              <li
-                                                id="4284e7c4-257a-411e-980e-84159a3157a8"
-                                                aria-selected="false"
-                                                className="c-autocomplete__option"
-                                                role="option"
-                                              >
-                                                <span
-                                                  target="/learn/schools/ages-7-11/ancient-greece/visit-resource-gods-and-goddesses"
-                                                  className="text-color-inherit"
-                                                >
-                                                  <span>
-                                                    <strong />V<strong />i
-                                                    <strong />s<strong />i
-                                                    <strong />t<strong />{" "}
-                                                    <strong />r<strong />e
-                                                    <strong />s<strong />o
-                                                    <strong />u<strong />r
-                                                    <strong />c<strong />e
-                                                    <strong />:<strong />{" "}
-                                                    <strong />G<strong />o
-                                                    <strong />d<strong />s
-                                                    <strong /> <strong />a
-                                                    <strong />n<strong />d
-                                                    <strong /> <strong />g
-                                                    <strong />o<strong />d
-                                                    <strong />d<strong />e
-                                                    <strong />s<strong />s
-                                                    <strong />e<strong />s
-                                                    <strong />
-                                                  </span>
-                                                </span>
-                                              </li>
-                                              <li
-                                                id="efc09469-7485-42c7-819c-50aba28c4c93"
-                                                aria-selected="false"
-                                                className="c-autocomplete__option"
-                                                role="option"
-                                              >
-                                                <span
-                                                  target="/learn/schools/ages-7-11/ancient-greece/visit-resource-myths-and-legends"
-                                                  className="text-color-inherit"
-                                                >
-                                                  <span>
-                                                    <strong />V<strong />i
-                                                    <strong />s<strong />i
-                                                    <strong />t<strong />{" "}
-                                                    <strong />r<strong />e
-                                                    <strong />s<strong />o
-                                                    <strong />u<strong />r
-                                                    <strong />c<strong />e
-                                                    <strong />:<strong />{" "}
-                                                    <strong />M<strong />y
-                                                    <strong />t<strong />h
-                                                    <strong />s<strong />{" "}
-                                                    <strong />a<strong />n
-                                                    <strong />d<strong />{" "}
-                                                    <strong />l<strong />e
-                                                    <strong />g<strong />e
-                                                    <strong />n<strong />d
-                                                    <strong />s<strong />
-                                                  </span>
-                                                </span>
-                                              </li>
-                                              <li
-                                                id="autocomplete-view-all-results"
-                                                aria-selected="false"
-                                                className="c-autocomplete__view-all"
-                                                role="option"
-                                                tabIndex={-1}
-                                              >
-                                                <span className="c-autocomplete__view-all-text">
-                                                  {" "}
-                                                  View all results{" "}
-                                                </span>
-                                              </li>
-                                            </ul>
+                                                </li>
+                                              </ul>
+                                            )}
                                           </div>
                                         </form>
                                       </div>
