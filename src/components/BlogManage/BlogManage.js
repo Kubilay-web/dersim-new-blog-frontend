@@ -99,6 +99,13 @@ const BlogManage = () => {
     setImage(null);
   };
 
+  // Formu sıfırlayıp düzenleme moduna geç
+  const handleCreateNewBlog = () => {
+    resetForm();
+    setEditMode(false); // Reset to create mode
+    setEditBlogId(null);
+  };
+
   return (
     <div className="container py-5">
       <div className="row">
@@ -163,6 +170,15 @@ const BlogManage = () => {
             <button type="submit" className="btn btn-primary btn-block">
               {editMode ? "Blog Güncelle" : "Blog Oluştur"}
             </button>
+            {editMode && (
+              <button
+                type="button"
+                className="btn btn-secondary btn-block mt-2"
+                onClick={handleCreateNewBlog}
+              >
+                Yeni Blog Oluştur
+              </button>
+            )}
           </form>
 
           <h3 className="text-center">Mevcut Bloglar</h3>

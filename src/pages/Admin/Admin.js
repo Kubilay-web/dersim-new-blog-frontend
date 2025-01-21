@@ -3,14 +3,19 @@ import "./Admin.css";
 import { Helmet } from "react-helmet";
 import BlogManage from "../../components/BlogManage/BlogManage";
 import Dashboard from "../../components/Dashboard/Dashboard";
+import PaymentManage from "../../components/PaymentManage/PaymentManage";
+import ProductManage from "../../components/ProductManage/ProductManage"; // Import ProductManage component
+import Subscription from "../../components/Subscription/Subscription"; // Import Subscription component
+import { useSelector } from "react-redux";
 
 function Admin() {
+  const { currentUser } = useSelector((state) => state.user);
+
   const [currentPage, setCurrentPage] = useState("dashboard");
   const [style, setStyle] = useState(
     "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
   );
 
-  // Sidebar stilini değiştiren fonksiyon
   const changeStyle = () => {
     if (
       style === "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
@@ -21,7 +26,6 @@ function Admin() {
     }
   };
 
-  // Sayfa değiştirme fonksiyonu
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -47,8 +51,8 @@ function Admin() {
             className="sidebar-brand d-flex align-items-center justify-content-center"
             href="#"
             onClick={(e) => {
-              e.preventDefault(); // Sayfa yenilemesini engeller
-              handlePageChange("dashboard"); // Dashboard sayfasına geç
+              e.preventDefault();
+              handlePageChange("dashboard");
             }}
           >
             <div className="sidebar-brand-icon rotate-n-15">
@@ -68,8 +72,8 @@ function Admin() {
               className="nav-link"
               href="#"
               onClick={(e) => {
-                e.preventDefault(); // Sayfa yenilemesini engeller
-                handlePageChange("dashboard"); // Dashboard sayfasına geç
+                e.preventDefault();
+                handlePageChange("dashboard");
               }}
             >
               <i className="fas fa-fw fa-tachometer-alt"></i>
@@ -86,12 +90,58 @@ function Admin() {
               className="nav-link"
               href="#"
               onClick={(e) => {
-                e.preventDefault(); // Sayfa yenilemesini engeller
-                handlePageChange("blog-manage"); // Blog yönetimi sayfasına geç
+                e.preventDefault();
+                handlePageChange("blog-manage");
               }}
             >
               <i className="fas fa-fw fa-blog"></i>
               <span>Blogs</span>
+            </a>
+          </li>
+
+          {/* Nav Item - Payment Management */}
+          <li className="nav-item active">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange("payment-manage");
+              }}
+            >
+              <i className="fas fa-fw fa-credit-card"></i>
+              <span>Payments</span>
+            </a>
+          </li>
+
+          {/* Nav Item - Product Management */}
+          <li className="nav-item active">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange("product-manage");
+              }}
+            >
+              <i className="fas fa-fw fa-box"></i> {/* Product icon */}
+              <span>Products</span>
+            </a>
+          </li>
+
+          {/* Nav Item - Subscription */}
+          <li className="nav-item active">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange("subscription");
+              }}
+            >
+              <i className="fas fa-fw fa-clipboard-list"></i>{" "}
+              {/* Subscription icon */}
+              <span>Subscription</span>
             </a>
           </li>
         </ul>
@@ -108,7 +158,6 @@ function Admin() {
               >
                 <i className="fa fa-bars"></i>
               </button>
-
               {/* Topbar Search */}
               <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div className="input-group">
@@ -162,10 +211,7 @@ function Admin() {
                       <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                       Settings
                     </a>
-                    <a className="dropdown-item" href="#">
-                      <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Activity Log
-                    </a>
+
                     <div className="dropdown-divider"></div>
                     <a
                       className="dropdown-item"
@@ -186,12 +232,30 @@ function Admin() {
               {/* Page Heading */}
               <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">
-                  {currentPage === "dashboard" ? "Dashboard" : "Blog Yönetimi"}
+                  {currentPage === "dashboard"
+                    ? "Dashboard"
+                    : currentPage === "payment-manage"
+                    ? "Payment Management"
+                    : currentPage === "product-manage"
+                    ? "Product Management"
+                    : currentPage === "subscription"
+                    ? "Subscription Management"
+                    : "Blog Management"}
                 </h1>
               </div>
 
-              {/* Sayfa İçeriği */}
-              {currentPage === "dashboard" ? <Dashboard /> : <BlogManage />}
+              {/* Page Content */}
+              {currentPage === "dashboard" ? (
+                <Dashboard />
+              ) : currentPage === "payment-manage" ? (
+                <PaymentManage />
+              ) : currentPage === "product-manage" ? (
+                <ProductManage />
+              ) : currentPage === "subscription" ? (
+                <Subscription />
+              ) : (
+                <BlogManage />
+              )}
             </div>
           </div>
         </div>

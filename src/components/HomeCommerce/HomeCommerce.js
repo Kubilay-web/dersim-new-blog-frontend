@@ -44,7 +44,9 @@ const HomeCommerce = () => {
                   />
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title text-truncate">{product.name}</h5>
-                    <p className="card-text text-muted">{product.desc}</p>
+                    <p className="card-text text-muted">
+                      {product.description}
+                    </p>
                     <p className="card-text fw-bold">{product.price} TL</p>
                     <button
                       onClick={() => handleAddToCart(product)}
