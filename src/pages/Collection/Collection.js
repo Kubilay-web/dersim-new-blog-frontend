@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 
 const Collection = () => {
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Collection highlights";
+    const category2 = "Collection themes";
+
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+  }, []);
+
   return (
     <div>
       <div>
@@ -928,7 +951,7 @@ const Collection = () => {
                                   className="link link--chevron"
                                   href="/about-us/british-museum-story"
                                 >
-                                  <span>The British Museum story</span>
+                                  <span>The Dersim Museum story</span>
                                   <svg
                                     className="icon icon--chevron"
                                     role="presentation"
@@ -1065,47 +1088,55 @@ const Collection = () => {
                                         transform: "translate3d(0px, 0px, 0px)",
                                       }}
                                     >
-                                      <li
-                                        className="swiper-slide carousel--gallery__item swiper-slide-active"
-                                        data-swiper-slide-index={0}
-                                        style={{ "margin-right": "10px" }}
-                                      >
-                                        <button
-                                          type="button"
-                                          className="carousel--gallery__button | js-photoswipe-item"
-                                          data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2019-10/coffin-priest-hornedjitef-thebes-mummies-british-museum.jpg"
-                                          data-large-image-width={1466}
-                                          data-large-image-height={2000}
-                                          data-description='<strong>Inner coffin of Hornedjitef, from Thebes, Egypt, 240 BC</strong><br>The mummy of the priest Hornedjitef was encased in a gilded mask and cover, and two human-shaped wooden coffins. <a href="/collection/object/Y_EA6678"><span>Collection online</span></a>'
-                                          data-caption
-                                          data-lang
-                                        >
-                                          <span className="visually-hidden">
-                                            Inner coffin of Hornedjitef - opens
-                                            in a modal which shows a larger
-                                            image and a caption
-                                          </span>
-                                        </button>
-                                        <div className="carousel--gallery__content">
-                                          <div className="media media-gallery media-image js-media">
-                                            <img
-                                              loading="eager"
-                                              className="not-full-width lazyautosizes ls-is-cached lazyloaded"
-                                              width={513}
-                                              height={700}
-                                              data-sizes="auto"
-                                              data-focal-position="center center"
-                                              alt="A gold decorated coffin in the shape of a human. "
-                                              sizes="518px"
-                                              src="/images/Collection/image-02.jpg"
-                                            />
-                                          </div>
-                                          <p className="carousel--gallery__item-title">
-                                            Inner coffin of Hornedjitef
-                                          </p>
-                                        </div>
-                                      </li>
-                                      <li
+                                      {posts && posts.length > 0 ? (
+                                        posts
+                                          .slice(0, 1000)
+                                          .map((post, index) => (
+                                            <li
+                                              key={post._id}
+                                              className="swiper-slide carousel--gallery__item swiper-slide-active"
+                                              data-swiper-slide-index={0}
+                                              style={{ "margin-right": "10px" }}
+                                            >
+                                              <button
+                                                type="button"
+                                                className="carousel--gallery__button | js-photoswipe-item"
+                                                data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2019-10/coffin-priest-hornedjitef-thebes-mummies-british-museum.jpg"
+                                                data-large-image-width={1466}
+                                                data-large-image-height={2000}
+                                                data-description='<strong>Inner coffin of Hornedjitef, from Thebes, Egypt, 240 BC</strong><br>The mummy of the priest Hornedjitef was encased in a gilded mask and cover, and two human-shaped wooden coffins. <a href="/collection/object/Y_EA6678"><span>Collection online</span></a>'
+                                                data-caption
+                                                data-lang
+                                              >
+                                                <span className="visually-hidden">
+                                                  {post.content}
+                                                </span>
+                                              </button>
+                                              <div className="carousel--gallery__content">
+                                                <div className="media media-gallery media-image js-media">
+                                                  <img
+                                                    loading="eager"
+                                                    className="not-full-width lazyautosizes ls-is-cached lazyloaded"
+                                                    width={513}
+                                                    height={700}
+                                                    data-sizes="auto"
+                                                    data-focal-position="center center"
+                                                    alt="A gold decorated coffin in the shape of a human. "
+                                                    sizes="518px"
+                                                    src="/images/Collection/image-02.jpg"
+                                                  />
+                                                </div>
+                                                <p className="carousel--gallery__item-title">
+                                                  {post.content}
+                                                </p>
+                                              </div>
+                                            </li>
+                                          ))
+                                      ) : (
+                                        <p>No posts available</p>
+                                      )}
+
+                                      {/* <li
                                         className="swiper-slide carousel--gallery__item swiper-slide-next"
                                         data-swiper-slide-index={1}
                                         style={{ "margin-right": "10px" }}
@@ -1144,8 +1175,8 @@ const Collection = () => {
                                             Brass head of an Ooni (king) of Ife
                                           </p>
                                         </div>
-                                      </li>
-                                      <li
+                                      </li> */}
+                                      {/* <li
                                         className="swiper-slide carousel--gallery__item"
                                         data-swiper-slide-index={2}
                                         style={{ "margin-right": "10px" }}
@@ -1278,8 +1309,8 @@ const Collection = () => {
                                             Lewis Chessmen
                                           </p>
                                         </div>
-                                      </li>
-                                      <li
+                                      </li> */}
+                                      {/* <li
                                         className="swiper-slide carousel--gallery__item"
                                         data-swiper-slide-index={5}
                                         style={{ "margin-right": "10px" }}
@@ -1327,8 +1358,8 @@ const Collection = () => {
                                             Shield from West Papua
                                           </p>
                                         </div>
-                                      </li>
-                                      <li
+                                      </li> */}
+                                      {/* <li
                                         className="swiper-slide carousel--gallery__item"
                                         data-swiper-slide-index={6}
                                         style={{ "margin-right": "10px" }}
@@ -1378,8 +1409,8 @@ const Collection = () => {
                                             (wine jar)
                                           </p>
                                         </div>
-                                      </li>
-                                      <li
+                                      </li> */}
+                                      {/* <li
                                         className="swiper-slide carousel--gallery__item"
                                         data-swiper-slide-index={7}
                                         style={{ "margin-right": "10px" }}
@@ -1427,7 +1458,7 @@ const Collection = () => {
                                             The Lycurgus Cup
                                           </p>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                     <span
                                       className="swiper-notification"
@@ -1571,52 +1602,60 @@ const Collection = () => {
                                         className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper"
                                         style={{}}
                                       >
-                                        <li
-                                          className="l-grid__item swiper-slide"
-                                          style={{}}
-                                        >
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyautosizes lazyloaded"
-                                                    width={750}
-                                                    height={422}
-                                                    data-sizes="auto"
-                                                    data-focal-position="center center"
-                                                    alt="A turquoise two-headed serpent mouth ajar, heads pointing in different directions."
-                                                    sizes="516px"
-                                                    src="/images/Collection/image-06.jpg"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/collection/americas"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>Americas</span>
-                                                      </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    The Americas encapsulate the
-                                                    remarkable narratives of
-                                                    cultural achievement and
-                                                    human experience across two
-                                                    continents.
+                                        {posts2 && posts2.length > 0 ? (
+                                          posts2
+                                            .slice(0, 1000)
+                                            .map((post2, index) => (
+                                              <li
+                                                key={post2._id}
+                                                className="l-grid__item swiper-slide"
+                                                style={{}}
+                                              >
+                                                <div className="teaser">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyautosizes lazyloaded"
+                                                          width={750}
+                                                          height={422}
+                                                          data-sizes="auto"
+                                                          data-focal-position="center center"
+                                                          alt="A turquoise two-headed serpent mouth ajar, heads pointing in different directions."
+                                                          sizes="516px"
+                                                          src="/images/Collection/image-06.jpg"
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href="/collection/americas"
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              <span>
+                                                                {post2.title}
+                                                              </span>
+                                                            </span>
+                                                            {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post2.content}
+                                                        </div>
+                                                      </div>
+                                                    </div>
                                                   </div>
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
                                         <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
@@ -2407,7 +2446,7 @@ const Collection = () => {
                                 href="/the-british-museum-podcast"
                                 className="menu__link menu__link--level-0 menu__toggle"
                               >
-                                <span>The British Museum podcast</span>
+                                <span>The Dersim Museum podcast</span>
                                 <svg
                                   className="icon icon--chevron"
                                   role="presentation"

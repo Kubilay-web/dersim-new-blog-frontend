@@ -4,8 +4,9 @@ import { Helmet } from "react-helmet";
 import BlogManage from "../../components/BlogManage/BlogManage";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import PaymentManage from "../../components/PaymentManage/PaymentManage";
-import ProductManage from "../../components/ProductManage/ProductManage"; // Import ProductManage component
-import Subscription from "../../components/Subscription/Subscription"; // Import Subscription component
+import ProductManage from "../../components/ProductManage/ProductManage";
+import Subscription from "../../components/Subscription/Subscription";
+import PostManage from "../../components/PostManage/PostManage";
 import { useSelector } from "react-redux";
 
 function Admin() {
@@ -96,6 +97,21 @@ function Admin() {
             >
               <i className="fas fa-fw fa-blog"></i>
               <span>Blogs</span>
+            </a>
+          </li>
+
+          {/* Nav Item - Post Management */}
+          <li className="nav-item active">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange("post-manage");
+              }}
+            >
+              <i className="fas fa-fw fa-pencil-alt"></i> {/* Post icon */}
+              <span>Posts</span>
             </a>
           </li>
 
@@ -191,7 +207,7 @@ function Admin() {
                     aria-expanded="false"
                   >
                     <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                      Douglas McGee
+                      {currentUser?.name || "User"}
                     </span>
                     <img
                       className="img-profile rounded-circle"
@@ -240,11 +256,12 @@ function Admin() {
                     ? "Product Management"
                     : currentPage === "subscription"
                     ? "Subscription Management"
+                    : currentPage === "post-manage"
+                    ? "Post Management"
                     : "Blog Management"}
                 </h1>
               </div>
 
-              {/* Page Content */}
               {currentPage === "dashboard" ? (
                 <Dashboard />
               ) : currentPage === "payment-manage" ? (
@@ -253,6 +270,8 @@ function Admin() {
                 <ProductManage />
               ) : currentPage === "subscription" ? (
                 <Subscription />
+              ) : currentPage === "post-manage" ? (
+                <PostManage />
               ) : (
                 <BlogManage />
               )}

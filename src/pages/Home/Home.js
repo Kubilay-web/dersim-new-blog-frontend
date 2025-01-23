@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../css/css-1.css";
 import "../../css/css-2.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { useGetAllProductsQuery } from "../../redux/products/productsApi";
 
 const Home = () => {
-  // Dropdown menüsünün açılma/kapanma durumunu tutan state
+  const { data, error, isLoading } = useGetAllProductsQuery();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
@@ -27,6 +28,45 @@ const Home = () => {
   const toggleDropDown5 = () => {
     setIsOpen5(!isOpen5);
   };
+
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+  const [posts3, setPosts3] = useState([]);
+  const [posts4, setPosts4] = useState([]);
+  const [posts5, setPosts5] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Test Kategorisi";
+    const category2 = "Müzemizi Ziyaret Edin";
+    const category3 = "Demokrasi Çalışmaları";
+    const category4 = "Dersim Vakfından Haberler";
+    const category5 = "Koleksiyonlarımızı Keşfedin";
+
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+    fetchPosts(category3, setPosts3);
+    fetchPosts(category4, setPosts4);
+    fetchPosts(category5, setPosts5);
+  }, []);
+
+  const { refetch } = useGetAllProductsQuery();
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
+
   return (
     <div>
       <div>
@@ -68,12 +108,6 @@ const Home = () => {
           media="print"
           href="css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -708,67 +742,79 @@ const Home = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--exhibition teaser--exhibition-5365">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__content">
-                                                <h3 className="teaser__title">
-                                                  <a
-                                                    href="/exhibitions/picasso-printmaker"
-                                                    className="teaser__anchor"
-                                                  >
-                                                    <span>
-                                                      Bitmeyen Veda
-                                                      <br aria-hidden="true" />
-                                                      <strong>
-                                                        Dersim Belgesel Filmi
-                                                      </strong>
-                                                    </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    <span className="visually-hidden">
-                                                      . Rezervasyon .
-                                                    </span>
-                                                  </a>
-                                                </h3>
-                                                <footer className="teaser__footer">
-                                                  <ul className="teaser__meta teaser__meta--footer">
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span>Konferans</span>
-                                                    </li>
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span className="date-display-range">
-                                                        7 Kasım 2024 – 30 Mart
-                                                        2025
-                                                      </span>
-                                                    </li>
-                                                  </ul>
-                                                  <div
-                                                    className="teaser__defacer"
-                                                    aria-hidden="true"
-                                                  >
-                                                    Rezervasyon
+                                        {posts && posts.length > 0 ? (
+                                          posts
+                                            .slice(0, 1000)
+                                            .map((post, index) => (
+                                              <li
+                                                key={post._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser teaser--exhibition teaser--exhibition-5365">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__content">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            {post.title}
+                                                            <br aria-hidden="true" />
+                                                            <strong>
+                                                              {post.content}
+                                                            </strong>
+                                                          </span>
+                                                          <span className="visually-hidden">
+                                                            . Rezervasyon .
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <footer className="teaser__footer">
+                                                        <ul className="teaser__meta teaser__meta--footer">
+                                                          <li className="teaser__meta-item">
+                                                            {" "}
+                                                            <span>
+                                                              Konferans
+                                                            </span>
+                                                          </li>
+                                                          <li className="teaser__meta-item">
+                                                            {" "}
+                                                            <span className="date-display-range">
+                                                              7 Kasım 2024 – 30
+                                                              Mart 2025
+                                                            </span>
+                                                          </li>
+                                                        </ul>
+                                                        <div
+                                                          className="teaser__defacer"
+                                                          aria-hidden="true"
+                                                        >
+                                                          Rezervasyon
+                                                        </div>
+                                                      </footer>
+                                                    </div>
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post.image}
+                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
+                                                        />
+                                                      </div>
+                                                    </div>
                                                   </div>
-                                                </footer>
-                                              </div>
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/1-Belgesel.jpg"
-                                                    alt="Procession of camels with lone figure leading in shadow against orange sky"
-                                                  />
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
 
-                                        <li className="l-grid__item swiper-slide">
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--exhibition teaser--exhibition-5224">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__content">
@@ -784,7 +830,6 @@ const Home = () => {
                                                         Berlin Konferansı
                                                       </strong>
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     <span className="visually-hidden">
                                                       . Rezervasyon .
                                                     </span>
@@ -826,9 +871,9 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
 
-                                        <li className="l-grid__item swiper-slide">
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--exhibition teaser--exhibition-5204">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__content">
@@ -843,7 +888,6 @@ const Home = () => {
                                                         Dünya Anadil Etkinliği
                                                       </strong>
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     <span className="visually-hidden">
                                                       . Rezervasyon .
                                                     </span>
@@ -886,7 +930,7 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -943,48 +987,56 @@ const Home = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--4-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/room-33-china-south-asia-visitor-1920.webp"
-                                                    alt="Procession of camels with lone figure leading in shadow against orange sky"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/visit"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Ziyaretinizi Planlayın
-                                                        </span>
-                                                      </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Müzedeki her türlü sergi,
-                                                    konferans, etkinlik ve diğer
-                                                    tüm imkanlar için biletinizi
-                                                    temin edebilirsiniz.
+                                        {posts2 && posts2.length > 0 ? (
+                                          posts2
+                                            .slice(0, 1000)
+                                            .map((post2, index) => (
+                                              <li
+                                                key={post2._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src="/images/room-33-china-south-asia-visitor-1920.webp"
+                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href="/visit"
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              <span>
+                                                                {post2.title}
+                                                              </span>
+                                                            </span>
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post2.category}
+                                                        </div>
+                                                      </div>
+                                                    </div>
                                                   </div>
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1011,7 +1063,6 @@ const Home = () => {
                                                           Müze Krokisi
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1023,8 +1074,8 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1049,7 +1100,6 @@ const Home = () => {
                                                       <span>
                                                         <span>Galeriler</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1062,8 +1112,8 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1090,7 +1140,6 @@ const Home = () => {
                                                           Aile Ziyareti
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1107,7 +1156,7 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                   </div>{" "}
@@ -1171,51 +1220,57 @@ const Home = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--4-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/barış çalışmaları.jpg"
-                                                    alt="Procession of camels with lone figure leading in shadow against orange sky"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/about-us/masterplan"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Barış Çalışmaları
-                                                        </span>
-                                                      </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Ağır insan hakları ihlalleri
-                                                    ile ilgili hakikatlerin
-                                                    ortaya çıkarılması ve kalıcı
-                                                    barışın sağlanmasına yönelik
-                                                    çalışır. Belgeleme,
-                                                    raporlama, hafızalaştırma ve
-                                                    barış çalışmaları yürütür.
+                                        {posts3 && posts3.length > 0 ? (
+                                          posts3
+                                            .slice(0, 1000)
+                                            .map((post3, index) => (
+                                              <li
+                                                key={post3._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src="/images/barış çalışmaları.jpg"
+                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href="/about-us/masterplan"
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              <span>
+                                                                {post3.title}
+                                                              </span>
+                                                            </span>
+                                                            {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post3.content}
+                                                        </div>
+                                                      </div>
+                                                    </div>
                                                   </div>
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1242,7 +1297,6 @@ const Home = () => {
                                                           Hukuk Çalışmaları
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1258,8 +1312,8 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1287,7 +1341,6 @@ const Home = () => {
                                                           Savunulması
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1302,8 +1355,8 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1330,7 +1383,6 @@ const Home = () => {
                                                           Küresel İş Birliği
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1345,7 +1397,7 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                   </div>{" "}
@@ -1408,47 +1460,57 @@ const Home = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--4-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Dersim-Museum-1.png"
-                                                    alt="Procession of camels with lone figure leading in shadow against orange sky"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/research"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Sürgünde Dersim Müzesi
-                                                        </span>
-                                                      </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Almanya'da Sürgünde Dersim
-                                                    Müzesi'nin kurulması için
-                                                    çalışmalarımız devam ediyor.
+                                        {posts4 && posts4.length > 0 ? (
+                                          posts4
+                                            .slice(0, 1000)
+                                            .map((post4, index) => (
+                                              <li
+                                                key={post4._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src="/images/Dersim-Museum-1.png"
+                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href="/research"
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              <span>
+                                                                {post4.title}
+                                                              </span>
+                                                            </span>
+                                                            {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post4.content}
+                                                        </div>
+                                                      </div>
+                                                    </div>
                                                   </div>
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1476,7 +1538,6 @@ const Home = () => {
                                                           Yitirdik
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1515,7 +1576,6 @@ const Home = () => {
                                                           Dersim Vakfından Burs
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1555,7 +1615,6 @@ const Home = () => {
                                                           Mültecilerin İmkanları
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1567,7 +1626,7 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                   </div>{" "}
@@ -1644,41 +1703,53 @@ const Home = () => {
                                       data-slides-to-show={3}
                                     >
                                       <ul className="swiper-wrapper">
-                                        <li className="swiper-slide teaser--animate-slide">
-                                          <div className="teaser teaser--animate | js-teaser-animate">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser--animate__container">
-                                                <div className="teaser__content">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/collection/egypt"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        Sasaniler Dönemi
-                                                      </span>
-                                                      <span className="visually-hidden">
-                                                        Read more
-                                                      </span>
-                                                    </a>
-                                                  </h3>
-                                                </div>
-                                                <div className="teaser--animate__image">
-                                                  <div className="media media-discover media-image js-media">
-                                                    <img
-                                                      className="image-style"
-                                                      loading="lazy"
-                                                      src="/images/sasaniler.jpg"
-                                                      width={286}
-                                                      height={425}
-                                                    />
+                                        {posts5 && posts5.length > 0 ? (
+                                          posts5
+                                            .slice(0, 1000)
+                                            .map((post5, index) => (
+                                              <li
+                                                key={post5._id}
+                                                className="swiper-slide teaser--animate-slide"
+                                              >
+                                                <div className="teaser teaser--animate | js-teaser-animate">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser--animate__container">
+                                                      <div className="teaser__content">
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href="/collection/egypt"
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              {post5.title}
+                                                            </span>
+                                                            <span className="visually-hidden">
+                                                              Read more
+                                                            </span>
+                                                          </a>
+                                                        </h3>
+                                                      </div>
+                                                      <div className="teaser--animate__image">
+                                                        <div className="media media-discover media-image js-media">
+                                                          <img
+                                                            className="image-style"
+                                                            loading="lazy"
+                                                            src="/images/sasaniler.jpg"
+                                                            width={286}
+                                                            height={425}
+                                                          />
+                                                        </div>
+                                                      </div>
+                                                    </div>
                                                   </div>
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="swiper-slide teaser--animate-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="swiper-slide teaser--animate-slide">
                                           <div className="teaser teaser--animate | js-teaser-animate">
                                             <div className="teaser__wrapper">
                                               <div className="teaser--animate__container">
@@ -1713,8 +1784,8 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="swiper-slide teaser--animate-slide">
+                                        </li> */}
+                                        {/* <li className="swiper-slide teaser--animate-slide">
                                           <div className="teaser teaser--animate | js-teaser-animate">
                                             <div className="teaser__wrapper">
                                               <div className="teaser--animate__container">
@@ -1749,8 +1820,8 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="swiper-slide teaser--animate-slide">
+                                        </li> */}
+                                        {/* <li className="swiper-slide teaser--animate-slide">
                                           <div className="teaser teaser--animate | js-teaser-animate">
                                             <div className="teaser__wrapper">
                                               <div className="teaser--animate__container">
@@ -1781,8 +1852,8 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="swiper-slide teaser--animate-slide">
+                                        </li> */}
+                                        {/* <li className="swiper-slide teaser--animate-slide">
                                           <div className="teaser teaser--animate | js-teaser-animate">
                                             <div className="teaser__wrapper">
                                               <div className="teaser--animate__container">
@@ -1848,7 +1919,7 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="swiper-navigation carousel__nav-container carousel__nav-container--centred-buttons">
@@ -1935,41 +2006,46 @@ const Home = () => {
                                       data-slides-to-show={4}
                                     >
                                       <ul className="swiper-wrapper">
-                                        <li className="swiper-slide">
-                                          <div className="teaser teaser--has-link">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__content">
-                                                <h3 className="teaser__title">
-                                                  <a
-                                                    href="/shopinspired-by/inspired-by-the-dersim-museum.html?_ga=2.117272261.236295749.1596441842-1583734833.1593694052"
-                                                    className="teaser__anchor"
-                                                    data-tracking="shop-slice"
-                                                  >
-                                                    <span>
-                                                      Dersim Müzesi Kürtçe
-                                                      Sözlük
-                                                    </span>
-                                                    <span className="visually-hidden">
-                                                      /shopinspired-by/inspired-by-the-british-mus…
-                                                    </span>
-                                                  </a>
-                                                </h3>
-                                              </div>
-                                              <div className="teaser__image">
-                                                <div className="media media-embed_no_caption media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload not-full-width"
-                                                    sizes="100vw"
-                                                    width={500}
-                                                    height={500}
-                                                    src="/images/shop-1.webp"
-                                                  />
+                                        {data?.map((product) => (
+                                          <li
+                                            key={product._id}
+                                            className="swiper-slide"
+                                          >
+                                            <div className="teaser teaser--has-link">
+                                              <div className="teaser__wrapper">
+                                                <div className="teaser__content">
+                                                  <h3 className="teaser__title">
+                                                    <a
+                                                      href="/shop"
+                                                      className="teaser__anchor"
+                                                      data-tracking="shop-slice"
+                                                    >
+                                                      <span>
+                                                        {product.description}
+                                                      </span>
+                                                      <span className="visually-hidden">
+                                                        /shopinspired-by/inspired-by-the-british-mus…
+                                                      </span>
+                                                    </a>
+                                                  </h3>
+                                                </div>
+                                                <div className="teaser__image">
+                                                  <div className="media media-embed_no_caption media-image js-media">
+                                                    <img
+                                                      loading="eager"
+                                                      className="lazyload not-full-width"
+                                                      sizes="100vw"
+                                                      width={500}
+                                                      height={500}
+                                                      src={product.image}
+                                                    />
+                                                  </div>
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
-                                        </li>
+                                          </li>
+                                        ))}
+
                                         <li className="swiper-slide">
                                           <div className="teaser teaser--has-link">
                                             <div className="teaser__wrapper">
