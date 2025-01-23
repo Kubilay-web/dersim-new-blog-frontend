@@ -1,0 +1,142 @@
+/* Genel reset: tarayıcılar arası tutarsızlıkları gidermek için */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body ve html'yi sıfırla */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: none; /* Webkit için metin boyutu ayarı */
+  -moz-text-size-adjust: none; /* Firefox için metin boyutu ayarı */
+  -ms-text-size-adjust: none; /* IE için metin boyutu ayarı */
+  text-size-adjust: none; /* Modern tarayıcılar için */
+  line-height: 1.5; /* Satır yüksekliğini tutarlı yap */
+}
+
+/* Uluslararası liste stillerini sıfırlama */
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Linkleri stilizle */
+a {
+  text-decoration: none;
+  color: inherit; /* Bağlantıların varsayılan renklerini devre dışı bırak */
+}
+
+/* Görsel öğeleri sıfırlayın */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 0; /* Resimlerin etrafındaki varsayılan kenarlığı kaldır */
+}
+
+/* Tablo düzeni için sıfırlama */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Form öğelerinin sıfırlanması */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Placeholder stilini sıfırlama */
+input::placeholder,
+textarea::placeholder {
+  color: inherit;
+  opacity: 0.6; /* Placeholder metnini şeffaf yap */
+}
+
+/* IE için input ve button stilini sıfırlama */
+input[type="search"]::-ms-clear {
+  display: none; /* Internet Explorer'daki arama kutusu temizlik butonunu kaldır */
+}
+
+/* Eski tarayıcılar için */
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* Vendor prefix (eski tarayıcılar) ile ilgili hataları temizle */
+button,
+select,
+input {
+  -webkit-appearance: none; /* Webkit prefix */
+  -moz-appearance: none; /* Firefox prefix */
+  appearance: none; /* Modern tarayıcılar */
+}
+
+/* Webkit ve eski IE tarayıcıları için -webkit-text-size-adjust hata mesajlarını temizle */
+html {
+  -webkit-text-size-adjust: 100%; /* Webkit için metin boyutunu düzgünleştir */
+}
+
+/* Gereksiz eski vendor prefixlerini ve özellileri sıfırla */
+* {
+  -ms-viewport: 100%;
+  -webkit-appearance: none;
+  -moz-column-count: auto; /* Mozilla için sütun sayısı özelliklerini temizle */
+  -moz-column-gap: initial; /* Mozilla için sütun boşluğu özelliklerini temizle */
+  -ms-value: none; /* IE için input değerlerini temizle */
+  -ms-expand: none; /* IE için input genişleme özelliğini kaldır */
+}
+
+/* Eski IE ve Firefox özelliklerini sıfırlama */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea,
+button {
+  -moz-osx-font-smoothing: grayscale; /* Firefox ve Safari için font yumuşatma */
+  -webkit-font-smoothing: antialiased; /* Webkit tarayıcıları için font yumuşatma */
+}
+
+/* Genel sıfırlama */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5; /* Satır yüksekliğini ayarla */
+}
+
+/* Mobil uyumlu web tasarımda genel sınır ve genişlik sıfırlaması */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* @supports (tarayıcı özellikleri) özelliği kullanılabilir */
+@supports (--css: variables) {
+  * {
+    /* CSS özelliklerini burada modern tarayıcılar için özelleştirebilirsiniz */
+  }
+}

@@ -90,6 +90,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../src/css/reset.css";
 
 function App() {
   return (
