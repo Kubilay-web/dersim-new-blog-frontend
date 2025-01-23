@@ -90,8 +90,6 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // JS dosyasını da dahil edebilirsiniz
 
 function App() {
   return (
