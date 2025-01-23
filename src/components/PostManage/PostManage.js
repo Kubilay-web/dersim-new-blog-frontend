@@ -32,20 +32,22 @@ const PostManage = () => {
   };
 
   // Yeni post eklemek için API'yi çağır
+
   const handleCreatePost = async () => {
     const formData = new FormData();
     formData.append("title", postDetails.title);
     formData.append("content", postDetails.content);
     formData.append("category", postDetails.category);
     if (postDetails.image) {
-      formData.append("image", postDetails.image);
+      formData.append("image", postDetails.image); // Resim ekleme
     }
 
     try {
       const response = await axios.post(
         "http://localhost:5000/api/post/create",
-        formData
-      ); // Backend URL
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
       setPosts([...posts, response.data]);
       toast.success("Yeni yazı başarıyla eklendi!");
       setShowModal(false);
@@ -61,14 +63,15 @@ const PostManage = () => {
     formData.append("content", postDetails.content);
     formData.append("category", postDetails.category);
     if (postDetails.image) {
-      formData.append("image", postDetails.image);
+      formData.append("image", postDetails.image); // Yeni resim ekleme
     }
 
     try {
       const response = await axios.put(
         `http://localhost:5000/api/post/updatepost/${postDetails._id}`,
-        formData
-      ); // Backend URL
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
       setPosts(
         posts.map((post) =>
           post._id === response.data._id ? response.data : post
