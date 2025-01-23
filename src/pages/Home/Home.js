@@ -4,6 +4,7 @@ import "../../css/css-2.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { useGetAllProductsQuery } from "../../redux/products/productsApi";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
@@ -48,7 +49,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const category1 = "Test Kategorisi";
+    const category1 = "Konferanslar ve Etkinlikler";
     const category2 = "Müzemizi Ziyaret Edin";
     const category3 = "Demokrasi Çalışmaları";
     const category4 = "Dersim Vakfından Haberler";
@@ -70,6 +71,18 @@ const Home = () => {
   return (
     <div>
       <div>
+        <Helmet>
+          <script src="/js-general/jquery.min.js" type="text/javascript" />
+          <script src="/js-general/uc.js" type="text/javascript" />
+          <script
+            src="/js-general/js_AHW1Gd1in6RiZJasw3hcMl6NiLhRChyCxmU4q_j0Uf4.js"
+            type="text/javascript"
+          />
+          <script
+            src="/js-general/js_SPkMj3SpZ70JzzRSNrXpOjN64UdICR25YexAv-ckrcM.js"
+            type="text/javascript"
+          />
+        </Helmet>
         <meta charSet="utf-8" />
         <style
           dangerouslySetInnerHTML={{
@@ -1024,7 +1037,7 @@ const Home = () => {
                                                           </a>
                                                         </h3>
                                                         <div className="teaser__summary">
-                                                          {post2.category}
+                                                          {post2.content}
                                                         </div>
                                                       </div>
                                                     </div>
@@ -1246,7 +1259,7 @@ const Home = () => {
                                                       <div className="teaser__content-push">
                                                         <h3 className="teaser__title">
                                                           <a
-                                                            href="/about-us/masterplan"
+                                                            href={post3.slug}
                                                             className="teaser__anchor"
                                                           >
                                                             <span>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Admin.css";
 import { Helmet } from "react-helmet";
 import BlogManage from "../../components/BlogManage/BlogManage";
@@ -11,6 +11,28 @@ import { useSelector } from "react-redux";
 
 function Admin() {
   const { currentUser } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    // Bootstrap CSS'i dinamik olarak yükle
+    const cssLink = document.createElement("link");
+    cssLink.rel = "stylesheet";
+    cssLink.href =
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
+    document.head.appendChild(cssLink);
+
+    // Bootstrap JS'i dinamik olarak yükle
+    const jsScript = document.createElement("script");
+    jsScript.src =
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
+    jsScript.defer = true; // Script'in yüklenmesini bekler
+    document.body.appendChild(jsScript);
+
+    // Temizleme işlemi
+    return () => {
+      document.head.removeChild(cssLink);
+      document.body.removeChild(jsScript);
+    };
+  }, []);
 
   const [currentPage, setCurrentPage] = useState("dashboard");
   const [style, setStyle] = useState(
@@ -78,7 +100,7 @@ function Admin() {
               }}
             >
               <i className="fas fa-fw fa-tachometer-alt"></i>
-              <span>Dashboard</span>
+              <span>AnaSayfa</span>
             </a>
           </li>
 
