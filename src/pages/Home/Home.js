@@ -1499,7 +1499,7 @@ const Home = () => {
                                                       <div className="teaser__content-push">
                                                         <h3 className="teaser__title">
                                                           <a
-                                                            href="/research"
+                                                            href={post4.slug}
                                                             className="teaser__anchor"
                                                           >
                                                             <span>
@@ -1730,7 +1730,7 @@ const Home = () => {
                                                       <div className="teaser__content">
                                                         <h3 className="teaser__title">
                                                           <a
-                                                            href="/collection/egypt"
+                                                            href={post5.slug}
                                                             className="teaser__anchor"
                                                           >
                                                             <span>
