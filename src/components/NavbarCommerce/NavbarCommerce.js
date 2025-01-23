@@ -16,12 +16,12 @@ const NavbarCommerce = () => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href =
-      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
     document.head.appendChild(link);
 
     const script = document.createElement("script");
     script.src =
-      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js";
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
     script.defer = true;
     document.body.appendChild(script);
 
