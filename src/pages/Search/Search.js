@@ -10,7 +10,9 @@ const Search = () => {
   // Sayfa verilerini API'den veya dinamik kaynaktan al
   useEffect(() => {
     const fetchPages = async () => {
-      const response = await fetch("http://localhost:5000/api/pages"); // API URL'si
+      const response = await fetch(
+        "https://dersim-new-blog-backend.onrender.com/api/pages"
+      ); // API URL'si
       const data = await response.json();
       setPages(data);
     };
