@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -15,6 +15,8 @@ const CartCommerce = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [isBootstrapLoaded, setIsBootstrapLoaded] = useState(false);
+
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -25,9 +27,11 @@ const CartCommerce = () => {
     const script = document.createElement("script");
     script.src =
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
-    script.defer = true;
+    script.async = true; // JS dosyasının yüklenmesi için
+    script.onload = () => setIsBootstrapLoaded(true); // Script yüklendiğinde durumu güncelle
     document.body.appendChild(script);
 
+    // Temizleme işlemi
     return () => {
       document.head.removeChild(link);
       document.body.removeChild(script);
