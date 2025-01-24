@@ -12,6 +12,10 @@ const PostManage = () => {
     content: "",
     category: "",
     image: null,
+    event: "",
+    date: "",
+    price: "",
+    color: "#ffffff", // Varsayılan renk
   });
   const [imagePreview, setImagePreview] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
@@ -32,12 +36,16 @@ const PostManage = () => {
   };
 
   // Yeni post eklemek için API'yi çağır
-
   const handleCreatePost = async () => {
     const formData = new FormData();
     formData.append("title", postDetails.title);
     formData.append("content", postDetails.content);
     formData.append("category", postDetails.category);
+    formData.append("event", postDetails.event);
+    formData.append("date", postDetails.date);
+    formData.append("price", postDetails.price);
+    formData.append("color", postDetails.color); // Renk bilgisi eklendi
+
     if (postDetails.image) {
       formData.append("image", postDetails.image); // Resim ekleme
     }
@@ -62,6 +70,11 @@ const PostManage = () => {
     formData.append("title", postDetails.title);
     formData.append("content", postDetails.content);
     formData.append("category", postDetails.category);
+    formData.append("event", postDetails.event);
+    formData.append("date", postDetails.date);
+    formData.append("price", postDetails.price);
+    formData.append("color", postDetails.color); // Yeni renk bilgisi eklendi
+
     if (postDetails.image) {
       formData.append("image", postDetails.image); // Yeni resim ekleme
     }
@@ -104,7 +117,16 @@ const PostManage = () => {
       setImagePreview(post.image || null); // Var olan görseli önizlemede göster
       setIsEditMode(true);
     } else {
-      setPostDetails({ title: "", content: "", category: "", image: null });
+      setPostDetails({
+        title: "",
+        content: "",
+        category: "",
+        image: null,
+        event: "",
+        date: "",
+        price: "",
+        color: "#ffffff", // Yeni post için varsayılan renk
+      });
       setImagePreview(null);
       setIsEditMode(false);
     }
@@ -141,6 +163,9 @@ const PostManage = () => {
               <th>Başlık</th>
               <th>İçerik</th>
               <th>Kategori</th>
+              <th>Etkinlik</th>
+              <th>Tarih</th>
+              <th>Fiyat</th>
               <th>İşlemler</th>
             </tr>
           </thead>
@@ -150,6 +175,9 @@ const PostManage = () => {
                 <td>{post.title}</td>
                 <td>{post.content.slice(0, 50)}...</td>
                 <td>{post.category}</td>
+                <td>{post.event}</td>
+                <td>{new Date(post.date).toLocaleDateString()}</td>
+                <td>{post.price}</td>
                 <td>
                   <Button
                     variant="warning"
@@ -217,6 +245,52 @@ const PostManage = () => {
                 value={postDetails.category}
                 onChange={(e) =>
                   setPostDetails({ ...postDetails, category: e.target.value })
+                }
+              />
+            </Form.Group>
+
+            <Form.Group controlId="event">
+              <Form.Label>Etkinlik</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Etkinlik adı"
+                value={postDetails.event}
+                onChange={(e) =>
+                  setPostDetails({ ...postDetails, event: e.target.value })
+                }
+              />
+            </Form.Group>
+
+            <Form.Group controlId="date">
+              <Form.Label>Tarih</Form.Label>
+              <Form.Control
+                type="date"
+                value={postDetails.date}
+                onChange={(e) =>
+                  setPostDetails({ ...postDetails, date: e.target.value })
+                }
+              />
+            </Form.Group>
+
+            <Form.Group controlId="price">
+              <Form.Label>Fiyat</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Fiyat"
+                value={postDetails.price}
+                onChange={(e) =>
+                  setPostDetails({ ...postDetails, price: e.target.value })
+                }
+              />
+            </Form.Group>
+
+            <Form.Group controlId="color">
+              <Form.Label>Renk</Form.Label>
+              <Form.Control
+                type="color"
+                value={postDetails.color}
+                onChange={(e) =>
+                  setPostDetails({ ...postDetails, color: e.target.value })
                 }
               />
             </Form.Group>

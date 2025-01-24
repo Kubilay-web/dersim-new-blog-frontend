@@ -13645,5 +13645,9 @@
 }
 
 .teaser__wrapper:hover .teaser__defacer {
-  color: var(--post-color); /* Dinamik renk burada kullanılacak */
+  color: var(--post-color) !important; /* Dinamik renk burada kullanılacak */
+}
+
+.teaser--exhibition-5204.teaser__wrapper:hover:before {
+  background-color: var(--post-color) !important;
 }

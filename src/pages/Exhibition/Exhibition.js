@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
+import "../../css/css-2.css";
 
 const Exhibition = () => {
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+  const [posts3, setPosts3] = useState([]);
+  const [posts4, setPosts4] = useState([]);
+  const [posts5, setPosts5] = useState([]);
+  const [posts6, setPosts6] = useState([]);
+  const [posts7, setPosts7] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Special exhibitions";
+    const category2 = "Free exhibitions and displays";
+    const category3 = "Highlight events";
+    const category4 = "Guided tours";
+    const category5 = "Dersim touring exhibitions";
+    const category6 = "International touring exhibitions";
+    const category7 = "Past exhibitions";
+
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+    fetchPosts(category3, setPosts3);
+    fetchPosts(category4, setPosts4);
+    fetchPosts(category5, setPosts5);
+    fetchPosts(category6, setPosts6);
+    fetchPosts(category7, setPosts7);
+  }, []);
+
   return (
     <div>
       <div>
@@ -491,75 +530,821 @@ const Exhibition = () => {
                                           </svg>
                                         </button>
                                         <div
-                                          className="filters__panel | js-dropdown-item"
-                                          id="dropdown-content-block-events-exhibitions-when"
-                                          aria-hidden="true"
-                                          aria-labelledby="dropdown-block-events-exhibitions-when"
+                                          className="filters__panel | js-dropdown-item -is-active"
+                                          aria-hidden="false"
+                                          style={{
+                                            display: "block",
+                                            overflow: "hidden",
+                                          }}
                                         >
-                                          <div className="facets-widget-mixed_date_range">
-                                            <ul
-                                              data-drupal-facet-id="events_exhibitions_when"
-                                              data-drupal-facet-alias="events_exhibitions_when"
-                                              className="facet-inactive item-list__mixed_date_range"
+                                          <ul className="item-list__links">
+                                            <li
+                                              className="facet-item"
+                                              value="2025-01-24T09:00:00||2025-01-24T23:59:59"
                                             >
-                                              <li className="facet-item">
-                                                <a
-                                                  href="/exhibitions-events/20-12-2024"
-                                                  data-drupal-facet-item-id="events-exhibitions-when-2024-12-20t0800002024-12-20t235959"
-                                                  data-drupal-facet-item-value="2024-12-20T08:00:00||2024-12-20T23:59:59"
-                                                  data-drupal-facet-item-count={
-                                                    1
-                                                  }
-                                                >
-                                                  <span>
-                                                    <span className="facet-item__value">
-                                                      Today
-                                                    </span>
-                                                  </span>
-                                                </a>
-                                              </li>
-                                              <li className="facet-item">
-                                                <a
-                                                  href="/exhibitions-events/21-12-2024"
-                                                  data-drupal-facet-item-id="events-exhibitions-when-2024-12-21"
-                                                  data-drupal-facet-item-value="2024-12-21"
-                                                  data-drupal-facet-item-count={
-                                                    1
-                                                  }
-                                                >
-                                                  <span>
-                                                    <span className="facet-item__value">
-                                                      Tomorrow
-                                                    </span>
-                                                  </span>
-                                                </a>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                          <div className="js-form-item form-item js-form-type-textfield form-item- js-form-item-">
-                                            <label htmlFor="range-start">
-                                              Start
-                                            </label>
-                                            <input
-                                              data-remove-url="/exhibitions-events/20-12-2024"
-                                              type="text"
-                                              id="range-start"
-                                              size={60}
-                                              maxLength={128}
-                                              className="form-text"
-                                            />
-                                          </div>
-                                          <div className="js-form-item form-item js-form-type-textfield form-item- js-form-item-">
-                                            <label htmlFor="range-end">
-                                              End
-                                            </label>
+                                              <a href="#">
+                                                <span>Today</span>
+                                              </a>
+                                            </li>
+                                            <li
+                                              className="facet-item"
+                                              value="2025-01-25"
+                                            >
+                                              <a href="#">
+                                                <span>Tomorrow</span>
+                                              </a>
+                                            </li>
+                                          </ul>{" "}
+                                          <div className="whats-on-datepicker">
                                             <input
                                               type="text"
-                                              id="range-end"
-                                              size={60}
-                                              maxLength={128}
-                                              className="form-text"
-                                            />
+                                              placeholder="D/M/YYYY"
+                                              className="date-picker"
+                                            />{" "}
+                                            <div>
+                                              <div className="pika-single">
+                                                <div className="pika-lendar">
+                                                  <div
+                                                    id="pika-title-vo"
+                                                    className="pika-title"
+                                                    aria-live="assertive"
+                                                  >
+                                                    <div className="pika-label">
+                                                      January
+                                                      <select
+                                                        className="pika-select pika-select-month"
+                                                        tabIndex={-1}
+                                                      >
+                                                        <option
+                                                          value={0}
+                                                          selected="selected"
+                                                        >
+                                                          January
+                                                        </option>
+                                                        <option value={1}>
+                                                          February
+                                                        </option>
+                                                        <option value={2}>
+                                                          March
+                                                        </option>
+                                                        <option value={3}>
+                                                          April
+                                                        </option>
+                                                        <option value={4}>
+                                                          May
+                                                        </option>
+                                                        <option value={5}>
+                                                          June
+                                                        </option>
+                                                        <option value={6}>
+                                                          July
+                                                        </option>
+                                                        <option value={7}>
+                                                          August
+                                                        </option>
+                                                        <option value={8}>
+                                                          September
+                                                        </option>
+                                                        <option value={9}>
+                                                          October
+                                                        </option>
+                                                        <option value={10}>
+                                                          November
+                                                        </option>
+                                                        <option value={11}>
+                                                          December
+                                                        </option>
+                                                      </select>
+                                                    </div>
+                                                    <div className="pika-label">
+                                                      2025
+                                                      <select
+                                                        className="pika-select pika-select-year"
+                                                        tabIndex={-1}
+                                                      >
+                                                        <option
+                                                          value={2025}
+                                                          selected="selected"
+                                                        >
+                                                          2025
+                                                        </option>
+                                                        <option value={2026}>
+                                                          2026
+                                                        </option>
+                                                        <option value={2027}>
+                                                          2027
+                                                        </option>
+                                                        <option value={2028}>
+                                                          2028
+                                                        </option>
+                                                        <option value={2029}>
+                                                          2029
+                                                        </option>
+                                                        <option value={2030}>
+                                                          2030
+                                                        </option>
+                                                        <option value={2031}>
+                                                          2031
+                                                        </option>
+                                                        <option value={2032}>
+                                                          2032
+                                                        </option>
+                                                        <option value={2033}>
+                                                          2033
+                                                        </option>
+                                                        <option value={2034}>
+                                                          2034
+                                                        </option>
+                                                        <option value={2035}>
+                                                          2035
+                                                        </option>
+                                                      </select>
+                                                    </div>
+                                                    <button
+                                                      className="pika-prev is-disabled"
+                                                      type="button"
+                                                      aria-disabled="true"
+                                                      tabIndex={-1}
+                                                    >
+                                                      Previous Month
+                                                    </button>
+                                                    <button
+                                                      className="pika-next"
+                                                      type="button"
+                                                    >
+                                                      Next Month
+                                                    </button>
+                                                  </div>
+                                                  <table
+                                                    cellPadding={0}
+                                                    cellSpacing={0}
+                                                    className="pika-table"
+                                                    role="grid"
+                                                    aria-label="Select a date."
+                                                  >
+                                                    <thead>
+                                                      <tr>
+                                                        <th scope="col">
+                                                          <abbr title="Sunday">
+                                                            Sun
+                                                          </abbr>
+                                                        </th>
+                                                        <th scope="col">
+                                                          <abbr title="Monday">
+                                                            Mon
+                                                          </abbr>
+                                                        </th>
+                                                        <th scope="col">
+                                                          <abbr title="Tuesday">
+                                                            Tue
+                                                          </abbr>
+                                                        </th>
+                                                        <th scope="col">
+                                                          <abbr title="Wednesday">
+                                                            Wed
+                                                          </abbr>
+                                                        </th>
+                                                        <th scope="col">
+                                                          <abbr title="Thursday">
+                                                            Thu
+                                                          </abbr>
+                                                        </th>
+                                                        <th scope="col">
+                                                          <abbr title="Friday">
+                                                            Fri
+                                                          </abbr>
+                                                        </th>
+                                                        <th scope="col">
+                                                          <abbr title="Saturday">
+                                                            Sat
+                                                          </abbr>
+                                                        </th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr className="pika-row">
+                                                        <td className="is-empty" />
+                                                        <td className="is-empty" />
+                                                        <td className="is-empty" />
+                                                        <td
+                                                          data-day={1}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={1}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="1 January, 2025"
+                                                          >
+                                                            1
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={2}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={2}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="2 January, 2025"
+                                                          >
+                                                            2
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={3}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={3}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="3 January, 2025"
+                                                          >
+                                                            3
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={4}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={4}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="4 January, 2025"
+                                                          >
+                                                            4
+                                                          </button>
+                                                        </td>
+                                                      </tr>
+                                                      <tr className="pika-row">
+                                                        <td
+                                                          data-day={5}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={5}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="5 January, 2025"
+                                                          >
+                                                            5
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={6}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={6}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="6 January, 2025"
+                                                          >
+                                                            6
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={7}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={7}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="7 January, 2025"
+                                                          >
+                                                            7
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={8}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={8}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="8 January, 2025"
+                                                          >
+                                                            8
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={9}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={9}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="9 January, 2025"
+                                                          >
+                                                            9
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={10}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={10}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="10 January, 2025"
+                                                          >
+                                                            10
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={11}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={11}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="11 January, 2025"
+                                                          >
+                                                            11
+                                                          </button>
+                                                        </td>
+                                                      </tr>
+                                                      <tr className="pika-row">
+                                                        <td
+                                                          data-day={12}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={12}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="12 January, 2025"
+                                                          >
+                                                            12
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={13}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={13}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="13 January, 2025"
+                                                          >
+                                                            13
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={14}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={14}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="14 January, 2025"
+                                                          >
+                                                            14
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={15}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={15}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="15 January, 2025"
+                                                          >
+                                                            15
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={16}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={16}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="16 January, 2025"
+                                                          >
+                                                            16
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={17}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={17}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="17 January, 2025"
+                                                          >
+                                                            17
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={18}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={18}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="18 January, 2025"
+                                                          >
+                                                            18
+                                                          </button>
+                                                        </td>
+                                                      </tr>
+                                                      <tr className="pika-row">
+                                                        <td
+                                                          data-day={19}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={19}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="19 January, 2025"
+                                                          >
+                                                            19
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={20}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={20}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="20 January, 2025"
+                                                          >
+                                                            20
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={21}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={21}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="21 January, 2025"
+                                                          >
+                                                            21
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={22}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={22}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="22 January, 2025"
+                                                          >
+                                                            22
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={23}
+                                                          className="is-disabled"
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={23}
+                                                            aria-disabled="true"
+                                                            tabIndex={-1}
+                                                            aria-label="23 January, 2025"
+                                                          >
+                                                            23
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={24}
+                                                          className="is-today is-selected"
+                                                          aria-selected="true"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={24}
+                                                            aria-label="24 January, 2025"
+                                                          >
+                                                            24
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={25}
+                                                          className
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={25}
+                                                            aria-label="25 January, 2025"
+                                                          >
+                                                            25
+                                                          </button>
+                                                        </td>
+                                                      </tr>
+                                                      <tr className="pika-row">
+                                                        <td
+                                                          data-day={26}
+                                                          className
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={26}
+                                                            aria-label="26 January, 2025"
+                                                          >
+                                                            26
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={27}
+                                                          className
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={27}
+                                                            aria-label="27 January, 2025"
+                                                          >
+                                                            27
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={28}
+                                                          className
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={28}
+                                                            aria-label="28 January, 2025"
+                                                          >
+                                                            28
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={29}
+                                                          className
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={29}
+                                                            aria-label="29 January, 2025"
+                                                          >
+                                                            29
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={30}
+                                                          className
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={30}
+                                                            aria-label="30 January, 2025"
+                                                          >
+                                                            30
+                                                          </button>
+                                                        </td>
+                                                        <td
+                                                          data-day={31}
+                                                          className
+                                                          aria-selected="false"
+                                                        >
+                                                          <button
+                                                            className="pika-button pika-day"
+                                                            type="button"
+                                                            data-pika-year={
+                                                              2025
+                                                            }
+                                                            data-pika-month={0}
+                                                            data-pika-day={31}
+                                                            aria-label="31 January, 2025"
+                                                          >
+                                                            31
+                                                          </button>
+                                                        </td>
+                                                        <td className="is-empty" />
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </div>
+                                              </div>
+                                            </div>
                                           </div>
                                         </div>
                                       </li>
@@ -1060,62 +1845,76 @@ const Exhibition = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--exhibition teaser--exhibition-5204">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__content">
-                                                <h3 className="teaser__title">
-                                                  <a
-                                                    href="/exhibitions/silk-roads"
-                                                    className="teaser__anchor"
-                                                  >
-                                                    <span>
-                                                      <strong>
-                                                        Silk Roads
-                                                      </strong>
-                                                    </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    <span className="visually-hidden">
-                                                      . Book now .
-                                                    </span>
-                                                  </a>
-                                                </h3>
-                                                <footer className="teaser__footer">
-                                                  <ul className="teaser__meta teaser__meta--footer">
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span>Exhibition</span>
-                                                    </li>
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span className="date-display-range">
-                                                        26 September 2024 – 23
-                                                        February 2025
-                                                      </span>
-                                                    </li>
-                                                  </ul>
-                                                  <div
-                                                    className="teaser__defacer"
-                                                    aria-hidden="true"
-                                                  >
-                                                    Book now
+                                        {posts && posts.length > 0 ? (
+                                          posts.slice(0, 1000).map((post) => (
+                                            <li
+                                              key={post._id}
+                                              style={{
+                                                "--post-color": post.color,
+                                              }}
+                                              className="l-grid__item swiper-slide"
+                                            >
+                                              <div className="teaser teaser--exhibition teaser--exhibition-5204">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__content">
+                                                    <h3 className="teaser__title">
+                                                      <a
+                                                        href={post.slug}
+                                                        className="teaser__anchor"
+                                                      >
+                                                        <span>
+                                                          <strong>
+                                                            {post.title}
+                                                          </strong>
+                                                        </span>
+
+                                                        <span className="visually-hidden">
+                                                          . Book now .
+                                                        </span>
+                                                      </a>
+                                                    </h3>
+                                                    <footer className="teaser__footer">
+                                                      <ul className="teaser__meta teaser__meta--footer">
+                                                        <li className="teaser__meta-item">
+                                                          {" "}
+                                                          <span>
+                                                            {post.category}
+                                                          </span>
+                                                        </li>
+                                                        <li className="teaser__meta-item">
+                                                          {" "}
+                                                          <span className="date-display-range">
+                                                            {post.content}
+                                                          </span>
+                                                        </li>
+                                                      </ul>
+                                                      <div
+                                                        className="teaser__defacer"
+                                                        aria-hidden="true"
+                                                      >
+                                                        Book now
+                                                      </div>
+                                                    </footer>
                                                   </div>
-                                                </footer>
-                                              </div>
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Exhibition/image-01.webp"
-                                                  />
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyload"
+                                                        width={750}
+                                                        height={422}
+                                                        src={post.image}
+                                                      />
+                                                    </div>
+                                                  </div>
                                                 </div>
                                               </div>
-                                            </div>
-                                          </div>
-                                        </li>
+                                            </li>
+                                          ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+                                        {/* 
                                         <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--exhibition teaser--exhibition-5224">
                                             <div className="teaser__wrapper">
@@ -1132,7 +1931,6 @@ const Exhibition = () => {
                                                         what have we here?
                                                       </strong>
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     <span className="visually-hidden">
                                                       . Book now .
                                                     </span>
@@ -1190,7 +1988,7 @@ const Exhibition = () => {
                                                         printmaker
                                                       </strong>
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     <span className="visually-hidden">
                                                       . Book now .
                                                     </span>
@@ -1231,7 +2029,7 @@ const Exhibition = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -1288,66 +2086,78 @@ const Exhibition = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--exhibition teaser--exhibition-5278">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__content">
-                                                <h3 className="teaser__title">
-                                                  <a
-                                                    href="/exhibitions/war-rugs-afghanistans-knotted-history"
-                                                    className="teaser__anchor"
-                                                  >
-                                                    <span>
-                                                      War rugs
-                                                      <br aria-hidden="true" />
-                                                      <strong>
-                                                        Afghanistan's knotted
-                                                        history
-                                                      </strong>
-                                                    </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    <span className="visually-hidden">
-                                                      . Free .
-                                                    </span>
-                                                  </a>
-                                                </h3>
-                                                <footer className="teaser__footer">
-                                                  <ul className="teaser__meta teaser__meta--footer">
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span>Exhibition</span>
-                                                    </li>
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span className="date-display-range">
-                                                        4 October 2024 – 29 June
-                                                        2025
-                                                      </span>
-                                                    </li>
-                                                  </ul>
-                                                  <div
-                                                    className="teaser__defacer"
-                                                    aria-hidden="true"
-                                                  >
-                                                    Free
+                                        {posts2 && posts2.length > 0 ? (
+                                          posts2
+                                            .slice(0, 1000)
+                                            .map((post2, index) => (
+                                              <li
+                                                key={post2._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser teaser--exhibition teaser--exhibition-5278">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__content">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post2.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <br aria-hidden="true" />
+                                                            <strong>
+                                                              {post2.title}
+                                                            </strong>
+                                                          </span>
+
+                                                          <span className="visually-hidden">
+                                                            . Free .
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <footer className="teaser__footer">
+                                                        <ul className="teaser__meta teaser__meta--footer">
+                                                          <li className="teaser__meta-item">
+                                                            {" "}
+                                                            <span>
+                                                              {" "}
+                                                              {post2.category}
+                                                            </span>
+                                                          </li>
+                                                          <li className="teaser__meta-item">
+                                                            {" "}
+                                                            <span className="date-display-range">
+                                                              {post2.content}
+                                                            </span>
+                                                          </li>
+                                                        </ul>
+                                                        <div
+                                                          className="teaser__defacer"
+                                                          aria-hidden="true"
+                                                        >
+                                                          Free
+                                                        </div>
+                                                      </footer>
+                                                    </div>
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post2.image}
+                                                        />
+                                                      </div>
+                                                    </div>
                                                   </div>
-                                                </footer>
-                                              </div>
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Exhibition/image-04.jpg"
-                                                  />
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--exhibition teaser--exhibition-5428">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__content">
@@ -1366,7 +2176,7 @@ const Exhibition = () => {
                                                       Marie-Louise von
                                                       Motesiczky
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     <span className="visually-hidden">
                                                       . Free .
                                                     </span>
@@ -1423,7 +2233,7 @@ const Exhibition = () => {
                                                         Museum
                                                       </strong>
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     <span className="visually-hidden">
                                                       . Free .
                                                     </span>
@@ -1464,7 +2274,7 @@ const Exhibition = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -1521,113 +2331,120 @@ const Exhibition = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--has-meta-top">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Exhibition/image-07.jpg"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <div className="teaser__wrap">
-                                                    <div className="teaser__meta-wrap">
-                                                      <div className="teaser__meta teaser__meta--top">
-                                                        <div className="teaser__meta-item">
-                                                          <svg
-                                                            className="icon icon--museum"
-                                                            role="presentation"
-                                                            focusable="false"
-                                                            aria-hidden="true"
+                                        {posts3 && posts3.length > 0 ? (
+                                          posts3
+                                            .slice(0, 1000)
+                                            .map((post3, index) => (
+                                              <li
+                                                key={post3._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser teaser--has-meta-top">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post3.image}
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <div className="teaser__wrap">
+                                                          <div className="teaser__meta-wrap">
+                                                            <div className="teaser__meta teaser__meta--top">
+                                                              <div className="teaser__meta-item">
+                                                                <svg
+                                                                  className="icon icon--museum"
+                                                                  role="presentation"
+                                                                  focusable="false"
+                                                                  aria-hidden="true"
+                                                                >
+                                                                  <use xlinkHref="#sprite-icon-museum" />
+                                                                </svg>
+                                                                <span>
+                                                                  {" "}
+                                                                  <span>
+                                                                    {
+                                                                      post3.event
+                                                                    }
+                                                                  </span>
+                                                                </span>
+                                                              </div>
+                                                            </div>
+                                                            <ul className="teaser__meta">
+                                                              <li className="teaser__meta-item">
+                                                                <svg
+                                                                  className="icon icon--ticket"
+                                                                  role="presentation"
+                                                                  focusable="false"
+                                                                  aria-hidden="true"
+                                                                >
+                                                                  <use xlinkHref="#sprite-icon-ticket" />
+                                                                </svg>
+                                                                <span>
+                                                                  {post3.price}
+                                                                </span>
+                                                              </li>
+                                                              <li className="teaser__meta-item ">
+                                                                <svg
+                                                                  className="icon icon--calendar"
+                                                                  role="presentation"
+                                                                  focusable="false"
+                                                                  aria-hidden="true"
+                                                                >
+                                                                  <use xlinkHref="#sprite-icon-calendar" />
+                                                                </svg>
+                                                                <div className="meta-item__occurrence_wrapper">
+                                                                  <span>
+                                                                    {post3.date}
+                                                                  </span>
+                                                                </div>
+                                                              </li>
+                                                            </ul>
+                                                          </div>
+                                                          <div className="teaser__defacer teaser__defacer-exhibition-events">
+                                                            Book now
+                                                          </div>
+                                                        </div>
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href={post3.slug}
+                                                            className="teaser__anchor"
                                                           >
-                                                            <use xlinkHref="#sprite-icon-museum" />
-                                                          </svg>
-                                                          <span>
-                                                            {" "}
                                                             <span>
-                                                              Gallery talks
-                                                              &amp; tours /{" "}
+                                                              <span>
+                                                                {post3.title}
+                                                              </span>
                                                             </span>
-                                                            <span>
-                                                              Accessible event
+
+                                                            <span className="visually-hidden">
+                                                              . Book now .
                                                             </span>
-                                                          </span>
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post3.content}
                                                         </div>
                                                       </div>
-                                                      <ul className="teaser__meta">
-                                                        <li className="teaser__meta-item">
-                                                          <svg
-                                                            className="icon icon--ticket"
-                                                            role="presentation"
-                                                            focusable="false"
-                                                            aria-hidden="true"
-                                                          >
-                                                            <use xlinkHref="#sprite-icon-ticket" />
-                                                          </svg>
-                                                          <span> £5</span>
-                                                        </li>
-                                                        <li className="teaser__meta-item ">
-                                                          <svg
-                                                            className="icon icon--calendar"
-                                                            role="presentation"
-                                                            focusable="false"
-                                                            aria-hidden="true"
-                                                          >
-                                                            <use xlinkHref="#sprite-icon-calendar" />
-                                                          </svg>
-                                                          <div className="meta-item__occurrence_wrapper">
-                                                            <span>
-                                                              20 January 2025{" "}
-                                                            </span>
-                                                          </div>
-                                                        </li>
-                                                      </ul>
-                                                    </div>
-                                                    <div className="teaser__defacer teaser__defacer-exhibition-events">
-                                                      Book now
-                                                    </div>
-                                                  </div>
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/events/deaf-led-bsl-tour-silk-roads"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Deaf-led BSL tour of
-                                                          Silk Roads
-                                                        </span>
+                                                      <span className="teaser__button | button button--chevron">
+                                                        {" "}
+                                                        Book now
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                      <span className="visually-hidden">
-                                                        . Book now .
-                                                      </span>
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Discover how the Silk Roads
-                                                    linked communities across
-                                                    continents in our current
-                                                    exhibition through this
-                                                    Dersim Sign Language tour.
+                                                    </div>
                                                   </div>
                                                 </div>
-                                                <span className="teaser__button | button button--chevron">
-                                                  {" "}
-                                                  Book now
-                                                </span>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--has-meta-top">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1696,7 +2513,7 @@ const Exhibition = () => {
                                                           printmaking
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                       <span className="visually-hidden">
                                                         . Free .
                                                       </span>
@@ -1799,7 +2616,7 @@ const Exhibition = () => {
                                                           we here?
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                       <span className="visually-hidden">
                                                         . Book now .
                                                       </span>
@@ -1821,7 +2638,7 @@ const Exhibition = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -1894,108 +2711,116 @@ const Exhibition = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--has-meta-top">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Exhibition/image-10.jpg"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <div className="teaser__wrap">
-                                                    <div className="teaser__meta-wrap">
-                                                      <div className="teaser__meta teaser__meta--top">
-                                                        <div className="teaser__meta-item">
-                                                          <svg
-                                                            className="icon icon--museum"
-                                                            role="presentation"
-                                                            focusable="false"
-                                                            aria-hidden="true"
+                                        {posts4 && posts4.length > 0 ? (
+                                          posts4
+                                            .slice(0, 1000)
+                                            .map((post4, index) => (
+                                              <li
+                                                key={post4._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser teaser--has-meta-top">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post4.image}
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <div className="teaser__wrap">
+                                                          <div className="teaser__meta-wrap">
+                                                            <div className="teaser__meta teaser__meta--top">
+                                                              <div className="teaser__meta-item">
+                                                                <svg
+                                                                  className="icon icon--museum"
+                                                                  role="presentation"
+                                                                  focusable="false"
+                                                                  aria-hidden="true"
+                                                                >
+                                                                  <use xlinkHref="#sprite-icon-museum" />
+                                                                </svg>
+                                                                <span>
+                                                                  {" "}
+                                                                  <span>
+                                                                    {
+                                                                      post4.event
+                                                                    }
+                                                                  </span>
+                                                                </span>
+                                                              </div>
+                                                            </div>
+                                                            <ul className="teaser__meta">
+                                                              <li className="teaser__meta-item ">
+                                                                <svg
+                                                                  className="icon icon--calendar"
+                                                                  role="presentation"
+                                                                  focusable="false"
+                                                                  aria-hidden="true"
+                                                                >
+                                                                  <use xlinkHref="#sprite-icon-calendar" />
+                                                                </svg>
+                                                                <div className="meta-item__occurrence_wrapper">
+                                                                  <span>
+                                                                    Various
+                                                                    dates{" "}
+                                                                  </span>
+                                                                </div>
+                                                              </li>
+                                                            </ul>
+                                                          </div>
+                                                          <div className="teaser__defacer teaser__defacer-exhibition-events">
+                                                            Book now
+                                                          </div>
+                                                        </div>
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href={post4.slug}
+                                                            className="teaser__anchor"
                                                           >
-                                                            <use xlinkHref="#sprite-icon-museum" />
-                                                          </svg>
-                                                          <span>
-                                                            {" "}
                                                             <span>
-                                                              Gallery talks
-                                                              &amp; tours
+                                                              <span>
+                                                                {post4.title}
+                                                              </span>
                                                             </span>
-                                                          </span>
+
+                                                            <span className="visually-hidden">
+                                                              . Book now .
+                                                            </span>
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post4.content}
                                                         </div>
                                                       </div>
-                                                      <ul className="teaser__meta">
-                                                        <li className="teaser__meta-item ">
-                                                          <svg
-                                                            className="icon icon--calendar"
-                                                            role="presentation"
-                                                            focusable="false"
-                                                            aria-hidden="true"
-                                                          >
-                                                            <use xlinkHref="#sprite-icon-calendar" />
-                                                          </svg>
-                                                          <div className="meta-item__occurrence_wrapper">
-                                                            <span>
-                                                              Various dates{" "}
-                                                            </span>
-                                                          </div>
-                                                        </li>
-                                                      </ul>
-                                                    </div>
-                                                    <div className="teaser__defacer teaser__defacer-exhibition-events">
-                                                      Book now
-                                                    </div>
-                                                  </div>
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/events/desire-love-identity-lgbtq-tour-british-museum"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Desire, love, identity
-                                                          – an LGBTQ+ tour of
-                                                          the Dersim Museum
-                                                        </span>
+                                                      <span className="teaser__button | button button--chevron">
+                                                        Book{" "}
+                                                        <span className="visually-hidden">
+                                                          <span>
+                                                            Desire, love,
+                                                            identity – an LGBTQ+
+                                                            tour of the Dersim
+                                                            Museum
+                                                          </span>
+                                                        </span>{" "}
+                                                        now
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                      <span className="visually-hidden">
-                                                        . Book now .
-                                                      </span>
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Explore a fascinating
-                                                    selection of objects with
-                                                    LGBTQ connections, from the
-                                                    ancient world to the present
-                                                    day, on our volunteer-led
-                                                    tour.
+                                                    </div>
                                                   </div>
                                                 </div>
-                                                <span className="teaser__button | button button--chevron">
-                                                  Book{" "}
-                                                  <span className="visually-hidden">
-                                                    <span>
-                                                      Desire, love, identity –
-                                                      an LGBTQ+ tour of the
-                                                      Dersim Museum
-                                                    </span>
-                                                  </span>{" "}
-                                                  now
-                                                </span>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--has-meta-top">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -2076,7 +2901,7 @@ const Exhibition = () => {
                                                           minutes tour
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                       <span className="visually-hidden">
                                                         . Book now .
                                                       </span>
@@ -2186,7 +3011,7 @@ const Exhibition = () => {
                                                           Dersim Museum{" "}
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                       <span className="visually-hidden">
                                                         . Book now .
                                                       </span>
@@ -2214,7 +3039,7 @@ const Exhibition = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -2291,64 +3116,73 @@ const Exhibition = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--exhibition teaser--exhibition-5330">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__content">
-                                                <p className="teaser__meta teaser__meta--top">
-                                                  A Dersim Museum Touring
-                                                  Exhibition
-                                                </p>
-                                                <h3 className="teaser__title">
-                                                  <a
-                                                    href="/our-work/national/uk-touring-exhibitions-and-loans/current-tours/dersim-museum-unseen-botanical-world-mary-delany"
-                                                    className="teaser__anchor"
-                                                  >
-                                                    <span>
-                                                      <strong>
-                                                        The botanical world of
-                                                        Mary Delany
-                                                      </strong>
-                                                    </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    <span className="visually-hidden">
-                                                      . On Dersim tour .
-                                                    </span>
-                                                  </a>
-                                                </h3>
-                                                <footer className="teaser__footer">
-                                                  <ul className="teaser__meta teaser__meta--footer">
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span className="date-display-range">
-                                                        10 September 2024 – 23
-                                                        March 2025
-                                                      </span>
-                                                    </li>
-                                                  </ul>
-                                                  <div
-                                                    className="teaser__defacer"
-                                                    aria-hidden="true"
-                                                  >
-                                                    On Dersim tour
+                                        {posts5 && posts5.length > 0 ? (
+                                          posts5
+                                            .slice(0, 1000)
+                                            .map((post5, index) => (
+                                              <li
+                                                key={post5._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser teaser--exhibition teaser--exhibition-5330">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__content">
+                                                      <p className="teaser__meta teaser__meta--top">
+                                                        {post5.category}
+                                                      </p>
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post5.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <strong>
+                                                              {post5.title}
+                                                            </strong>
+                                                          </span>
+
+                                                          <span className="visually-hidden">
+                                                            . On Dersim tour .
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <footer className="teaser__footer">
+                                                        <ul className="teaser__meta teaser__meta--footer">
+                                                          <li className="teaser__meta-item">
+                                                            {" "}
+                                                            <span className="date-display-range">
+                                                              {post5.content}
+                                                            </span>
+                                                          </li>
+                                                        </ul>
+                                                        <div
+                                                          className="teaser__defacer"
+                                                          aria-hidden="true"
+                                                        >
+                                                          On Dersim tour
+                                                        </div>
+                                                      </footer>
+                                                    </div>
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post5.image}
+                                                        />
+                                                      </div>
+                                                    </div>
                                                   </div>
-                                                </footer>
-                                              </div>
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Exhibition/image-13.webp"
-                                                  />
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--exhibition teaser--exhibition-5332">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__content">
@@ -2368,7 +3202,7 @@ const Exhibition = () => {
                                                       <br aria-hidden="true" />
                                                       of Dersim
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     <span className="visually-hidden">
                                                       . Coming January 2025 .
                                                     </span>
@@ -2425,7 +3259,7 @@ const Exhibition = () => {
                                                       <br aria-hidden="true" />
                                                       enduring heritage
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     <span className="visually-hidden">
                                                       . Coming February 2025 .
                                                     </span>
@@ -2462,7 +3296,7 @@ const Exhibition = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -2540,62 +3374,71 @@ const Exhibition = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--exhibition teaser--exhibition-2719">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__content">
-                                                <p className="teaser__meta teaser__meta--top">
-                                                  International touring
-                                                  exhibition
-                                                </p>
-                                                <h3 className="teaser__title">
-                                                  <a
-                                                    href="/our-work/international/international-touring-exhibitions/feminine-power"
-                                                    className="teaser__anchor"
-                                                  >
-                                                    <span>
-                                                      Feminine power: the divine
-                                                      to the demonic
-                                                    </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    <span className="visually-hidden">
-                                                      . On world tour .
-                                                    </span>
-                                                  </a>
-                                                </h3>
-                                                <footer className="teaser__footer">
-                                                  <ul className="teaser__meta teaser__meta--footer">
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span className="date-display-range">
-                                                        10 December 2022 – 10
-                                                        August 2025
-                                                      </span>
-                                                    </li>
-                                                  </ul>
-                                                  <div
-                                                    className="teaser__defacer"
-                                                    aria-hidden="true"
-                                                  >
-                                                    On world tour
+                                        {posts6 && posts6.length > 0 ? (
+                                          posts6
+                                            .slice(0, 1000)
+                                            .map((post6, index) => (
+                                              <li
+                                                key={post6._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser teaser--exhibition teaser--exhibition-2719">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__content">
+                                                      <p className="teaser__meta teaser__meta--top">
+                                                        {post6.category}
+                                                      </p>
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post6.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            {post6.title}
+                                                          </span>
+
+                                                          <span className="visually-hidden">
+                                                            . On world tour .
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <footer className="teaser__footer">
+                                                        <ul className="teaser__meta teaser__meta--footer">
+                                                          <li className="teaser__meta-item">
+                                                            {" "}
+                                                            <span className="date-display-range">
+                                                              {post6.content}
+                                                            </span>
+                                                          </li>
+                                                        </ul>
+                                                        <div
+                                                          className="teaser__defacer"
+                                                          aria-hidden="true"
+                                                        >
+                                                          On world tour
+                                                        </div>
+                                                      </footer>
+                                                    </div>
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post6.image}
+                                                        />
+                                                      </div>
+                                                    </div>
                                                   </div>
-                                                </footer>
-                                              </div>
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Exhibition/image-16.jpg"
-                                                  />
                                                 </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--exhibition teaser--exhibition-3089">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__content">
@@ -2612,7 +3455,7 @@ const Exhibition = () => {
                                                       Islanders: the art of life
                                                       in Oceania
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     <span className="visually-hidden">
                                                       . Coming soon .
                                                     </span>
@@ -2667,7 +3510,7 @@ const Exhibition = () => {
                                                       I am Ashurbanipal: king of
                                                       Assyria, king of the world
                                                     </span>
-                                                    {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     <span className="visually-hidden">
                                                       . On world tour .
                                                     </span>
@@ -2704,7 +3547,7 @@ const Exhibition = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -2745,85 +3588,86 @@ const Exhibition = () => {
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
                             aria-labelledby="paragraph-17776-title"
                           >
-                            <div className="container">
-                              <div className="section__inner">
-                                <div className="teaser-listing__container">
-                                  <h2
-                                    id="paragraph-17776-title"
-                                    className="visually-hidden teaser-listing__title"
-                                  >
-                                    Past exhibitions
-                                  </h2>
-                                  <a
-                                    href="/exhibitions-events/past-exhibitions"
-                                    className="teaser-listing__cta"
-                                  >
-                                    <span>
-                                      Browse past exhibitions and displays
-                                    </span>
-                                    <svg
-                                      className="icon icon--chevron"
-                                      role="presentation"
-                                      focusable="false"
-                                      aria-hidden="true"
-                                    >
-                                      <use xlinkHref="#sprite-icon-chevron" />
-                                    </svg>
-                                  </a>
-                                  <div className="carousel-container | js-carousel-container">
-                                    <div
-                                      className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
-                                      data-items-length={1}
-                                      data-slides-to-show={2}
-                                    >
-                                      <ul className="l-grid l-grid--1-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Exhibition/image-19.jpg"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/exhibitions-events/past-exhibitions"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Past exhibitions
-                                                        </span>
-                                                      </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Take a look at our past
-                                                    exhibitions and enjoy the
-                                                    articles, videos and image
-                                                    galleries still available to
-                                                    view online.
+                            {posts7 && posts7.length > 0 ? (
+                              posts7.slice(0, 1000).map((post7, index) => (
+                                <div key={post7._id} className="container">
+                                  <div className="section__inner">
+                                    <div className="teaser-listing__container">
+                                      <h2
+                                        id="paragraph-17776-title"
+                                        className="visually-hidden teaser-listing__title"
+                                      >
+                                        Past exhibitions
+                                      </h2>
+                                      <a
+                                        href="/exhibitions-events/past-exhibitions"
+                                        className="teaser-listing__cta"
+                                      >
+                                        <span>
+                                          Browse past exhibitions and displays
+                                        </span>
+                                        <svg
+                                          className="icon icon--chevron"
+                                          role="presentation"
+                                          focusable="false"
+                                          aria-hidden="true"
+                                        >
+                                          <use xlinkHref="#sprite-icon-chevron" />
+                                        </svg>
+                                      </a>
+                                      <div className="carousel-container | js-carousel-container">
+                                        <div
+                                          className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
+                                          data-items-length={1}
+                                          data-slides-to-show={2}
+                                        >
+                                          <ul className="l-grid l-grid--1-col | teaser-listing__teasers swiper-wrapper">
+                                            <li className="l-grid__item swiper-slide">
+                                              <div className="teaser">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyload"
+                                                        width={750}
+                                                        height={422}
+                                                        src={post7.image}
+                                                      />
+                                                    </div>
+                                                  </div>
+                                                  <div className="teaser__content">
+                                                    <div className="teaser__content-push">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post7.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <span>
+                                                              {post7.title}
+                                                            </span>
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <div className="teaser__summary">
+                                                        {post7.content}
+                                                      </div>
+                                                    </div>
                                                   </div>
                                                 </div>
                                               </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                      </ul>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>{" "}
                                     </div>
-                                  </div>{" "}
+                                  </div>
                                 </div>
-                              </div>
-                            </div>
+                              ))
+                            ) : (
+                              <p>No posts available</p>
+                            )}
                           </section>
                         </div>
                       </div>
