@@ -8,9 +8,6 @@ import {
   getTotals,
   removeFromCart,
 } from "../../redux/products/cartSlice";
-import "../NavbarCommerce/NavbarCommerce.css";
-import "../../css/css-2.css";
-import "../../css/css-1.css";
 
 const CartCommerce = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -46,7 +43,7 @@ const CartCommerce = () => {
         <div className="cart-empty text-center">
           <p>Your cart is empty.</p>
           <div className="start-shopping">
-            <Link to="/" className="btn btn-outline-primary">
+            <Link to="/shop" className="btn btn-outline-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
