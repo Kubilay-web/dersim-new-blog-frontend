@@ -2566,9 +2566,9 @@
   img {
     height: auto;
   }
-  img:not(.not-full-width):not([class^="_hj"]) {
+  /* img:not(.not-full-width):not([class^="_hj"]) {
     width: 100%;
-  }
+  } */
   img[width]:not([height]) {
     width: auto;
   }
@@ -13630,8 +13630,6 @@
   }
 }
 
-
-
 /* 
 .teaser--exhibition-5365 .teaser__wrapper:hover:before {
   background-color: #0080C9 !important;
@@ -13640,12 +13638,12 @@
   color: #0080C9;
 } */
 
-
 .teaser__wrapper:hover:before {
-  background-color: var(--post-color) !important;  /* Dinamik renk burada kullanılacak */
+  background-color: var(
+    --post-color
+  ) !important; /* Dinamik renk burada kullanılacak */
 }
 
 .teaser__wrapper:hover .teaser__defacer {
-  color: var(--post-color);  /* Dinamik renk burada kullanılacak */
+  color: var(--post-color); /* Dinamik renk burada kullanılacak */
 }
-
