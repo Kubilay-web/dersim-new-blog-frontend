@@ -18,46 +18,6 @@ const CartCommerce = () => {
   const [isLoaded, setIsLoaded] = useState(false); // useState kullanımı
 
   useEffect(() => {
-    const loadBootstrap = async () => {
-      // CSS dosyasını yükle
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href =
-        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
-      document.head.appendChild(link);
-
-      // JS dosyasını yükle
-      const script = document.createElement("script");
-      script.src =
-        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
-      script.defer = true;
-      document.body.appendChild(script);
-
-      // JS dosyasının yüklenmesini bekle
-      await new Promise((resolve) => {
-        script.onload = resolve;
-      });
-
-      // Her şey yüklendiyse isLoaded'ı true yap
-      setIsLoaded(true);
-    };
-
-    loadBootstrap();
-
-    return () => {
-      // Cleanup işlemi (CSS ve JS dosyasını kaldır)
-      const link = document.querySelector(
-        'link[href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"]'
-      );
-      const script = document.querySelector(
-        'script[src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"]'
-      );
-      if (link) document.head.removeChild(link);
-      if (script) document.body.removeChild(script);
-    };
-  }, []);
-
-  useEffect(() => {
     dispatch(getTotals());
   }, [cart, dispatch]);
 

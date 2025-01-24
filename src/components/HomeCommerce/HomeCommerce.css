@@ -1,0 +1,85 @@
+/* HomeCommerce.css */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.05);
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 250px; /* Fixed height for images */
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.2rem;
+}
+
+.card-price {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.btn-add-to-cart {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .product-card {
+    transform: none;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-price {
+    font-size: 1rem;
+  }
+
+  .btn-add-to-cart {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+/* Spacing and Layout Tweaks */
+.container {
+  max-width: 1200px;
+}

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useGetAllProductsQuery } from "../../redux/products/productsApi";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../redux/products/cartSlice";
+import "./HomeCommerce.css"; // Import custom CSS for styles
 
 const HomeCommerce = () => {
   const { data, error, isLoading, refetch } = useGetAllProductsQuery();
@@ -13,25 +14,6 @@ const HomeCommerce = () => {
     dispatch(addToCart(product));
     navigate("/cart");
   };
-
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href =
-      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
-    document.head.appendChild(link);
-
-    const script = document.createElement("script");
-    script.src =
-      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
-    script.defer = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.head.removeChild(link);
-      document.body.removeChild(script);
-    };
-  }, []);
 
   useEffect(() => {
     refetch();
@@ -51,28 +33,30 @@ const HomeCommerce = () => {
         </div>
       ) : (
         <>
-          <h2 className="text-center mb-4">New Arrivals</h2>
+          <h2 className="text-center mb-5 font-weight-bold text-dark">
+            New Arrivals
+          </h2>
           <div className="row g-4">
             {data?.map((product) => (
-              <div key={product._id} className="col-sm-6 col-md-3 col-lg-4">
-                <div className="card h-100 shadow-sm">
+              <div key={product._id} className="col-sm-6 col-md-4 col-lg-3">
+                <div className="card shadow-sm rounded-lg product-card">
                   <img
                     src={product.image}
-                    className="card-img-top"
+                    className="card-img-top rounded-top"
                     alt={product.name}
                   />
-                  <div className="card-body d-flex flex-column">
+                  <div className="card-body">
                     <h5 className="card-title text-truncate">{product.name}</h5>
-                    <p className="card-text text-muted">
-                      {product.description}
-                    </p>
-                    <p className="card-text fw-bold">{product.price} TL</p>
-                    <button
-                      onClick={() => handleAddToCart(product)}
-                      className="btn btn-primary mt-auto"
-                    >
-                      Add To Cart
-                    </button>
+                    <p className="card-text">{product.description}</p>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <p className="card-price fw-bold">{product.price} TL</p>
+                      <button
+                        onClick={() => handleAddToCart(product)}
+                        className="btn btn-primary btn-add-to-cart"
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
