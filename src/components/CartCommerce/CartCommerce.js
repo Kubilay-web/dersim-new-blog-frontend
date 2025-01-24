@@ -10,6 +10,7 @@ import {
 } from "../../redux/products/cartSlice";
 import "../NavbarCommerce/NavbarCommerce.css";
 import "../../css/css-2.css";
+import "../../css/css-1.css";
 
 const CartCommerce = () => {
   const { currentUser } = useSelector((state) => state.user);
