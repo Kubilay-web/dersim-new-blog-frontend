@@ -35,7 +35,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       setPosts(res.data.posts);
       setLoading(false);
@@ -51,7 +51,7 @@ const Dashboard = () => {
     const fetchHomepageData = async () => {
       try {
         const response = await axios.get(
-          "https://dersim-new-blog-backend.vercel.app/api/home/homepage"
+          "http://localhost:5000/api/home/homepage"
         );
         setHomepageData(response.data);
         setLoading(false);
@@ -101,16 +101,13 @@ const Dashboard = () => {
       if (editingPost) {
         // Post güncelleme
         await axios.put(
-          `https://dersim-new-blog-backend.vercel.app/api/post/updatepost/${editingPost._id}`,
+          `http://localhost:5000/api/post/updatepost/${editingPost._id}`,
           postFormData
         );
         alert("Post başarıyla güncellendi!");
       } else {
         // Yeni post oluşturma
-        await axios.post(
-          "https://dersim-new-blog-backend.vercel.app/api/post/create",
-          postFormData
-        );
+        await axios.post("http://localhost:5000/api/post/create", postFormData);
         alert("Post başarıyla oluşturuldu!");
       }
       setShowModal(false);
@@ -126,7 +123,7 @@ const Dashboard = () => {
     if (window.confirm("Bu postu silmek istediğinizden emin misiniz?")) {
       try {
         await axios.delete(
-          `https://dersim-new-blog-backend.vercel.app/api/post/deletepost/${postId}`
+          `http://localhost:5000/api/post/deletepost/${postId}`
         );
         alert("Post başarıyla silindi!");
         fetchPosts(selectedTitle);

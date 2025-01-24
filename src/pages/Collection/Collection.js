@@ -6,11 +6,12 @@ import { Helmet } from "react-helmet";
 const Collection = () => {
   const [posts, setPosts] = useState([]);
   const [posts2, setPosts2] = useState([]);
+  const [posts3, setPosts3] = useState([]);
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -22,9 +23,11 @@ const Collection = () => {
   useEffect(() => {
     const category1 = "Collection highlights";
     const category2 = "Collection themes";
+    const category3 = "Egypt";
 
     fetchPosts(category1, setPosts);
     fetchPosts(category2, setPosts2);
+    fetchPosts(category3, setPosts3);
   }, []);
 
   return (
@@ -38,7 +41,7 @@ const Collection = () => {
             type="text/javascript"
           />
           <script
-            src="/js-general/js_SPkMj3SpZ70JzzRSNrXpOjN64UdICR25YexAv-ckrcM.js"
+            src="js-general/js_SPkMj3SpZ70JzzRSNrXpOjN64UdICR25YexAv-ckrcM.js"
             type="text/javascript"
           />
         </Helmet>
@@ -1624,7 +1627,7 @@ const Collection = () => {
                                                           data-focal-position="center center"
                                                           alt="A turquoise two-headed serpent mouth ajar, heads pointing in different directions."
                                                           sizes="516px"
-                                                          src="/images/Collection/image-06.jpg"
+                                                          src={post2.image}
                                                         />
                                                       </div>
                                                     </div>
@@ -1632,7 +1635,7 @@ const Collection = () => {
                                                       <div className="teaser__content-push">
                                                         <h3 className="teaser__title">
                                                           <a
-                                                            href="/collection/americas"
+                                                            href={post2.slug}
                                                             className="teaser__anchor"
                                                           >
                                                             <span>
@@ -1640,7 +1643,6 @@ const Collection = () => {
                                                                 {post2.title}
                                                               </span>
                                                             </span>
-                                                            {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                           </a>
                                                         </h3>
                                                         <div className="teaser__summary">
@@ -1660,7 +1662,7 @@ const Collection = () => {
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          <div className="teaser">
+                                          {/* <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -1677,7 +1679,7 @@ const Collection = () => {
                                                   />
                                                 </div>
                                               </div>
-                                              <div className="teaser__content">
+                                               <div className="teaser__content">
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
@@ -1687,7 +1689,6 @@ const Collection = () => {
                                                       <span>
                                                         <span>Animals</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1697,15 +1698,15 @@ const Collection = () => {
                                                     Museum's collection.
                                                   </div>
                                                 </div>
-                                              </div>
+                                              </div> 
                                             </div>
-                                          </div>
+                                          </div> */}
                                         </li>
                                         <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          <div className="teaser">
+                                          {/* <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -1732,7 +1733,6 @@ const Collection = () => {
                                                       <span>
                                                         <span>China</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1744,7 +1744,7 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                         </li>
                                       </ul>
                                     </div>
@@ -1835,7 +1835,7 @@ const Collection = () => {
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          <div className="teaser">
+                                          {/* <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -1864,7 +1864,6 @@ const Collection = () => {
                                                           Death and memory{" "}
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1875,13 +1874,13 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                         </li>
                                         <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          <div className="teaser">
+                                          {/* <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -1911,7 +1910,6 @@ const Collection = () => {
                                                           identity
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1922,13 +1920,13 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                         </li>
                                         <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          <div className="teaser">
+                                          {/* <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -1955,7 +1953,6 @@ const Collection = () => {
                                                       <span>
                                                         <span>Africa</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1965,7 +1962,7 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
                                         </li>
                                       </ul>
                                     </div>
@@ -2066,25 +2063,24 @@ const Collection = () => {
                                                   />
                                                 </div>
                                               </div>
+
                                               <div className="teaser__content">
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="/collection/egypt"
+                                                      href="/egypt"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
                                                         <span>Egypt</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
                                                     Some of the British Museum's
                                                     best-known Collection items
                                                     come from Egypt each with
-                                                    their own unique
-                                                    story.&nbsp;
+                                                    their own unique story.
                                                   </div>
                                                 </div>
                                               </div>
