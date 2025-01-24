@@ -16,7 +16,7 @@ const PaymentManage = () => {
     const script = document.createElement("script");
     script.src =
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
-    script.async = true;
+    script.defer = true;
     document.body.appendChild(script);
 
     return () => {
@@ -28,9 +28,7 @@ const PaymentManage = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await axios.get(
-          "https://dersim-new-blog-backend.onrender.com/api/payments"
-        );
+        const response = await axios.get("http://localhost:5000/api/payments");
         setPayments(response.data.payments);
       } catch (error) {
         console.error("Error fetching payments", error);

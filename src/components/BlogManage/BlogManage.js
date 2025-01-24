@@ -22,7 +22,7 @@ const BlogManage = () => {
     const script = document.createElement("script");
     script.src =
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
-    script.async = true;
+    script.defer = true;
     document.body.appendChild(script);
 
     return () => {

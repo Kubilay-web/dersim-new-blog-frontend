@@ -39,7 +39,7 @@ const Home = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.onrender.com/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -84,18 +84,6 @@ const Home = () => {
           />
         </Helmet>
         <meta charSet="utf-8" />
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              ".teaser--exhibition-3418 .teaser__wrapper:hover:before {background-color:#0080C9 !important} .teaser--exhibition-3418 .teaser__wrapper:hover .teaser__defacer {color:#0080C9} .teaser--exhibition-3418 .teaser__defacer {background-color:#0080C9} .teaser--exhibition-3418 .teaser__title strong {color:#0080C9} .teaser--exhibition-2232 .teaser__wrapper:hover:before {background-color:#0085B9 !important} .teaser--exhibition-2232 .teaser__wrapper:hover .teaser__defacer {color:#0085B9} .teaser--exhibition-2232 .teaser__defacer {background-color:#0085B9} .teaser--exhibition-2232 .teaser__title strong {color:#0085B9} .teaser--exhibition-2013 .teaser__wrapper:hover:before {background-color:#008CA7 !important} .teaser--exhibition-2013 .teaser__wrapper:hover .teaser__defacer {color:#008CA7} .teaser--exhibition-2013 .teaser__defacer {background-color:#008CA7} .teaser--exhibition-2013 .teaser__title strong {color:#008CA7} .teaser--exhibition-3143 .teaser__wrapper:hover:before {background-color:#008F7C !important} .teaser--exhibition-3143 .teaser__wrapper:hover .teaser__defacer {color:#008F7C} .teaser--exhibition-3143 .teaser__defacer {background-color:#008F7C} .teaser--exhibition-3143 .teaser__title strong {color:#008F7C} .teaser--exhibition-1397 .teaser__wrapper:hover:before {background-color:#009699 !important} .teaser--exhibition-1397 .teaser__wrapper:hover .teaser__defacer {color:#009699} .teaser--exhibition-1397 .teaser__defacer {background-color:#009699} .teaser--exhibition-1397 .teaser__title strong {color:#009699} .teaser--exhibition-4801 .teaser__wrapper:hover:before {background-color:#009AB4 !important} .teaser--exhibition-4801 .teaser__wrapper:hover .teaser__defacer {color:#009AB4} .teaser--exhibition-4801 .teaser__defacer {background-color:#009AB4} .teaser--exhibition-4801 .teaser__title strong {color:#009AB4} .teaser--exhibition-4450 .teaser__wrapper:hover:before {background-color:#009BB3 !important} .teaser--exhibition-4450 .teaser__wrapper:hover .teaser__defacer {color:#009BB3} .teaser--exhibition-4450 .teaser__defacer {background-color:#009BB3} .teaser--exhibition-4450 .teaser__title strong {color:#009BB3} .teaser--exhibition-4400 .teaser__wrapper:hover:before {background-color:#009D3D !important} .teaser--exhibition-4400 .teaser__wrapper:hover .teaser__defacer {color:#009D3D} .teaser--exhibition-4400 .teaser__defacer {background-color:#009D3D} .teaser--exhibition-4400 .teaser__title strong {color:#009D3D} .teaser--exhibition-3070 .teaser__wrapper:hover:before {background-color:#00AFAD !important} .teaser--exhibition-3070 .teaser__wrapper:hover .teaser__defacer {color:#00AFAD} .teaser--exhibition-3070 .teaser__defacer {background-color:#00AFAD} .teaser--exhibition-3070 .teaser__title strong {color:#00AFAD} .teaser--exhibition-3607 .teaser__wrapper:hover:before {background-color:#00B2B2 !important} .teaser--exhibition-3607 .teaser__wrapper:hover .teaser__defacer {color:#00B2B2} .teaser--exhibition-3607 .teaser__defacer {background-color:#00B2B2} .teaser--exhibition-3607 .teaser__title strong {color:#00B2B2} .teaser--exhibition-4409 .teaser__wrapper:hover:before {background-color:#00B451 !important} .teaser--exhibition-4409 .teaser__wrapper:hover .teaser__defacer {color:#00B451} .teaser--exhibition-4409 .teaser__defacer {background-color:#00B451} .teaser--exhibition-4409 .teaser__title strong {color:#00B451} .teaser--exhibition-441 .teaser__wrapper:hover:before {background-color:#00BBB4 !important} .teaser--exhibition-441 .teaser__wrapper:hover .teaser__defacer {color:#00BBB4} .teaser--exhibition-441 .teaser__defacer {background-color:#00BBB4} .teaser--exhibition-441 .teaser__title strong {color:#00BBB4} .teaser--exhibition-2226 .teaser__wrapper:hover:before {background-color:#067E15 !important} .teaser--exhibition-2226 .teaser__wrapper:hover .teaser__defacer {color:#067E15} .teaser--exhibition-2226 .teaser__defacer {background-color:#067E15} .teaser--exhibition-2226 .teaser__title strong {color:#067E15} .teaser--exhibition-4301 .teaser__wrapper:hover:before {background-color:#2198D8 !important} .teaser--exhibition-4301 .teaser__wrapper:hover .teaser__defacer {color:#2198D8} .teaser--exhibition-4301 .teaser__defacer {background-color:#2198D8} .teaser--exhibition-4301 .teaser__title strong {color:#2198D8} .teaser--exhibition-3231 .teaser__wrapper:hover:before {background-color:#31AA6C !important} .teaser--exhibition-3231 .teaser__wrapper:hover .teaser__defacer {color:#31AA6C} .teaser--exhibition-3231 .teaser__defacer {background-color:#31AA6C} .teaser--exhibition-3231 .teaser__title strong {color:#31AA6C} .teaser--exhibition-2106 .teaser__wrapper:hover:before {background-color:#338F73 !important} .teaser--exhibition-2106 .teaser__wrapper:hover .teaser__defacer {color:#338F73} .teaser--exhibition-2106 .teaser__defacer {background-color:#338F73} .teaser--exhibition-2106 .teaser__title strong {color:#338F73} .teaser--exhibition-5224 .teaser__wrapper:hover:before {background-color:#3A8340 !important} .teaser--exhibition-5224 .teaser__wrapper:hover .teaser__defacer {color:#3A8340} .teaser--exhibition-5224 .teaser__defacer {background-color:#3A8340} .teaser--exhibition-5224 .teaser__title strong {color:#3A8340} .teaser--exhibition-2225 .teaser__wrapper:hover:before {background-color:#3EC2EA !important} .teaser--exhibition-2225 .teaser__wrapper:hover .teaser__defacer {color:#3EC2EA} .teaser--exhibition-2225 .teaser__defacer {background-color:#3EC2EA} .teaser--exhibition-2225 .teaser__title strong {color:#3EC2EA} .teaser--exhibition-4804 .teaser__wrapper:hover:before {background-color:#4E77C1 !important} .teaser--exhibition-4804 .teaser__wrapper:hover .teaser__defacer {color:#4E77C1} .teaser--exhibition-4804 .teaser__defacer {background-color:#4E77C1} .teaser--exhibition-4804 .teaser__title strong {color:#4E77C1} .teaser--exhibition-4200 .teaser__wrapper:hover:before {background-color:#547D7D !important} .teaser--exhibition-4200 .teaser__wrapper:hover .teaser__defacer {color:#547D7D} .teaser--exhibition-4200 .teaser__defacer {background-color:#547D7D} .teaser--exhibition-4200 .teaser__title strong {color:#547D7D} .teaser--exhibition-1393 .teaser__wrapper:hover:before {background-color:#55DA85 !important} .teaser--exhibition-1393 .teaser__wrapper:hover .teaser__defacer {color:#55DA85} .teaser--exhibition-1393 .teaser__defacer {background-color:#55DA85} .teaser--exhibition-1393 .teaser__title strong {color:#55DA85} .teaser--exhibition-4237 .teaser__wrapper:hover:before {background-color:#5E8AB4 !important} .teaser--exhibition-4237 .teaser__wrapper:hover .teaser__defacer {color:#5E8AB4} .teaser--exhibition-4237 .teaser__defacer {background-color:#5E8AB4} .teaser--exhibition-4237 .teaser__title strong {color:#5E8AB4} .teaser--exhibition-4595 .teaser__wrapper:hover:before {background-color:#607B94 !important} .teaser--exhibition-4595 .teaser__wrapper:hover .teaser__defacer {color:#607B94} .teaser--exhibition-4595 .teaser__defacer {background-color:#607B94} .teaser--exhibition-4595 .teaser__title strong {color:#607B94} .teaser--exhibition-3428 .teaser__wrapper:hover:before {background-color:#648F82 !important} .teaser--exhibition-3428 .teaser__wrapper:hover .teaser__defacer {color:#648F82} .teaser--exhibition-3428 .teaser__defacer {background-color:#648F82} .teaser--exhibition-3428 .teaser__title strong {color:#648F82} .teaser--exhibition-3164 .teaser__wrapper:hover:before {background-color:#68972F !important} .teaser--exhibition-3164 .teaser__wrapper:hover .teaser__defacer {color:#68972F} .teaser--exhibition-3164 .teaser__defacer {background-color:#68972F} .teaser--exhibition-3164 .teaser__title strong {color:#68972F} .teaser--exhibition-5428 .teaser__wrapper:hover:before {background-color:#6EA5E6 !important} .teaser--exhibition-5428 .teaser__wrapper:hover .teaser__defacer {color:#6EA5E6} .teaser--exhibition-5428 .teaser__defacer {background-color:#6EA5E6} .teaser--exhibition-5428 .teaser__title strong {color:#6EA5E6} .teaser--exhibition-2231 .teaser__wrapper:hover:before {background-color:#724F7A !important} .teaser--exhibition-2231 .teaser__wrapper:hover .teaser__defacer {color:#724F7A} .teaser--exhibition-2231 .teaser__defacer {background-color:#724F7A} .teaser--exhibition-2231 .teaser__title strong {color:#724F7A} .teaser--exhibition-1383 .teaser__wrapper:hover:before {background-color:#7482BE !important} .teaser--exhibition-1383 .teaser__wrapper:hover .teaser__defacer {color:#7482BE} .teaser--exhibition-1383 .teaser__defacer {background-color:#7482BE} .teaser--exhibition-1383 .teaser__title strong {color:#7482BE} .teaser--exhibition-3557 .teaser__wrapper:hover:before {background-color:#75B843 !important} .teaser--exhibition-3557 .teaser__wrapper:hover .teaser__defacer {color:#75B843} .teaser--exhibition-3557 .teaser__defacer {background-color:#75B843} .teaser--exhibition-3557 .teaser__title strong {color:#75B843} .teaser--exhibition-4939 .teaser__wrapper:hover:before {background-color:#75BEE9 !important} .teaser--exhibition-4939 .teaser__wrapper:hover .teaser__defacer {color:#75BEE9} .teaser--exhibition-4939 .teaser__defacer {background-color:#75BEE9} .teaser--exhibition-4939 .teaser__title strong {color:#75BEE9} .teaser--exhibition-3439 .teaser__wrapper:hover:before {background-color:#796CA7 !important} .teaser--exhibition-3439 .teaser__wrapper:hover .teaser__defacer {color:#796CA7} .teaser--exhibition-3439 .teaser__defacer {background-color:#796CA7} .teaser--exhibition-3439 .teaser__title strong {color:#796CA7} .teaser--exhibition-1399 .teaser__wrapper:hover:before {background-color:#82B7AD !important} .teaser--exhibition-1399 .teaser__wrapper:hover .teaser__defacer {color:#82B7AD} .teaser--exhibition-1399 .teaser__defacer {background-color:#82B7AD} .teaser--exhibition-1399 .teaser__title strong {color:#82B7AD} .teaser--exhibition-2803 .teaser__wrapper:hover:before {background-color:#8441DC !important} .teaser--exhibition-2803 .teaser__wrapper:hover .teaser__defacer {color:#8441DC} .teaser--exhibition-2803 .teaser__defacer {background-color:#8441DC} .teaser--exhibition-2803 .teaser__title strong {color:#8441DC} .teaser--exhibition-2222 .teaser__wrapper:hover:before {background-color:#8630AB !important} .teaser--exhibition-2222 .teaser__wrapper:hover .teaser__defacer {color:#8630AB} .teaser--exhibition-2222 .teaser__defacer {background-color:#8630AB} .teaser--exhibition-2222 .teaser__title strong {color:#8630AB} .teaser--exhibition-5455 .teaser__wrapper:hover:before {background-color:#8AF6FF !important} .teaser--exhibition-5455 .teaser__wrapper:hover .teaser__defacer {color:#8AF6FF} .teaser--exhibition-5455 .teaser__defacer {background-color:#8AF6FF} .teaser--exhibition-5455 .teaser__title strong {color:#8AF6FF} .teaser--exhibition-2100 .teaser__wrapper:hover:before {background-color:#90B0A1 !important} .teaser--exhibition-2100 .teaser__wrapper:hover .teaser__defacer {color:#90B0A1} .teaser--exhibition-2100 .teaser__defacer {background-color:#90B0A1} .teaser--exhibition-2100 .teaser__title strong {color:#90B0A1} .teaser--exhibition-3438 .teaser__wrapper:hover:before {background-color:#92C56E !important} .teaser--exhibition-3438 .teaser__wrapper:hover .teaser__defacer {color:#92C56E} .teaser--exhibition-3438 .teaser__defacer {background-color:#92C56E} .teaser--exhibition-3438 .teaser__title strong {color:#92C56E} .teaser--exhibition-4609 .teaser__wrapper:hover:before {background-color:#92C56E !important} .teaser--exhibition-4609 .teaser__wrapper:hover .teaser__defacer {color:#92C56E} .teaser--exhibition-4609 .teaser__defacer {background-color:#92C56E} .teaser--exhibition-4609 .teaser__title strong {color:#92C56E} .teaser--exhibition-2223 .teaser__wrapper:hover:before {background-color:#9370DB !important} .teaser--exhibition-2223 .teaser__wrapper:hover .teaser__defacer {color:#9370DB} .teaser--exhibition-2223 .teaser__defacer {background-color:#9370DB} .teaser--exhibition-2223 .teaser__title strong {color:#9370DB} .teaser--exhibition-705 .teaser__wrapper:hover:before {background-color:#9AB9AD !important} .teaser--exhibition-705 .teaser__wrapper:hover .teaser__defacer {color:#9AB9AD} .teaser--exhibition-705 .teaser__defacer {background-color:#9AB9AD} .teaser--exhibition-705 .teaser__title strong {color:#9AB9AD} .teaser--exhibition-2228 .teaser__wrapper:hover:before {background-color:#A29062 !important} .teaser--exhibition-2228 .teaser__wrapper:hover .teaser__defacer {color:#A29062} .teaser--exhibition-2228 .teaser__defacer {background-color:#A29062} .teaser--exhibition-2228 .teaser__title strong {color:#A29062} .teaser--exhibition-442 .teaser__wrapper:hover:before {background-color:#A6C38D !important} .teaser--exhibition-442 .teaser__wrapper:hover .teaser__defacer {color:#A6C38D} .teaser--exhibition-442 .teaser__defacer {background-color:#A6C38D} .teaser--exhibition-442 .teaser__title strong {color:#A6C38D} .teaser--exhibition-5332 .teaser__wrapper:hover:before {background-color:#A77E55 !important} .teaser--exhibition-5332 .teaser__wrapper:hover .teaser__defacer {color:#A77E55} .teaser--exhibition-5332 .teaser__defacer {background-color:#A77E55} .teaser--exhibition-5332 .teaser__title strong {color:#A77E55} .teaser--exhibition-4404 .teaser__wrapper:hover:before {background-color:#A9B875 !important} .teaser--exhibition-4404 .teaser__wrapper:hover .teaser__defacer {color:#A9B875} .teaser--exhibition-4404 .teaser__defacer {background-color:#A9B875} .teaser--exhibition-4404 .teaser__title strong {color:#A9B875} .teaser--exhibition-2984 .teaser__wrapper:hover:before {background-color:#ABE1FA !important} .teaser--exhibition-2984 .teaser__wrapper:hover .teaser__defacer {color:#ABE1FA} .teaser--exhibition-2984 .teaser__defacer {background-color:#ABE1FA} .teaser--exhibition-2984 .teaser__title strong {color:#ABE1FA} .teaser--exhibition-5097 .teaser__wrapper:hover:before {background-color:#ADACAA !important} .teaser--exhibition-5097 .teaser__wrapper:hover .teaser__defacer {color:#ADACAA} .teaser--exhibition-5097 .teaser__defacer {background-color:#ADACAA} .teaser--exhibition-5097 .teaser__title strong {color:#ADACAA} .teaser--exhibition-3549 .teaser__wrapper:hover:before {background-color:#B156D2 !important} .teaser--exhibition-3549 .teaser__wrapper:hover .teaser__defacer {color:#B156D2} .teaser--exhibition-3549 .teaser__defacer {background-color:#B156D2} .teaser--exhibition-3549 .teaser__title strong {color:#B156D2} .teaser--exhibition-2194 .teaser__wrapper:hover:before {background-color:#B2A48E !important} .teaser--exhibition-2194 .teaser__wrapper:hover .teaser__defacer {color:#B2A48E} .teaser--exhibition-2194 .teaser__defacer {background-color:#B2A48E} .teaser--exhibition-2194 .teaser__title strong {color:#B2A48E} .teaser--exhibition-2230 .teaser__wrapper:hover:before {background-color:#B2B2A4 !important} .teaser--exhibition-2230 .teaser__wrapper:hover .teaser__defacer {color:#B2B2A4} .teaser--exhibition-2230 .teaser__defacer {background-color:#B2B2A4} .teaser--exhibition-2230 .teaser__title strong {color:#B2B2A4} .teaser--exhibition-2009 .teaser__wrapper:hover:before {background-color:#B2B2B2 !important} .teaser--exhibition-2009 .teaser__wrapper:hover .teaser__defacer {color:#B2B2B2} .teaser--exhibition-2009 .teaser__defacer {background-color:#B2B2B2} .teaser--exhibition-2009 .teaser__title strong {color:#B2B2B2} .teaser--exhibition-2022 .teaser__wrapper:hover:before {background-color:#B2B2B2 !important} .teaser--exhibition-2022 .teaser__wrapper:hover .teaser__defacer {color:#B2B2B2} .teaser--exhibition-2022 .teaser__defacer {background-color:#B2B2B2} .teaser--exhibition-2022 .teaser__title strong {color:#B2B2B2} .teaser--exhibition-2105 .teaser__wrapper:hover:before {background-color:#B35674 !important} .teaser--exhibition-2105 .teaser__wrapper:hover .teaser__defacer {color:#B35674} .teaser--exhibition-2105 .teaser__defacer {background-color:#B35674} .teaser--exhibition-2105 .teaser__title strong {color:#B35674} .teaser--exhibition-4778 .teaser__wrapper:hover:before {background-color:#BCD15F !important} .teaser--exhibition-4778 .teaser__wrapper:hover .teaser__defacer {color:#BCD15F} .teaser--exhibition-4778 .teaser__defacer {background-color:#BCD15F} .teaser--exhibition-4778 .teaser__title strong {color:#BCD15F} .teaser--exhibition-5447 .teaser__wrapper:hover:before {background-color:#C1BA38 !important} .teaser--exhibition-5447 .teaser__wrapper:hover .teaser__defacer {color:#C1BA38} .teaser--exhibition-5447 .teaser__defacer {background-color:#C1BA38} .teaser--exhibition-5447 .teaser__title strong {color:#C1BA38} .teaser--exhibition-4661 .teaser__wrapper:hover:before {background-color:#C2BB36 !important} .teaser--exhibition-4661 .teaser__wrapper:hover .teaser__defacer {color:#C2BB36} .teaser--exhibition-4661 .teaser__defacer {background-color:#C2BB36} .teaser--exhibition-4661 .teaser__title strong {color:#C2BB36} .teaser--exhibition-4403 .teaser__wrapper:hover:before {background-color:#C5C4BE !important} .teaser--exhibition-4403 .teaser__wrapper:hover .teaser__defacer {color:#C5C4BE} .teaser--exhibition-4403 .teaser__defacer {background-color:#C5C4BE} .teaser--exhibition-4403 .teaser__title strong {color:#C5C4BE} .teaser--exhibition-4960 .teaser__wrapper:hover:before {background-color:#C75B8F !important} .teaser--exhibition-4960 .teaser__wrapper:hover .teaser__defacer {color:#C75B8F} .teaser--exhibition-4960 .teaser__defacer {background-color:#C75B8F} .teaser--exhibition-4960 .teaser__title strong {color:#C75B8F} .teaser--exhibition-2224 .teaser__wrapper:hover:before {background-color:#CAB011 !important} .teaser--exhibition-2224 .teaser__wrapper:hover .teaser__defacer {color:#CAB011} .teaser--exhibition-2224 .teaser__defacer {background-color:#CAB011} .teaser--exhibition-2224 .teaser__title strong {color:#CAB011} .teaser--exhibition-2012 .teaser__wrapper:hover:before {background-color:#CAB482 !important} .teaser--exhibition-2012 .teaser__wrapper:hover .teaser__defacer {color:#CAB482} .teaser--exhibition-2012 .teaser__defacer {background-color:#CAB482} .teaser--exhibition-2012 .teaser__title strong {color:#CAB482} .teaser--exhibition-2202 .teaser__wrapper:hover:before {background-color:#D73C61 !important} .teaser--exhibition-2202 .teaser__wrapper:hover .teaser__defacer {color:#D73C61} .teaser--exhibition-2202 .teaser__defacer {background-color:#D73C61} .teaser--exhibition-2202 .teaser__title strong {color:#D73C61} .teaser--exhibition-1324 .teaser__wrapper:hover:before {background-color:#D76062 !important} .teaser--exhibition-1324 .teaser__wrapper:hover .teaser__defacer {color:#D76062} .teaser--exhibition-1324 .teaser__defacer {background-color:#D76062} .teaser--exhibition-1324 .teaser__title strong {color:#D76062} .teaser--exhibition-1217 .teaser__wrapper:hover:before {background-color:#D9AA00 !important} .teaser--exhibition-1217 .teaser__wrapper:hover .teaser__defacer {color:#D9AA00} .teaser--exhibition-1217 .teaser__defacer {background-color:#D9AA00} .teaser--exhibition-1217 .teaser__title strong {color:#D9AA00} .teaser--exhibition-2473 .teaser__wrapper:hover:before {background-color:#DCD5C5 !important} .teaser--exhibition-2473 .teaser__wrapper:hover .teaser__defacer {color:#DCD5C5} .teaser--exhibition-2473 .teaser__defacer {background-color:#DCD5C5} .teaser--exhibition-2473 .teaser__title strong {color:#DCD5C5} .teaser--exhibition-3168 .teaser__wrapper:hover:before {background-color:#DD7237 !important} .teaser--exhibition-3168 .teaser__wrapper:hover .teaser__defacer {color:#DD7237} .teaser--exhibition-3168 .teaser__defacer {background-color:#DD7237} .teaser--exhibition-3168 .teaser__title strong {color:#DD7237} .teaser--exhibition-1408 .teaser__wrapper:hover:before {background-color:#DEC372 !important} .teaser--exhibition-1408 .teaser__wrapper:hover .teaser__defacer {color:#DEC372} .teaser--exhibition-1408 .teaser__defacer {background-color:#DEC372} .teaser--exhibition-1408 .teaser__title strong {color:#DEC372} .teaser--exhibition-2229 .teaser__wrapper:hover:before {background-color:#DF2312 !important} .teaser--exhibition-2229 .teaser__wrapper:hover .teaser__defacer {color:#DF2312} .teaser--exhibition-2229 .teaser__defacer {background-color:#DF2312} .teaser--exhibition-2229 .teaser__title strong {color:#DF2312} .teaser--exhibition-4660 .teaser__wrapper:hover:before {background-color:#DFC070 !important} .teaser--exhibition-4660 .teaser__wrapper:hover .teaser__defacer {color:#DFC070} .teaser--exhibition-4660 .teaser__defacer {background-color:#DFC070} .teaser--exhibition-4660 .teaser__title strong {color:#DFC070} .teaser--exhibition-4793 .teaser__wrapper:hover:before {background-color:#E0352F !important} .teaser--exhibition-4793 .teaser__wrapper:hover .teaser__defacer {color:#E0352F} .teaser--exhibition-4793 .teaser__defacer {background-color:#E0352F} .teaser--exhibition-4793 .teaser__title strong {color:#E0352F} .teaser--exhibition-4783 .teaser__wrapper:hover:before {background-color:#E13C0D !important} .teaser--exhibition-4783 .teaser__wrapper:hover .teaser__defacer {color:#E13C0D} .teaser--exhibition-4783 .teaser__defacer {background-color:#E13C0D} .teaser--exhibition-4783 .teaser__title strong {color:#E13C0D} .teaser--exhibition-2023 .teaser__wrapper:hover:before {background-color:#EB0000 !important} .teaser--exhibition-2023 .teaser__wrapper:hover .teaser__defacer {color:#EB0000} .teaser--exhibition-2023 .teaser__defacer {background-color:#EB0000} .teaser--exhibition-2023 .teaser__title strong {color:#EB0000} .teaser--exhibition-4305 .teaser__wrapper:hover:before {background-color:#EC008C !important} .teaser--exhibition-4305 .teaser__wrapper:hover .teaser__defacer {color:#EC008C} .teaser--exhibition-4305 .teaser__defacer {background-color:#EC008C} .teaser--exhibition-4305 .teaser__title strong {color:#EC008C} .teaser--exhibition-4318 .teaser__wrapper:hover:before {background-color:#EC409D !important} .teaser--exhibition-4318 .teaser__wrapper:hover .teaser__defacer {color:#EC409D} .teaser--exhibition-4318 .teaser__defacer {background-color:#EC409D} .teaser--exhibition-4318 .teaser__title strong {color:#EC409D} .teaser--exhibition-5365 .teaser__wrapper:hover:before {background-color:#EF4036 !important} .teaser--exhibition-5365 .teaser__wrapper:hover .teaser__defacer {color:#EF4036} .teaser--exhibition-5365 .teaser__defacer {background-color:#EF4036} .teaser--exhibition-5365 .teaser__title strong {color:#EF4036} .teaser--exhibition-440 .teaser__wrapper:hover:before {background-color:#EF7B47 !important} .teaser--exhibition-440 .teaser__wrapper:hover .teaser__defacer {color:#EF7B47} .teaser--exhibition-440 .teaser__defacer {background-color:#EF7B47} .teaser--exhibition-440 .teaser__title strong {color:#EF7B47} .teaser--exhibition-5278 .teaser__wrapper:hover:before {background-color:#F01329 !important} .teaser--exhibition-5278 .teaser__wrapper:hover .teaser__defacer {color:#F01329} .teaser--exhibition-5278 .teaser__defacer {background-color:#F01329} .teaser--exhibition-5278 .teaser__title strong {color:#F01329} .teaser--exhibition-4177 .teaser__wrapper:hover:before {background-color:#F15B4E !important} .teaser--exhibition-4177 .teaser__wrapper:hover .teaser__defacer {color:#F15B4E} .teaser--exhibition-4177 .teaser__defacer {background-color:#F15B4E} .teaser--exhibition-4177 .teaser__title strong {color:#F15B4E} .teaser--exhibition-5330 .teaser__wrapper:hover:before {background-color:#F65681 !important} .teaser--exhibition-5330 .teaser__wrapper:hover .teaser__defacer {color:#F65681} .teaser--exhibition-5330 .teaser__defacer {background-color:#F65681} .teaser--exhibition-5330 .teaser__title strong {color:#F65681} .teaser--exhibition-5204 .teaser__wrapper:hover:before {background-color:#F9B853 !important} .teaser--exhibition-5204 .teaser__wrapper:hover .teaser__defacer {color:#F9B853} .teaser--exhibition-5204 .teaser__defacer {background-color:#F9B853} .teaser--exhibition-5204 .teaser__title strong {color:#F9B853} .teaser--exhibition-2227 .teaser__wrapper:hover:before {background-color:#FA1CFF !important} .teaser--exhibition-2227 .teaser__wrapper:hover .teaser__defacer {color:#FA1CFF} .teaser--exhibition-2227 .teaser__defacer {background-color:#FA1CFF} .teaser--exhibition-2227 .teaser__title strong {color:#FA1CFF} .teaser--exhibition-4676 .teaser__wrapper:hover:before {background-color:#FAA21B !important} .teaser--exhibition-4676 .teaser__wrapper:hover .teaser__defacer {color:#FAA21B} .teaser--exhibition-4676 .teaser__defacer {background-color:#FAA21B} .teaser--exhibition-4676 .teaser__title strong {color:#FAA21B} .teaser--exhibition-2698 .teaser__wrapper:hover:before {background-color:#FBBA00 !important} .teaser--exhibition-2698 .teaser__wrapper:hover .teaser__defacer {color:#FBBA00} .teaser--exhibition-2698 .teaser__defacer {background-color:#FBBA00} .teaser--exhibition-2698 .teaser__title strong {color:#FBBA00} .teaser--exhibition-4682 .teaser__wrapper:hover:before {background-color:#FC4C02 !important} .teaser--exhibition-4682 .teaser__wrapper:hover .teaser__defacer {color:#FC4C02} .teaser--exhibition-4682 .teaser__defacer {background-color:#FC4C02} .teaser--exhibition-4682 .teaser__title strong {color:#FC4C02} .teaser--exhibition-5125 .teaser__wrapper:hover:before {background-color:#FDBC54 !important} .teaser--exhibition-5125 .teaser__wrapper:hover .teaser__defacer {color:#FDBC54} .teaser--exhibition-5125 .teaser__defacer {background-color:#FDBC54} .teaser--exhibition-5125 .teaser__title strong {color:#FDBC54} .teaser--exhibition-4949 .teaser__wrapper:hover:before {background-color:#FE987D !important} .teaser--exhibition-4949 .teaser__wrapper:hover .teaser__defacer {color:#FE987D} .teaser--exhibition-4949 .teaser__defacer {background-color:#FE987D} .teaser--exhibition-4949 .teaser__title strong {color:#FE987D} .teaser--exhibition-2233 .teaser__wrapper:hover:before {background-color:#FF0000 !important} .teaser--exhibition-2233 .teaser__wrapper:hover .teaser__defacer {color:#FF0000} .teaser--exhibition-2233 .teaser__defacer {background-color:#FF0000} .teaser--exhibition-2233 .teaser__title strong {color:#FF0000} .teaser--exhibition-4472 .teaser__wrapper:hover:before {background-color:#FF1A00 !important} .teaser--exhibition-4472 .teaser__wrapper:hover .teaser__defacer {color:#FF1A00} .teaser--exhibition-4472 .teaser__defacer {background-color:#FF1A00} .teaser--exhibition-4472 .teaser__title strong {color:#FF1A00} .teaser--exhibition-643 .teaser__wrapper:hover:before {background-color:#FFAE3B !important} .teaser--exhibition-643 .teaser__wrapper:hover .teaser__defacer {color:#FFAE3B} .teaser--exhibition-643 .teaser__defacer {background-color:#FFAE3B} .teaser--exhibition-643 .teaser__title strong {color:#FFAE3B} .teaser--exhibition-3359 .teaser__wrapper:hover:before {background-color:#FFCD1C !important} .teaser--exhibition-3359 .teaser__wrapper:hover .teaser__defacer {color:#FFCD1C} .teaser--exhibition-3359 .teaser__defacer {background-color:#FFCD1C} .teaser--exhibition-3359 .teaser__title strong {color:#FFCD1C} .teaser--exhibition-4807 .teaser__wrapper:hover:before {background-color:#FFE800 !important} .teaser--exhibition-4807 .teaser__wrapper:hover .teaser__defacer {color:#FFE800} .teaser--exhibition-4807 .teaser__defacer {background-color:#FFE800} .teaser--exhibition-4807 .teaser__title strong {color:#FFE800} .teaser--exhibition-1830 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-1830 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-1830 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-1830 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-1831 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-1831 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-1831 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-1831 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-1832 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-1832 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-1832 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-1832 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-1877 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-1877 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-1877 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-1877 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-2054 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-2054 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-2054 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-2054 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-2719 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-2719 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-2719 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-2719 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-2757 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-2757 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-2757 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-2757 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-2924 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-2924 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-2924 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-2924 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-3035 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-3035 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-3035 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-3035 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-3086 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-3086 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-3086 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-3086 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-3087 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-3087 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-3087 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-3087 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-3089 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-3089 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-3089 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-3089 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-3174 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-3174 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-3174 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-3174 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4085 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4085 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4085 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4085 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4226 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4226 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4226 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4226 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4228 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4228 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4228 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4228 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4239 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4239 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4239 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4239 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4307 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4307 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4307 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4307 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4401 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4401 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4401 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4401 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4509 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4509 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4509 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4509 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4533 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4533 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4533 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4533 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4534 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4534 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4534 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4534 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4535 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4535 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4535 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4535 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-4547 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-4547 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-4547 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-4547 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-5189 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-5189 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-5189 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-5189 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-5190 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-5190 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-5190 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-5190 .teaser__title strong {color:#FFFFFF} .teaser--exhibition-5191 .teaser__wrapper:hover:before {background-color:#FFFFFF !important} .teaser--exhibition-5191 .teaser__wrapper:hover .teaser__defacer {color:#FFFFFF} .teaser--exhibition-5191 .teaser__defacer {background-color:#FFFFFF} .teaser--exhibition-5191 .teaser__title strong {color:#FFFFFF}",
-          }}
-        />
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              ".theme-color { color: #EB0000} .hero__title strong { color: #EB0000}",
-          }}
-        />
         <meta
           name="description"
           content="Welcome to the Dersim Museum - discover two million years of human history and culture."
@@ -756,194 +744,73 @@ const Home = () => {
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
                                         {posts && posts.length > 0 ? (
-                                          posts
-                                            .slice(0, 1000)
-                                            .map((post, index) => (
-                                              <li
-                                                key={post._id}
-                                                className="l-grid__item swiper-slide"
-                                              >
-                                                <div className="teaser teaser--exhibition teaser--exhibition-5365">
-                                                  <div className="teaser__wrapper">
-                                                    <div className="teaser__content">
-                                                      <h3 className="teaser__title">
-                                                        <a
-                                                          href={post.slug}
-                                                          className="teaser__anchor"
-                                                        >
-                                                          <span>
-                                                            {post.title}
-                                                            <br aria-hidden="true" />
-                                                            <strong>
-                                                              {post.content}
-                                                            </strong>
+                                          posts.slice(0, 1000).map((post) => (
+                                            <li
+                                              key={post._id}
+                                              className="l-grid__item swiper-slide"
+                                              style={{
+                                                "--post-color": post.color,
+                                              }} // Renk burada dinamik olarak geçiliyor
+                                            >
+                                              <div className="teaser teaser--exhibition">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__content">
+                                                    <h3 className="teaser__title">
+                                                      <a
+                                                        href={post.slug}
+                                                        className="teaser__anchor"
+                                                      >
+                                                        <span>
+                                                          {post.title}
+                                                          <br aria-hidden="true" />
+                                                          <strong>
+                                                            {post.content}
+                                                          </strong>
+                                                        </span>
+                                                        <span className="visually-hidden">
+                                                          . Rezervasyon .
+                                                        </span>
+                                                      </a>
+                                                    </h3>
+                                                    <footer className="teaser__footer">
+                                                      <ul className="teaser__meta teaser__meta--footer">
+                                                        <li className="teaser__meta-item">
+                                                          <span>Konferans</span>
+                                                        </li>
+                                                        <li className="teaser__meta-item">
+                                                          <span className="date-display-range">
+                                                            7 Kasım 2024 – 30
+                                                            Mart 2025
                                                           </span>
-                                                          <span className="visually-hidden">
-                                                            . Rezervasyon .
-                                                          </span>
-                                                        </a>
-                                                      </h3>
-                                                      <footer className="teaser__footer">
-                                                        <ul className="teaser__meta teaser__meta--footer">
-                                                          <li className="teaser__meta-item">
-                                                            {" "}
-                                                            <span>
-                                                              Konferans
-                                                            </span>
-                                                          </li>
-                                                          <li className="teaser__meta-item">
-                                                            {" "}
-                                                            <span className="date-display-range">
-                                                              7 Kasım 2024 – 30
-                                                              Mart 2025
-                                                            </span>
-                                                          </li>
-                                                        </ul>
-                                                        <div
-                                                          className="teaser__defacer"
-                                                          aria-hidden="true"
-                                                        >
-                                                          Rezervasyon
-                                                        </div>
-                                                      </footer>
-                                                    </div>
-                                                    <div className="teaser__image-container">
-                                                      <div className="media media-teaser_landscape media-image js-media">
-                                                        <img
-                                                          loading="eager"
-                                                          className="lazyload"
-                                                          width={750}
-                                                          height={422}
-                                                          src={post.image}
-                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
-                                                        />
+                                                        </li>
+                                                      </ul>
+                                                      <div
+                                                        className="teaser__defacer"
+                                                        aria-hidden="true"
+                                                      >
+                                                        Rezervasyon
                                                       </div>
+                                                    </footer>
+                                                  </div>
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyload"
+                                                        width={750}
+                                                        height={422}
+                                                        src={post.image}
+                                                        alt="Image description"
+                                                      />
                                                     </div>
                                                   </div>
                                                 </div>
-                                              </li>
-                                            ))
+                                              </div>
+                                            </li>
+                                          ))
                                         ) : (
                                           <p>No posts available</p>
                                         )}
-
-                                        {/* <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--exhibition teaser--exhibition-5224">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__content">
-                                                <h3 className="teaser__title">
-                                                  <a
-                                                    href="/exhibitions/hew-locke-what-have-we-here"
-                                                    className="teaser__anchor"
-                                                  >
-                                                    <span>
-                                                      Cumartesi Anneleri
-                                                      <br aria-hidden="true" />
-                                                      <strong>
-                                                        Berlin Konferansı
-                                                      </strong>
-                                                    </span>
-                                                    <span className="visually-hidden">
-                                                      . Rezervasyon .
-                                                    </span>
-                                                  </a>
-                                                </h3>
-                                                <footer className="teaser__footer">
-                                                  <ul className="teaser__meta teaser__meta--footer">
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span>Konferans</span>
-                                                    </li>
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span className="date-display-range">
-                                                        17 Ekim 2024 – 9 Şubat
-                                                        2025
-                                                      </span>
-                                                    </li>
-                                                  </ul>
-                                                  <div
-                                                    className="teaser__defacer"
-                                                    aria-hidden="true"
-                                                  >
-                                                    Rezervasyon
-                                                  </div>
-                                                </footer>
-                                              </div>
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/2-cumartesi anneleri.jpg"
-                                                    alt="Procession of camels with lone figure leading in shadow against orange sky"
-                                                  />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li> */}
-
-                                        {/* <li className="l-grid__item swiper-slide">
-                                          <div className="teaser teaser--exhibition teaser--exhibition-5204">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__content">
-                                                <h3 className="teaser__title">
-                                                  <a
-                                                    href="/exhibitions/silk-roads"
-                                                    className="teaser__anchor"
-                                                  >
-                                                    <span>
-                                                      Zazaca Konferansı <br />
-                                                      <strong>
-                                                        Dünya Anadil Etkinliği
-                                                      </strong>
-                                                    </span>
-                                                    <span className="visually-hidden">
-                                                      . Rezervasyon .
-                                                    </span>
-                                                  </a>
-                                                </h3>
-                                                <footer className="teaser__footer">
-                                                  <ul className="teaser__meta teaser__meta--footer">
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span>
-                                                        Etkinlik-Berlin
-                                                      </span>
-                                                    </li>
-                                                    <li className="teaser__meta-item">
-                                                      {" "}
-                                                      <span className="date-display-range">
-                                                        26 Eylül 2024 – 23 Şubat
-                                                        2025
-                                                      </span>
-                                                    </li>
-                                                  </ul>
-                                                  <div
-                                                    className="teaser__defacer"
-                                                    aria-hidden="true"
-                                                  >
-                                                    Rezervasyon
-                                                  </div>
-                                                </footer>
-                                              </div>
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/3-Anadil.jpg"
-                                                  />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -1017,8 +884,7 @@ const Home = () => {
                                                           className="lazyload"
                                                           width={750}
                                                           height={422}
-                                                          src="/images/room-33-china-south-asia-visitor-1920.webp"
-                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
+                                                          src={post2.image}
                                                         />
                                                       </div>
                                                     </div>
@@ -1250,8 +1116,7 @@ const Home = () => {
                                                           className="lazyload"
                                                           width={750}
                                                           height={422}
-                                                          src="/images/barış çalışmaları.jpg"
-                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
+                                                          src={post3.image}
                                                         />
                                                       </div>
                                                     </div>
@@ -1490,8 +1355,7 @@ const Home = () => {
                                                           className="lazyload"
                                                           width={750}
                                                           height={422}
-                                                          src="/images/Dersim-Museum-1.png"
-                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
+                                                          src={post4.image}
                                                         />
                                                       </div>
                                                     </div>
@@ -1747,7 +1611,7 @@ const Home = () => {
                                                           <img
                                                             className="image-style"
                                                             loading="lazy"
-                                                            src="/images/sasaniler.jpg"
+                                                            src={post5.image}
                                                             width={286}
                                                             height={425}
                                                           />
@@ -2059,7 +1923,7 @@ const Home = () => {
                                           </li>
                                         ))}
 
-                                        <li className="swiper-slide">
+                                        {/* <li className="swiper-slide">
                                           <div className="teaser teaser--has-link">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__content">
@@ -2197,7 +2061,7 @@ const Home = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                         <li className="swiper-slide">
                                           <div className="teaser teaser--has-link">
                                             <div className="teaser__wrapper">

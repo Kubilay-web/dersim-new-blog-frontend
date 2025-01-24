@@ -13629,3 +13629,23 @@
     width: 100%;
   }
 }
+
+
+
+/* 
+.teaser--exhibition-5365 .teaser__wrapper:hover:before {
+  background-color: #0080C9 !important;
+}
+.teaser--exhibition-5365 .teaser__wrapper:hover .teaser__defacer {
+  color: #0080C9;
+} */
+
+
+.teaser__wrapper:hover:before {
+  background-color: var(--post-color) !important;  /* Dinamik renk burada kullanılacak */
+}
+
+.teaser__wrapper:hover .teaser__defacer {
+  color: var(--post-color);  /* Dinamik renk burada kullanılacak */
+}
+
