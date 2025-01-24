@@ -11,7 +11,7 @@ const HomeCommerce = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    navigate("/cart");
+    navigate("/cart", { replace: true });
   };
 
   useEffect(() => {
