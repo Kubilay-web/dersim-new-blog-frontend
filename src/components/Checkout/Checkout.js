@@ -10,25 +10,29 @@ const Checkout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Bootstrap CSS ve JS dosyasını dinamik olarak yükle
   useEffect(() => {
+    // Bootstrap CSS dosyasını dinamik olarak ekleyelim
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href =
-      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
     document.head.appendChild(link);
 
+    // Bootstrap JS dosyasını dinamik olarak ekleyelim
     const script = document.createElement("script");
     script.src =
-      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
-    script.defer = true;
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js";
+    script.integrity =
+      "sha384-pzjw8f+ua7Kw1TIq0p6n6YDpU7tQAxpfe4EdT9B5o8TJOz1IpD7mf6p7r5pXj/Ud";
+    script.crossOrigin = "anonymous";
     document.body.appendChild(script);
 
+    // Temizleme fonksiyonu, component unmount olduğunda link ve scripti kaldırır
     return () => {
       document.head.removeChild(link);
       document.body.removeChild(script);
     };
-  }, []);
+  }, []); // Boş array, yalnızca component mount olduğunda çalışır
 
   const [paymentDetails, setPaymentDetails] = useState({
     locale: "tr",
