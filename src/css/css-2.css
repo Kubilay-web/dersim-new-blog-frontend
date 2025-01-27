@@ -347,7 +347,6 @@
   }
   .pswp__bg {
     -webkit-backface-visibility: hidden;
-    background: #000;
     opacity: 0;
     transform: translateZ(0);
   }
@@ -3550,6 +3549,7 @@
     .hero--background-pinned .hero__background img {
       height: calc(100vh - 1px);
       position: fixed;
+      width: 100vw !important;
     }
   }
   .hero__background:after {

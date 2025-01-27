@@ -1849,6 +1849,7 @@ const Home = () => {
                               </div>
                             </div>
                           </section>
+
                           <div className="spacer spacer--small-divider" />
                           <section
                             className="section--bg-white paragraph paragraph--type--slice-shop paragraph--view-mode--default section section--slice-shop section--z-index-scope section--has-carousel"
