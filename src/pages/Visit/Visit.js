@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 
 const Visit = () => {
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+  const [posts3, setPosts3] = useState([]);
+  const [posts4, setPosts4] = useState([]);
+  const [posts5, setPosts5] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Ways to explore";
+    const category2 = "Exhibitions";
+    const category3 = "Eat, drink, shop and enjoy";
+
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+    fetchPosts(category3, setPosts3);
+  }, []);
+
   return (
     <>
       <div>
@@ -1005,7 +1033,53 @@ const Visit = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
+                                        {posts && posts.length > 0 ? (
+                                          posts.slice(0, 1000).map((post) => (
+                                            <li
+                                              key={post._id}
+                                              className="l-grid__item swiper-slide"
+                                            >
+                                              <div className="teaser">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyload"
+                                                        width={750}
+                                                        height={422}
+                                                        src={post.image}
+                                                      />
+                                                    </div>
+                                                  </div>
+                                                  <div className="teaser__content">
+                                                    <div className="teaser__content-push">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <span>
+                                                              {post.title}
+                                                            </span>
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <div className="teaser__summary">
+                                                        {post.content}
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                          ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li key={post._id} className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1030,7 +1104,6 @@ const Visit = () => {
                                                       <span>
                                                         <span>Galleries </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1071,7 +1144,6 @@ const Visit = () => {
                                                           Family visits
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1113,7 +1185,6 @@ const Visit = () => {
                                                           Exhibitions and events
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1125,7 +1196,7 @@ const Visit = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -2856,7 +2927,71 @@ const Visit = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
+                                        {posts2 && posts2.length > 0 ? (
+                                          posts2
+                                            .slice(0, 1000)
+                                            .map((post2, index) => (
+                                              <li
+                                                key={post2._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser teaser--has-meta-top">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post2.image}
+                                                          alt="Procession of camels with lone figure leading in shadow against orange sky"
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <div className="teaser__defacer teaser__defacer-exhibition-events">
+                                                          Book now
+                                                        </div>
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href={post2.slug}
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              <span>
+                                                                {post2.title}
+                                                              </span>
+                                                            </span>
+                                                            <span className="visually-hidden">
+                                                              . Book now .
+                                                            </span>
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post2.content}
+                                                        </div>
+                                                      </div>
+                                                      <span className="teaser__button | button button--chevron">
+                                                        Find out more{" "}
+                                                        <span className="visually-hidden">
+                                                          about{" "}
+                                                          <span>
+                                                            Silk Roads
+                                                          </span>
+                                                        </span>
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--has-meta-top">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -2884,7 +3019,6 @@ const Visit = () => {
                                                       <span>
                                                         <span>Silk Roads</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                       <span className="visually-hidden">
                                                         . Book now .
                                                       </span>
@@ -2909,8 +3043,8 @@ const Visit = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser teaser--has-meta-top">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -2940,7 +3074,6 @@ const Visit = () => {
                                                           we here?
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                       <span className="visually-hidden">
                                                         . Book now .
                                                       </span>
@@ -2997,7 +3130,6 @@ const Visit = () => {
                                                           Picasso: printmaker
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                       <span className="visually-hidden">
                                                         . Book now .
                                                       </span>
@@ -3024,7 +3156,7 @@ const Visit = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -4650,7 +4782,55 @@ const Visit = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
+                                        {posts3 && posts3.length > 0 ? (
+                                          posts3
+                                            .slice(0, 1000)
+                                            .map((post3, index) => (
+                                              <li
+                                                key={post3._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post3.image}
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href={post3.slug}
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              <span>
+                                                                {post3.title}
+                                                              </span>
+                                                            </span>
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post3.content}
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -4676,7 +4856,6 @@ const Visit = () => {
                                                           Food and drink
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -4690,8 +4869,8 @@ const Visit = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -4717,7 +4896,6 @@ const Visit = () => {
                                                           The Dersim Museum Shop
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -4754,7 +4932,6 @@ const Visit = () => {
                                                       <span>
                                                         <span>Collection</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -4767,7 +4944,7 @@ const Visit = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
