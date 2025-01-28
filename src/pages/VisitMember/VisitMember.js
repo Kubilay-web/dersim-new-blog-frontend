@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const VisitMember = () => {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Plan your visit";
+
+    fetchPosts(category1, setPosts);
+  }, []);
+
   return (
     <div>
       <div>
@@ -119,14 +139,6 @@ const VisitMember = () => {
               ".cookieconsent-optin-preferences,.cookieconsent-optin-statistics,.cookieconsent-optin-marketing,.cookieconsent-optin{display:none;}.cookieconsent-optout-preferences,.cookieconsent-optout-statistics,.cookieconsent-optout-marketing,.cookieconsent-optout{display:block;display:initial;}",
           }}
         />
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          &lt;iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MW5VCK"
-          height="0" width="0"
-          style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -932,7 +944,57 @@ const VisitMember = () => {
                                         className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper"
                                         style={{}}
                                       >
-                                        <li
+                                        {posts && posts.length > 0 ? (
+                                          posts.slice(0, 1000).map((post) => (
+                                            <li
+                                              key={post._id}
+                                              className="l-grid__item swiper-slide"
+                                              style={{}}
+                                            >
+                                              <div className="teaser">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyautosizes lazyloaded"
+                                                        width={750}
+                                                        height={422}
+                                                        data-sizes="auto"
+                                                        data-focal-position="center center"
+                                                        sizes="516px"
+                                                        src={post.image}
+                                                      />
+                                                    </div>
+                                                  </div>
+                                                  <div className="teaser__content">
+                                                    <div className="teaser__content-push">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <span>
+                                                              {post.title}
+                                                            </span>
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <div className="teaser__summary">
+                                                        {post.content}
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                          ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
@@ -965,7 +1027,7 @@ const VisitMember = () => {
                                                           Members' events
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -978,8 +1040,8 @@ const VisitMember = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li
+                                        </li> */}
+                                        {/* <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
@@ -1014,7 +1076,7 @@ const VisitMember = () => {
                                                           ideas
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                       <span className="visually-hidden">
                                                         {" "}
                                                         (Opens in new window)
@@ -1031,8 +1093,8 @@ const VisitMember = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li
+                                        </li> */}
+                                        {/* <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
@@ -1065,7 +1127,7 @@ const VisitMember = () => {
                                                           Members' Room
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1076,7 +1138,7 @@ const VisitMember = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -1158,7 +1220,7 @@ const VisitMember = () => {
                                       data-slides-to-show={2}
                                       style={{}}
                                     >
-                                      <ul
+                                      {/* <ul
                                         className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper"
                                         style={{}}
                                       >
@@ -1193,7 +1255,6 @@ const VisitMember = () => {
                                                       <span>
                                                         <span>Galleries </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1241,7 +1302,6 @@ const VisitMember = () => {
                                                           object trail
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1287,7 +1347,6 @@ const VisitMember = () => {
                                                       <span>
                                                         <span>Museum map</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1301,7 +1360,7 @@ const VisitMember = () => {
                                             </div>
                                           </div>
                                         </li>
-                                      </ul>
+                                      </ul> */}
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
                                       <button

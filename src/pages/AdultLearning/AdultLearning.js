@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const AdultLearning = () => {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Adult learning";
+
+    fetchPosts(category1, setPosts);
+  }, []);
+
   return (
     <div>
       <div>
@@ -732,7 +752,53 @@ const AdultLearning = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
+                                        {posts && posts.length > 0 ? (
+                                          posts.slice(0, 1000).map((post) => (
+                                            <li
+                                              key={post._id}
+                                              className="l-grid__item swiper-slide"
+                                            >
+                                              <div className="teaser">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyload"
+                                                        width={750}
+                                                        height={422}
+                                                        src={post.image}
+                                                      />
+                                                    </div>
+                                                  </div>
+                                                  <div className="teaser__content">
+                                                    <div className="teaser__content-push">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <span>
+                                                              {post.title}
+                                                            </span>
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <div className="teaser__summary">
+                                                        {post.content}
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                          ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -759,7 +825,7 @@ const AdultLearning = () => {
                                                           discussions
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -771,8 +837,8 @@ const AdultLearning = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -798,7 +864,7 @@ const AdultLearning = () => {
                                                           Performances
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -810,8 +876,8 @@ const AdultLearning = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -837,7 +903,7 @@ const AdultLearning = () => {
                                                           Online events
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -849,7 +915,7 @@ const AdultLearning = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -886,7 +952,7 @@ const AdultLearning = () => {
                               </div>
                             </div>
                           </section>
-                          <section
+                          {/* <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-white"
                             aria-labelledby="paragraph-10046-title"
                           >
@@ -920,6 +986,9 @@ const AdultLearning = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
+                                        
+                                        
+                                        
                                         <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
@@ -947,7 +1016,7 @@ const AdultLearning = () => {
                                                           events
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -987,7 +1056,7 @@ const AdultLearning = () => {
                                                           study days
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1024,7 +1093,7 @@ const AdultLearning = () => {
                                                       <span>
                                                         <span>Workshops</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1072,8 +1141,8 @@ const AdultLearning = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
-                          <section
+                          </section> */}
+                          {/* <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-white"
                             aria-labelledby="paragraph-9613-title"
                           >
@@ -1133,7 +1202,7 @@ const AdultLearning = () => {
                                                           Gallery talks
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1172,7 +1241,7 @@ const AdultLearning = () => {
                                                           Film screenings
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1211,7 +1280,7 @@ const AdultLearning = () => {
                                                           Accessible events
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1259,8 +1328,8 @@ const AdultLearning = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
-                          <section
+                          </section> */}
+                          {/* <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-white"
                             aria-labelledby="paragraph-9615-title"
                           >
@@ -1321,7 +1390,7 @@ const AdultLearning = () => {
                                                           specialist lectures
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1360,7 +1429,7 @@ const AdultLearning = () => {
                                                       <span>
                                                         <span>ESOL</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1401,7 +1470,7 @@ const AdultLearning = () => {
                                                           Demonstrations
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1449,7 +1518,7 @@ const AdultLearning = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section> */}
                           <section
                             className="paragraph paragraph--type--slice-banner paragraph--view-mode--default section section--slice-banner section--maintain-spacer-top section--bg-white banner"
                             aria-labelledby="paragraph-26142-title"
