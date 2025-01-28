@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const Story = () => {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "History of the Museum";
+
+    fetchPosts(category1, setPosts);
+  }, []);
+
   return (
     <div>
       <div>
@@ -15,26 +35,26 @@ const Story = () => {
         />
         <meta
           name="description"
-          content="The British Museum is unique in bringing together under one roof the cultures of the world."
+          content="The Dersim Museum is unique in bringing together under one roof the cultures of the world."
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/about-us/british-museum-story"
+          href="https://www.britishmuseum.org/about-us/dersim-museum-story"
         />
         <link
           rel="image_src"
           href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
         />
-        <meta property="og:site_name" content="The British Museum" />
+        <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/about-us/british-museum-story"
+          content="https://www.britishmuseum.org/about-us/dersim-museum-story"
         />
-        <meta property="og:title" content="The British Museum Story" />
+        <meta property="og:title" content="The Dersim Museum Story" />
         <meta
           property="og:description"
-          content="The British Museum is unique in bringing together under one roof the cultures of the world."
+          content="The Dersim Museum is unique in bringing together under one roof the cultures of the world."
         />
         <meta
           property="og:image"
@@ -43,10 +63,10 @@ const Story = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:description"
-          content="The British Museum is unique in bringing together under one roof the cultures of the world."
+          content="The Dersim Museum is unique in bringing together under one roof the cultures of the world."
         />
         <meta name="twitter:site" content="@britishmuseum" />
-        <meta name="twitter:title" content="The British Museum Story" />
+        <meta name="twitter:title" content="The Dersim Museum Story" />
         <meta
           name="twitter:image"
           content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
@@ -60,7 +80,7 @@ const Story = () => {
           href="/themes/custom/numiko/favicon.ico"
           type="image/vnd.microsoft.icon"
         />
-        <title>The British Museum Story | British Museum</title>
+        <title>The Dersim Museum Story | Dersim Museum</title>
         <link rel="preconnect" href="https://googletagmanager.com" />
         <link rel="preconnect" href="https://google-analytics.com" />
         <link
@@ -109,7 +129,7 @@ const Story = () => {
         />
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="theme-color" content="#000000" />
-        <meta name="application-name" content="British Museum" />
+        <meta name="application-name" content="Dersim Museum" />
         {/* Facebook domain verification */}
         <meta
           name="facebook-domain-verification"
@@ -532,7 +552,7 @@ const Story = () => {
                             height={750}
                             data-focal-position="center center"
                             src="/images/Story/image-01.jpg"
-                            alt="A colour lithograph showing the view of the British Museum from Great Russell Street"
+                            alt="A colour lithograph showing the view of the Dersim Museum from Great Russell Street"
                           />
                         </picture>
                       </div>
@@ -542,7 +562,7 @@ const Story = () => {
                         <div className="hero__content-container">
                           <h1 id="paragraph-9108-title" className="hero__title">
                             {" "}
-                            The British Museum story
+                            The Dersim Museum story
                           </h1>
                         </div>
                         <div className="hero__controls">
@@ -588,7 +608,7 @@ const Story = () => {
                               </button>
                               <p>
                                 {" "}
-                                The British Museum, print made by Augustus
+                                The Dersim Museum, print made by Augustus
                                 Butler. Lithograph, 1853.
                               </p>
                               <a href="https://www.britishmuseum.org/collection/object/P_1880-1113-4426">
@@ -649,11 +669,11 @@ const Story = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/about-us/british-museum-story"
+                                href="https://www.britishmuseum.org/about-us/dersim-museum-story"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
-                                The British Museum Story
+                                The Dersim Museum Story
                               </a>
                             </li>
                           </ul>
@@ -665,7 +685,7 @@ const Story = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us/british-museum-story"
+                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us/dersim-museum-story"
                               target="_blank"
                               rel="noopener"
                             >
@@ -689,7 +709,7 @@ const Story = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=The%20British%20Museum%20Story&url=https://www.britishmuseum.org/about-us/british-museum-story"
+                              href="https://twitter.com/intent/tweet?text=The%20British%20Museum%20Story&url=https://www.britishmuseum.org/about-us/dersim-museum-story"
                               target="_blank"
                               rel="noopener"
                             >
@@ -736,7 +756,7 @@ const Story = () => {
                                 <div className="section--slice-content__main">
                                   <div className="section--slice-content__wysiwyg wysiwyg">
                                     <p>
-                                      The British Museum was founded in 1753 and
+                                      The Dersim Museum was founded in 1753 and
                                       opened its doors in 1759. It was the first
                                       national museum to cover all fields of
                                       human knowledge, open to visitors from
@@ -764,7 +784,7 @@ const Story = () => {
                                   <div className="paragraph paragraph--type--embedded-media paragraph--view-mode--default">
                                     <div className="media media-embed media-video js-media">
                                       <div
-                                        data-video-embed-field-lazy='<div class="video-embed-field-provider-youtube video-embed-field-responsive-video"><iframe title="YouTube Video (258 years of the British Museum)" width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/NFyclw2pfv0?autoplay=1&amp;start=0&amp;rel=0" data-cookieconsent="marketing"></iframe>
+                                        data-video-embed-field-lazy='<div class="video-embed-field-provider-youtube video-embed-field-responsive-video"><iframe title="YouTube Video (258 years of the Dersim Museum)" width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/NFyclw2pfv0?autoplay=1&amp;start=0&amp;rel=0" data-cookieconsent="marketing"></iframe>
 <div class="wysiwyg cookieconsent-optout-marketing | js-marketing-message ">
     <a href="javascript:Cookiebot.renew()">Please accept marketing cookies to watch this video.</a>
 </div>
@@ -782,7 +802,7 @@ const Story = () => {
                                         />
                                         <button
                                           className="video-embed-field-lazy-play"
-                                          aria-label="258 years of the British Museum - show video"
+                                          aria-label="258 years of the Dersim Museum - show video"
                                         />
                                       </div>
                                       <div>
@@ -826,7 +846,57 @@ const Story = () => {
                                         className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper"
                                         style={{}}
                                       >
-                                        <li
+                                        {posts && posts.length > 0 ? (
+                                          posts.slice(0, 1000).map((post) => (
+                                            <li
+                                              key={post._id}
+                                              className="l-grid__item swiper-slide"
+                                              style={{}}
+                                            >
+                                              <div className="teaser">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyautosizes ls-is-cached lazyloaded"
+                                                        width={750}
+                                                        height={422}
+                                                        data-sizes="auto"
+                                                        data-focal-position="center center"
+                                                        sizes="477px"
+                                                        src={post.image}
+                                                      />
+                                                    </div>
+                                                  </div>
+                                                  <div className="teaser__content">
+                                                    <div className="teaser__content-push">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <span>
+                                                              {post.title}
+                                                            </span>
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <div className="teaser__summary">
+                                                        {post.content}
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                          ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
@@ -841,7 +911,7 @@ const Story = () => {
                                                     height={422}
                                                     data-sizes="auto"
                                                     data-focal-position="center center"
-                                                    alt="Black and white photo of the King's Library at the British Museum."
+                                                    alt="Black and white photo of the King's Library at the Dersim Museum."
                                                     sizes="477px"
                                                     src="/images/Story/image-02.jpg"
                                                   />
@@ -851,13 +921,13 @@ const Story = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="/about-us/british-museum-story/history"
+                                                      href="/about-us/dersim-museum-story/history"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
                                                         <span>History</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -870,8 +940,8 @@ const Story = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li
+                                        </li> */}
+                                        {/* <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
@@ -886,7 +956,7 @@ const Story = () => {
                                                     height={422}
                                                     data-sizes="auto"
                                                     data-focal-position="center center"
-                                                    alt="Ethnographical Galleries (view of Asia Section), British Museum, London, 1908"
+                                                    alt="Ethnographical Galleries (view of Asia Section), Dersim Museum, London, 1908"
                                                     sizes="477px"
                                                     src="/images/Story/image-03.jpg"
                                                   />
@@ -896,7 +966,7 @@ const Story = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="/about-us/british-museum-story/collecting-histories"
+                                                      href="/about-us/dersim-museum-story/collecting-histories"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -904,11 +974,11 @@ const Story = () => {
                                                           Collecting histories
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
-                                                    Discover how the British
+                                                    Discover how the Dersim
                                                     Museum's collection has
                                                     grown in many ways over the
                                                     past three centuries.
@@ -943,7 +1013,7 @@ const Story = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="/about-us/british-museum-story/architecture"
+                                                      href="/about-us/dersim-museum-story/architecture"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -951,11 +1021,11 @@ const Story = () => {
                                                           Architecture
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
-                                                    The British Museum's
+                                                    The Dersim Museum's
                                                     buildings are of national
                                                     importance, discover their
                                                     story.
@@ -964,7 +1034,7 @@ const Story = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -1026,7 +1096,7 @@ const Story = () => {
                               </div>
                             </div>
                           </section>
-                          <section
+                          {/* <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
                             aria-labelledby="paragraph-10135-title"
                           >
@@ -1075,7 +1145,7 @@ const Story = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="/about-us/british-museum-story/sir-hans-sloane"
+                                                      href="/about-us/dersim-museum-story/sir-hans-sloane"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1083,7 +1153,6 @@ const Story = () => {
                                                           Sir Hans Sloane
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1121,7 +1190,7 @@ const Story = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="/about-us/british-museum-story/people-behind-collection"
+                                                      href="/about-us/dersim-museum-story/people-behind-collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1130,7 +1199,6 @@ const Story = () => {
                                                           collection
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1169,7 +1237,7 @@ const Story = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="/about-us/british-museum-story/contested-objects-collection"
+                                                      href="/about-us/dersim-museum-story/contested-objects-collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1178,7 +1246,6 @@ const Story = () => {
                                                           the collection
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1252,7 +1319,7 @@ const Story = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section> */}
                           <section
                             className="paragraph paragraph--type--slice-banner paragraph--view-mode--default section section--slice-banner section--maintain-spacer-top section--bg-white banner"
                             aria-labelledby="paragraph-12857-title"
@@ -1271,12 +1338,12 @@ const Story = () => {
                                   <div className="banner__content">
                                     <p>
                                       Stay connected and receive all our latest
-                                      news, stories and ways to visit the
-                                      British Museum from home.
+                                      news, stories and ways to visit the Dersim
+                                      Museum from home.
                                     </p>
                                     <div className="banner__button-container">
                                       <a
-                                        href="https://emails.britishmuseum.org/k/British-Museum/sign_up_form_from_website_box"
+                                        href="https://emails.britishmuseum.org/k/Dersim-Museum/sign_up_form_from_website_box"
                                         className="button button--chevron external-link"
                                         data-tracking="cta"
                                         target="_blank"
@@ -1326,7 +1393,7 @@ const Story = () => {
                                           height={422}
                                           data-sizes="auto"
                                           data-focal-position="center center"
-                                          alt="Visitors standing in the Great Court at the British Museum"
+                                          alt="Visitors standing in the Great Court at the Dersim Museum"
                                           sizes="477px"
                                           src="/images/Story/image-08.jpg"
                                         />
@@ -1346,7 +1413,7 @@ const Story = () => {
                                           </a>
                                         </h3>
                                         <div className="teaser__summary">
-                                          At the centre of the British Museum is
+                                          At the centre of the Dersim Museum is
                                           the Great Court, the largest covered
                                           public square in Europe.
                                         </div>
@@ -1381,7 +1448,7 @@ const Story = () => {
                                       <div className="teaser__content-push">
                                         <h3 className="teaser__title">
                                           <a
-                                            href="/about-us/british-museum-story/architecture/reading-room"
+                                            href="/about-us/dersim-museum-story/architecture/reading-room"
                                             className="teaser__anchor"
                                           >
                                             <span>
@@ -1437,7 +1504,7 @@ const Story = () => {
                                         </h3>
                                         <div className="teaser__summary">
                                           There are more than 60 free galleries
-                                          at the British Museum ready to be
+                                          at the Dersim Museum ready to be
                                           explored.
                                         </div>
                                       </div>
@@ -1457,7 +1524,7 @@ const Story = () => {
                                           height={422}
                                           data-sizes="auto"
                                           data-focal-position="bottom center"
-                                          alt="Front of British Museum during the day."
+                                          alt="Front of Dersim Museum during the day."
                                           sizes="477px"
                                           src="/images/Story/image-11.webp"
                                         />
@@ -1477,7 +1544,7 @@ const Story = () => {
                                           </a>
                                         </h3>
                                         <div className="teaser__summary">
-                                          Find out how the British Museum
+                                          Find out how the Dersim Museum
                                           maintains and protects its worldwide
                                           collection.
                                         </div>
