@@ -415,16 +415,6 @@ const Projects = () => {
           >
             Skip to main content
           </a>
-          {/* No JS Warning */}
-          <noscript>
-            &lt;div class="alert alert--warning" role="alert" style="display:
-            block;"&gt; &lt;div class="container"&gt; &lt;div
-            class="alert__inner"&gt; &lt;div class="alert__content"&gt;
-            &lt;p&gt;Please enable JavaScript in your web browser to get the
-            best experience.&lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
-            &lt;/div&gt;
-          </noscript>
-          {/* End of No JS Warning */}
           <div
             className="dialog-off-canvas-main-canvas"
             data-off-canvas-main-canvas
