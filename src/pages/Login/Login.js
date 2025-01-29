@@ -41,9 +41,13 @@ export default function Login() {
     try {
       dispatch(signInStart());
 
-      const res = await axios.post(`${URL}/api/auth/signin`, formData, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axios.post(
+        `https://dersim-new-blog-backend.vercel.app/api/auth/signin`,
+        formData,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
 
       const data = res.data;
 
