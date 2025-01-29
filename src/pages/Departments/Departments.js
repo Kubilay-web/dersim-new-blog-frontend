@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const Departments = () => {
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Departments";
+    const category2 = "Across the Museum";
+
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+  }, []);
+
   return (
     <div>
       <div>
@@ -725,7 +748,53 @@ const Departments = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--4-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
+                                        {posts && posts.length > 0 ? (
+                                          posts.slice(0, 1000).map((post) => (
+                                            <li
+                                              key={post._id}
+                                              className="l-grid__item swiper-slide"
+                                            >
+                                              <div className="teaser">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyload"
+                                                        width={750}
+                                                        height={422}
+                                                        src={post.image}
+                                                      />
+                                                    </div>
+                                                  </div>
+                                                  <div className="teaser__content">
+                                                    <div className="teaser__content-push">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <span>
+                                                              {post.title}
+                                                            </span>
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <div className="teaser__summary">
+                                                        {post.content}
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                          ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -752,7 +821,6 @@ const Departments = () => {
                                                           the Americas
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -766,8 +834,8 @@ const Departments = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -791,7 +859,6 @@ const Departments = () => {
                                                       <span>
                                                         <span>Asia</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -834,7 +901,6 @@ const Departments = () => {
                                                           Prehistory
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -875,7 +941,6 @@ const Departments = () => {
                                                           Egypt and Sudan
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -890,7 +955,7 @@ const Departments = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                   </div>{" "}
@@ -898,7 +963,7 @@ const Departments = () => {
                               </div>
                             </div>
                           </section>
-                          <section
+                          {/* <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-white"
                             aria-labelledby="paragraph-8572-title"
                           >
@@ -944,7 +1009,6 @@ const Departments = () => {
                                                           Greece and Rome
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -982,7 +1046,6 @@ const Departments = () => {
                                                       <span>
                                                         <span>Middle East</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1024,7 +1087,6 @@ const Departments = () => {
                                                           Money and Medals
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1065,7 +1127,6 @@ const Departments = () => {
                                                           Prints and Drawings
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1087,7 +1148,7 @@ const Departments = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section> */}
                           <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-white"
                             aria-labelledby="paragraph-9617-title"
@@ -1108,7 +1169,55 @@ const Departments = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
+                                        {posts2 && posts2.length > 0 ? (
+                                          posts2
+                                            .slice(0, 1000)
+                                            .map((post2, index) => (
+                                              <li
+                                                key={post2._id}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post2.image}
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                    <div className="teaser__content">
+                                                      <div className="teaser__content-push">
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href={post2.slug}
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              <span>
+                                                                {post2.title}
+                                                              </span>
+                                                            </span>
+                                                          </a>
+                                                        </h3>
+                                                        <div className="teaser__summary">
+                                                          {post2.content}
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1134,7 +1243,6 @@ const Departments = () => {
                                                           Collection Care
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1147,8 +1255,8 @@ const Departments = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
+                                        </li> */}
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1174,7 +1282,6 @@ const Departments = () => {
                                                           Scientific Research
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1216,7 +1323,6 @@ const Departments = () => {
                                                           Human remains
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1231,7 +1337,7 @@ const Departments = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">
@@ -1313,7 +1419,6 @@ const Departments = () => {
                                                       <span>
                                                         <span>Study rooms</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1352,7 +1457,6 @@ const Departments = () => {
                                                           Search the collection{" "}
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1393,7 +1497,6 @@ const Departments = () => {
                                                           Museum objects
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1433,7 +1536,6 @@ const Departments = () => {
                                                       <span>
                                                         <span>Galleries</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
