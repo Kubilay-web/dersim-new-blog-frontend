@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 
 const Hire = () => {
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Commercial hire";
+
+    fetchPosts(category1, setPosts);
+  }, []);
+
   return (
     <div>
       <div>
@@ -883,7 +903,7 @@ const Hire = () => {
                               </div>
                             </div>
                           </section>
-                          <section
+                          {/* <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-white"
                             aria-labelledby="paragraph-5048-title"
                           >
@@ -900,97 +920,10 @@ const Hire = () => {
                                   >
                                     Spaces available
                                   </h2>
-                                  <div className="carousel-container | js-carousel-container">
-                                    <div
-                                      className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
-                                      data-items-length={2}
-                                      data-slides-to-show={2}
-                                    >
-                                      <ul className="l-grid l-grid--2-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Hire/image-01.webp"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/commercial/commercial-hire/bp-lecture-theatre"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          BP Lecture Theatre
-                                                        </span>
-                                                      </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Capacity: 323. Ideal for
-                                                    conferences, AGMs and
-                                                    presentations.
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li className="l-grid__item swiper-slide">
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyload"
-                                                    width={750}
-                                                    height={422}
-                                                    src="/images/Hire/image-02.webp"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/commercial/commercial-hire/stevenson-lecture-theatre"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          The Stevenson Lecture
-                                                          Theatre
-                                                        </span>
-                                                      </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Capacity: 142
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>{" "}
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section> */}
                           <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-white"
                             aria-labelledby="paragraph-5138-title"
@@ -1011,7 +944,53 @@ const Hire = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        <li className="l-grid__item swiper-slide">
+                                        {posts && posts.length > 0 ? (
+                                          posts.slice(0, 1000).map((post) => (
+                                            <li
+                                              key={post._id}
+                                              className="l-grid__item swiper-slide"
+                                            >
+                                              <div className="teaser">
+                                                <div className="teaser__wrapper">
+                                                  <div className="teaser__image-container">
+                                                    <div className="media media-teaser_landscape media-image js-media">
+                                                      <img
+                                                        loading="eager"
+                                                        className="lazyload"
+                                                        width={750}
+                                                        height={422}
+                                                        src={post.image}
+                                                      />
+                                                    </div>
+                                                  </div>
+                                                  <div className="teaser__content">
+                                                    <div className="teaser__content-push">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <span>
+                                                              {post.title}
+                                                            </span>
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <div className="teaser__summary">
+                                                        {post.content}
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </li>
+                                          ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
+
+                                        {/* <li className="l-grid__item swiper-slide">
                                           <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
@@ -1037,7 +1016,6 @@ const Hire = () => {
                                                           East and West foyers
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1076,7 +1054,6 @@ const Hire = () => {
                                                           Claus Moser Room
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1114,7 +1091,6 @@ const Hire = () => {
                                                           Rooms A and B
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -1125,7 +1101,7 @@ const Hire = () => {
                                               </div>
                                             </div>
                                           </div>
-                                        </li>
+                                        </li> */}
                                       </ul>
                                     </div>
                                     <div className="carousel__nav-container carousel__nav-container--inline-buttons">

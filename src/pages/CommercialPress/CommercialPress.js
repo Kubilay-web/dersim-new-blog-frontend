@@ -1063,7 +1063,7 @@ const CommercialPress = () => {
                             </div>
                           </section>
                           <div className="spacer spacer--small-divider" />
-                          <section
+                          {/* <section
                             className="section--bg-white paragraph paragraph--type--slice-shop paragraph--view-mode--default section section--slice-shop section--z-index-scope section--has-carousel"
                             aria-labelledby="paragraph-9460-title"
                           >
@@ -1304,7 +1304,7 @@ const CommercialPress = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section> */}
                         </div>
                       </div>
                     </div>
