@@ -16555,48 +16555,49 @@
             (t = !1), i();
           }),
           document.addEventListener("DOMContentLoaded", function () {
-            // İlerleme göstergesini ekleme fonksiyonu
+            const progressIndicator =
+              document.getElementById("progress-indicator");
+
+            // Yükleme göstergesini göster
             function showProgressIndicator() {
-              // Tam ekran bir ilerleme göstergesi oluşturuyoruz
-              const progressIndicator = document.createElement("div");
-              progressIndicator.style.position = "fixed";
-              progressIndicator.style.top = "0";
-              progressIndicator.style.left = "0";
-              progressIndicator.style.width = "100%";
-              progressIndicator.style.height = "100%";
-              progressIndicator.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-              progressIndicator.style.zIndex = "9999";
-              progressIndicator.innerHTML =
-                '<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white;">Yükleniyor...</div>';
-
-              document.body.appendChild(progressIndicator);
+              progressIndicator.style.display = "flex";
             }
 
-            // İlerleme göstergesini kaldırma fonksiyonu
+            // Yükleme göstergesini gizle
             function hideProgressIndicator() {
-              const progressIndicator = document.querySelector(
-                'div[style*="z-index: 9999"]'
-              );
-              if (progressIndicator) {
-                progressIndicator.remove();
-              }
+              progressIndicator.style.display = "none";
             }
 
-            // AJAX işlemi simülasyonu (gerçek AJAX isteği ile değiştirebilirsiniz)
-            function simulateAjaxRequest() {
-              showProgressIndicator(); // İlerleme göstergesini ekle
+            // Ajax isteği başlatma
+            function sendAjaxRequest(url, method = "GET") {
+              showProgressIndicator(); // Yükleme göstergesini göster
 
-              // 3 saniye bekleyip ilerleme göstergesini kaldırıyoruz
-              setTimeout(function () {
-                hideProgressIndicator(); // İlerleme göstergesini kaldır
-              }, 3000); // 3 saniye sonra AJAX işleminin bittiğini varsayalım
+              const xhr = new XMLHttpRequest();
+              xhr.open(method, url, true);
+              xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                  // Ajax isteği başarılı oldu
+                  console.log(xhr.responseText);
+                } else {
+                  // Hata durumu
+                  console.error("Ajax request failed: " + xhr.statusText);
+                }
+                hideProgressIndicator(); // Yükleme göstergesini gizle
+              };
+              xhr.onerror = function () {
+                // Hata durumu
+                console.error("Ajax request failed");
+                hideProgressIndicator(); // Yükleme göstergesini gizle
+              };
+              xhr.send();
             }
 
-            // AJAX işlemi başlatmak için örnek bir buton
-            const ajaxButton = document.getElementById("ajaxButton");
-            if (ajaxButton) {
-              ajaxButton.addEventListener("click", simulateAjaxRequest);
-            }
+            // Örnek bir Ajax isteği, bir butona tıklama ile başlatılacak
+            document
+              .getElementById("load-data-btn")
+              .addEventListener("click", function () {
+                sendAjaxRequest("https://jsonplaceholder.typicode.com/posts");
+              });
           });
       },
       2819: () => {
@@ -21718,27 +21719,31 @@
           },
         }),
         document.addEventListener("DOMContentLoaded", function () {
-          // Tüm dropdown öğelerini seçiyoruz
-          var dropdownItems = document.querySelectorAll(".js-dropdown-item");
+          // Bütün .js-dropdown-item öğelerini seçiyoruz
+          const dropdownItems = document.querySelectorAll(".js-dropdown-item");
 
-          // Her bir dropdown öğesi üzerinde işlem yapıyoruz
+          // Her bir öğeye tıklama olayını ekliyoruz
           dropdownItems.forEach(function (item) {
-            // 'item' üzerinde işlemler yapmadan önce, en yakın .js-dropdown-item öğesini arıyoruz
-            var closestDropdownItem = item.closest(".js-dropdown-item");
+            item.addEventListener("click", function (e) {
+              // 'e' olayını kullanarak hedef öğeyi alıyoruz
+              const closestDropdownItem = e.target.closest(".js-dropdown-item");
 
-            // Eğer en yakın öğe bulunduysa (null değilse), lr fonksiyonu çalıştırılabilir
-            if (closestDropdownItem) {
-              // lr fonksiyonunu çağırıyoruz
-              lr(sr, closestDropdownItem); // Bu kısımda 'sr' ve 'lr' ne anlama geliyorsa, burada işlem yapılacak
-            }
+              // closestDropdownItem bulunmuşsa (null değilse)
+              if (closestDropdownItem) {
+                // lr(sr, (or = closestDropdownItem)) fonksiyonunu simüle ediyoruz
+                // Burada sadece örnek olarak, en yakın öğeyi konsola yazdırıyoruz
+                console.log(
+                  "Tıklanan en yakın .js-dropdown-item öğesi:",
+                  closestDropdownItem
+                );
+
+                // Burada, lr(sr, (or = closestDropdownItem)) fonksiyonunun yerini alacak işlem yapılabilir
+                // Örneğin: closestDropdownItem.style.backgroundColor = "lightgray";
+              }
+            });
           });
         });
 
-      // lr fonksiyonu (bu kısmı ihtiyaca göre özelleştirebilirsiniz)
-      function lr(sr, or) {
-        // Burada 'lr' fonksiyonu ne yapıyorsa, onu burada gerçekleştirebilirsiniz.
-        console.log("lr fonksiyonu çalıştı!", sr, or);
-      }
       var dr = t()(".js-button-menu"),
         cr = t()(".js-menu-container"),
         pr = "-is-active",

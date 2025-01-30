@@ -163,9 +163,6 @@ const PostManage = () => {
               <th>Başlık</th>
               <th>İçerik</th>
               <th>Kategori</th>
-              <th>Etkinlik</th>
-              <th>Tarih</th>
-              <th>Fiyat</th>
               <th>İşlemler</th>
             </tr>
           </thead>
@@ -175,9 +172,6 @@ const PostManage = () => {
                 <td>{post.title}</td>
                 <td>{post.content.slice(0, 50)}...</td>
                 <td>{post.category}</td>
-                <td>{post.event}</td>
-                <td>{new Date(post.date).toLocaleDateString()}</td>
-                <td>{post.price}</td>
                 <td>
                   <Button
                     variant="warning"
