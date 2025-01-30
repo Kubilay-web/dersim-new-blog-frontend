@@ -43,6 +43,32 @@ const Exhibition = () => {
     fetchPosts(category7, setPosts7);
   }, []);
 
+  const [postsAll, setPostsAll] = useState([]); // Tüm postları saklayacağımız state
+  const [selectedCategory, setSelectedCategory] = useState(""); // Seçilen kategoriyi takip eden state
+
+  // Kategorilere ait tüm postları çeken fonksiyon
+  const fetchPostsAll = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/post/getPosts");
+      const data = await res.json();
+      setPostsAll(data.posts); // Gelen veriyi state'e kaydet
+    } catch (error) {
+      console.error("Failed to fetch posts:", error);
+    }
+  };
+
+  // useEffect ile tüm postları çekiyoruz
+  useEffect(() => {
+    fetchPostsAll();
+  }, []);
+
+  // Seçilen kategoriye göre filtreleme işlemi
+  const filteredPosts = selectedCategory
+    ? postsAll.filter(
+        (post) => post.category.toLowerCase() === selectedCategory.toLowerCase() // Kategoriyi karşılaştır ve filtrele
+      )
+    : []; // Eğer kategori seçilmemişse, hiç bir post gösterme (boş dizi döndür)
+
   return (
     <div>
       <div>
@@ -103,12 +129,6 @@ const Exhibition = () => {
           media="print"
           href="css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -1524,7 +1544,134 @@ const Exhibition = () => {
                                           </div>
                                         </div>
                                       </li>
+
                                       <li
+                                        className="facet-inactive block-facet--links filters__filter | js-dropdown-container"
+                                        id="block-events-exhibitions-what"
+                                      >
+                                        <button
+                                          type="button"
+                                          className="filters__filter-tab | js-dropdown-button"
+                                          data-facet-key="what"
+                                          id="dropdown-block-events-exhibitions-what"
+                                          aria-expanded="false"
+                                          aria-controls="dropdown-content-block-events-exhibitions-what"
+                                        >
+                                          <span>What</span>
+                                          <svg
+                                            className="icon icon--chevron"
+                                            role="presentation"
+                                            focusable="false"
+                                            aria-hidden="true"
+                                          >
+                                            <use xlinkHref="#sprite-icon-chevron" />
+                                          </svg>
+                                        </button>
+                                        <div
+                                          className="filters__panel | js-dropdown-item"
+                                          id="dropdown-content-block-events-exhibitions-what"
+                                          aria-hidden="true"
+                                          aria-labelledby="dropdown-block-events-exhibitions-what"
+                                        >
+                                          <div className="facets-widget-links">
+                                            <ul
+                                              data-drupal-facet-id="events_exhibitions_what"
+                                              data-drupal-facet-alias="events_exhibitions_what"
+                                              className="facet-inactive js-facets-links item-list__links"
+                                            >
+                                              <li className="facet-item">
+                                                <a
+                                                  href="#"
+                                                  onClick={() =>
+                                                    setSelectedCategory(
+                                                      "Special exhibitions"
+                                                    )
+                                                  }
+                                                  data-drupal-facet-item-id="events-exhibitions-what-355"
+                                                >
+                                                  <span>
+                                                    <span className="facet-item__value">
+                                                      Special exhibitions
+                                                    </span>
+                                                  </span>
+                                                </a>
+                                              </li>
+                                              <li className="facet-item">
+                                                <a
+                                                  href="#"
+                                                  onClick={() =>
+                                                    setSelectedCategory(
+                                                      "Free exhibitions and displays"
+                                                    )
+                                                  }
+                                                  data-drupal-facet-item-id="events-exhibitions-what-451"
+                                                >
+                                                  <span>
+                                                    <span className="facet-item__value">
+                                                      Free exhibitions and
+                                                      displays
+                                                    </span>
+                                                  </span>
+                                                </a>
+                                              </li>
+                                              <li className="facet-item">
+                                                <a
+                                                  href="#"
+                                                  onClick={() =>
+                                                    setSelectedCategory(
+                                                      "Gallery talks & tours"
+                                                    )
+                                                  }
+                                                  data-drupal-facet-item-id="events-exhibitions-what-126"
+                                                >
+                                                  <span>
+                                                    <span className="facet-item__value">
+                                                      Gallery talks & tours
+                                                    </span>
+                                                  </span>
+                                                </a>
+                                              </li>
+                                              <li className="facet-item">
+                                                <a
+                                                  href="#"
+                                                  onClick={() =>
+                                                    setSelectedCategory(
+                                                      "Accessible event"
+                                                    )
+                                                  }
+                                                  data-drupal-facet-item-id="events-exhibitions-what-375"
+                                                >
+                                                  <span>
+                                                    <span className="facet-item__value">
+                                                      Accessible event
+                                                    </span>
+                                                  </span>
+                                                </a>
+                                              </li>
+                                              <li className="facet-item">
+                                                <a
+                                                  href="#"
+                                                  onClick={() =>
+                                                    setSelectedCategory(
+                                                      "Lectures & discussions"
+                                                    )
+                                                  }
+                                                  data-drupal-facet-item-id="events-exhibitions-what-153"
+                                                >
+                                                  <span>
+                                                    <span className="facet-item__value">
+                                                      Lectures & discussions
+                                                    </span>
+                                                  </span>
+                                                </a>
+                                              </li>
+                                              {/* Add other filter options as needed */}
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </li>
+
+                                      {/* <li
                                         className="facet-inactive block-facet--links filters__filter | js-dropdown-container"
                                         id="block-events-exhibitions-what"
                                       >
@@ -1796,13 +1943,147 @@ const Exhibition = () => {
                                             </ul>
                                           </div>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </header>
+
+                          <section
+                            className="section--bg-black paragraph paragraph--type--slice-exhibition-promo paragraph--view-mode--default section section--slice-exhibition-promo section--z-index-scope section--has-carousel"
+                            aria-labelledby="paragraph-116-title"
+                          >
+                            <div className="container">
+                              <div className="section__inner">
+                                <div className="teaser-listing__container">
+                                  <h2
+                                    id="paragraph-116-title"
+                                    className="section__title teaser-listing__title"
+                                  >
+                                    Search
+                                  </h2>
+                                  <div className="carousel-container | js-carousel-container">
+                                    <div
+                                      className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
+                                      data-items-length={3}
+                                      data-slides-to-show={2}
+                                    >
+                                      <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
+                                        {filteredPosts &&
+                                        filteredPosts.length > 0 ? (
+                                          filteredPosts
+                                            .slice(0, 1000) // Max 1000 postu göster
+                                            .map((post) => (
+                                              <li
+                                                key={post._id}
+                                                style={{
+                                                  "--post-color": post.color,
+                                                }}
+                                                className="l-grid__item swiper-slide"
+                                              >
+                                                <div className="teaser teaser--exhibition teaser--exhibition-5204">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser__content">
+                                                      <h3 className="teaser__title">
+                                                        <a
+                                                          href={post.slug}
+                                                          className="teaser__anchor"
+                                                        >
+                                                          <span>
+                                                            <strong>
+                                                              {post.title}
+                                                            </strong>
+                                                          </span>
+                                                          <span className="visually-hidden">
+                                                            . Book now .
+                                                          </span>
+                                                        </a>
+                                                      </h3>
+                                                      <footer className="teaser__footer">
+                                                        <ul className="teaser__meta teaser__meta--footer">
+                                                          <li className="teaser__meta-item">
+                                                            <span>
+                                                              {post.category}
+                                                            </span>
+                                                          </li>
+                                                          <li className="teaser__meta-item">
+                                                            <span className="date-display-range">
+                                                              {post.content}
+                                                            </span>
+                                                          </li>
+                                                        </ul>
+                                                        <div
+                                                          className="teaser__defacer"
+                                                          aria-hidden="true"
+                                                        >
+                                                          Book now
+                                                        </div>
+                                                      </footer>
+                                                    </div>
+                                                    <div className="teaser__image-container">
+                                                      <div className="media media-teaser_landscape media-image js-media">
+                                                        <img
+                                                          loading="eager"
+                                                          className="lazyload"
+                                                          width={750}
+                                                          height={422}
+                                                          src={post.image}
+                                                        />
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p
+                                            style={{
+                                              margin: "auto",
+                                              paddingTop: "20px",
+                                            }}
+                                          >
+                                            No posts available
+                                          </p>
+                                        )}
+                                      </ul>
+                                    </div>
+                                    <div className="carousel__nav-container carousel__nav-container--inline-buttons">
+                                      <button
+                                        aria-label="Previous slide"
+                                        className="carousel__nav carousel__nav--prev | js-carousel-prev"
+                                      >
+                                        <svg
+                                          className="icon icon--chevron icon--chevron-small"
+                                          role="presentation"
+                                          focusable="false"
+                                          aria-hidden="true"
+                                        >
+                                          <use xlinkHref="#sprite-icon-chevron" />
+                                        </svg>
+                                      </button>
+                                      <div className="carousel__pagination | js-pagination-dots" />
+                                      <button
+                                        aria-label="Next slide"
+                                        className="carousel__nav carousel__nav--next | js-carousel-next"
+                                      >
+                                        <svg
+                                          className="icon icon--chevron icon--chevron-small"
+                                          role="presentation"
+                                          focusable="false"
+                                          aria-hidden="true"
+                                        >
+                                          <use xlinkHref="#sprite-icon-chevron" />
+                                        </svg>
+                                      </button>
+                                    </div>
+                                  </div>{" "}
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+
                           <section
                             className="section--bg-black paragraph paragraph--type--slice-exhibition-promo paragraph--view-mode--default section section--slice-exhibition-promo section--z-index-scope section--has-carousel"
                             aria-labelledby="paragraph-116-title"
