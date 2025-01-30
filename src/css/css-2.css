@@ -13637,3 +13637,33 @@
 .teaser.teaser--exhibition.teaser--exhibition-5204 {
   background-color: var(--post-color);
 }
+
+.swiper-wrapper {
+  margin: auto !important;
+}
+
+/* Change color of the navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important; /* Set the color to any desired color (e.g., orange) */
+  background-color: transparent; /* Optional: make background transparent */
+  border-radius: 50%; /* Optional: round the arrows */
+}
+
+/* Optional: Change color when the arrow is hovered */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #f0f0f0 !important; /* Change color when hovered (e.g., yellow) */
+}
+
+.swiper-slide.swiper-slide-next {
+  margin: 10px !important;
+}
+
+.swiper-slide.wiper-slide-active {
+  margin: 10px !important;
+}
+
+.swiper-slide {
+  margin: 0px !important;
+}
