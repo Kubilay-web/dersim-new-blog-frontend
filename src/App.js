@@ -79,6 +79,7 @@ import Admonitions from "./pages/Admonitions/Admonitions";
 import ExhibitionEvents from "./pages/ExhibitionEvents/ExhibitionEvents";
 import VisitMember from "./pages/VisitMember/VisitMember";
 import Admin from "./pages/Admin/Admin";
+import PrivateRoute from "./PrivateRoute";
 import Masterplan from "./pages/Masterplan/Masterplan";
 import BlogDetail from "./components/BlogDetail/BlogDetail";
 
@@ -253,7 +254,13 @@ function App() {
           element={<VisitMember />}
         />
 
-        <Route path="/admin" element={<Admin />} />
+        {/* <Route path="/admin" element={<Admin />} /> */}
+
+        <Route
+          path="/admin"
+          element={<PrivateRoute element={<Admin />} />} // PrivateRoute ile Admin sayfası korunuyor
+        />
+
         <Route path="/about-us/masterplan" element={<Masterplan />} />
 
         <Route path="/blog/:slug" element={<BlogDetail />} />
