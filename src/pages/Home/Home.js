@@ -6,13 +6,6 @@ import Footer from "../../components/Footer/Footer";
 import { useGetAllProductsQuery } from "../../redux/products/productsApi";
 import { Helmet } from "react-helmet";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const [isOpen, setIsOpen] = useState(false);
@@ -1582,59 +1575,56 @@ const Home = () => {
                                     </svg>
                                   </a>
                                   <div className="carousel-container | js-carousel-container">
-                                    <div className="carousel carousel--main swiper-container | js-carousel-main">
+                                    <div
+                                      className="carousel carousel--main swiper-container | js-carousel-main"
+                                      data-slides-to-show={3}
+                                    >
                                       <ul className="swiper-wrapper">
-                                        <Swiper
-                                          modules={[Navigation, Pagination]} // Specify the modules you're using
-                                          spaceBetween={50} // Space between slides
-                                          slidesPerView={3} // Number of slides to show at once
-                                          loop={false} // Infinite looping of slides
-                                          navigation // Enable navigation arrows
-                                          pagination={{ clickable: true }} // Enable clickable pagination
-                                        >
-                                          {posts5 && posts5.length > 0 ? (
-                                            posts5
-                                              .slice(0, 1000)
-                                              .map((post5) => (
-                                                <SwiperSlide key={post5._id}>
-                                                  <div className="teaser teaser--animate | js-teaser-animate">
-                                                    <div className="teaser__wrapper">
-                                                      <div className="teaser--animate__container">
-                                                        <div className="teaser__content">
-                                                          <h3 className="teaser__title">
-                                                            <a
-                                                              href={post5.slug}
-                                                              className="teaser__anchor"
-                                                            >
-                                                              <span>
-                                                                {post5.title}
-                                                              </span>
-                                                              <span className="visually-hidden">
-                                                                Read more
-                                                              </span>
-                                                            </a>
-                                                          </h3>
-                                                        </div>
-                                                        <div className="teaser--animate__image">
-                                                          <div className="media media-discover media-image js-media">
-                                                            <img
-                                                              className="image-style"
-                                                              loading="lazy"
-                                                              src={post5.image}
-                                                              width={286}
-                                                              height={425}
-                                                            />
-                                                          </div>
+                                        {posts5 && posts5.length > 0 ? (
+                                          posts5
+                                            .slice(0, 1000)
+                                            .map((post5, index) => (
+                                              <li
+                                                key={post5._id}
+                                                className="swiper-slide teaser--animate-slide"
+                                              >
+                                                <div className="teaser teaser--animate | js-teaser-animate">
+                                                  <div className="teaser__wrapper">
+                                                    <div className="teaser--animate__container">
+                                                      <div className="teaser__content">
+                                                        <h3 className="teaser__title">
+                                                          <a
+                                                            href={post5.slug}
+                                                            className="teaser__anchor"
+                                                          >
+                                                            <span>
+                                                              {post5.title}
+                                                            </span>
+                                                            <span className="visually-hidden">
+                                                              Read more
+                                                            </span>
+                                                          </a>
+                                                        </h3>
+                                                      </div>
+                                                      <div className="teaser--animate__image">
+                                                        <div className="media media-discover media-image js-media">
+                                                          <img
+                                                            className="image-style"
+                                                            loading="lazy"
+                                                            src={post5.image}
+                                                            width={286}
+                                                            height={425}
+                                                          />
                                                         </div>
                                                       </div>
                                                     </div>
                                                   </div>
-                                                </SwiperSlide>
-                                              ))
-                                          ) : (
-                                            <p>No posts available</p>
-                                          )}
-                                        </Swiper>
+                                                </div>
+                                              </li>
+                                            ))
+                                        ) : (
+                                          <p>No posts available</p>
+                                        )}
 
                                         {/* <li className="swiper-slide teaser--animate-slide">
                                           <div className="teaser teaser--animate | js-teaser-animate">

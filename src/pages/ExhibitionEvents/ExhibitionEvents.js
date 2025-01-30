@@ -56,12 +56,6 @@ const ExhibitionEvents = () => {
           media="print"
           href="/sites/default/files/css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css?delta=1&language=en&theme=numiko&include=eJxtjm0KAyEMRC_kx5GWuEk1rKtiYsXbd2lhC6V_BuY9GEaWKJ0-gJAp4-Sj-phrgGxFV-YSf-neuanYRIDU_0vToEPs0JJ47KNBdl_iRmkjZJZEaJ5MU_w73VlxZDIzgcpWy6YVYfkwCl70ATvpvfZp7rp32MkYSV9cPk2l"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"

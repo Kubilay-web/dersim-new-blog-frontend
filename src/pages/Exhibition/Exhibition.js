@@ -3084,7 +3084,7 @@ const Exhibition = () => {
                               <a
                                 className="js-jump-link-anchor"
                                 id="uk-touring-exhibitions"
-                              />{" "}
+                              />
                               <div className="section__inner">
                                 <div className="teaser-listing__container">
                                   <h2
@@ -3123,6 +3123,9 @@ const Exhibition = () => {
                                               <li
                                                 key={post5._id}
                                                 className="l-grid__item swiper-slide"
+                                                style={{
+                                                  "--post-color": post5.color,
+                                                }}
                                               >
                                                 <div className="teaser teaser--exhibition teaser--exhibition-5330">
                                                   <div className="teaser__wrapper">
@@ -3381,6 +3384,9 @@ const Exhibition = () => {
                                               <li
                                                 key={post6._id}
                                                 className="l-grid__item swiper-slide"
+                                                style={{
+                                                  "--post-color": post6.color,
+                                                }}
                                               >
                                                 <div className="teaser teaser--exhibition teaser--exhibition-2719">
                                                   <div className="teaser__wrapper">
