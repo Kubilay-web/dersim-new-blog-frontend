@@ -49,7 +49,9 @@ const Exhibition = () => {
   // Kategorilere ait tüm postları çeken fonksiyon
   const fetchPostsAll = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/post/getPosts");
+      const res = await fetch(
+        "https://dersim-new-blog-backend.vercel.app/api/post/getPosts"
+      );
       const data = await res.json();
       setPostsAll(data.posts); // Gelen veriyi state'e kaydet
     } catch (error) {
@@ -160,15 +162,6 @@ const Exhibition = () => {
           name="facebook-domain-verification"
           content="8rxgufrjnmm08rnfosf5ers9d1q7a5"
         />
-        {/* End Facebook domain verification */}
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          &lt;iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MW5VCK"
-          height="0" width="0"
-          style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1581,7 +1574,6 @@ const Exhibition = () => {
                                             >
                                               <li className="facet-item">
                                                 <a
-                                                  href="#"
                                                   onClick={() =>
                                                     setSelectedCategory(
                                                       "Special exhibitions"
@@ -1598,7 +1590,6 @@ const Exhibition = () => {
                                               </li>
                                               <li className="facet-item">
                                                 <a
-                                                  href="#"
                                                   onClick={() =>
                                                     setSelectedCategory(
                                                       "Free exhibitions and displays"
@@ -1616,7 +1607,6 @@ const Exhibition = () => {
                                               </li>
                                               <li className="facet-item">
                                                 <a
-                                                  href="#"
                                                   onClick={() =>
                                                     setSelectedCategory(
                                                       "Gallery talks & tours"
@@ -1633,7 +1623,6 @@ const Exhibition = () => {
                                               </li>
                                               <li className="facet-item">
                                                 <a
-                                                  href="#"
                                                   onClick={() =>
                                                     setSelectedCategory(
                                                       "Accessible event"
@@ -1650,7 +1639,6 @@ const Exhibition = () => {
                                               </li>
                                               <li className="facet-item">
                                                 <a
-                                                  href="#"
                                                   onClick={() =>
                                                     setSelectedCategory(
                                                       "Lectures & discussions"

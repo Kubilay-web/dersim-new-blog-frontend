@@ -750,7 +750,7 @@ const Home = () => {
                                               className="l-grid__item swiper-slide"
                                               style={{
                                                 "--post-color": post.color,
-                                              }} // Renk burada dinamik olarak geçiliyor
+                                              }}
                                             >
                                               <div className="teaser teaser--exhibition">
                                                 <div className="teaser__wrapper">

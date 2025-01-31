@@ -46,6 +46,7 @@ export default function Login() {
         formData,
         {
           headers: { "Content-Type": "application/json" },
+          withCredentials: true,
         }
       );
 
@@ -55,7 +56,7 @@ export default function Login() {
         dispatch(signInFailure(data.message));
       } else {
         dispatch(signInSuccess(data));
-        navigate("/shop");
+        navigate("/admin");
       }
     } catch (error) {
       dispatch(signInFailure(error.response?.data?.message || error.message));
