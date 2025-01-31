@@ -7,10 +7,14 @@ import PaymentManage from "../../components/PaymentManage/PaymentManage";
 import ProductManage from "../../components/ProductManage/ProductManage";
 import Subscription from "../../components/Subscription/Subscription";
 import PostManage from "../../components/PostManage/PostManage";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { signoutSuccess } from "../../redux/user/userSlice";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 function Admin() {
   const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // Bootstrap CSS'i dinamik olarak yükle
@@ -51,6 +55,25 @@ function Admin() {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+  };
+
+  const handleSignout = async () => {
+    const URL = process.env.REACT_APP_BACKEND_URL;
+
+    try {
+      const response = await axios.post(`${URL}/api/user/signout`);
+
+      // Başarılı çıkış
+      if (response.status === 200) {
+        dispatch(signoutSuccess());
+        toast.warning("Logged out", { position: "bottom-left" });
+      } else {
+        console.log(response.data.message);
+      }
+    } catch (error) {
+      // Hata durumunda
+      console.error(error.message);
+    }
   };
 
   return (
@@ -229,7 +252,7 @@ function Admin() {
                     aria-expanded="false"
                   >
                     <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                      {currentUser?.name || "User"}
+                      {currentUser.username}
                     </span>
                     <img
                       className="img-profile rounded-circle"
@@ -251,15 +274,18 @@ function Admin() {
                     </a>
 
                     <div className="dropdown-divider"></div>
-                    <a
-                      className="dropdown-item"
-                      href="#"
-                      data-toggle="modal"
-                      data-target="#logoutModal"
-                    >
-                      <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Logout
-                    </a>
+
+                    <div onClick={handleSignout}>
+                      <a
+                        className="dropdown-item"
+                        href="#"
+                        data-toggle="modal"
+                        data-target="#logoutModal"
+                      >
+                        <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Logout
+                      </a>
+                    </div>
                   </div>
                 </li>
               </ul>

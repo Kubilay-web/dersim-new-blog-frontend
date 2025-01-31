@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -9,10 +9,19 @@ import {
 } from "../../redux/user/userSlice";
 
 export default function Login() {
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const [formData, setFormData] = useState({});
+  const { loading, error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href =
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
+    document.head.appendChild(link);
+    return () => document.head.removeChild(link);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -31,72 +40,58 @@ export default function Login() {
         formData,
         {
           headers: { "Content-Type": "application/json" },
-          withCredentials: true, // Çerezleri desteklemek için
         }
       );
 
-      const data = res.data;
-      if (data.success === false) {
-        dispatch(signInFailure(data.message));
+      if (res.data) {
+        dispatch(signInSuccess(res.data));
+        navigate("/shop");
       } else {
-        dispatch(signInSuccess(data));
-        navigate("/admin");
+        dispatch(signInFailure("Login failed"));
       }
     } catch (error) {
-      dispatch(signInFailure(error.response?.data?.message || error.message));
+      dispatch(
+        signInFailure(error.response?.data?.message || "An error occurred")
+      );
     }
   };
 
   return (
-    <div className="mt-5 mb-5 container">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <form className="d-flex flex-column gap-3" onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Your email
-              </label>
+    <div className="mt-5 mb-5">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <form className="d-flex flex-column gap-3" onSubmit={handleSubmit}>
               <input
                 type="email"
                 className="form-control"
-                placeholder="name@company.com"
                 id="email"
+                placeholder="Email"
                 onChange={handleChange}
               />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">
-                Your password
-              </label>
               <input
                 type="password"
                 className="form-control"
-                placeholder="**********"
                 id="password"
+                placeholder="Password"
                 onChange={handleChange}
               />
+              <button
+                type="submit"
+                className="btn btn-gradient"
+                disabled={loading}
+              >
+                {loading ? "Loading..." : "Sign In"}
+              </button>
+            </form>
+            <div className="mt-3">
+              <span>Don't have an account? </span>
+              <Link to="/sign-up" className="text-primary">
+                Sign Up
+              </Link>
             </div>
-            <button
-              type="submit"
-              className="btn btn-primary"
-              disabled={loading}
-            >
-              {loading ? "Loading..." : "Sign In"}
-            </button>
-          </form>
-
-          <div className="mt-3">
-            <span>Don't have an account? </span>
-            <Link to="/sign-up" className="text-primary">
-              Sign Up
-            </Link>
+            {error && <div className="alert alert-danger mt-3">{error}</div>}
           </div>
-
-          {errorMessage && (
-            <div className="alert alert-danger mt-3" role="alert">
-              {errorMessage}
-            </div>
-          )}
         </div>
       </div>
     </div>
