@@ -13645,3 +13645,37 @@
 .teaser.teaser--exhibition.teaser--exhibition-2719 {
   background-color: var(--post5-color);
 }
+
+.filters__panel.js-dropdown-item.-is-active {
+  height: 370px;
+}
+
+/* clear-search-btn sınıfına özel stil */
+.clear-search-btn {
+  background-color: #ff4d4d; /* Kırmızı tonunda bir arka plan rengi */
+  color: white; /* Yazı rengi beyaz */
+  font-size: 16px; /* Yazı boyutu */
+  padding: 10px 20px; /* Dikeyde 10px, yatayda 20px padding */
+  border: none; /* Kenarlık kaldırılıyor */
+  border-radius: 5px; /* Köşeleri yuvarlak yapıyoruz */
+  cursor: pointer; /* Hover yapıldığında işaretçi simgesi */
+  transition: all 0.3s ease; /* Hover ve aktif durum için geçiş animasyonu */
+  font-weight: bold; /* Yazıyı kalın yap */
+}
+
+/* Hover durumu */
+.clear-search-btn:hover {
+  background-color: #ff3333; /* Hover yapıldığında arka plan rengi daha koyu kırmızı */
+  transform: translateY(-2px); /* Buton hafifçe yukarı kayar */
+}
+
+/* Tıklama (active) durumu */
+.clear-search-btn:active {
+  transform: translateY(1px); /* Buton tıklandığında biraz aşağıya kayar */
+}
+
+/* Focus (odaklanma) durumu */
+.clear-search-btn:focus {
+  outline: none; /* Focus efekti için dış kenarlık kaldırılıyor */
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.6); /* Fokus yapıldığında kırmızı bir gölge eklenir */
+}

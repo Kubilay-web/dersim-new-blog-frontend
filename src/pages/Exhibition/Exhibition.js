@@ -3,6 +3,8 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 import "../../css/css-2.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Exhibition = () => {
   const [posts, setPosts] = useState([]);
@@ -43,19 +45,25 @@ const Exhibition = () => {
     fetchPosts(category7, setPosts7);
   }, []);
 
-  const [postsAll, setPostsAll] = useState([]); // Tüm postları saklayacağımız state
+  const [postsAll, setPostsAll] = useState([]); // Tüm postları saklayacağımız state, başlangıçta boş
   const [selectedCategory, setSelectedCategory] = useState(""); // Seçilen kategoriyi takip eden state
+  const [startDate, setStartDate] = useState(null); // Başlangıç tarihi state
+  const [endDate, setEndDate] = useState(null); // Bitiş tarihi state
+  const [loading, setLoading] = useState(true); // Verilerin yüklendiğini takip edecek state
 
   // Kategorilere ait tüm postları çeken fonksiyon
   const fetchPostsAll = async () => {
+    setLoading(true); // Veriler yükleniyor durumuna alıyoruz
     try {
       const res = await fetch(
         "https://dersim-new-blog-backend.vercel.app/api/post/getPosts"
       );
       const data = await res.json();
       setPostsAll(data.posts); // Gelen veriyi state'e kaydet
+      setLoading(false); // Veriler yüklendi
     } catch (error) {
       console.error("Failed to fetch posts:", error);
+      setLoading(false); // Hata durumunda da yükleme durumu sona erer
     }
   };
 
@@ -64,12 +72,60 @@ const Exhibition = () => {
     fetchPostsAll();
   }, []);
 
-  // Seçilen kategoriye göre filtreleme işlemi
-  const filteredPosts = selectedCategory
-    ? postsAll.filter(
-        (post) => post.category.toLowerCase() === selectedCategory.toLowerCase() // Kategoriyi karşılaştır ve filtrele
-      )
-    : []; // Eğer kategori seçilmemişse, hiç bir post gösterme (boş dizi döndür)
+  // "7 November 2024" gibi bir tarihi Date objesine dönüştürme
+  const parseDate = (dateString) => {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const parts = dateString.split(" ");
+    const day = parseInt(parts[0], 10);
+    const month = months.indexOf(parts[1]);
+    const year = parseInt(parts[2], 10);
+
+    return new Date(year, month, day);
+  };
+
+  // Seçilen tarih aralığına göre postları filtreleme
+
+  const filteredPosts =
+    selectedCategory || startDate || endDate // Kategori veya tarih seçilmişse
+      ? postsAll.filter((post) => {
+          const postDate = parseDate(post.content); // Burada content'ın tarih olduğunu varsayıyoruz
+
+          // Başlangıç tarihi filtresi
+          const isAfterStart = startDate ? postDate >= startDate : true;
+
+          // Bitiş tarihi filtresi
+          const isBeforeEnd = endDate ? postDate <= endDate : true;
+
+          // Kategori filtresi
+          const isCategoryMatch = selectedCategory
+            ? post.category.toLowerCase() === selectedCategory.toLowerCase()
+            : true;
+
+          // Kategori ve tarih filtresine göre postları döndür
+          return isAfterStart && isBeforeEnd && isCategoryMatch;
+        })
+      : []; // Eğer kategori veya tarih seçilmemişse, boş dizi döndür
+
+  // "Clear Search Result" fonksiyonu
+  const clearSearchResults = () => {
+    setStartDate(null); // Başlangıç tarihini sıfırlama
+    setEndDate(null); // Bitiş tarihini sıfırlama
+    setSelectedCategory(""); // Seçilen kategoriyi sıfırlama
+  };
 
   return (
     <div>
@@ -544,7 +600,7 @@ const Exhibition = () => {
                                             overflow: "hidden",
                                           }}
                                         >
-                                          <ul className="item-list__links">
+                                          {/* <ul className="item-list__links">
                                             <li
                                               className="facet-item"
                                               value="2025-01-24T09:00:00||2025-01-24T23:59:59"
@@ -561,8 +617,8 @@ const Exhibition = () => {
                                                 <span>Tomorrow</span>
                                               </a>
                                             </li>
-                                          </ul>{" "}
-                                          <div className="whats-on-datepicker">
+                                          </ul> */}
+                                          {/* <div className="whats-on-datepicker">
                                             <input
                                               type="text"
                                               placeholder="D/M/YYYY"
@@ -1352,7 +1408,26 @@ const Exhibition = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>
+                                          </div> */}
+                                          {/* Başlangıç tarihi seçimi */}
+
+                                          <DatePicker
+                                            selected={startDate}
+                                            onChange={(date) =>
+                                              setStartDate(date)
+                                            }
+                                            placeholderText="Start Date"
+                                            dateFormat="yyyy-MM-dd"
+                                          />
+                                          {/* Bitiş tarihi seçimi */}
+                                          <DatePicker
+                                            selected={endDate}
+                                            onChange={(date) =>
+                                              setEndDate(date)
+                                            }
+                                            placeholderText="End Date"
+                                            dateFormat="yyyy-MM-dd"
+                                          />
                                         </div>
                                       </li>
                                       <li
@@ -1952,6 +2027,12 @@ const Exhibition = () => {
                                   >
                                     Search
                                   </h2>
+                                  <button
+                                    className="clear-search-btn"
+                                    onClick={clearSearchResults}
+                                  >
+                                    Clear Search
+                                  </button>
                                   <div className="carousel-container | js-carousel-container">
                                     <div
                                       className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
@@ -1959,8 +2040,7 @@ const Exhibition = () => {
                                       data-slides-to-show={2}
                                     >
                                       <ul className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper">
-                                        {filteredPosts &&
-                                        filteredPosts.length > 0 ? (
+                                        {filteredPosts.length > 0 ? (
                                           filteredPosts
                                             .slice(0, 1000) // Max 1000 postu göster
                                             .map((post) => (
