@@ -2112,7 +2112,7 @@ const Exhibition = () => {
                                               paddingTop: "20px",
                                             }}
                                           >
-                                            No posts available
+                                            No data available
                                           </p>
                                         )}
                                       </ul>

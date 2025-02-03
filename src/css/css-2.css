@@ -13666,7 +13666,6 @@
 /* Hover durumu */
 .clear-search-btn:hover {
   background-color: #ff3333; /* Hover yapıldığında arka plan rengi daha koyu kırmızı */
-  transform: translateY(-2px); /* Buton hafifçe yukarı kayar */
 }
 
 /* Tıklama (active) durumu */
