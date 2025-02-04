@@ -1265,7 +1265,7 @@ const Collection = () => {
                     <div id="block-numiko-mainpagecontent">
                       <div>
                         <div>
-                          <section
+                          {/* <section
                             className="paragraph paragraph--type--slice-gallery paragraph--view-mode--default section section--slice-gallery section--bg-black"
                             aria-labelledby="paragraph-9690-title"
                           >
@@ -1356,7 +1356,7 @@ const Collection = () => {
                                         <p>No posts available</p>
                                       )}
 
-                                      {/* <li
+                                     <li
                                         className="swiper-slide carousel--gallery__item swiper-slide-next"
                                         data-swiper-slide-index={1}
                                         style={{ "margin-right": "10px" }}
@@ -1395,8 +1395,8 @@ const Collection = () => {
                                             Brass head of an Ooni (king) of Ife
                                           </p>
                                         </div>
-                                      </li> */}
-                                      {/* <li
+                                      </li> 
+                                       <li
                                         className="swiper-slide carousel--gallery__item"
                                         data-swiper-slide-index={2}
                                         style={{ "margin-right": "10px" }}
@@ -1529,8 +1529,8 @@ const Collection = () => {
                                             Lewis Chessmen
                                           </p>
                                         </div>
-                                      </li> */}
-                                      {/* <li
+                                      </li> 
+                                      <li
                                         className="swiper-slide carousel--gallery__item"
                                         data-swiper-slide-index={5}
                                         style={{ "margin-right": "10px" }}
@@ -1578,8 +1578,8 @@ const Collection = () => {
                                             Shield from West Papua
                                           </p>
                                         </div>
-                                      </li> */}
-                                      {/* <li
+                                      </li> 
+                                     <li
                                         className="swiper-slide carousel--gallery__item"
                                         data-swiper-slide-index={6}
                                         style={{ "margin-right": "10px" }}
@@ -1629,8 +1629,8 @@ const Collection = () => {
                                             (wine jar)
                                           </p>
                                         </div>
-                                      </li> */}
-                                      {/* <li
+                                      </li> 
+                                       <li
                                         className="swiper-slide carousel--gallery__item"
                                         data-swiper-slide-index={7}
                                         style={{ "margin-right": "10px" }}
@@ -1678,7 +1678,7 @@ const Collection = () => {
                                             The Lycurgus Cup
                                           </p>
                                         </div>
-                                      </li> */}
+                                      </li> 
                                     </ul>
                                     <span
                                       className="swiper-notification"
@@ -1789,7 +1789,7 @@ const Collection = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section> */}
                           <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
                             aria-labelledby="paragraph-3247-title"
@@ -1879,7 +1879,7 @@ const Collection = () => {
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          {/* <div className="teaser">
+                                          <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -1896,7 +1896,7 @@ const Collection = () => {
                                                   />
                                                 </div>
                                               </div>
-                                               <div className="teaser__content">
+                                              <div className="teaser__content">
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
@@ -1915,15 +1915,16 @@ const Collection = () => {
                                                     Museum's collection.
                                                   </div>
                                                 </div>
-                                              </div> 
+                                              </div>
                                             </div>
-                                          </div> */}
+                                          </div>{" "}
+                                          *
                                         </li>
                                         <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          {/* <div className="teaser">
+                                          <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -1961,7 +1962,7 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div> */}
+                                          </div>
                                         </li>
                                       </ul>
                                     </div>
@@ -2129,7 +2130,7 @@ const Collection = () => {
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          {/* <div className="teaser">
+                                          <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -2168,13 +2169,13 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div> */}
+                                          </div>
                                         </li>
                                         <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          {/* <div className="teaser">
+                                          <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -2214,13 +2215,13 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div> */}
+                                          </div>
                                         </li>
                                         <li
                                           className="l-grid__item swiper-slide"
                                           style={{}}
                                         >
-                                          {/* <div className="teaser">
+                                          <div className="teaser">
                                             <div className="teaser__wrapper">
                                               <div className="teaser__image-container">
                                                 <div className="media media-teaser_landscape media-image js-media">
@@ -2256,7 +2257,7 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div> */}
+                                          </div>
                                         </li>
                                       </ul>
                                     </div>
