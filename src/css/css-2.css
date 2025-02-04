@@ -13676,7 +13676,7 @@
 }
 
 .carousel-container {
-  padding: 0px 30px 0px 30px;
+  padding: 0px 80px 0px 80px;
 }
 
 .swiper-pagination {
@@ -13691,7 +13691,6 @@
 span.swiper-pagination-bullet {
   background-color: grey !important;
 }
-
 
 /* Swiper Button Styling */
 .swiper-button-prev,
