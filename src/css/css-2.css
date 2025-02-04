@@ -13675,5 +13675,47 @@
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.6); /* Fokus yapıldığında kırmızı bir gölge eklenir */
 }
 
+.carousel-container {
+  padding: 0px 30px 0px 30px;
+}
+
+.swiper-pagination {
+  padding-top: 40px;
+  position: relative !important;
+  text-align: center;
+  transition: 300ms opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+
+span.swiper-pagination-bullet {
+  background-color: grey !important;
+}
 
 
+/* Swiper Button Styling */
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px; /* Okların büyüklüğünü ayarlayabilirsiniz */
+  color: #000; /* Okların rengini ayarlayın */
+  background: rgba(255, 255, 255, 0.6); /* Arka plan rengi (saydam) */
+  padding: 10px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.swiper-button-prev {
+  left: 10px; /* Sol ok */
+}
+
+.swiper-button-next {
+  right: 10px; /* Sağ ok */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(255, 255, 255, 0.9); /* Hover efekti */
+}
