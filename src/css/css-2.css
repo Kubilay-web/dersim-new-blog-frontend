@@ -13675,7 +13675,7 @@
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.6); /* Fokus yapıldığında kırmızı bir gölge eklenir */
 }
 
-.carousel-container {
+.carousel-container-swiper-container {
   padding: 0px 80px 0px 80px;
 }
 

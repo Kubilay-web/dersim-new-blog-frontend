@@ -1917,8 +1917,7 @@ const Collection = () => {
                                                 </div>
                                               </div>
                                             </div>
-                                          </div>{" "}
-                                          *
+                                          </div>
                                         </li>
                                         <li
                                           className="l-grid__item swiper-slide"
@@ -2026,7 +2025,18 @@ const Collection = () => {
                             </div>
                           </section>
 
-                          <div className="carousel-container">
+                          <div className="carousel-container-swiper-container">
+                            <div className="carousel__title-container">
+                              <h2
+                                id="paragraph-9690-title"
+                                className="section__title"
+                                data-gtm-vis-first-on-screen1766321_306={2211}
+                                data-gtm-vis-total-visible-time1766321_306={100}
+                                data-gtm-vis-has-fired1766321_306={1}
+                              >
+                                Collection highlights
+                              </h2>
+                            </div>
                             <Swiper
                               slidesPerView={3}
                               spaceBetween={10}
@@ -2487,7 +2497,6 @@ const Collection = () => {
                                                           Read the blog
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -2532,7 +2541,6 @@ const Collection = () => {
                                                       <span>
                                                         <span>Galleries</span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
@@ -2578,7 +2586,6 @@ const Collection = () => {
                                                           collection
                                                         </span>
                                                       </span>
-                                                      {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                                     </a>
                                                   </h3>
                                                   <div className="teaser__summary">
