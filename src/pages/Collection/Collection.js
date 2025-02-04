@@ -44,6 +44,10 @@ const Collection = () => {
             src="js-general/js_SPkMj3SpZ70JzzRSNrXpOjN64UdICR25YexAv-ckrcM.js"
             type="text/javascript"
           />
+
+          <script src="js-general/jquery.min.js"></script>
+          <script src="js-general/jquery2.js"></script>
+          <script src="js-general/uc.js"></script>
         </Helmet>
         <meta charSet="utf-8" />
         <style
