@@ -2327,8 +2327,8 @@ const Collection = () => {
                                 <p>No posts available</p>
                               )}
                             </Swiper>
-                            <div className="swiper-button-prev">←</div>{" "}
-                            <div className="swiper-button-next">→</div>{" "}
+                            {/* <div className="swiper-button-prev">←</div>{" "}
+                            <div className="swiper-button-next">→</div>{" "} */}
                           </div>
                           <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
