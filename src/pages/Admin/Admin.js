@@ -131,7 +131,7 @@ function Admin() {
           <hr className="sidebar-divider" />
 
           {/* Nav Item - Blog Management */}
-          <li className="nav-item active">
+          {/* <li className="nav-item active">
             <a
               className="nav-link"
               href="#"
@@ -143,7 +143,7 @@ function Admin() {
               <i className="fas fa-fw fa-blog"></i>
               <span>Blogs</span>
             </a>
-          </li>
+          </li> */}
 
           {/* Nav Item - Post Management */}
           <li className="nav-item active">
@@ -306,10 +306,9 @@ function Admin() {
                     ? "Subscription Management"
                     : currentPage === "post-manage"
                     ? "Post Management"
-                    : "Blog Management"}
+                    : ""}
                 </h1>
               </div>
-
               {currentPage === "dashboard" ? (
                 <Dashboard />
               ) : currentPage === "payment-manage" ? (
@@ -320,9 +319,8 @@ function Admin() {
                 <Subscription />
               ) : currentPage === "post-manage" ? (
                 <PostManage />
-              ) : (
-                <BlogManage />
-              )}
+              ) : null}{" "}
+              {/* BlogManage kısmı çıkarıldı */}
             </div>
           </div>
         </div>

@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, Modal, Table, Spinner } from "react-bootstrap";
+import {
+  Button,
+  Form,
+  Modal,
+  Table,
+  Spinner,
+  Pagination,
+} from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify"; // Notification gösterimi için
 
@@ -19,6 +26,9 @@ const PostManage = () => {
   });
   const [imagePreview, setImagePreview] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(""); // Arama sorgusu
+  const [currentPage, setCurrentPage] = useState(1); // Sayfa numarası
+  const [postsPerPage] = useState(5); // Sayfa başına post sayısı
 
   // API'ye postları almak için istek gönder
   const fetchPosts = async () => {
@@ -147,9 +157,31 @@ const PostManage = () => {
     }
   };
 
+  // Arama filtreleme fonksiyonu
+  const filterPosts = () => {
+    return posts.filter(
+      (post) =>
+        post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.content.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  };
+
+  // Pagination hesaplamaları
+  const filteredPosts = filterPosts();
+  const currentPosts = filteredPosts.slice(0, 10);
+
   return (
     <div className="container mt-5">
       <h2 className="mb-4">Yazı Yönetimi</h2>
+
+      {/* Arama Barı */}
+      <Form.Control
+        type="text"
+        placeholder="Kategori veya içerik arayın..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="mb-4"
+      />
 
       {/* Post Listesi */}
       {loading ? (
@@ -167,7 +199,7 @@ const PostManage = () => {
             </tr>
           </thead>
           <tbody>
-            {posts.map((post) => (
+            {currentPosts.map((post) => (
               <tr key={post._id}>
                 <td>{post.title}</td>
                 <td>{post.content.slice(0, 50)}...</td>
