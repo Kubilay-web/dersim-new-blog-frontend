@@ -34,10 +34,10 @@ const Collection = () => {
     <div>
       <div>
         <Helmet>
-          <script src="/js-general/jquery.min.js" type="text/javascript" />
-          <script src="/js-general/uc.js" type="text/javascript" />
+          <script src="js-general/jquery.min.js" type="text/javascript" />
+          <script src="js-general/uc.js" type="text/javascript" />
           <script
-            src="/js-general/js_AHW1Gd1in6RiZJasw3hcMl6NiLhRChyCxmU4q_j0Uf4.js"
+            src="js-general/js_AHW1Gd1in6RiZJasw3hcMl6NiLhRChyCxmU4q_j0Uf4.js"
             type="text/javascript"
           />
           <script
@@ -114,12 +114,6 @@ const Collection = () => {
           media="print"
           href="/sites/default/files/css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css?delta=2&language=en&theme=numiko&include=eJxtzTEOwzAIQNELOfGRImwjG5UAAjPk9u1Wqer6_vDjiY13bRBYJG96aZ2sDfiI_TDJ_NXuZDuOhTDQ_8di4DAdbEUdngZ8fuVMsWxMsXCUrszYN6nEpfLZYW0pg_ENgpk7UA"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -160,14 +154,6 @@ const Collection = () => {
               ".cookieconsent-optin-preferences,.cookieconsent-optin-statistics,.cookieconsent-optin-marketing,.cookieconsent-optin{display:none;}.cookieconsent-optout-preferences,.cookieconsent-optout-statistics,.cookieconsent-optout-marketing,.cookieconsent-optout{display:block;display:initial;}",
           }}
         />
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          &lt;iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MW5VCK"
-          height="0" width="0"
-          style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1098,16 +1084,17 @@ const Collection = () => {
                                             <li
                                               key={post._id}
                                               className="swiper-slide carousel--gallery__item swiper-slide-active"
-                                              data-swiper-slide-index={0}
+                                              data-swiper-slide-index={index}
                                               style={{ "margin-right": "10px" }}
                                             >
                                               <button
                                                 type="button"
                                                 className="carousel--gallery__button | js-photoswipe-item"
-                                                data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2019-10/coffin-priest-hornedjitef-thebes-mummies-british-museum.jpg"
+                                                data-large-image-url={
+                                                  post.image
+                                                }
                                                 data-large-image-width={1466}
                                                 data-large-image-height={2000}
-                                                data-description='<strong>Inner coffin of Hornedjitef, from Thebes, Egypt, 240 BC</strong><br>The mummy of the priest Hornedjitef was encased in a gilded mask and cover, and two human-shaped wooden coffins. <a href="/collection/object/Y_EA6678"><span>Collection online</span></a>'
                                                 data-caption
                                                 data-lang
                                               >
@@ -1124,9 +1111,8 @@ const Collection = () => {
                                                     height={700}
                                                     data-sizes="auto"
                                                     data-focal-position="center center"
-                                                    alt="A gold decorated coffin in the shape of a human. "
                                                     sizes="518px"
-                                                    src="/images/Collection/image-02.jpg"
+                                                    src={post.image}
                                                   />
                                                 </div>
                                                 <p className="carousel--gallery__item-title">
@@ -1568,7 +1554,7 @@ const Collection = () => {
                                         <use xlinkHref="#sprite-icon-chevron-large" />
                                       </svg>
                                     </button>
-                                  </div>{" "}
+                                  </div>
                                 </div>
                               </div>
                             </div>

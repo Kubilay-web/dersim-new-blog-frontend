@@ -13646,10 +13646,6 @@
   background-color: var(--post5-color);
 }
 
-.filters__panel.js-dropdown-item.-is-active {
-  height: 370px;
-}
-
 /* clear-search-btn sınıfına özel stil */
 .clear-search-btn {
   background-color: #ff4d4d; /* Kırmızı tonunda bir arka plan rengi */
@@ -13678,3 +13674,6 @@
   outline: none; /* Focus efekti için dış kenarlık kaldırılıyor */
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.6); /* Fokus yapıldığında kırmızı bir gölge eklenir */
 }
+
+
+

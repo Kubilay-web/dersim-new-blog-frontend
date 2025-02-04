@@ -3,8 +3,8 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 import "../../css/css-2.css";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 
 const Exhibition = () => {
   const [posts, setPosts] = useState([]);
@@ -618,13 +618,32 @@ const Exhibition = () => {
                                               </a>
                                             </li>
                                           </ul> */}
-                                          {/* <div className="whats-on-datepicker">
+                                          <div className="whats-on-datepicker">
+                                            Start Date
                                             <input
                                               type="text"
-                                              placeholder="D/M/YYYY"
+                                              selected={startDate}
+                                              onChange={(e) =>
+                                                setStartDate(
+                                                  new Date(e.target.value)
+                                                )
+                                              } // Convert input value to a Date
+                                              placeholder="yyyy-MM-dd"
                                               className="date-picker"
-                                            />{" "}
-                                            <div>
+                                            />
+                                            End Date
+                                            <input
+                                              type="text"
+                                              selected={endDate}
+                                              onChange={(e) =>
+                                                setEndDate(
+                                                  new Date(e.target.value)
+                                                )
+                                              } // Convert input value to a Date
+                                              placeholder="yyyy-MM-dd"
+                                              className="date-picker"
+                                            />
+                                            {/* <div>
                                               <div className="pika-single">
                                                 <div className="pika-lendar">
                                                   <div
@@ -1407,11 +1426,10 @@ const Exhibition = () => {
                                                   </table>
                                                 </div>
                                               </div>
-                                            </div>
-                                          </div> */}
+                                            </div> */}
+                                          </div>
                                           {/* Başlangıç tarihi seçimi */}
-
-                                          <DatePicker
+                                          {/* <DatePicker
                                             selected={startDate}
                                             onChange={(date) =>
                                               setStartDate(date)
@@ -1420,14 +1438,14 @@ const Exhibition = () => {
                                             dateFormat="yyyy-MM-dd"
                                           />
                                           {/* Bitiş tarihi seçimi */}
-                                          <DatePicker
+                                          {/* <DatePicker
                                             selected={endDate}
                                             onChange={(date) =>
                                               setEndDate(date)
                                             }
                                             placeholderText="End Date"
                                             dateFormat="yyyy-MM-dd"
-                                          />
+                                          /> */}
                                         </div>
                                       </li>
                                       <li
