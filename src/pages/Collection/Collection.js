@@ -30,6 +30,30 @@ const Collection = () => {
     fetchPosts(category3, setPosts3);
   }, []);
 
+  // State to store the search query and filtered posts
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredPosts, setFilteredPosts] = useState(posts2);
+
+  // Handle search button click
+  const handleSearch = (e) => {
+    e.preventDefault(); // Prevent the default form submit action
+
+    // Filter posts based on the search query
+    const filtered = posts2.filter(
+      (post2) =>
+        post2.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post2.content.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    // Update the filtered posts
+    setFilteredPosts(filtered);
+  };
+
+  const handleResetSearch = () => {
+    setSearchQuery("");
+    setFilteredPosts("");
+  };
+
   return (
     <div>
       <div>
@@ -610,12 +634,12 @@ const Collection = () => {
                                 >
                                   <div className="hero-col-search__fields">
                                     <div className="hero-col-search__field hero-col-search__field--select">
-                                      <div className="hero-col-search__input-container">
+                                      {/* <div className="hero-col-search__input-container">
                                         <div
                                           dir="auto"
                                           className="v-select v-select--hero-col vs--single vs--unsearchable"
                                         >
-                                          {" "}
+                                     
                                           <div
                                             id="vs1__combobox"
                                             role="combobox"
@@ -627,8 +651,8 @@ const Collection = () => {
                                             <div className="vs__selected-options">
                                               <span className="vs__selected">
                                                 Search by: All fields
-                                                {/**/}
-                                              </span>{" "}
+                                           
+                                              </span>
                                               <input
                                                 readOnly="readonly"
                                                 aria-autocomplete="list"
@@ -638,7 +662,7 @@ const Collection = () => {
                                                 autoComplete="off"
                                                 className="vs__search"
                                               />
-                                            </div>{" "}
+                                            </div>
                                             <div className="vs__actions">
                                               <button
                                                 type="button"
@@ -680,9 +704,60 @@ const Collection = () => {
                                             }}
                                           />{" "}
                                         </div>
-                                      </div>
-                                    </div>{" "}
+                                      </div> */}
+                                    </div>
+
                                     <div className="hero-col-search__field hero-col-search__field--input">
+                                      <div className="hero-col-search__group">
+                                        <div className="hero-col-search__field--input">
+                                          <label
+                                            htmlFor="collection-input-search"
+                                            className="hero-col-search__label"
+                                          >
+                                            Search <strong>collection</strong>,{" "}
+                                            <strong>themes</strong>
+                                          </label>
+                                          <div className="hero-col-search__input-container">
+                                            <input
+                                              id="collection-input-search"
+                                              type="search"
+                                              placeholder="Search collection themes"
+                                              role="combobox"
+                                              maxLength={128}
+                                              required="required"
+                                              aria-expanded="false"
+                                              className="hero-col-search__input"
+                                              value={searchQuery} // Bind the input value to the state
+                                              onChange={(e) =>
+                                                setSearchQuery(e.target.value)
+                                              } // Update the state on input change
+                                            />
+                                          </div>
+                                        </div>
+                                        <div className="hero-col-search__field hero-col-search__field--button">
+                                          <button
+                                            type="submit"
+                                            className="button button--white hero-col-search__submit"
+                                            onClick={handleSearch} // Trigger the search on button click
+                                          >
+                                            <span className="visually-hidden">
+                                              Search
+                                            </span>
+
+                                            <svg
+                                              className="icon icon--search"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-search" />
+                                            </svg>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    {/* <div className="hero-col-search__field hero-col-search__field--input">
                                       <div className="hero-col-search__group">
                                         <div className="hero-col-search__field--input">
                                           <label
@@ -705,7 +780,7 @@ const Collection = () => {
                                               aria-expanded="false"
                                               className="hero-col-search__input"
                                             />{" "}
-                                            {/**/}
+                                          
                                           </div>
                                         </div>{" "}
                                         <div className="hero-col-search__field hero-col-search__field--button">
@@ -727,8 +802,7 @@ const Collection = () => {
                                           </button>
                                         </div>
                                       </div>{" "}
-                                      {/**/}
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </form>
                               </div>
@@ -1033,6 +1107,152 @@ const Collection = () => {
                     </div>
                   </div>
                 </div>
+
+                <section
+                  className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
+                  aria-labelledby="paragraph-3247-title"
+                >
+                  <div className="container">
+                    <a className="js-jump-link-anchor" id="themes" />{" "}
+                    <div className="section__inner">
+                      <div className="teaser-listing__container">
+                        <h2
+                          id="paragraph-3247-title"
+                          className="section__title teaser-listing__title"
+                          data-gtm-vis-first-on-screen1766321_306={2876}
+                          data-gtm-vis-total-visible-time1766321_306={100}
+                          data-gtm-vis-has-fired1766321_306={1}
+                        >
+                          Search
+                        </h2>
+                        <div className="hero-col-search__field hero-col-search__field--button">
+                          <button
+                            type="button"
+                            className="button button--white hero-col-search__reset"
+                            onClick={handleResetSearch} // Call reset function
+                          >
+                            Reset
+                          </button>
+                        </div>
+                        <div className="carousel-container | js-carousel-container">
+                          <div
+                            className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
+                            data-items-length={3}
+                            data-slides-to-show={2}
+                            style={{}}
+                          >
+                            <ul
+                              className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper"
+                              style={{}}
+                            >
+                              {filteredPosts.length > 0 ? (
+                                <ul>
+                                  {filteredPosts.map((post2) => (
+                                    <li
+                                      key={post2._id}
+                                      className="l-grid__item swiper-slide"
+                                    >
+                                      <div className="teaser">
+                                        <div className="teaser__wrapper">
+                                          <div className="teaser__image-container">
+                                            <div className="media media-teaser_landscape media-image js-media">
+                                              <img
+                                                loading="eager"
+                                                className="lazyautosizes lazyloaded"
+                                                width={750}
+                                                height={422}
+                                                alt="A turquoise two-headed serpent mouth ajar, heads pointing in different directions."
+                                                src={post2.image}
+                                              />
+                                            </div>
+                                          </div>
+                                          <div className="teaser__content">
+                                            <div className="teaser__content-push">
+                                              <h3 className="teaser__title">
+                                                <a
+                                                  href={post2.slug}
+                                                  className="teaser__anchor"
+                                                >
+                                                  {post2.title}
+                                                </a>
+                                              </h3>
+                                              <div className="teaser__summary">
+                                                {post2.content}
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  ))}
+                                </ul>
+                              ) : (
+                                <p style={{ margin: "auto" }}>
+                                  No data available
+                                </p>
+                              )}
+                            </ul>
+                          </div>
+                          <div className="carousel__nav-container carousel__nav-container--inline-buttons">
+                            <button
+                              aria-label="Previous slide"
+                              className="carousel__nav carousel__nav--prev | js-carousel-prev"
+                              tabIndex={0}
+                              role="button"
+                              aria-disabled="true"
+                            >
+                              <svg
+                                className="icon icon--chevron icon--chevron-small"
+                                role="presentation"
+                                focusable="false"
+                                aria-hidden="true"
+                              >
+                                <use xlinkHref="#sprite-icon-chevron" />
+                              </svg>
+                            </button>
+                            <div className="carousel__pagination | js-pagination-dots swiper-pagination-clickable">
+                              <span
+                                className="swiper-pagination-bullet"
+                                tabIndex={0}
+                                role="button"
+                                aria-label="Go to slide 1"
+                              />
+                              <span
+                                className="swiper-pagination-bullet"
+                                tabIndex={0}
+                                role="button"
+                                aria-label="Go to slide 2"
+                              />
+                              <span
+                                className="swiper-pagination-bullet"
+                                tabIndex={0}
+                                role="button"
+                                aria-label="Go to slide 3"
+                              />
+                            </div>
+                            <button
+                              aria-label="Next slide"
+                              className="carousel__nav carousel__nav--next | js-carousel-next"
+                              tabIndex={0}
+                              role="button"
+                              aria-disabled="false"
+                            >
+                              <svg
+                                className="icon icon--chevron icon--chevron-small"
+                                role="presentation"
+                                focusable="false"
+                                aria-hidden="true"
+                              >
+                                <use xlinkHref="#sprite-icon-chevron" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>{" "}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
                 <div className="layout-content">
                   <div>
                     <div id="block-numiko-mainpagecontent">

@@ -7,14 +7,24 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [pages, setPages] = useState([]); // Dinamik içerikler için state
 
-  // Sayfa verilerini API'den veya dinamik kaynaktan al
+  // Sayfa verilerini API'den al
   useEffect(() => {
     const fetchPages = async () => {
       const response = await fetch(
-        "https://dersim-new-blog-backend.vercel.app/api/pages"
+        "https://dersim-new-blog-backend.vercel.app/api/blogs"
       ); // API URL'si
       const data = await response.json();
-      setPages(data);
+
+      console.log("Gelen veri:", data); // API'den gelen veri
+
+      // Eğer gelen veri bir nesne ise ve 'data' içinde diziyi alalım
+      if (Array.isArray(data)) {
+        setPages(data); // Eğer direk dizi ise setPages'e koy
+      } else if (data && Array.isArray(data.blogs)) {
+        setPages(data.blogs); // Eğer 'blogs' adlı bir dizi varsa onu kullan
+      } else {
+        console.error("Beklenen formatta veri gelmedi:", data);
+      }
     };
 
     fetchPages();
@@ -26,19 +36,35 @@ const Search = () => {
     filterResults(event.target.value);
   };
 
+  // Arama butonuna tıklanarak arama işlemi yapılacak fonksiyon
+  const handleSearchButtonClick = () => {
+    filterResults(searchTerm);
+  };
+
+  // Arama sonuçlarını filtrele
   const filterResults = (query) => {
     if (!query) {
-      setSearchResults([]);
+      setSearchResults([]); // Eğer arama boşsa, sonuçları temizle
       return;
     }
 
-    const filteredPages = pages.filter(
-      (page) =>
-        page.content.toLowerCase().includes(query.toLowerCase()) ||
-        page.title.toLowerCase().includes(query.toLowerCase())
-    );
+    // `pages`'in bir dizi olduğundan emin ol
+    if (Array.isArray(pages)) {
+      const filteredPages = pages.filter(
+        (page) =>
+          page.title.toLowerCase().includes(query.toLowerCase()) ||
+          page.content.toLowerCase().includes(query.toLowerCase()) ||
+          (page.description &&
+            page.description.toLowerCase().includes(query.toLowerCase()))
+      );
+      setSearchResults(filteredPages); // Filtrelenen sonuçları ayarla
+    }
+  };
 
-    setSearchResults(filteredPages);
+  // Arama sonuçlarını kapat
+  const handleCloseSearchResults = () => {
+    setSearchResults([]); // Arama sonuçlarını temizle
+    setSearchTerm(""); // Arama kutusunu sıfırla
   };
 
   return (
@@ -133,14 +159,6 @@ const Search = () => {
               ".cookieconsent-optin-preferences,.cookieconsent-optin-statistics,.cookieconsent-optin-marketing,.cookieconsent-optin{display:none;}.cookieconsent-optout-preferences,.cookieconsent-optout-statistics,.cookieconsent-optout-marketing,.cookieconsent-optout{display:block;display:initial;}",
           }}
         />
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          &lt;iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MW5VCK"
-          height="0" width="0"
-          style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -524,6 +542,7 @@ const Search = () => {
                                               >
                                                 Keyword
                                               </label>
+
                                               <input
                                                 id="global-keyword-search"
                                                 className="form-text form-autocomplete"
@@ -543,8 +562,9 @@ const Search = () => {
                                                 value={searchTerm}
                                                 onChange={handleSearch}
                                               />
+
                                               <button
-                                                type="submit"
+                                                type="button"
                                                 className="search-submit"
                                               >
                                                 <span className="visually-hidden">
@@ -561,16 +581,16 @@ const Search = () => {
                                               </button>
                                             </div>
 
-                                            {searchResults.length > 0 && (
+                                            {/* {searchResults.length > 0 && (
                                               <ul
                                                 id="autocomplete-options"
                                                 role="listbox"
                                                 className="c-autocomplete__options"
                                                 style={{ display: "block" }}
                                               >
-                                                {searchResults.map((page) => (
+                                                {searchResults.map((blog) => (
                                                   <li
-                                                    key={page.path}
+                                                    key={blog._id}
                                                     className="c-autocomplete__option"
                                                     role="option"
                                                   >
@@ -582,7 +602,7 @@ const Search = () => {
                                                     </a>
                                                   </li>
                                                 ))}
-                                                <li
+                                                 <li
                                                   id="autocomplete-view-all-results"
                                                   className="c-autocomplete__view-all"
                                                   role="option"
@@ -591,9 +611,9 @@ const Search = () => {
                                                   <span className="c-autocomplete__view-all-text">
                                                     View all results
                                                   </span>
-                                                </li>
+                                                </li> 
                                               </ul>
-                                            )}
+                                            )} */}
                                           </div>
                                         </form>
                                       </div>
@@ -603,6 +623,68 @@ const Search = () => {
                               </div>
                             </div>
                           </div>
+
+                          {searchResults.length > 0 && (
+                            <div className="blog-list">
+                              <div className="l-grid horizontal l-grid--3-col">
+                                {pages.map((page) => (
+                                  <div
+                                    key={page._id}
+                                    className="l-grid__item col-1"
+                                  >
+                                    <div className="teaser teaser--has-meta-top">
+                                      <div className="teaser__wrapper">
+                                        <div className="teaser__image-container">
+                                          <div className="media media-teaser_landscape media-image js-media">
+                                            <img
+                                              loading="eager"
+                                              className="lazyload"
+                                              width={750}
+                                              height={422}
+                                              src={page.image}
+                                              alt={page.title}
+                                            />
+                                          </div>
+                                        </div>
+
+                                        <div className="teaser__content">
+                                          <div className="teaser__content-push">
+                                            <div className="teaser__meta teaser__meta--top">
+                                              <div className="teaser__meta-item">
+                                                <span>{page.category}</span>
+                                              </div>
+                                            </div>
+                                            <h3 className="teaser__title">
+                                              <a
+                                                href={`/blog/${page.slug}`}
+                                                className="teaser__anchor"
+                                              >
+                                                <span>{page.title}</span>
+                                              </a>
+                                            </h3>
+                                            <div className="teaser__summary">
+                                              {page.content}
+                                            </div>
+                                          </div>
+                                          <span className="teaser__button | button button--chevron">
+                                            Read more
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Optionally: Show a message if no search results */}
+                          {searchResults.length === 0 && searchTerm && (
+                            <p style={{ paddingLeft: "20px" }}>
+                              No results found for "{searchTerm}"
+                            </p>
+                          )}
+
                           <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-white"
                             aria-labelledby="paragraph-10256-title"
