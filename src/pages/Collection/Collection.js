@@ -2025,94 +2025,7 @@ const Collection = () => {
                             </div>
                           </section>
 
-                          <div className="carousel-container-swiper-container">
-                            <div className="carousel__title-container">
-                              <h2
-                                id="paragraph-9690-title"
-                                className="section__title"
-                                data-gtm-vis-first-on-screen1766321_306={2211}
-                                data-gtm-vis-total-visible-time1766321_306={100}
-                                data-gtm-vis-has-fired1766321_306={1}
-                              >
-                                Collection highlights
-                              </h2>
-                            </div>
-                            <Swiper
-                              slidesPerView={3}
-                              spaceBetween={10}
-                              draggable={true}
-                              pagination={{
-                                clickable: true,
-                              }}
-                              navigation={{
-                                prevEl: ".swiper-button-prev",
-                                nextEl: ".swiper-button-next",
-                              }}
-                              breakpoints={{
-                                640: {
-                                  slidesPerView: 2,
-                                  spaceBetween: 10,
-                                },
-                                768: {
-                                  slidesPerView: 2,
-                                  spaceBetween: 10,
-                                },
-                                1024: {
-                                  slidesPerView: 3,
-                                  spaceBetween: 50,
-                                },
-                              }}
-                              modules={[Pagination, Navigation]}
-                              className="mySwiper"
-                            >
-                              {posts && posts.length > 0 ? (
-                                posts.slice(0, 1000).map((post, index) => (
-                                  <SwiperSlide
-                                    key={post._id}
-                                    className="carousel--gallery__item"
-                                  >
-                                    <button
-                                      type="button"
-                                      className="carousel--gallery__button | js-photoswipe-item"
-                                      data-large-image-url={post.image}
-                                      data-large-image-width={1466}
-                                      data-large-image-height={2000}
-                                      data-caption
-                                      data-lang
-                                    >
-                                      <span className="visually-hidden">
-                                        {post.content}
-                                      </span>
-                                    </button>
-                                    <div className="carousel--gallery__content">
-                                      <div className="media media-gallery media-image js-media">
-                                        <img
-                                          loading="eager"
-                                          className="not-full-width lazyautosizes ls-is-cached lazyloaded"
-                                          width={513}
-                                          height={700}
-                                          data-sizes="auto"
-                                          data-focal-position="center center"
-                                          sizes="518px"
-                                          src={post.image}
-                                          alt={post.content}
-                                        />
-                                      </div>
-                                      <p className="carousel--gallery__item-title">
-                                        {post.content}
-                                      </p>
-                                    </div>
-                                  </SwiperSlide>
-                                ))
-                              ) : (
-                                <p>No posts available</p>
-                              )}
-                            </Swiper>
-                            <div className="swiper-button-prev">←</div>{" "}
-                            <div className="swiper-button-next">→</div>{" "}
-                          </div>
-
-                          <section
+                          {/* <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
                             aria-labelledby="paragraph-3315-title"
                           >
@@ -2329,7 +2242,94 @@ const Collection = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section> */}
+
+                          <div className="carousel-container-swiper-container">
+                            <div className="carousel__title-container">
+                              <h2
+                                id="paragraph-9690-title"
+                                className="section__title"
+                                data-gtm-vis-first-on-screen1766321_306={2211}
+                                data-gtm-vis-total-visible-time1766321_306={100}
+                                data-gtm-vis-has-fired1766321_306={1}
+                              >
+                                Collection highlights
+                              </h2>
+                            </div>
+                            <Swiper
+                              slidesPerView={3}
+                              spaceBetween={10}
+                              draggable={true}
+                              pagination={{
+                                clickable: true,
+                              }}
+                              navigation={{
+                                prevEl: ".swiper-button-prev",
+                                nextEl: ".swiper-button-next",
+                              }}
+                              breakpoints={{
+                                640: {
+                                  slidesPerView: 2,
+                                  spaceBetween: 10,
+                                },
+                                768: {
+                                  slidesPerView: 2,
+                                  spaceBetween: 10,
+                                },
+                                1024: {
+                                  slidesPerView: 3,
+                                  spaceBetween: 50,
+                                },
+                              }}
+                              modules={[Pagination, Navigation]}
+                              className="mySwiper"
+                            >
+                              {posts && posts.length > 0 ? (
+                                posts.slice(0, 1000).map((post, index) => (
+                                  <SwiperSlide
+                                    key={post._id}
+                                    className="carousel--gallery__item"
+                                  >
+                                    <button
+                                      type="button"
+                                      className="carousel--gallery__button | js-photoswipe-item"
+                                      data-large-image-url={post.image}
+                                      data-large-image-width={1466}
+                                      data-large-image-height={2000}
+                                      data-caption
+                                      data-lang
+                                    >
+                                      <span className="visually-hidden">
+                                        {post.content}
+                                      </span>
+                                    </button>
+                                    <div className="carousel--gallery__content">
+                                      <div className="media media-gallery media-image js-media">
+                                        <img
+                                          loading="eager"
+                                          className="not-full-width lazyautosizes ls-is-cached lazyloaded"
+                                          width={513}
+                                          height={700}
+                                          data-sizes="auto"
+                                          data-focal-position="center center"
+                                          sizes="518px"
+                                          src={post.image}
+                                          alt={post.content}
+                                        />
+                                      </div>
+                                      <p className="carousel--gallery__item-title">
+                                        {post.content}
+                                      </p>
+                                    </div>
+                                  </SwiperSlide>
+                                ))
+                              ) : (
+                                <p>No posts available</p>
+                              )}
+                            </Swiper>
+                            <div className="swiper-button-prev">←</div>{" "}
+                            <div className="swiper-button-next">→</div>{" "}
+                          </div>
                           <section
                             className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
                             aria-labelledby="paragraph-7727-title"
