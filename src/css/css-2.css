@@ -13725,7 +13725,6 @@ span.swiper-pagination-bullet {
   flex-wrap: wrap;
 }
 
-
 .filters__panel.js-dropdown-item.-is-panel {
-  height: 500px; /* Aktif olduğunda yükseklik 500px */
+  height: 500px;
 }

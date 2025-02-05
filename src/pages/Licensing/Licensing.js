@@ -2,6 +2,12 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 const Licensing = () => {
   return (
@@ -86,12 +92,6 @@ const Licensing = () => {
           media="print"
           href="/sites/default/files/css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css?delta=1&language=en&theme=numiko&include=eJxtyUkOwCAIAMAPubwJK1FSVAJy8Pc9Nml6nbFjG0cuYBimD7pXbrwKcLR9mGb76qUk22JHqKj_GQQUmoJ0y1VdgNMryad4YbKO9QH-yTD4"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -919,6 +919,7 @@ const Licensing = () => {
                               </div>
                             </div>
                           </section>
+
                           <section
                             className="paragraph paragraph--type--slice-gallery paragraph--view-mode--default section section--slice-gallery section--bg-white"
                             aria-labelledby="paragraph-23993-title"
@@ -945,6 +946,7 @@ const Licensing = () => {
                                   <div
                                     className="carousel carousel--gallery swiper-container | js-carousel-gallery swiper-container-initialized swiper-container-horizontal"
                                     style={{ cursor: "grab" }}
+                                    data-slides-to-show={2}
                                   >
                                     <ul
                                       className="swiper-wrapper js-photoswipe-container"
@@ -1342,7 +1344,7 @@ const Licensing = () => {
                                 <div className="carousel-container | js-carousel-container">
                                   <div
                                     className="carousel carousel--2-col swiper-container | js-carousel-2-col"
-                                    data-items-length={2}
+                                    data-items-length={6}
                                     data-slides-to-show={2}
                                   >
                                     <ul className="l-grid l-grid--2-col | review-slice__container swiper-wrapper">
@@ -1567,6 +1569,8 @@ const Licensing = () => {
                                       <li
                                         className="swiper-slide carousel--gallery__item swiper-slide-active"
                                         data-swiper-slide-index={0}
+                                        data-items-length={6}
+                                        data-slides-to-show={2}
                                         style={{ "margin-right": "10px" }}
                                       >
                                         <button
