@@ -17,7 +17,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/contact/contact",
+        "https://dersim-new-blog-backend.onrender.com/api/contact/contact",
         {
           NameSurname: nameSurname,
           Email: email,
