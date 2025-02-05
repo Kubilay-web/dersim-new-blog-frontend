@@ -1,9 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
+import "../../css/css-2.css";
+import axios from "axios";
 
 const Contact = () => {
+  const [nameSurname, setNameSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [feedbackType, setFeedbackType] = useState(""); // 'success' or 'fail'
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/contact/contact",
+        {
+          NameSurname: nameSurname,
+          Email: email,
+          Message: message,
+        }
+      );
+
+      setFeedbackMessage(response.data.message);
+      setFeedbackType("success");
+
+      // Clear input fields
+      setNameSurname("");
+      setEmail("");
+      setMessage("");
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        setFeedbackMessage("");
+        setFeedbackType("");
+      }, 3000);
+    } catch (error) {
+      setFeedbackMessage("Failed to send. Please try again.");
+      setFeedbackType("fail");
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        setFeedbackMessage("");
+        setFeedbackType("");
+      }, 3000);
+    }
+  };
+
   return (
     <div>
       <div>
@@ -124,15 +170,6 @@ const Contact = () => {
           name="facebook-domain-verification"
           content="8rxgufrjnmm08rnfosf5ers9d1q7a5"
         />
-        {/* End Facebook domain verification */}
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          &lt;iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MW5VCK"
-          height="0" width="0"
-          style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -2043,12 +2080,9 @@ const Contact = () => {
                                     </div>
                                     <div className="section--form__form">
                                       <form
+                                        onSubmit={handleSubmit}
                                         className="webform-submission-form webform-submission-add-form webform-submission-contact-us-form webform-submission-contact-us-add-form webform-submission-contact-us-paragraph-5943-form webform-submission-contact-us-paragraph-5943-add-form js-webform-details-toggle webform-details-toggle"
-                                        data-drupal-selector="webform-submission-contact-us-paragraph-5943-add-form"
-                                        action="/about-us/contact-us"
-                                        method="post"
                                         id="webform-submission-contact-us-paragraph-5943-add-form"
-                                        acceptCharset="UTF-8"
                                       >
                                         <div className="js-form-item form-item js-form-type-textfield form-item-first-name js-form-item-first-name">
                                           <label
@@ -2057,21 +2091,35 @@ const Contact = () => {
                                           >
                                             Name
                                           </label>
+
                                           <input
-                                            data-drupal-selector="edit-first-name"
-                                            data-parsley-maxlength-message="Name field has a maximum length of 255."
-                                            data-parsley-required-message="Name field is required."
+                                            data-drupal-selector="edit-confirm-your-email-mail-1"
+                                            className="webform-email form-email required"
                                             type="text"
-                                            id="edit-first-name"
-                                            name="first_name"
+                                            id="edit-confirm-your-email-mail-1"
                                             defaultValue
+                                            value={nameSurname}
+                                            onChange={(e) =>
+                                              setNameSurname(e.target.value)
+                                            }
                                             size={60}
-                                            maxLength={255}
+                                            maxLength={254}
                                             placeholder="Your name"
-                                            className="form-text required"
                                             required="required"
                                             aria-required="true"
                                           />
+                                          {/* <input
+                                            type="text"
+                                            size={60}
+                                            maxLength={255}
+                                            placeholder="Your name"
+                                            value={nameSurname}
+                                            onChange={(e) =>
+                                              setNameSurname(e.target.value)
+                                            }
+                                            className="form-text required"
+                                            required
+                                          /> */}
                                         </div>
                                         <fieldset
                                           id="edit-confirm-your-email"
@@ -2100,6 +2148,10 @@ const Contact = () => {
                                                 id="edit-confirm-your-email-mail-1"
                                                 name="confirm_your_email[mail_1]"
                                                 defaultValue
+                                                value={email}
+                                                onChange={(e) =>
+                                                  setEmail(e.target.value)
+                                                }
                                                 size={60}
                                                 maxLength={254}
                                                 placeholder="Your email address"
@@ -2107,7 +2159,7 @@ const Contact = () => {
                                                 aria-required="true"
                                               />
                                             </div>
-                                            <div className="js-form-item form-item js-form-type-email form-item-confirm-your-email-mail-2 js-form-item-confirm-your-email-mail-2">
+                                            {/* <div className="js-form-item form-item js-form-type-email form-item-confirm-your-email-mail-2 js-form-item-confirm-your-email-mail-2">
                                               <label
                                                 htmlFor="edit-confirm-your-email-mail-2"
                                                 className="js-form-required form-required"
@@ -2130,10 +2182,10 @@ const Contact = () => {
                                                 required="required"
                                                 aria-required="true"
                                               />
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </fieldset>
-                                        <div className="js-form-item form-item js-form-type-select form-item-department js-form-item-department">
+                                        {/* <div className="js-form-item form-item js-form-type-select form-item-department js-form-item-department">
                                           <label
                                             htmlFor="edit-department"
                                             className="js-form-required form-required"
@@ -2209,8 +2261,8 @@ const Contact = () => {
                                             </option>
                                             <option value="Other">Other</option>
                                           </select>
-                                        </div>
-                                        <div className="js-form-item form-item js-form-type-textfield form-item-enquiry-title js-form-item-enquiry-title">
+                                        </div> */}
+                                        {/* <div className="js-form-item form-item js-form-type-textfield form-item-enquiry-title js-form-item-enquiry-title">
                                           <label
                                             htmlFor="edit-enquiry-title"
                                             className="js-form-required form-required"
@@ -2232,13 +2284,13 @@ const Contact = () => {
                                             required="required"
                                             aria-required="true"
                                           />
-                                        </div>
+                                        </div> */}
                                         <div className="js-form-item form-item js-form-type-textarea form-item-your-message- js-form-item-your-message-">
                                           <label
                                             htmlFor="edit-your-message-"
                                             className="js-form-required form-required"
                                           >
-                                            Your message{" "}
+                                            Your message
                                           </label>
                                           <div>
                                             <textarea
@@ -2246,6 +2298,10 @@ const Contact = () => {
                                               data-parsley-required-message="Your message  field is required."
                                               id="edit-your-message-"
                                               name="your_message_"
+                                              value={message}
+                                              onChange={(e) =>
+                                                setMessage(e.target.value)
+                                              }
                                               rows={5}
                                               cols={60}
                                               placeholder="Please provide a complete description of your enquiry"
@@ -2256,7 +2312,7 @@ const Contact = () => {
                                             />
                                           </div>
                                         </div>
-                                        <div
+                                        {/* <div
                                           id="edit-privacy-information"
                                           className="js-form-item form-item js-form-type-item form-item-privacy-information js-form-item-privacy-information"
                                         >
@@ -2298,8 +2354,8 @@ const Contact = () => {
                                             </a>
                                             , telephone 020 7323 8000.
                                           </p>
-                                        </div>
-                                        <fieldset
+                                        </div> */}
+                                        {/* <fieldset
                                           data-drupal-selector="edit-captcha"
                                           className="captcha captcha-type-challenge--turnstile"
                                         >
@@ -2348,7 +2404,7 @@ const Contact = () => {
                                             to prevent automated spam
                                             submissions.
                                           </div>
-                                        </fieldset>
+                                        </fieldset> */}
                                         <div
                                           data-drupal-selector="edit-actions"
                                           className="form-actions webform-actions js-form-wrapper form-wrapper"
@@ -2363,6 +2419,18 @@ const Contact = () => {
                                           >
                                             Submit
                                           </button>
+
+                                          {feedbackMessage && (
+                                            <div
+                                              className={
+                                                feedbackType === "success"
+                                                  ? "success-message"
+                                                  : "error-message"
+                                              }
+                                            >
+                                              {feedbackMessage}
+                                            </div>
+                                          )}
                                         </div>
                                         <input
                                           autoComplete="off"
@@ -2381,7 +2449,7 @@ const Contact = () => {
                                           className="url-textfield js-form-wrapper form-wrapper"
                                           style={{ display: "none !important" }}
                                         >
-                                          <div className="js-form-item form-item js-form-type-textfield form-item-url js-form-item-url">
+                                          {/* <div className="js-form-item form-item js-form-type-textfield form-item-url js-form-item-url">
                                             <label htmlFor="edit-url">
                                               Leave this field blank
                                             </label>
@@ -2397,7 +2465,7 @@ const Contact = () => {
                                               maxLength={128}
                                               className="form-text"
                                             />
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </form>
                                     </div>
