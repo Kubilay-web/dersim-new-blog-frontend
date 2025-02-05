@@ -3,8 +3,8 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 import "../../css/css-2.css";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Exhibition = () => {
   const [posts, setPosts] = useState([]);
@@ -14,6 +14,7 @@ const Exhibition = () => {
   const [posts5, setPosts5] = useState([]);
   const [posts6, setPosts6] = useState([]);
   const [posts7, setPosts7] = useState([]);
+  const [isInputFocused, setIsInputFocused] = useState(false); // Inputun odak durumunu tutacak state
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
@@ -593,7 +594,11 @@ const Exhibition = () => {
                                           </svg>
                                         </button>
                                         <div
-                                          className="filters__panel | js-dropdown-item -is-active"
+                                          className={`filters__panel js-dropdown-item ${
+                                            isInputFocused
+                                              ? "-is-panel"
+                                              : "-is-active"
+                                          }`}
                                           aria-hidden="false"
                                           style={{
                                             display: "block",
@@ -619,29 +624,41 @@ const Exhibition = () => {
                                             </li>
                                           </ul> */}
                                           <div className="whats-on-datepicker">
+                                            {/* Başlangıç Tarihi */}
                                             Start Date
-                                            <input
-                                              type="text"
+                                            <DatePicker
                                               selected={startDate}
-                                              onChange={(e) =>
-                                                setStartDate(
-                                                  new Date(e.target.value)
-                                                )
-                                              } // Convert input value to a Date
-                                              placeholder="yyyy-MM-dd"
+                                              onChange={(date) =>
+                                                setStartDate(date)
+                                              }
+                                              dateFormat="yyyy-MM-dd"
+                                              placeholderText="yyyy-MM-dd"
                                               className="date-picker"
+                                              isClearable
+                                              onFocus={() =>
+                                                setIsInputFocused(true)
+                                              } // Inputa tıklandığında state'i true yap
+                                              onBlur={() =>
+                                                setIsInputFocused(false)
+                                              } // Inputtan odak çıkıldığında state'i false yap
                                             />
+                                            {/* Bitiş Tarihi */}
                                             End Date
-                                            <input
-                                              type="text"
+                                            <DatePicker
                                               selected={endDate}
-                                              onChange={(e) =>
-                                                setEndDate(
-                                                  new Date(e.target.value)
-                                                )
-                                              } // Convert input value to a Date
-                                              placeholder="yyyy-MM-dd"
+                                              onChange={(date) =>
+                                                setEndDate(date)
+                                              }
+                                              dateFormat="yyyy-MM-dd"
+                                              placeholderText="yyyy-MM-dd"
                                               className="date-picker"
+                                              isClearable
+                                              onFocus={() =>
+                                                setIsInputFocused(true)
+                                              } // Inputa tıklandığında state'i true yap
+                                              onBlur={() =>
+                                                setIsInputFocused(false)
+                                              } // Inputtan odak çıkıldığında state'i false yap
                                             />
                                             {/* <div>
                                               <div className="pika-single">

@@ -13718,3 +13718,14 @@ span.swiper-pagination-bullet {
 .swiper-button-next:hover {
   background: rgba(255, 255, 255, 0.9); /* Hover efekti */
 }
+
+.whats-on-datepicker {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+.filters__panel.js-dropdown-item.-is-panel {
+  height: 500px; /* Aktif olduğunda yükseklik 500px */
+}
