@@ -122,6 +122,16 @@ const NavbarCommerce = () => {
                       Home Page
                     </Link>
                   </li>
+
+                  {/* Show Admin Page link only if the user is an admin */}
+                  {currentUser.isAdmin && (
+                    <li>
+                      <Link to="/admin" className="dropdown-item">
+                        Admin Page
+                      </Link>
+                    </li>
+                  )}
+
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
