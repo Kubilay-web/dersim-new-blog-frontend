@@ -35,7 +35,7 @@ export default function Login() {
     try {
       dispatch(signInStart());
       const res = await fetch(
-        "https://dersim-new-blog-backend.onrender.com/api/auth/signin",
+        "https://dersim-new-blog-backend.vercel.app/api/auth/signin",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
