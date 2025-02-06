@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "../../css/css-2.css";
@@ -14,6 +14,11 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Reset error state when the component mounts
+    dispatch(signInFailure(null));
+  }, [dispatch]);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
@@ -21,7 +26,11 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      return dispatch(signInFailure("Please fill all the fields"));
+      dispatch(signInFailure("Please fill all the fields"));
+      setTimeout(() => {
+        dispatch(signInFailure(null)); // Clear error after 3 seconds
+      }, 3000);
+      return;
     }
     try {
       dispatch(signInStart());
@@ -36,6 +45,9 @@ export default function Login() {
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data.message));
+        setTimeout(() => {
+          dispatch(signInFailure(null)); // Clear error after 3 seconds
+        }, 3000);
       }
 
       if (res.ok) {
@@ -44,6 +56,9 @@ export default function Login() {
       }
     } catch (error) {
       dispatch(signInFailure(error.message));
+      setTimeout(() => {
+        dispatch(signInFailure(null)); // Clear error after 3 seconds
+      }, 3000);
     }
   };
 
@@ -63,7 +78,11 @@ export default function Login() {
             style={{ maxWidth: "400px", width: "100%" }}
           >
             <div>
-              <label htmlFor="email" className="form-label">
+              <label
+                style={{ color: "#000" }}
+                htmlFor="email"
+                className="form-label"
+              >
                 Your email
               </label>
               <input
@@ -75,7 +94,11 @@ export default function Login() {
               />
             </div>
             <div>
-              <label htmlFor="password" className="form-label">
+              <label
+                style={{ color: "#000" }}
+                htmlFor="password"
+                className="form-label"
+              >
                 Your password
               </label>
               <input
@@ -107,13 +130,25 @@ export default function Login() {
           </form>
 
           <div className="d-flex gap-2 text-sm mt-3">
-            <span>Don't have an account?</span>
+            <span style={{ color: "#000" }}>Don't have an account?</span>
             <Link to="/sign-up" className="text-primary">
               Sign Up
             </Link>
           </div>
 
-          {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
+          {/* Display error message if it exists and is shown after clicking Sign In */}
+          {errorMessage && (
+            <div
+              style={{
+                color: "red",
+                marginTop: "10px",
+                textAlign: "center",
+                fontSize: "14px",
+              }}
+            >
+              {errorMessage}
+            </div>
+          )}
         </div>
       </div>
     </div>
