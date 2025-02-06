@@ -9,6 +9,8 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify"; // Notification gösterimi için
+import ReactPaginate from "react-paginate"; // react-paginate import edilmiştir
+import "./PostManage.css";
 
 const PostManage = () => {
   const [posts, setPosts] = useState([]);
@@ -27,7 +29,7 @@ const PostManage = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState(""); // Arama sorgusu
-  const [currentPage, setCurrentPage] = useState(1); // Sayfa numarası
+  const [currentPage, setCurrentPage] = useState(0); // Sayfa numarası
   const [postsPerPage] = useState(5); // Sayfa başına post sayısı
 
   // API'ye postları almak için istek gönder
@@ -167,8 +169,15 @@ const PostManage = () => {
   };
 
   // Pagination hesaplamaları
+
   const filteredPosts = filterPosts();
-  const currentPosts = filteredPosts.slice(0, 10);
+  const offset = currentPage * postsPerPage;
+  const currentPosts = filteredPosts.slice(offset, offset + postsPerPage);
+
+  // Sayfa değiştirme fonksiyonu
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
 
   return (
     <div className="container mt-5">
@@ -348,6 +357,15 @@ const PostManage = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <ReactPaginate
+        previousLabel={"Önceki"}
+        nextLabel={"Sonraki"}
+        pageCount={Math.ceil(filteredPosts.length / postsPerPage)}
+        onPageChange={handlePageChange}
+        containerClassName={"pagination justify-content-center mt-4"}
+        activeClassName={"active"}
+      />
     </div>
   );
 };

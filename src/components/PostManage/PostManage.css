@@ -1,0 +1,72 @@
+/* Sayfa Numarası ve Navigasyon Butonları için Genel Stil */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.pagination a,
+.pagination span {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #007bff;
+  background-color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover,
+.pagination span:hover {
+  background-color: #007bff;
+  color: white !important;
+  cursor: pointer;
+}
+
+/* Aktif Sayfa İçin Stil */
+.pagination .active a {
+  background-color: #007bff;
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Önceki ve Sonraki Butonları için Özel Stil */
+.pagination .previous a,
+.pagination .next a {
+  font-weight: bold;
+}
+
+.pagination .disabled a,
+.pagination .disabled span {
+  color: #ccc;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+}
+
+/* Sayfa Numaralarındaki Arka Planı Ayarlamak */
+.pagination a {
+  border-radius: 50%;
+  height: 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination .previous a,
+.pagination .next a {
+  border-radius: 5px;
+  text-decoration: none;
+}
