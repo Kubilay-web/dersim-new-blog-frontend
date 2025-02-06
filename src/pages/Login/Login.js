@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import "../../css/css-2.css";
 import {
   signInStart,
   signInSuccess,
@@ -10,18 +10,9 @@ import {
 
 export default function Login() {
   const [formData, setFormData] = useState({});
-  const { loading, error } = useSelector((state) => state.user);
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href =
-      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
-    document.head.appendChild(link);
-    return () => document.head.removeChild(link);
-  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -32,66 +23,97 @@ export default function Login() {
     if (!formData.email || !formData.password) {
       return dispatch(signInFailure("Please fill all the fields"));
     }
-
     try {
       dispatch(signInStart());
-      const res = await axios.post(
-        `https://dersim-new-blog-backend.onrender.com/api/auth/signin`,
-        formData,
+      const res = await fetch(
+        "https://dersim-new-blog-backend.onrender.com/api/auth/signin",
         {
+          method: "POST",
           headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
         }
       );
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(signInFailure(data.message));
+      }
 
-      if (res.data) {
-        dispatch(signInSuccess(res.data));
+      if (res.ok) {
+        dispatch(signInSuccess(data));
         navigate("/shop");
-      } else {
-        dispatch(signInFailure("Login failed"));
       }
     } catch (error) {
-      dispatch(
-        signInFailure(error.response?.data?.message || "An error occurred")
-      );
+      dispatch(signInFailure(error.message));
     }
   };
 
   return (
-    <div className="mt-5 mb-5">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <form className="d-flex flex-column gap-3" onSubmit={handleSubmit}>
+    <div className="mt-5 mb-5 bg-white">
+      <div className="container d-flex justify-content-center align-items-center flex-column flex-md-row gap-5">
+        {/* Left Section - Optional, can be added if needed */}
+        <div className="flex-1 d-flex justify-content-center align-items-center">
+          {/* Optional content can go here */}
+        </div>
+
+        {/* Right Section */}
+        <div className="flex-1 d-flex justify-content-center align-items-center flex-column">
+          <form
+            className="d-flex flex-column gap-3"
+            onSubmit={handleSubmit}
+            style={{ maxWidth: "400px", width: "100%" }}
+          >
+            <div>
+              <label htmlFor="email" className="form-label">
+                Your email
+              </label>
               <input
                 type="email"
                 className="form-control"
                 id="email"
-                placeholder="Email"
+                placeholder="name@company.com"
                 onChange={handleChange}
               />
+            </div>
+            <div>
+              <label htmlFor="password" className="form-label">
+                Your password
+              </label>
               <input
                 type="password"
                 className="form-control"
                 id="password"
-                placeholder="Password"
+                placeholder="**********"
                 onChange={handleChange}
               />
-              <button
-                type="submit"
-                className="btn btn-gradient"
-                disabled={loading}
-              >
-                {loading ? "Loading..." : "Sign In"}
-              </button>
-            </form>
-            <div className="mt-3">
-              <span>Don't have an account? </span>
-              <Link to="/sign-up" className="text-primary">
-                Sign Up
-              </Link>
             </div>
-            {error && <div className="alert alert-danger mt-3">{error}</div>}
+            <button
+              className="btn btn-primary mt-3"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="ms-2">Loading...</span>
+                </>
+              ) : (
+                "Sign In"
+              )}
+            </button>
+          </form>
+
+          <div className="d-flex gap-2 text-sm mt-3">
+            <span>Don't have an account?</span>
+            <Link to="/sign-up" className="text-primary">
+              Sign Up
+            </Link>
           </div>
+
+          {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
         </div>
       </div>
     </div>

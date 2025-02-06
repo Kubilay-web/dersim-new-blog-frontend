@@ -9,7 +9,7 @@ body {
     opacity: 1;
   }
   body {
-    background: #fff;
+    background: #fff !important;
     color: #000;
     float: none;
     font: 1em Helvetica, Arial, sans-serif !important;

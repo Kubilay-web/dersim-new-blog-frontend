@@ -123,7 +123,6 @@ const NavbarCommerce = () => {
                     </Link>
                   </li>
 
-                  {/* Show Admin Page link only if the user is an admin */}
                   {currentUser.isAdmin && (
                     <li>
                       <Link to="/admin" className="dropdown-item">
