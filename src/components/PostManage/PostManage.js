@@ -17,6 +17,7 @@ const PostManage = () => {
   const [postDetails, setPostDetails] = useState({
     title: "",
     content: "",
+    blogContent: "", // Yeni eklenen alan
     category: "",
     image: null,
     event: "",
@@ -50,6 +51,7 @@ const PostManage = () => {
     const formData = new FormData();
     formData.append("title", postDetails.title);
     formData.append("content", postDetails.content);
+    formData.append("blogContent", postDetails.blogContent); // Blog içeriği eklendi
     formData.append("category", postDetails.category);
     formData.append("event", postDetails.event);
     formData.append("date", postDetails.date);
@@ -79,6 +81,7 @@ const PostManage = () => {
     const formData = new FormData();
     formData.append("title", postDetails.title);
     formData.append("content", postDetails.content);
+    formData.append("blogContent", postDetails.blogContent); // Blog içeriği eklendi
     formData.append("category", postDetails.category);
     formData.append("event", postDetails.event);
     formData.append("date", postDetails.date);
@@ -130,6 +133,7 @@ const PostManage = () => {
       setPostDetails({
         title: "",
         content: "",
+        blogContent: "", // Yeni post için boş blog içeriği
         category: "",
         image: null,
         event: "",
@@ -263,6 +267,22 @@ const PostManage = () => {
               />
             </Form.Group>
 
+            <Form.Group controlId="blogContent">
+              <Form.Label>Blog İçeriği</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Blog içeriğini girin"
+                value={postDetails.blogContent}
+                onChange={(e) =>
+                  setPostDetails({
+                    ...postDetails,
+                    blogContent: e.target.value,
+                  })
+                }
+              />
+            </Form.Group>
+
             <Form.Group controlId="category">
               <Form.Label>Kategori</Form.Label>
               <Form.Control
@@ -288,7 +308,7 @@ const PostManage = () => {
             </Form.Group>
 
             <Form.Group controlId="date">
-              <Form.Label>Tarih</Form.Label>
+              <Form.Label>Etkinlik Tarihi</Form.Label>
               <Form.Control
                 type="date"
                 value={postDetails.date}
@@ -301,8 +321,8 @@ const PostManage = () => {
             <Form.Group controlId="price">
               <Form.Label>Fiyat</Form.Label>
               <Form.Control
-                type="number"
-                placeholder="Fiyat"
+                type="text"
+                placeholder="Fiyat girin"
                 value={postDetails.price}
                 onChange={(e) =>
                   setPostDetails({ ...postDetails, price: e.target.value })
@@ -322,20 +342,23 @@ const PostManage = () => {
             </Form.Group>
 
             <Form.Group controlId="image">
-              <Form.Label>Görsel</Form.Label>
-              <Form.Control type="file" onChange={handleImageChange} />
+              <Form.Label>Resim</Form.Label>
+              <Form.Control
+                type="file"
+                onChange={handleImageChange}
+                accept="image/*"
+              />
               {imagePreview && (
-                <div className="mt-3">
-                  <img
-                    src={imagePreview}
-                    alt="Görsel Önizleme"
-                    style={{ maxWidth: "100%", height: "auto" }}
-                  />
-                </div>
+                <img
+                  src={imagePreview}
+                  alt="Preview"
+                  style={{ width: "100px", marginTop: "10px" }}
+                />
               )}
             </Form.Group>
           </Form>
         </Modal.Body>
+
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowModal(false)}>
             Kapat
@@ -348,6 +371,13 @@ const PostManage = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      {/* Pagination */}
+      <Pagination>
+        <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
+        <Pagination.Item>{currentPage}</Pagination.Item>
+        <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} />
+      </Pagination>
     </div>
   );
 };
