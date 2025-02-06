@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import "../../css/css-2.css";
 import {
   signInStart,
   signInSuccess,
@@ -62,8 +61,21 @@ export default function Login() {
     }
   };
 
+  // Bootstrap CSS'i dinamik olarak yükle
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href =
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
-    <div className="mt-5 mb-5 bg-white">
+    <div className="mt-5 mb-5 h-[100vh]">
       <div className="container d-flex justify-content-center align-items-center flex-column flex-md-row gap-5">
         {/* Left Section - Optional, can be added if needed */}
         <div className="flex-1 d-flex justify-content-center align-items-center">

@@ -1465,7 +1465,7 @@ const Exhibition = () => {
                                           /> */}
                                         </div>
                                       </li>
-                                      <li
+                                      {/* <li
                                         className="facet-inactive block-facet--links filters__filter | js-dropdown-container"
                                         id="block-events-exhibitions-who"
                                       >
@@ -1646,7 +1646,7 @@ const Exhibition = () => {
                                             </ul>
                                           </div>
                                         </div>
-                                      </li>
+                                      </li> */}
 
                                       <li
                                         className="facet-inactive block-facet--links filters__filter | js-dropdown-container"
