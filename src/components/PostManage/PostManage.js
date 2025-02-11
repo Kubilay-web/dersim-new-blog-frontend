@@ -24,6 +24,7 @@ const PostManage = () => {
     event: "",
     date: "",
     price: "",
+    slug: "",
     color: "#ffffff", // Varsayılan renk
   });
   const [imagePreview, setImagePreview] = useState(null);
@@ -56,6 +57,7 @@ const PostManage = () => {
     formData.append("event", postDetails.event);
     formData.append("date", postDetails.date);
     formData.append("price", postDetails.price);
+    formData.append("slug", postDetails.slug);
     formData.append("color", postDetails.color); // Renk bilgisi eklendi
 
     if (postDetails.image) {
@@ -85,6 +87,7 @@ const PostManage = () => {
     formData.append("event", postDetails.event);
     formData.append("date", postDetails.date);
     formData.append("price", postDetails.price);
+    formData.append("slug", postDetails.slug);
     formData.append("color", postDetails.color); // Yeni renk bilgisi eklendi
 
     if (postDetails.image) {
@@ -137,6 +140,7 @@ const PostManage = () => {
         event: "",
         date: "",
         price: "",
+        slug: "",
         color: "#ffffff", // Yeni post için varsayılan renk
       });
       setImagePreview(null);
@@ -303,6 +307,17 @@ const PostManage = () => {
                 value={postDetails.date}
                 onChange={(e) =>
                   setPostDetails({ ...postDetails, date: e.target.value })
+                }
+              />
+            </Form.Group>
+
+            <Form.Group controlId="slug">
+              <Form.Label>Slug</Form.Label>
+              <Form.Control
+                type="text"
+                value={postDetails.slug}
+                onChange={(e) =>
+                  setPostDetails({ ...postDetails, slug: e.target.value })
                 }
               />
             </Form.Group>
