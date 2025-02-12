@@ -5,6 +5,12 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { useGetAllProductsQuery } from "../../redux/products/productsApi";
 import { Helmet } from "react-helmet";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
@@ -1574,13 +1580,89 @@ const Home = () => {
                                       <use xlinkHref="#sprite-icon-chevron" />
                                     </svg>
                                   </a>
+
+                                  <Swiper
+                                    slidesPerView={3}
+                                    spaceBetween={10}
+                                    draggable={true}
+                                    pagination={{
+                                      clickable: true,
+                                    }}
+                                    navigation={{
+                                      prevEl: ".swiper-button-prev",
+                                      nextEl: ".swiper-button-next",
+                                    }}
+                                    breakpoints={{
+                                      640: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 10,
+                                      },
+                                      768: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 10,
+                                      },
+                                      1024: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 50,
+                                      },
+                                    }}
+                                    modules={[Pagination, Navigation]}
+                                    className="mySwiper"
+                                  >
+                                    {posts5 && posts5.length > 0 ? (
+                                      posts5
+                                        .slice(0, 1000)
+                                        .map((post5, index) => (
+                                          <SwiperSlide
+                                            key={post5._id}
+                                            className="swiper-slide teaser--animate-slide"
+                                          >
+                                            <div className="teaser teaser--animate | js-teaser-animate">
+                                              <div className="teaser__wrapper">
+                                                <div className="teaser--animate__container">
+                                                  <div className="teaser__content">
+                                                    <h3 className="teaser__title">
+                                                      <a
+                                                        href={post5.slug}
+                                                        className="teaser__anchor"
+                                                      >
+                                                        <span>
+                                                          {post5.title}
+                                                        </span>
+                                                        <span className="visually-hidden">
+                                                          Read more
+                                                        </span>
+                                                      </a>
+                                                    </h3>
+                                                  </div>
+                                                  <div className="teaser--animate__image">
+                                                    <div className="media media-discover media-image js-media">
+                                                      <img
+                                                        className="image-style"
+                                                        loading="lazy"
+                                                        src={post5.image}
+                                                        width={286}
+                                                        height={425}
+                                                      />
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </SwiperSlide>
+                                        ))
+                                    ) : (
+                                      <p>No posts available</p>
+                                    )}
+                                  </Swiper>
+
                                   <div className="carousel-container | js-carousel-container">
                                     <div
                                       className="carousel carousel--main swiper-container | js-carousel-main"
                                       data-slides-to-show={3}
                                     >
                                       <ul className="swiper-wrapper">
-                                        {posts5 && posts5.length > 0 ? (
+                                        {/* {posts5 && posts5.length > 0 ? (
                                           posts5
                                             .slice(0, 1000)
                                             .map((post5, index) => (
@@ -1624,7 +1706,7 @@ const Home = () => {
                                             ))
                                         ) : (
                                           <p>No posts available</p>
-                                        )}
+                                        )} */}
 
                                         {/* <li className="swiper-slide teaser--animate-slide">
                                           <div className="teaser teaser--animate | js-teaser-animate">

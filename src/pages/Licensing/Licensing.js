@@ -946,7 +946,7 @@ const Licensing = () => {
                                   <div
                                     className="carousel carousel--gallery swiper-container | js-carousel-gallery swiper-container-initialized swiper-container-horizontal"
                                     style={{ cursor: "grab" }}
-                                    data-slides-to-show={2}
+                                    data-slides-to-show={3}
                                   >
                                     <ul
                                       className="swiper-wrapper js-photoswipe-container"

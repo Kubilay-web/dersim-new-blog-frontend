@@ -13679,7 +13679,7 @@
 }
 
 .swiper-pagination {
-  padding-top: 40px;
+  padding-top: 10px;
   position: relative !important;
   text-align: center;
   transition: 300ms opacity;
