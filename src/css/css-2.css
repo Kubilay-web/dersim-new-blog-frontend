@@ -4891,7 +4891,6 @@
   .-header-expanded:before,
   .-menu-active:before {
     animation: animate-overlay 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    background-color: rgba(0, 0, 0, 0.8);
     bottom: 0;
     content: "";
     left: 0;

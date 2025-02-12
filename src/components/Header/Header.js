@@ -105,7 +105,7 @@ const Header = () => {
             </div>
 
             <button
-              onClick={toggleDropDown6}
+              onClick={toggleDropDown}
               className="header__button header__button--menu | js-button-menu"
               type="button"
             >
@@ -498,7 +498,10 @@ const Header = () => {
                             </svg>
                           </a>
                         </li>
-                        <li className="menu__item menu__item--expanded menu__item--level-0">
+                        <li
+                          ref={menuRef2}
+                          className="menu__item menu__item--expanded menu__item--level-0"
+                        >
                           <button
                             onClick={toggleDropDown2}
                             className="menu__link menu__link--level-0 menu__toggle menu__link--expanded js-drilldown-button"
@@ -690,7 +693,10 @@ const Header = () => {
                             </div>
                           )}
                         </li>
-                        <li className="menu__item menu__item--expanded menu__item--level-0">
+                        <li
+                          ref={menuRef3}
+                          className="menu__item menu__item--expanded menu__item--level-0"
+                        >
                           <button
                             onClick={toggleDropDown3}
                             className="menu__link menu__link--level-0 menu__toggle menu__link--expanded js-drilldown-button"
@@ -882,7 +888,10 @@ const Header = () => {
                             </div>
                           )}
                         </li>
-                        <li className="menu__item menu__item--expanded menu__item--level-0">
+                        <li
+                          ref={menuRef4}
+                          className="menu__item menu__item--expanded menu__item--level-0"
+                        >
                           <button
                             onClick={toggleDropDown4}
                             className="menu__link menu__link--level-0 menu__toggle menu__link--expanded js-drilldown-button"
@@ -1074,7 +1083,10 @@ const Header = () => {
                             </div>
                           )}
                         </li>
-                        <li className="menu__item menu__item--expanded menu__item--level-0">
+                        <li
+                          ref={menuRef5}
+                          className="menu__item menu__item--expanded menu__item--level-0"
+                        >
                           <button
                             onClick={toggleDropDown5}
                             className="menu__link menu__link--level-0 menu__toggle menu__link--expanded js-drilldown-button"

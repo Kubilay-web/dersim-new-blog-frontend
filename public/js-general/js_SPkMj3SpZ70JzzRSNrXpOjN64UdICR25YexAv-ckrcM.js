@@ -2996,22 +2996,7 @@
                         this.$container.width(2 * this._css.width),
                         this.$container.prepend(r),
                         "rtl" === this.options.direction
-                          ? u.call(
-                              this,
-                              { marginRight: 0, speed: n },
-                              function () {
-                                var e = r.next();
-                                e
-                                  .addClass(this.options.cssClass.sub)
-                                  .removeClass(this.options.cssClass.root),
-                                  this.$container
-                                    .find("[" + i + "]")
-                                    .last()
-                                    .removeAttr(i)
-                                    .append(e),
-                                  d.call(this, r);
-                              }.bind(this)
-                            )
+                          ? u.call(this, { marginRight: 0, speed: n })
                           : u.call(
                               this,
                               { marginLeft: 0, speed: n },
