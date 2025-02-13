@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import "../../css/css-1.css";
+import "../../css/css-2.css";
 import { Helmet } from "react-helmet";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 const Licensing = () => {
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+      );
+      const data = await res.json();
+      setPostFunc(data.posts);
+    } catch (error) {
+      console.error(`Failed to fetch posts for category ${category}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const category1 = "Product Licensing";
+    const category2 = "From the collection";
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+  }, []);
+
   return (
     <div>
       <div>
@@ -914,6 +944,98 @@ const Licensing = () => {
                             </div>
                           </section>
 
+                          <section className="swiper-general-container">
+                            <div className="carousel__title-container">
+                              <h2
+                                id="paragraph-23993-title"
+                                className="section__title"
+                              >
+                                Examples from our product licensing programme
+                              </h2>
+                            </div>
+                            <Swiper
+                              slidesPerView={3}
+                              spaceBetween={10}
+                              draggable={true}
+                              pagination={{
+                                clickable: true,
+                              }}
+                              navigation={{
+                                prevEl: ".swiper-button-prev",
+                                nextEl: ".swiper-button-next",
+                              }}
+                              breakpoints={{
+                                640: {
+                                  slidesPerView: 2,
+                                  spaceBetween: 10,
+                                },
+                                768: {
+                                  slidesPerView: 2,
+                                  spaceBetween: 10,
+                                },
+                                1024: {
+                                  slidesPerView: 3,
+                                  spaceBetween: 50,
+                                },
+                              }}
+                              modules={[Pagination, Navigation]}
+                              className="mySwiper"
+                            >
+                              {posts && posts.length > 0 ? (
+                                posts.slice(0, 1000).map((post, index) => (
+                                  <SwiperSlide
+                                    key={post._id}
+                                    className="swiper-slide teaser--animate-slide"
+                                  >
+                                    <ul
+                                      className="swiper-wrapper js-photoswipe-container"
+                                      style={{
+                                        "-webkit-transform":
+                                          "translate3d(0px, 0px, 0px)",
+                                        "-ms-transform":
+                                          "translate3d(0px, 0px, 0px)",
+                                        transform: "translate3d(0px, 0px, 0px)",
+                                      }}
+                                    >
+                                      <li
+                                        className="swiper-slide carousel--gallery__item swiper-slide-active"
+                                        style={{ "margin-right": "10px" }}
+                                      >
+                                        <button
+                                          type="button"
+                                          className="carousel--gallery__button | js-photoswipe-item"
+                                          data-large-image-url={post.image}
+                                          data-large-image-width={1280}
+                                          data-large-image-height={720}
+                                          data-caption
+                                          data-lang
+                                        ></button>
+                                        <div className="carousel--gallery__content">
+                                          <div className="media media-gallery media-image js-media">
+                                            <img
+                                              loading="eager"
+                                              className="lazyload not-full-width"
+                                              width={1244}
+                                              height={700}
+                                              src={post.image}
+                                              data-sizes="auto"
+                                              data-focal-position="center center"
+                                            />
+                                          </div>
+                                          <p className="carousel--gallery__item-title">
+                                            {post.title}
+                                          </p>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </SwiperSlide>
+                                ))
+                              ) : (
+                                <p>No posts available</p>
+                              )}
+                            </Swiper>
+                          </section>
+                          {/* 
                           <section
                             className="paragraph paragraph--type--slice-gallery paragraph--view-mode--default section section--slice-gallery section--bg-white"
                             aria-labelledby="paragraph-23993-title"
@@ -1322,7 +1444,8 @@ const Licensing = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section> */}
+
                           <section
                             className="paragraph paragraph--type--slice-review paragraph--view-mode--default section section--slice-review section--bg-white review-slice"
                             aria-labelledby="paragraph-24775-title"
@@ -1529,7 +1652,99 @@ const Licensing = () => {
                             </div>
                           </section>
 
-                          <section
+                          <section className="swiper-general-container">
+                            <div className="carousel__title-container">
+                              <h2
+                                id="paragraph-25315-title"
+                                className="visually-hidden"
+                              >
+                                From the collection
+                              </h2>
+                            </div>
+                            <Swiper
+                              slidesPerView={3}
+                              spaceBetween={10}
+                              draggable={true}
+                              pagination={{
+                                clickable: true,
+                              }}
+                              navigation={{
+                                prevEl: ".swiper-button-prev",
+                                nextEl: ".swiper-button-next",
+                              }}
+                              breakpoints={{
+                                640: {
+                                  slidesPerView: 2,
+                                  spaceBetween: 10,
+                                },
+                                768: {
+                                  slidesPerView: 2,
+                                  spaceBetween: 10,
+                                },
+                                1024: {
+                                  slidesPerView: 3,
+                                  spaceBetween: 50,
+                                },
+                              }}
+                              modules={[Pagination, Navigation]}
+                              className="mySwiper"
+                            >
+                              {posts2 && posts2.length > 0 ? (
+                                posts2.slice(0, 1000).map((post2, index) => (
+                                  <SwiperSlide
+                                    key={post2._id}
+                                    className="swiper-slide teaser--animate-slide"
+                                  >
+                                    <ul
+                                      className="swiper-wrapper js-photoswipe-container"
+                                      style={{
+                                        "-webkit-transform":
+                                          "translate3d(0px, 0px, 0px)",
+                                        "-ms-transform":
+                                          "translate3d(0px, 0px, 0px)",
+                                        transform: "translate3d(0px, 0px, 0px)",
+                                      }}
+                                    >
+                                      <li
+                                        className="swiper-slide carousel--gallery__item swiper-slide-active"
+                                        style={{ "margin-right": "10px" }}
+                                      >
+                                        <button
+                                          type="button"
+                                          className="carousel--gallery__button | js-photoswipe-item"
+                                          data-large-image-url={post2.image}
+                                          data-large-image-width={1280}
+                                          data-large-image-height={720}
+                                          data-caption
+                                          data-lang
+                                        ></button>
+                                        <div className="carousel--gallery__content">
+                                          <div className="media media-gallery media-image js-media">
+                                            <img
+                                              loading="eager"
+                                              className="lazyload not-full-width"
+                                              width={1244}
+                                              height={700}
+                                              src={post2.image}
+                                              data-sizes="auto"
+                                              data-focal-position="center center"
+                                            />
+                                          </div>
+                                          <p className="carousel--gallery__item-title">
+                                            {post2.title}
+                                          </p>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </SwiperSlide>
+                                ))
+                              ) : (
+                                <p>No posts available</p>
+                              )}
+                            </Swiper>
+                          </section>
+
+                          {/* <section
                             className="paragraph paragraph--type--slice-gallery paragraph--view-mode--default section section--slice-gallery section--bg-white"
                             aria-labelledby="paragraph-25315-title"
                           >
@@ -1861,7 +2076,8 @@ const Licensing = () => {
                                 </div>
                               </div>
                             </div>
-                          </section>
+                          </section>  */}
+
                           <section
                             className="paragraph paragraph--type--slice-banner paragraph--view-mode--default section section--slice-banner section--maintain-spacer-top section--bg-white banner"
                             aria-labelledby="paragraph-23995-title"

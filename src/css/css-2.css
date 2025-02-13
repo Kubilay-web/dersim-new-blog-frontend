@@ -13746,3 +13746,9 @@ span.swiper-pagination-bullet {
   margin-top: 15px;
   border-radius: 5px;
 }
+
+section.swiper-general-container {
+  background-color: #fff !important;
+  padding: 20px 0px 20px 20px;
+  color: #000;
+}
