@@ -12,28 +12,23 @@ const NavbarCommerce = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
-    // Bootstrap CSS dosyasını dinamik olarak ekleyelim
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href =
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
     document.head.appendChild(link);
 
-    // Bootstrap JS dosyasını dinamik olarak ekleyelim
     const script = document.createElement("script");
     script.src =
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
     script.crossOrigin = "anonymous";
     document.body.appendChild(script);
 
-    // Temizleme fonksiyonu, component unmount olduğunda link ve scripti kaldırır
     return () => {
       document.head.removeChild(link);
       document.body.removeChild(script);
     };
-  }, []); // Boş array, yalnızca component mount olduğunda çalışır
-
-  // Çıkış yapma işlemi
+  }, []);
 
   const handleSignout = async () => {
     const URL = process.env.REACT_APP_BACKEND_URL;
@@ -41,7 +36,6 @@ const NavbarCommerce = () => {
     try {
       const response = await axios.post(`${URL}/api/user/signout`);
 
-      // Başarılı çıkış
       if (response.status === 200) {
         dispatch(signoutSuccess());
         toast.warning("Logged out", { position: "bottom-left" });
@@ -49,7 +43,6 @@ const NavbarCommerce = () => {
         console.log(response.data.message);
       }
     } catch (error) {
-      // Hata durumunda
       console.error(error.message);
     }
   };
@@ -113,7 +106,7 @@ const NavbarCommerce = () => {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <Link to="/dashboard?tab=profile" className="dropdown-item">
+                    <Link to="/profile" className="dropdown-item">
                       Profile
                     </Link>
                   </li>

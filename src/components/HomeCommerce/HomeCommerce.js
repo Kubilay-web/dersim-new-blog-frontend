@@ -3,16 +3,13 @@ import { useDispatch } from "react-redux";
 import { useGetAllProductsQuery } from "../../redux/products/productsApi";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../redux/products/cartSlice";
-
 const HomeCommerce = () => {
   const { data, error, isLoading, refetch } = useGetAllProductsQuery();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
-
   useEffect(() => {
     // Bootstrap CSS dosyasını dinamik olarak ekleyelim
     const link = document.createElement("link");
@@ -20,7 +17,6 @@ const HomeCommerce = () => {
     link.href =
       "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
     document.head.appendChild(link);
-
     // Bootstrap JS dosyasını dinamik olarak ekleyelim
     const script = document.createElement("script");
     script.src =
@@ -29,18 +25,15 @@ const HomeCommerce = () => {
       "sha384-pzjw8f+ua7Kw1TIq0p6n6YDpU7tQAxpfe4EdT9B5o8TJOz1IpD7mf6p7r5pXj/Ud";
     script.crossOrigin = "anonymous";
     document.body.appendChild(script);
-
     // Temizleme fonksiyonu, component unmount olduğunda link ve scripti kaldırır
     return () => {
       document.head.removeChild(link);
       document.body.removeChild(script);
     };
-  }, []); // Boş array, yalnızca component mount olduğunda çalışır
-
+  }, []); // Boş array, yalnızca component mount olduğunda çalışı
   useEffect(() => {
     refetch();
   }, [refetch]);
-
   return (
     <div className="container py-5">
       {isLoading ? (

@@ -1,5 +1,4 @@
-/* Not Found */
-.not-found {
+Not Found .not-found {
   font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
@@ -17,7 +16,6 @@
   font-size: 20px;
 }
 
-/* NavBar */
 .nav-bar {
   font-family: "Nunito", sans-serif;
   position: sticky;
@@ -59,7 +57,6 @@
   margin-right: 20px;
 }
 
-/* Home */
 .home-container {
   font-family: "Nunito", sans-serif;
   padding: 2rem 4rem;
@@ -129,7 +126,6 @@
   cursor: pointer;
 }
 
-/* Cart */
 .cart-container {
   font-family: "Nunito", sans-serif;
   padding: 2rem 4rem;
@@ -229,7 +225,6 @@
   font-weight: 700;
 }
 
-/* cart summary */
 .cart-summary {
   font-family: "Nunito", sans-serif;
   display: flex;
@@ -320,7 +315,6 @@
   align-items: center;
 }
 
-/* Admin */
 .link-active {
   font-family: "Nunito", sans-serif;
   color: #4b70e2;
@@ -330,9 +324,7 @@
   color: rgb(97, 97, 97);
 }
 
-/* Responsive */
 @media (max-width: 665px) {
-  /* NavBar */
   .nav-bar {
     font-family: "Nunito", sans-serif;
     padding: 0 1rem;
@@ -342,7 +334,6 @@
     font-size: 30px;
   }
 
-  /* Cart */
   .cart-container {
     font-family: "Nunito", sans-serif;
     padding: 2rem;
@@ -372,8 +363,8 @@
 }
 
 .loader {
-  border: 4px solid #f3f3f3; /* Light grey */
-  border-top: 4px solid #3498db; /* Blue */
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
   border-radius: 50%;
   width: 24px;
   height: 24px;

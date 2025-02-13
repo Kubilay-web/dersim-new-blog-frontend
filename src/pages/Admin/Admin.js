@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { signoutSuccess } from "../../redux/user/userSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
+import ContactManage from "../../components/ContactManage/ContactManage";
 
 function Admin() {
   const { currentUser } = useSelector((state) => state.user);
@@ -205,6 +206,21 @@ function Admin() {
               <span>Subscription</span>
             </a>
           </li>
+
+          <li className="nav-item active">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange("contact");
+              }}
+            >
+              <i className="fas fa-fw fa-clipboard-list"></i>{" "}
+              {/* Subscription icon */}
+              <span>Contact</span>
+            </a>
+          </li>
         </ul>
 
         {/* Content Wrapper */}
@@ -306,6 +322,8 @@ function Admin() {
                     ? "Subscription Management"
                     : currentPage === "post-manage"
                     ? "Post Management"
+                    : currentPage === "contact"
+                    ? "Contacts"
                     : ""}
                 </h1>
               </div>
@@ -319,8 +337,9 @@ function Admin() {
                 <Subscription />
               ) : currentPage === "post-manage" ? (
                 <PostManage />
-              ) : null}{" "}
-              {/* BlogManage kısmı çıkarıldı */}
+              ) : currentPage === "contact" ? (
+                <ContactManage />
+              ) : null}
             </div>
           </div>
         </div>

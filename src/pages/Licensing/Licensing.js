@@ -2,12 +2,6 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import { Navigation } from "swiper/modules";
 
 const Licensing = () => {
   return (
@@ -1534,6 +1528,7 @@ const Licensing = () => {
                               </div>
                             </div>
                           </section>
+
                           <section
                             className="paragraph paragraph--type--slice-gallery paragraph--view-mode--default section section--slice-gallery section--bg-white"
                             aria-labelledby="paragraph-25315-title"
@@ -1570,7 +1565,7 @@ const Licensing = () => {
                                         className="swiper-slide carousel--gallery__item swiper-slide-active"
                                         data-swiper-slide-index={0}
                                         data-items-length={6}
-                                        data-slides-to-show={2}
+                                        data-slides-to-show={3}
                                         style={{ "margin-right": "10px" }}
                                       >
                                         <button
