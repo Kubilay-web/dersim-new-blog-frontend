@@ -16,7 +16,9 @@ const ContentManage = () => {
     // Yazıları getirme
     const fetchContents = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/contents");
+        const response = await axios.get(
+          "https://dersim-new-blog-backend.vercel.app/api/contents"
+        );
         setContents(response.data);
       } catch (err) {
         setError("Yazılar alınırken hata oluştu");
@@ -36,10 +38,13 @@ const ContentManage = () => {
 
     try {
       // Sadece metin (HTML etiketleri olmadan) alıyoruz
-      const response = await axios.post("http://localhost:5000/api/contents", {
-        title: newContent.title,
-        body: newContent.body.replace(/<[^>]+>/g, ""), // HTML etiketlerini temizliyoruz
-      });
+      const response = await axios.post(
+        "https://dersim-new-blog-backend.vercel.app/api/contents",
+        {
+          title: newContent.title,
+          body: newContent.body.replace(/<[^>]+>/g, ""), // HTML etiketlerini temizliyoruz
+        }
+      );
       setContents([...contents, response.data]);
       setNewContent({ title: "", body: "" });
       setError("");
@@ -52,7 +57,7 @@ const ContentManage = () => {
   const handleEditContent = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/contents/${id}`
+        `https://dersim-new-blog-backend.vercel.app/api/contents/${id}`
       );
       setEditContent(response.data);
     } catch (err) {
@@ -69,7 +74,7 @@ const ContentManage = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/contents/${editContent._id}`,
+        `https://dersim-new-blog-backend.vercel.app/api/contents/${editContent._id}`,
         {
           title: editContent.title,
           body: editContent.body.replace(/<[^>]+>/g, ""), // HTML etiketlerini temizliyoruz
@@ -91,7 +96,9 @@ const ContentManage = () => {
   const handleDeleteContent = async (id) => {
     if (window.confirm("Bu yazıyı silmek istediğinizden emin misiniz?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/contents/${id}`);
+        await axios.delete(
+          `https://dersim-new-blog-backend.vercel.app/api/contents/${id}`
+        );
         setContents(contents.filter((content) => content._id !== id));
         setError("");
       } catch (err) {

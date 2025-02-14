@@ -26,7 +26,7 @@ const Visit = () => {
   const fetchContentsByTitle = async (title, setPostFunc) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/contents/title/${title}`
+        `https://dersim-new-blog-backend.vercel.app/api/contents/title/${title}`
       );
       const data = await res.json();
       setPostFunc([data]); // Eğer birden fazla içerik döndürmüyorsa array içinde tek bir içerik döndürüyoruz
