@@ -12,6 +12,8 @@ import { signoutSuccess } from "../../redux/user/userSlice";
 import { toast } from "react-toastify";
 import axios from "axios";
 import ContactManage from "../../components/ContactManage/ContactManage";
+import ContentManage from "../../components/ContentManage/ContentManage";
+import AccordionManage from "../../components/AccordionManage/AccordionManage";
 
 function Admin() {
   const { currentUser } = useSelector((state) => state.user);
@@ -221,6 +223,36 @@ function Admin() {
               <span>Contact</span>
             </a>
           </li>
+
+          <li className="nav-item active">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange("content");
+              }}
+            >
+              <i className="fas fa-fw fa-clipboard-list"></i>{" "}
+              {/* Subscription icon */}
+              <span>Contents</span>
+            </a>
+          </li>
+
+          <li className="nav-item active">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                handlePageChange("accordion");
+              }}
+            >
+              <i className="fas fa-fw fa-clipboard-list"></i>{" "}
+              {/* Subscription icon */}
+              <span>Accordion</span>
+            </a>
+          </li>
         </ul>
 
         {/* Content Wrapper */}
@@ -324,6 +356,10 @@ function Admin() {
                     ? "Post Management"
                     : currentPage === "contact"
                     ? "Contacts"
+                    : currentPage === "content"
+                    ? "Contents"
+                    : currentPage === "accordion"
+                    ? "Accordion"
                     : ""}
                 </h1>
               </div>
@@ -339,6 +375,10 @@ function Admin() {
                 <PostManage />
               ) : currentPage === "contact" ? (
                 <ContactManage />
+              ) : currentPage === "content" ? (
+                <ContentManage />
+              ) : currentPage === "accordion" ? (
+                <AccordionManage />
               ) : null}
             </div>
           </div>

@@ -9,6 +9,7 @@ const Visit = () => {
   const [posts3, setPosts3] = useState([]);
   const [posts4, setPosts4] = useState([]);
   const [posts5, setPosts5] = useState([]);
+  const [title, setTitle] = useState([]);
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
@@ -22,14 +23,28 @@ const Visit = () => {
     }
   };
 
+  const fetchContentsByTitle = async (title, setPostFunc) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/contents/title/${title}`
+      );
+      const data = await res.json();
+      setPostFunc([data]); // Eğer birden fazla içerik döndürmüyorsa array içinde tek bir içerik döndürüyoruz
+    } catch (error) {
+      console.error(`Failed to fetch posts for title ${title}:`, error);
+    }
+  };
+
   useEffect(() => {
     const category1 = "Ways to explore";
     const category2 = "Exhibitions";
     const category3 = "Eat, drink, shop and enjoy";
+    const title = "Plan your visit";
 
     fetchPosts(category1, setPosts);
     fetchPosts(category2, setPosts2);
     fetchPosts(category3, setPosts3);
+    fetchContentsByTitle(title, setTitle);
   }, []);
 
   return (
@@ -926,11 +941,17 @@ const Visit = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
-                              Immerse yourself in two million years of human
-                              history, art and culture.
-                            </p>
-                            <div className="wysiwyg">
+                            {title && title.length > 0 ? (
+                              title
+                                .slice(0, 2)
+                                .map((item, index) => (
+                                  <p key={index}>{item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+
+                            {/* <div className="wysiwyg">
                               <p>
                                 <a href="https://ticketing.britishmuseum.org/events?k=general%20admission">
                                   Book your free ticket
@@ -1001,7 +1022,7 @@ const Visit = () => {
                                 visit.
                               </p>
                               <p>We look forward to welcoming you.</p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

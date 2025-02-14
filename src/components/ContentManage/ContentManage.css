@@ -1,0 +1,18 @@
+/* ContentManage.css */
+
+/* Quill editor içindeki paragraflar arası boşluğu artırıyoruz */
+/* ContentManage.css */
+
+.ql-editor p {
+  margin-bottom: 0.7em; /* Paragraflar arası boşluğu artırır */
+}
+
+/* Quill editor içinde özel stil eklemek */
+.ql-editor {
+  min-height: 200px; /* Editorun minimum yüksekliği */
+}
+
+.quill-content {
+  white-space: pre-wrap; /* Satır sonları ve boşlukları olduğu gibi göster */
+  word-wrap: break-word;
+}
