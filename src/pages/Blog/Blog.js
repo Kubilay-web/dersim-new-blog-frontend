@@ -18,13 +18,16 @@ const Blog = () => {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${URL}/api/blogs`, {
-        params: {
-          category: selectedCategory,
-          page,
-          limit,
-        },
-      });
+      const response = await axios.get(
+        `https://dersim-new-blog-backend.vercel.app/api/blogs`,
+        {
+          params: {
+            category: selectedCategory,
+            page,
+            limit,
+          },
+        }
+      );
       setBlogs(response.data.blogs);
       setTotalBlogs(response.data.totalBlogs);
       setLoading(false);

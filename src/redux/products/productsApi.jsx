@@ -4,7 +4,9 @@ const URL = process.env.REACT_APP_BACKEND_URL;
 
 export const productsApi = createApi({
   reducerPath: "productsApi",
-  baseQuery: fetchBaseQuery({ baseUrl: `${URL}/api/` }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: `https://dersim-new-blog-backend.vercel.app/api/`,
+  }),
   endpoints: (builder) => ({
     getAllProducts: builder.query({
       query: () => `products`, // Make sure this matches your API endpoint

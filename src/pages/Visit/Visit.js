@@ -1857,45 +1857,36 @@ const Visit = () => {
                               />
 
                               <div className="section__inner">
-                                {/* Kategori başlığını dinamik olarak alıyoruz */}
                                 {accordionData2 && accordionData2.length > 0 ? (
                                   accordionData2
                                     .slice(0, 1)
-                                    .map((item2, index2) => (
+                                    .map((item, index) => (
                                       <h2
-                                        key={index2}
+                                        key={index}
                                         id="paragraph-18453-title"
                                         className="section__title"
                                       >
-                                        {item2.categoryId}{" "}
-                                        {/* Kategori adını dinamik olarak ekliyoruz */}
+                                        {item.categoryId}
                                       </h2>
                                     ))
                                 ) : (
                                   <p>No content available</p>
                                 )}
 
-                                {/* Accordion içeriğini dinamik hale getiriyoruz */}
                                 {accordionData2.length > 0 ? (
                                   <ul>
-                                    {accordionData2.map((item2, index2) => (
+                                    {accordionData2.map((item, index) => (
                                       <div
-                                        key={index2} // Her accordion öğesi için benzersiz key
+                                        key={index}
                                         className="accordion__item | js-accordion-item"
                                         data-js-collapse-first="true"
                                       >
                                         <h3 className="accordion__heading">
                                           <button
                                             className="accordion__button | js-accordion-btn"
-                                            aria-expanded={
-                                              openIndex === index2
-                                                ? "true"
-                                                : "false"
-                                            } // Açık mı kapalı mı kontrol et
-                                            aria-controls={`accordion-content-${index2}`} // Benzersiz content id
-                                            onClick={() =>
-                                              toggleAccordion(index2)
-                                            } // Butona tıklanınca toggleAccordion fonksiyonu çalışır
+                                            id={`accordion-btn-${index}-second`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}-second`} // Benzersiz content id
                                           >
                                             <svg
                                               className="icon icon--plus"
@@ -1905,22 +1896,18 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item2.title}</span>{" "}
-                                            {/* Başlık dinamik olarak item2'den alınıyor */}
+                                            <span>{item.title}</span>
                                           </button>
                                         </h3>
                                         <div
                                           className="accordion__content | js-accordion-content"
-                                          id={`accordion-content-${index2}`} // Benzersiz content id
-                                          aria-hidden={
-                                            openIndex === index2
-                                              ? "false"
-                                              : "true"
-                                          } // İçerik açıldığında "aria-hidden" false olmalı
-                                          aria-labelledby={`accordion-${index2}`} // Button id ile eşleşiyor
+                                          id={`accordion-content-${index}-second`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}-second`} // Button id ile eşleşiyor
                                         >
-                                          <p>{item2.content}</p>{" "}
-                                          {/* İçerik dinamik olarak item2'den alınıyor */}
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
                                         </div>
                                       </div>
                                     ))}
@@ -3482,45 +3469,36 @@ const Visit = () => {
                               />
 
                               <div className="section__inner">
-                                {/* Kategori başlığını dinamik olarak alıyoruz */}
                                 {accordionData3 && accordionData3.length > 0 ? (
                                   accordionData3
                                     .slice(0, 1)
-                                    .map((item3, index3) => (
+                                    .map((item, index) => (
                                       <h2
-                                        key={index3}
+                                        key={index}
                                         id="paragraph-18453-title"
                                         className="section__title"
                                       >
-                                        {item3.categoryId}{" "}
-                                        {/* Kategori adını dinamik olarak ekliyoruz */}
+                                        {item.categoryId}
                                       </h2>
                                     ))
                                 ) : (
                                   <p>No content available</p>
                                 )}
 
-                                {/* Accordion içeriğini dinamik hale getiriyoruz */}
                                 {accordionData3.length > 0 ? (
                                   <ul>
-                                    {accordionData3.map((item3, index3) => (
+                                    {accordionData3.map((item, index) => (
                                       <div
-                                        key={index3} // Her accordion öğesi için benzersiz key
+                                        key={index}
                                         className="accordion__item | js-accordion-item"
                                         data-js-collapse-first="true"
                                       >
                                         <h3 className="accordion__heading">
                                           <button
                                             className="accordion__button | js-accordion-btn"
-                                            aria-expanded={
-                                              openIndex === index3
-                                                ? "true"
-                                                : "false"
-                                            } // Açık mı kapalı mı kontrol et
-                                            aria-controls={`accordion-content-${index3}`} // Benzersiz content id
-                                            onClick={() =>
-                                              toggleAccordion(index3)
-                                            } // Butona tıklanınca toggleAccordion fonksiyonu çalışır
+                                            id={`accordion-btn-${index}-third`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}-third`} // Benzersiz content id
                                           >
                                             <svg
                                               className="icon icon--plus"
@@ -3530,22 +3508,18 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item3.title}</span>{" "}
-                                            {/* Başlık dinamik olarak item2'den alınıyor */}
+                                            <span>{item.title}</span>
                                           </button>
                                         </h3>
                                         <div
                                           className="accordion__content | js-accordion-content"
-                                          id={`accordion-content-${index3}`} // Benzersiz content id
-                                          aria-hidden={
-                                            openIndex === index3
-                                              ? "false"
-                                              : "true"
-                                          } // İçerik açıldığında "aria-hidden" false olmalı
-                                          aria-labelledby={`accordion-${index3}`} // Button id ile eşleşiyor
+                                          id={`accordion-content-${index}-third`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}-third`} // Button id ile eşleşiyor
                                         >
-                                          <p>{item3.content}</p>{" "}
-                                          {/* İçerik dinamik olarak item2'den alınıyor */}
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
                                         </div>
                                       </div>
                                     ))}
@@ -4010,60 +3984,53 @@ const Visit = () => {
                             aria-labelledby="paragraph-18464-title"
                           >
                             <div className="container">
-                              {accordionData4.length > 0 ? (
-                                <ul>
-                                  {accordionData4.map((item3, index3) => (
-                                    <div
-                                      key={index3} // Her accordion öğesi için benzersiz key
-                                      className="accordion__item | js-accordion-item"
-                                      data-js-collapse-first="true"
-                                    >
-                                      <h3 className="accordion__heading">
-                                        <button
-                                          className="accordion__button | js-accordion-btn"
-                                          aria-expanded={
-                                            openIndex === index3
-                                              ? "true"
-                                              : "false"
-                                          } // Açık mı kapalı mı kontrol et
-                                          aria-controls={`accordion-content-${index3}`} // Benzersiz content id
-                                          onClick={() =>
-                                            toggleAccordion(index3)
-                                          } // Butona tıklanınca toggleAccordion fonksiyonu çalışır
-                                        >
-                                          <svg
-                                            className="icon icon--plus"
-                                            role="presentation"
-                                            focusable="false"
-                                            aria-hidden="true"
-                                          >
-                                            <use xlinkHref="#sprite-icon-plus" />
-                                          </svg>
-                                          <span>{item3.title}</span>{" "}
-                                          {/* Başlık dinamik olarak item2'den alınıyor */}
-                                        </button>
-                                      </h3>
+                              <div className="section__inner">
+                                {accordionData4.length > 0 ? (
+                                  <ul>
+                                    {accordionData4.map((item, index) => (
                                       <div
-                                        className="accordion__content | js-accordion-content"
-                                        id={`accordion-content-${index3}`} // Benzersiz content id
-                                        aria-hidden={
-                                          openIndex === index3
-                                            ? "false"
-                                            : "true"
-                                        } // İçerik açıldığında "aria-hidden" false olmalı
-                                        aria-labelledby={`accordion-${index3}`} // Button id ile eşleşiyor
+                                        key={index}
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
                                       >
-                                        <p>{item3.content}</p>{" "}
-                                        {/* İçerik dinamik olarak item2'den alınıyor */}
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            id={`accordion-btn-${index}-fourth`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}-fourth`} // Benzersiz content id
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item.title}</span>
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index}-fourth`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}-fourth`} // Button id ile eşleşiyor
+                                        >
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
+                                        </div>
                                       </div>
-                                    </div>
-                                  ))}
-                                </ul>
-                              ) : (
-                                <p>
-                                  No accordion data available for this category.
-                                </p>
-                              )}
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
 
                               {/* <div className="section__inner">
                                 <h2
@@ -4469,24 +4436,18 @@ const Visit = () => {
                               <div className="section__inner">
                                 {accordionData5.length > 0 ? (
                                   <ul>
-                                    {accordionData5.map((item3, index3) => (
+                                    {accordionData5.map((item, index) => (
                                       <div
-                                        key={index3} // Her accordion öğesi için benzersiz key
+                                        key={index}
                                         className="accordion__item | js-accordion-item"
                                         data-js-collapse-first="true"
                                       >
                                         <h3 className="accordion__heading">
                                           <button
                                             className="accordion__button | js-accordion-btn"
-                                            aria-expanded={
-                                              openIndex === index3
-                                                ? "true"
-                                                : "false"
-                                            } // Açık mı kapalı mı kontrol et
-                                            aria-controls={`accordion-content-${index3}`} // Benzersiz content id
-                                            onClick={() =>
-                                              toggleAccordion(index3)
-                                            } // Butona tıklanınca toggleAccordion fonksiyonu çalışır
+                                            id={`accordion-btn-${index}-fifth`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}-fifth`} // Benzersiz content id
                                           >
                                             <svg
                                               className="icon icon--plus"
@@ -4496,22 +4457,18 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item3.title}</span>{" "}
-                                            {/* Başlık dinamik olarak item2'den alınıyor */}
+                                            <span>{item.title}</span>
                                           </button>
                                         </h3>
                                         <div
                                           className="accordion__content | js-accordion-content"
-                                          id={`accordion-content-${index3}`} // Benzersiz content id
-                                          aria-hidden={
-                                            openIndex === index3
-                                              ? "false"
-                                              : "true"
-                                          } // İçerik açıldığında "aria-hidden" false olmalı
-                                          aria-labelledby={`accordion-${index3}`} // Button id ile eşleşiyor
+                                          id={`accordion-content-${index}-fifth`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}-fifth`} // Button id ile eşleşiyor
                                         >
-                                          <p>{item3.content}</p>{" "}
-                                          {/* İçerik dinamik olarak item2'den alınıyor */}
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
                                         </div>
                                       </div>
                                     ))}
@@ -4522,239 +4479,6 @@ const Visit = () => {
                                     category.
                                   </p>
                                 )}
-
-                                {/* 
-                                <h2
-                                  id="paragraph-18469-title"
-                                  className="visually-hidden"
-                                >
-                                  Security and bag searches
-                                </h2>
-                                <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18465"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18465"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span>
-                                        {" "}
-                                        Security, bag searches and large luggage
-                                      </span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18465"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18465"
-                                  >
-                                    <ul>
-                                      <li>
-                                        For everyone's safety, all bags,
-                                        rucksacks, packages and personal items
-                                        may be searched before entry.
-                                      </li>
-                                      <li>
-                                        Wheeled cases, sports equipment and
-                                        large items of luggage are not allowed
-                                        on Dersim Museum premises.
-                                      </li>
-                                      <li>
-                                        Storage for luggage is available at
-                                        major rail stations, including Euston,
-                                        King's Cross and Charing Cross.
-                                      </li>
-                                      <li>
-                                        An easy access route is available for
-                                        disabled visitors, Members and visitors
-                                        with buggies and/or children under five.
-                                      </li>
-                                      <li>
-                                        If you require assistance or the
-                                        entrance into the Museum poses an
-                                        accessibility barrier, please let our
-                                        uniformed staff know&nbsp;and they'll be
-                                        happy to assist you.
-                                      </li>
-                                      <li>
-                                        Please don't leave your bags unattended
-                                        at any point during your visit.
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18466"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18466"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span> Restricted items</span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18466"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18466"
-                                  >
-                                    <ul>
-                                      <li>
-                                        For security reasons, no large items of
-                                        luggage can be brought into the
-                                        Museum&nbsp;(bigger than 40cm x 40cm x
-                                        50cm and heavier than 8kg) or onto the
-                                        premises.
-                                      </li>
-                                      <li>
-                                        Wheeled cases are not permitted
-                                        regardless of their size and weight.
-                                      </li>
-                                      <li>
-                                        Folding bicycles are not permitted
-                                        inside the Museum.&nbsp;
-                                      </li>
-                                      <li>
-                                        Adult scooters, skateboards and musical
-                                        instruments are not allowed onto the
-                                        premises.
-                                      </li>
-                                      <li>
-                                        Pushchairs are permitted on-site.
-                                        Fold-up prams and buggies can be left
-                                        free of charge in the cloakroom, which
-                                        is found by turning left immediately
-                                        after passing through the Main entrance
-                                        of the Museum.
-                                      </li>
-                                      <li>
-                                        Offensive weapons, dangerous chemicals,
-                                        and other suspicious items will be
-                                        confiscated before entry is granted.
-                                      </li>
-                                      <li>
-                                        You'll be able to retrieve any
-                                        confiscated items when you leave,
-                                        provided there are no legal
-                                        barriers.&nbsp;
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18467"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18467"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span> Visitor regulations</span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18467"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18467"
-                                  >
-                                    <ul>
-                                      <li>
-                                        All visitors entering the Museum agree
-                                        to abide by the visitor
-                                        regulations:&nbsp;
-                                      </li>
-                                    </ul>
-                                    <div
-                                      data-entity-type="media"
-                                      data-entity-uuid="b9ad821d-4098-4df4-91a9-98d8889e8622"
-                                      data-embed-button="document"
-                                      data-entity-embed-display="view_mode:media.full"
-                                      data-langcode="en"
-                                      data-entity-embed-display-settings="[]"
-                                      className="embedded-entity"
-                                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                                    >
-                                      <div className="media media-full media-document js-media">
-                                        <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf"
-                                          className="media-document__link"
-                                          download
-                                        >
-                                          <div className="media-document__icon-container">
-                                            <svg
-                                              className="icon icon--download"
-                                              role="presentation"
-                                              focusable="false"
-                                              aria-hidden="true"
-                                            >
-                                              <use xlinkHref="#sprite-icon-download" />
-                                            </svg>
-                                          </div>
-                                          <div className="media-document__content">
-                                            <span className="media-document__name">
-                                              <span className="visually-hidden">
-                                                Download{" "}
-                                              </span>
-                                              Visitor regulations
-                                            </span>
-                                            <div className="media-document__meta">
-                                              (PDF, 74.35 KB)
-                                            </div>
-                                          </div>
-                                        </a>
-                                      </div>
-                                    </div>
-                                    <ul>
-                                      <li>
-                                        The Museum reserves the right to vary or
-                                        alter these regulations without prior
-                                        notice.
-                                      </li>
-                                      <li>
-                                        Special exhibitions may have additional
-                                        regulations.
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div> */}
                               </div>
                             </div>
                           </section>
@@ -4825,34 +4549,38 @@ const Visit = () => {
                                 className="js-jump-link-anchor"
                                 id="facilities"
                               />
+
                               <div className="section__inner">
-                                <h2
-                                  id="paragraph-18476-title"
-                                  className="section__title"
-                                >
-                                  Facilities
-                                </h2>
+                                {accordionData6 && accordionData6.length > 0 ? (
+                                  accordionData6
+                                    .slice(0, 1)
+                                    .map((item, index) => (
+                                      <h2
+                                        key={index}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item.categoryId}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
 
                                 {accordionData6.length > 0 ? (
                                   <ul>
-                                    {accordionData6.map((item3, index3) => (
+                                    {accordionData6.map((item, index) => (
                                       <div
-                                        key={index3} // Her accordion öğesi için benzersiz key
+                                        key={index}
                                         className="accordion__item | js-accordion-item"
                                         data-js-collapse-first="true"
                                       >
                                         <h3 className="accordion__heading">
                                           <button
                                             className="accordion__button | js-accordion-btn"
-                                            aria-expanded={
-                                              openIndex === index3
-                                                ? "true"
-                                                : "false"
-                                            } // Açık mı kapalı mı kontrol et
-                                            aria-controls={`accordion-content-${index3}`} // Benzersiz content id
-                                            onClick={() =>
-                                              toggleAccordion(index3)
-                                            } // Butona tıklanınca toggleAccordion fonksiyonu çalışır
+                                            id={`accordion-btn-${index}-sixth`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}-sixth`} // Benzersiz content id
                                           >
                                             <svg
                                               className="icon icon--plus"
@@ -4862,22 +4590,18 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item3.title}</span>{" "}
-                                            {/* Başlık dinamik olarak item2'den alınıyor */}
+                                            <span>{item.title}</span>
                                           </button>
                                         </h3>
                                         <div
                                           className="accordion__content | js-accordion-content"
-                                          id={`accordion-content-${index3}`} // Benzersiz content id
-                                          aria-hidden={
-                                            openIndex === index3
-                                              ? "false"
-                                              : "true"
-                                          } // İçerik açıldığında "aria-hidden" false olmalı
-                                          aria-labelledby={`accordion-${index3}`} // Button id ile eşleşiyor
+                                          id={`accordion-content-${index}-sixth`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}-sixth`} // Button id ile eşleşiyor
                                         >
-                                          <p>{item3.content}</p>{" "}
-                                          {/* İçerik dinamik olarak item2'den alınıyor */}
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
                                         </div>
                                       </div>
                                     ))}
@@ -4888,398 +4612,6 @@ const Visit = () => {
                                     category.
                                   </p>
                                 )}
-
-                                {/* <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18470"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18470"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span> Visitor and Member cloakroom</span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18470"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18470"
-                                  >
-                                    <ul>
-                                      <li>
-                                        Opening hours: 11.00–17.00 (20.30 on
-                                        Fridays).
-                                        <ul>
-                                          <li>
-                                            Last deposits are one hour before
-                                            closing time.
-                                          </li>
-                                          <li>
-                                            Please collect items 30 minutes
-                                            before closing time.
-                                          </li>
-                                        </ul>
-                                      </li>
-                                      <li>
-                                        The cloakroom can be found by turning
-                                        left immediately after passing through
-                                        the Main entrance to the Museum.&nbsp;
-                                      </li>
-                                      <li>
-                                        Please note that items of luggage
-                                        weighing more than 8kg and larger than
-                                        40x40x50cm (including all wheeled
-                                        suitcases) are not permitted.&nbsp;
-                                        <ul>
-                                          <li>
-                                            Please see the{" "}
-                                            <a href="https://www.britishmuseum.org/visit#entering-the-museum">
-                                              restricted items
-                                            </a>{" "}
-                                            section for full details.
-                                          </li>
-                                          <li>
-                                            Storage for luggage is available at
-                                            major rail stations, including
-                                            Euston, King's Cross and Charing
-                                            Cross.
-                                          </li>
-                                        </ul>
-                                      </li>
-                                      <li>
-                                        Use of the cloakroom is charged
-                                        per-item:
-                                        <ul>
-                                          <li>Coats – £2</li>
-                                          <li>Bags up to 4kg – £2.50</li>
-                                          <li>Bags 4–8kg – £5</li>
-                                          <li>Umbrellas – £1</li>
-                                          <li>Fold-up pushchairs – free</li>
-                                        </ul>
-                                      </li>
-                                      <li>
-                                        Members can use the cloakroom free of
-                                        charge. The same restrictions apply.
-                                      </li>
-                                      <li>
-                                        You must retrieve items from the
-                                        cloakroom before you leave the Museum
-                                        site.
-                                      </li>
-                                      <li>
-                                        In the event of a fire evacuation, the
-                                        cloakroom will be closed immediately and
-                                        you must follow our fire evacuation
-                                        instructions. Our staff will help to
-                                        retrieve your items from the cloakroom
-                                        as soon as possible after the Museum
-                                        reopens.
-                                      </li>
-                                      <li>
-                                        Please note that the cloakroom has
-                                        limited capacity, and when this capacity
-                                        is reached, it cannot accept items until
-                                        space becomes available again.
-                                      </li>
-                                      <li>
-                                        The Museum reserves the right to vary or
-                                        alter these conditions without prior
-                                        notice.
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18472"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18472"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span> Lost property</span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18472"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18472"
-                                  >
-                                    <p>
-                                      If you've lost an item while visiting the
-                                      Museum, please email{" "}
-                                      <a
-                                        href="/cdn-cgi/l/email-protection#4a2625393e3a38253a2f383e330a2838233e233922273f392f3f276425382d"
-                                        data-gc-link="mailto:lostproperty@britishmuseum.org"
-                                      >
-                                        <span
-                                          className="__cf_email__"
-                                          data-cfemail="c2aeadb1b6b2b0adb2a7b0b6bb82a0b0abb6abb1aaafb7b1a7b7afecadb0a5"
-                                        >
-                                          [email&nbsp;protected]
-                                        </span>
-                                      </a>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18471"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18471"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span> Free wifi</span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18471"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18471"
-                                  >
-                                    <ul>
-                                      <li>
-                                        Free wifi is available for all visitors
-                                        to the Museum.
-                                      </li>
-                                      <li>
-                                        Please connect to 'Dersim Museum
-                                        WiFi'&nbsp;only.
-                                      </li>
-                                      <li>
-                                        You'll be required to supply your full
-                                        name and email address&nbsp;before using
-                                        the service.
-                                      </li>
-                                      <li>
-                                        Free wifi is funded by the Mayor of
-                                        Dersim and Department for Digital,
-                                        Culture, Media &amp; Sport. Connectivity
-                                        is supported by the Daisy Group.
-                                      </li>
-                                      <li>
-                                        Charging phones and plugging in any
-                                        other electronics is not allowed.
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18473"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18473"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span>
-                                        {" "}
-                                        Facilities for babies and children
-                                      </span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18473"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18473"
-                                  >
-                                    <p>
-                                      For information about facilities for
-                                      parents, babies&nbsp;and young children,
-                                      please see the{" "}
-                                      <a
-                                        href="/visit/family-visits"
-                                        data-entity-type="node"
-                                        data-entity-uuid="5f1e29d0-d3ce-4977-adb5-e7bc71906b38"
-                                        data-entity-substitution="canonical"
-                                        title="Family visits"
-                                      >
-                                        Family&nbsp;visits&nbsp;page
-                                      </a>
-                                      <strong>.</strong>
-                                    </p>
-                                    <p>
-                                      If you need help during your visit, please
-                                      speak to a uniformed member of staff.
-                                    </p>
-                                  </div>
-                                </div>
-                                <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18474"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18474"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span> Accessible facilities</span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18474"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18474"
-                                  >
-                                    <p>
-                                      For information about facilities and
-                                      resources for disabled
-                                      visitors&nbsp;please see the{" "}
-                                      <a
-                                        href="/visit/accessibility-museum"
-                                        data-entity-type="node"
-                                        data-entity-uuid="377d1eaf-caa3-4fba-8eeb-7eb62bb562e9"
-                                        data-entity-substitution="canonical"
-                                        title="Accessibility at the Museum"
-                                      >
-                                        Accessibility at the Museum page
-                                      </a>
-                                      .
-                                    </p>
-                                    <p>
-                                      If you need assistance&nbsp;during your
-                                      visit, please speak to a uniformed member
-                                      of staff.
-                                    </p>
-                                  </div>
-                                </div>
-                                <div
-                                  className="accordion__item | js-accordion-item"
-                                  data-js-collapse-first="true"
-                                >
-                                  <h3 className="accordion__heading">
-                                    <button
-                                      className="accordion__button | js-accordion-btn"
-                                      id="accordion-18475"
-                                      aria-expanded="false"
-                                      aria-controls="accordion-content-18475"
-                                    >
-                                      <svg
-                                        className="icon icon--plus"
-                                        role="presentation"
-                                        focusable="false"
-                                        aria-hidden="true"
-                                      >
-                                        <use xlinkHref="#sprite-icon-plus" />
-                                      </svg>
-                                      <span> Photography and filming</span>
-                                    </button>
-                                  </h3>
-                                  <div
-                                    className="accordion__content | js-accordion-content"
-                                    id="accordion-content-18475"
-                                    aria-hidden="true"
-                                    aria-labelledby="accordion-18475"
-                                  >
-                                    <ul>
-                                      <li>
-                                        Hand-held flash photography and video
-                                        recording is allowed in most galleries
-                                        for private purposes only.
-                                      </li>
-                                      <li>
-                                        Signs will indicate where photography is
-                                        restricted.
-                                      </li>
-                                      <li>
-                                        Tripods, monopods and selfie sticks may
-                                        not be used inside the Museum building.
-                                      </li>
-                                      <li>
-                                        In special circumstances, a permit to
-                                        use these items can be issued – if you
-                                        have any queries, contact the Museum
-                                        at&nbsp;
-                                        <a
-                                          href="/cdn-cgi/l/email-protection#56303f3a3b3f38311634243f223f253e3b232533233b78392431"
-                                          data-gc-link="filming@britishmuseum.org"
-                                        >
-                                          <span
-                                            className="__cf_email__"
-                                            data-cfemail="63050a0f0e0a0d042301110a170a100b0e161006160e4d0c1104"
-                                          >
-                                            [email&nbsp;protected]
-                                          </span>
-                                        </a>{" "}
-                                        or on +44 (0)20 7323 8016.
-                                      </li>
-                                      <li>
-                                        For questions regarding commercial
-                                        photography or filming, please see our{" "}
-                                        <a
-                                          href="/commercial"
-                                          data-entity-type="node"
-                                          data-entity-uuid="e824b0ec-6aea-4315-9fda-5ed7b54f6fa7"
-                                          data-entity-substitution="canonical"
-                                          title="Commercial"
-                                        >
-                                          Commercial page
-                                        </a>
-                                        .
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div> */}
                               </div>
                             </div>
                           </section>
