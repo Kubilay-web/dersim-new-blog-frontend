@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const AudioApp = () => {
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1deb8b2864c833c098fd";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
+
   return (
     <div>
       <div>
@@ -501,10 +519,25 @@ const AudioApp = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-2217-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-2217-title"
+                                className="hero__title"
+                              >
+                                {" "}
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+
+                          {/* <h1 id="paragraph-2217-title" className="hero__title">
                             {" "}
                             Audio app
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -855,10 +888,20 @@ const AudioApp = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+
+                            {/* <p className="h3">
                               The Dersim Museum&nbsp; at your fingertips
-                            </p>
-                            <div className="wysiwyg">
+                            </p> */}
+                            {/* <div className="wysiwyg">
                               <p>
                                 Start your visit early – make the most of your
                                 time at the Museum and explore the diverse
@@ -897,7 +940,7 @@ const AudioApp = () => {
                                 earbuds from the Guide Desk and Dersim Museum
                                 Shop.
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

@@ -18,7 +18,7 @@ const Collection = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -26,6 +26,24 @@ const Collection = () => {
       console.error(`Failed to fetch posts for category ${category}:`, error);
     }
   };
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67b2ec387ffef8be106d27a6";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
 
   useEffect(() => {
     const category1 = "Collection highlights";
@@ -607,9 +625,22 @@ const Collection = () => {
                             <div className="container">
                               <div className="section__inner">
                                 <div className="hero-col__heading">
-                                  <h1 className="hero-col__title">
+                                  {content && content.length > 0 ? (
+                                    content.slice(0, 1).map((item, index) => (
+                                      <h1
+                                        key={index}
+                                        className="hero-col__title"
+                                      >
+                                        {item.title}
+                                      </h1>
+                                    ))
+                                  ) : (
+                                    <p>No content available</p>
+                                  )}
+
+                                  {/* <h1 className="hero-col__title">
                                     Explore the&nbsp;collection
-                                  </h1>{" "}
+                                  </h1>{" "} */}
                                   <div className="hero-col__caption">
                                     <p>
                                       Welcome to the new version of Collection
@@ -1039,7 +1070,16 @@ const Collection = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               Get closer to the British Museum collection and
                               immerse yourself in two million years of history,
                               across six continents.
@@ -1107,7 +1147,7 @@ const Collection = () => {
                                   </a>
                                 </li>
                               </ul>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

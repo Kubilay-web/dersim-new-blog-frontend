@@ -33,9 +33,7 @@ const PaymentManage = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await axios.get(
-          "https://dersim-new-blog-backend.vercel.app/api/payments"
-        );
+        const response = await axios.get("http://localhost:5000/api/payments");
         setPayments(response.data.payments);
       } catch (error) {
         console.error("Error fetching payments", error);

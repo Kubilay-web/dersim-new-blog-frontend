@@ -32,7 +32,7 @@ const ContactManage = () => {
   // Fetch data from the backend on component mount
   useEffect(() => {
     axios
-      .get("https://dersim-new-blog-backend.vercel.app/api/contact/get/contact") // API URL
+      .get("http://localhost:5000/api/contact/get/contact") // API URL
       .then((response) => {
         setContactForms(response.data); // Set the response data to state
       })

@@ -1,45 +1,41 @@
-import React, { useState, useEffect } from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"; // React Router'ı kullanarak parametreyi alıyoruz
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
-const Story = () => {
-  const [posts, setPosts] = useState([]);
+const PostDetail = () => {
+  const URL = process.env.REACT_APP_BACKEND_URL;
 
-  const fetchPosts = async (category, setPostFunc) => {
-    try {
-      const res = await fetch(
-        `http://localhost:5000/api/post/getposts/category?category=${category}`
-      );
-      const data = await res.json();
-      setPostFunc(data.posts);
-    } catch (error) {
-      console.error(`Failed to fetch posts for category ${category}:`, error);
-    }
-  };
+  const { slug } = useParams(); // URL'den slug parametresini alıyoruz
+  const [blog, setBlog] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const category1 = "History of the Museum";
+    // Sluga göre blogu çekiyoruz
+    const fetchBlog = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/post/${slug}`);
+        const data = await response.json();
+        if (response.ok) {
+          setBlog(data); // Blog verisini alıp state'e kaydediyoruz
+        } else {
+          setError(data.message);
+        }
+      } catch (err) {
+        setError("Blog detayları alınırken bir hata oluştu.");
+      }
+    };
 
-    fetchPosts(category1, setPosts);
-  }, []);
+    fetchBlog();
+  }, [slug]); // slug değiştiğinde yeniden çalışacak
 
-  const [content, setContent] = useState([]);
+  if (error) {
+    return <div>Hata: {error}</div>;
+  }
 
-  const fetchContentById = async (id, setPostFunc) => {
-    try {
-      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
-      const data = await res.json();
-      setPostFunc([data]);
-    } catch (error) {
-      console.error(`Failed to fetch content for ID ${id}:`, error);
-    }
-  };
-
-  useEffect(() => {
-    const someContentId = "67af1edf8b2864c833c09911";
-
-    fetchContentById(someContentId, setContent);
-  }, []);
+  if (!blog) {
+    return <div>Yükleniyor...</div>;
+  }
 
   return (
     <div>
@@ -53,150 +49,99 @@ const Story = () => {
         />
         <meta
           name="description"
-          content="The Dersim Museum is unique in bringing together under one roof the cultures of the world."
+          content="From Touch Tours to behind-the-scenes research, five volunteers share their experiences of volunteering at the British Museum."
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/about-us/dersim-museum-story"
+          href="https://www.britishmuseum.org/blog/celebrating-volunteers-british-museum"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
+          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-12/Volunteers-blog-hero-1920x1080.jpg?itok=zK4Kn2EV"
         />
-        <meta property="og:site_name" content="The Dersim Museum" />
+        <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/about-us/dersim-museum-story"
+          content="https://www.britishmuseum.org/blog/celebrating-volunteers-british-museum"
         />
-        <meta property="og:title" content="The Dersim Museum Story" />
+        <meta
+          property="og:title"
+          content="Celebrating volunteers at the British Museum"
+        />
         <meta
           property="og:description"
-          content="The Dersim Museum is unique in bringing together under one roof the cultures of the world."
+          content="From Touch Tours to behind-the-scenes research, five volunteers share their experiences of volunteering at the British Museum."
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
+          content="images/Volunteers-blog-hero-1920x1080_1.jpg"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:description"
-          content="The Dersim Museum is unique in bringing together under one roof the cultures of the world."
+          content="From Touch Tours to behind-the-scenes research, five volunteers share their experiences of volunteering at the British Museum."
         />
         <meta name="twitter:site" content="@britishmuseum" />
-        <meta name="twitter:title" content="The Dersim Museum Story" />
+        <meta
+          name="twitter:title"
+          content="Celebrating volunteers at the British Museum"
+        />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
+          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-12/Volunteers-blog-hero-1920x1080.jpg?itok=zK4Kn2EV"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
         <meta name="HandheldFriendly" content="true" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="icon"
-          href="/themes/custom/numiko/favicon.ico"
-          type="image/vnd.microsoft.icon"
-        />
-        <title>The Dersim Museum Story | Dersim Museum</title>
+        <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+        <title>
+          Celebrating volunteers at the British Museum | British Museum
+        </title>
         <link rel="preconnect" href="https://googletagmanager.com" />
         <link rel="preconnect" href="https://google-analytics.com" />
         <link
           rel="stylesheet"
           media="all"
-          href="/sites/default/files/css/css_DaQifN4gD2elzYyKV9lSJaJJyA1o4Rl9UhWprUD0EjI.css?delta=0&language=en&theme=numiko&include=eJxtyVEOwyAIANALaT1Sg4UqGSoBbeJOv88ly37f8-2TWsrgFPpq_BqpyMgg0ecW7uVXL2OdHisBkv3PoGBQDLR6QlsKcnzlWF1XFvZKGB5GGie1THjeTIJJ4L2jDMAP9V47tg"
+          href="css/css_AZT9uoK8DrAxJy0QDeijN2yNf3cO275yMRKSxmq79WY.css"
         />
         <link
           rel="stylesheet"
           media="all"
-          href="/sites/default/files/css/css_VAvkHRcLHSWwq0ovHYJ-IGyjWbQie-FPraftF1kr7dQ.css?delta=1&language=en&theme=numiko&include=eJxtyVEOwyAIANALaT1Sg4UqGSoBbeJOv88ly37f8-2TWsrgFPpq_BqpyMgg0ecW7uVXL2OdHisBkv3PoGBQDLR6QlsKcnzlWF1XFvZKGB5GGie1THjeTIJJ4L2jDMAP9V47tg"
+          href="css/css_VAvkHRcLHSWwq0ovHYJ-IGyjWbQie-FPraftF1kr7dQ.css"
         />
         <link
           rel="stylesheet"
           media="print"
-          href="/sites/default/files/css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css?delta=2&language=en&theme=numiko&include=eJxtyVEOwyAIANALaT1Sg4UqGSoBbeJOv88ly37f8-2TWsrgFPpq_BqpyMgg0ecW7uVXL2OdHisBkv3PoGBQDLR6QlsKcnzlWF1XFvZKGB5GGie1THjeTIJJ4L2jDMAP9V47tg"
+          href="css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/themes/custom/numiko/favicon/apple-touch-icon.png"
+          href="images/apple-touch-icon.png"
         />
         <link
           rel="icon"
           type="image/png"
-          href="/themes/custom/numiko/favicon/favicon-32x32.png"
+          href="images/favicon-32x32.png"
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href="/themes/custom/numiko/favicon/favicon-16x16.png"
+          href="images/favicon-16x16.png"
           sizes="16x16"
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link
           rel="mask-icon"
-          href="/themes/custom/numiko/favicon/safari-pinned-tab.svg"
+          href="images/safari-pinned-tab.svg"
           color="#5bbad5"
         />
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="theme-color" content="#000000" />
-        <meta name="application-name" content="Dersim Museum" />
-        {/* Facebook domain verification */}
-        <meta
-          name="facebook-domain-verification"
-          content="8rxgufrjnmm08rnfosf5ers9d1q7a5"
-        />
-        <style
-          type="text/css"
-          id="CookieConsentStateDisplayStyles"
-          dangerouslySetInnerHTML={{
-            __html:
-              ".cookieconsent-optin-preferences,.cookieconsent-optin-statistics,.cookieconsent-optin-marketing,.cookieconsent-optin{display:none;}.cookieconsent-optout-preferences,.cookieconsent-optout-statistics,.cookieconsent-optout-marketing,.cookieconsent-optout{display:block;display:initial;}",
-          }}
-        />
-        <iframe
-          name="__uspapiLocator"
-          tabIndex={-1}
-          role="presentation"
-          aria-hidden="true"
-          title="Blank"
-          style={{
-            display: "none",
-            position: "absolute",
-            width: "1px",
-            height: "1px",
-            top: "-9999px",
-          }}
-        />
-        <iframe name="__tcfapiLocator" style={{ display: "none" }} />
-        <iframe
-          tabIndex={-1}
-          role="presentation"
-          aria-hidden="true"
-          title="Blank"
-          src="https://consentcdn.cookiebot.com/sdk/bc-v4.min.html"
-          style={{
-            position: "absolute",
-            width: "1px",
-            height: "1px",
-            top: "-9999px",
-          }}
-        />
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          &lt;iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MW5VCK"
-          height="0" width="0"
-          style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
+        <meta name="application-name" content="British Museum" />
         <div className="hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -536,28 +481,29 @@ const Story = () => {
                   <div
                     className="hero--has-overlay paragraph paragraph--type--slice-generic-hero paragraph--view-mode--default hero align_left hero--background-pinned js-hero"
                     role="article"
-                    aria-labelledby="paragraph-9108-title"
+                    aria-labelledby="paragraph-42677-title"
                   >
                     <div className="hero__background">
                       <div className="media media-hero media-image js-media">
                         <picture>
                           {/*[if IE 9]><video style="display: none;"><![endif]*/}
                           <source
-                            src="/images/Story/image-01.jpg"
+                            src={blog.image}
                             media="all and (min-width: 1440px)"
                             type="image/jpeg"
                             width={1600}
-                            height={638}
+                            height={900}
                           />
+
                           <source
-                            src="/images/Story/image-01.jpg"
+                            src={blog.image}
                             media="all and (min-width: 1024px)"
                             type="image/jpeg"
                             width={1300}
-                            height={519}
+                            height={731}
                           />
                           <source
-                            src="/images/Story/image-01.jpg"
+                            src={blog.image}
                             media="all and (min-width: 768px)"
                             type="image/jpeg"
                             width={1000}
@@ -569,8 +515,7 @@ const Story = () => {
                             width={750}
                             height={750}
                             data-focal-position="center center"
-                            src="/images/Story/image-01.jpg"
-                            alt="A colour lithograph showing the view of the Dersim Museum from Great Russell Street"
+                            src={blog.image}
                           />
                         </picture>
                       </div>
@@ -578,32 +523,22 @@ const Story = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          {content && content.length > 0 ? (
-                            content.slice(0, 1).map((item, index) => (
-                              <h1
-                                key={index}
-                                id="paragraph-3938-title"
-                                className="hero__title"
-                              >
-                                {item.title}
-                              </h1>
-                            ))
-                          ) : (
-                            <p>No content available</p>
-                          )}
-                          {/* <h1 id="paragraph-9108-title" className="hero__title">
+                          <h1
+                            id="paragraph-42677-title"
+                            className="hero__title hero__title--small"
+                          >
                             {" "}
-                            The Dersim Museum story
-                          </h1> */}
+                            {blog.title}
+                          </h1>
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
                             <button
                               type="button"
                               className="hero__caption-button | js-hero-caption-btn"
-                              id="hero-image-caption-button-9108"
+                              id="hero-image-caption-button-42677"
                               aria-expanded="false"
-                              aria-controls="hero-image-caption-content-9108"
+                              aria-controls="hero-image-caption-content-42677"
                             >
                               <span className="visually-hidden">
                                 Show image caption
@@ -619,16 +554,16 @@ const Story = () => {
                             </button>
                             <div
                               className="hero__caption-content | js-hero-caption-content"
-                              id="hero-image-caption-content-9108"
+                              id="hero-image-caption-content-42677"
                               aria-hidden="true"
-                              aria-labelledby="hero-image-caption-button-9108"
+                              aria-labelledby="hero-image-caption-button-42677"
                             >
                               <button
                                 type="button"
                                 className="hero__caption-content-close | js-hero-caption-btn"
-                                id="hero-image-caption-close-button-9108"
+                                id="hero-image-caption-close-button-42677"
                                 aria-expanded="false"
-                                aria-controls="hero-image-caption-content-9108"
+                                aria-controls="hero-image-caption-content-42677"
                               >
                                 <span className="visually-hidden">
                                   Close image caption
@@ -639,12 +574,10 @@ const Story = () => {
                               </button>
                               <p>
                                 {" "}
-                                The Dersim Museum, print made by Augustus
-                                Butler. Lithograph, 1853.
+                                Matthew delivers an Out-of-hours tour in the
+                                Egyptian sculpture gallery. Photo © Benedict
+                                Johnson, 2023.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/P_1880-1113-4426">
-                                <span>View Collection online</span>
-                              </a>
                             </div>
                           </div>
                         </div>
@@ -652,7 +585,7 @@ const Story = () => {
                     </div>
                   </div>
                 </div>
-                <div className="breadcrumb--bg-black section--breadcrumb">
+                <div className="breadcrumb--bg-white section--breadcrumb">
                   <div className="container">
                     <div className="breadcrumb__inner">
                       <div id="block-breadcrumbs">
@@ -661,7 +594,7 @@ const Story = () => {
                             id="system-breadcrumb"
                             className="visually-hidden"
                           >
-                            You are in the About us section
+                            You are in the Blog section
                           </h2>
                           <ul className="breadcrumb__list">
                             <li className="breadcrumb__item breadcrumb__item--link">
@@ -686,8 +619,8 @@ const Story = () => {
                               >
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
-                              <a href="/about-us" className="breadcrumb__link">
-                                <span>About us</span>
+                              <a href="/blog" className="breadcrumb__link">
+                                <span>Blog</span>
                               </a>
                             </li>
                             <li className="breadcrumb__item breadcrumb__item--current">
@@ -699,12 +632,13 @@ const Story = () => {
                               >
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
+
                               <a
-                                href="https://www.britishmuseum.org/about-us/dersim-museum-story"
+                                href={`/blog/${blog.slug}`}
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
-                                The Dersim Museum Story
+                                {blog.title}
                               </a>
                             </li>
                           </ul>
@@ -715,10 +649,10 @@ const Story = () => {
                         <ul className="social-share__list">
                           <li className="social-share__item">
                             <a
-                              className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us/dersim-museum-story"
+                              className="social-share__link"
+                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/blog/celebrating-volunteers-british-museum"
                               target="_blank"
-                              rel="noopener"
+                              rel="nofollow noopener noreferrer"
                             >
                               <span className="visually-hidden">
                                 Share on Facebook
@@ -731,18 +665,14 @@ const Story = () => {
                               >
                                 <use xlinkHref="#sprite-icon-facebook" />
                               </svg>
-                              <span className="visually-hidden">
-                                {" "}
-                                (Opens in new window)
-                              </span>
                             </a>
                           </li>
                           <li className="social-share__item">
                             <a
-                              className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=The%20British%20Museum%20Story&url=https://www.britishmuseum.org/about-us/dersim-museum-story"
+                              className="social-share__link"
+                              href="https://twitter.com/intent/tweet?text=Celebrating%20volunteers%20at%20the%20British%20Museum%20&url=https://www.britishmuseum.org/blog/celebrating-volunteers-british-museum"
                               target="_blank"
-                              rel="noopener"
+                              rel="nofollow noopener noreferrer"
                             >
                               <span className="visually-hidden">
                                 Share on X (formerly Twitter)
@@ -755,10 +685,6 @@ const Story = () => {
                               >
                                 <use xlinkHref="#sprite-icon-x" />
                               </svg>
-                              <span className="visually-hidden">
-                                {" "}
-                                (Opens in new window)
-                              </span>
                             </a>
                           </li>
                         </ul>
@@ -766,641 +692,789 @@ const Story = () => {
                     </div>
                   </div>
                 </div>
-                <div></div>
+                <div>
+                  <div className="paragraph paragraph--type--slice-generic-intro paragraph--view-mode--default section section--intro section--bg-white">
+                    <div className="container">
+                      <div className="section__inner">
+                        <div className="section--intro__container">
+                          <div className="section--intro__info">
+                            <div className="section--intro__info-slices section--intro__info-slices-no-title">
+                              <div className="paragraph paragraph--type--info-author paragraph--view-mode--default section--intro__info-author">
+                                <div className="media media-avatar media-image js-media">
+                                  <img
+                                    loading="eager"
+                                    srcSet="images/Stuart-Frost-headshot-250x250.jpg 1x"
+                                    width={80}
+                                    height={80}
+                                    data-focal-position="center center"
+                                    src="images/Stuart-Frost-headshot-250x250.jpg"
+                                    alt="Stuart Frost wears a white shirt and pink tie"
+                                  />
+                                </div>
+                                <div className="author__item_wrapper">
+                                  <p className="paragraph paragraph--type--info-author paragraph--view-mode--default section--intro__info-author">
+                                    By Stuart Frost, Head of Volunteers &amp;
+                                    Interpretation
+                                  </p>
+                                  <div>Publication date: 5 December 2024</div>
+                                </div>
+                              </div>
+                              <div className="paragraph paragraph--type--info-content paragraph--view-mode--default section--intro__info-content wysiwyg">
+                                <p>
+                                  <a href="https://www.britishmuseum.org/support-us/volunteer">
+                                    <span>
+                                      Find out more about volunteering
+                                    </span>
+                                  </a>
+                                  <span> at the British Museum.</span>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="section--intro__content">
+                            <p className="h3"></p>
+                            <div className="wysiwyg">
+                              <h3>
+                                From Touch tours to behind-the-scenes research,
+                                five volunteers share their experiences of
+                                volunteering at the British Museum.
+                              </h3>
+                              <p>
+                                International Volunteer Day falls annually on 5
+                                December, providing an opportunity to celebrate
+                                the contribution of millions of people around
+                                the world who give their time freely to make a
+                                positive difference.&nbsp;
+                                <br />
+                                <br />
+                                The British Museum has a team of about 500
+                                volunteers from all walks of life, aged from 18
+                                to over 90. Some are students or at the start of
+                                their careers; others have retired and are
+                                enjoying new challenges. Volunteers support
+                                colleagues in almost every department in a
+                                dizzying array of tasks, from assisting
+                                curatorial colleagues in collections-based
+                                research to helping keep records up to date.
+                                There are even more volunteers in front-of-house
+                                roles, welcoming visitors to the Museum and
+                                helping millions of visitors enjoy the Museum's
+                                collection year in, year out, through gallery
+                                talks and object handling. We regularly get
+                                positive feedback from visitors who've been on a{" "}
+                                <a href="https://www.britishmuseum.org/visit/tours-and-talks">
+                                  volunteer-led tour
+                                </a>
+                                , or who have visited a{" "}
+                                <a href="https://www.britishmuseum.org/visit/tours-and-talks#hands-on-desks">
+                                  Hands-on desk
+                                </a>
+                                . The volunteers are incredible, and we're
+                                grateful to each and every one of them for their
+                                contribution and support.
+                              </p>
+                              <p>
+                                Read on to hear from five volunteers about their
+                                experience volunteering at the British Museum,
+                                and learn some of the special insights they've
+                                gained from working so closely with the
+                                collection and staff.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="layout-content">
                   <div>
                     <div id="block-numiko-mainpagecontent">
                       <div>
                         <div>
                           <section
-                            className="paragraph paragraph--type--slice-content paragraph--view-mode--default section section--slice-content section--slice-content--align-left section--bg-black"
-                            aria-labelledby="paragraph-9178-title"
+                            className="paragraph paragraph--type--slice-content paragraph--view-mode--default section section--slice-content section--slice-content--align-left section--bg-white"
+                            aria-labelledby="paragraph-42679-title"
                           >
                             <div className="container">
                               <div className="section__inner">
-                                {content && content.length > 0 ? (
-                                  content
-                                    .slice(0, 1)
-                                    .map((item, index) => (
-                                      <p key={index}> {item.body}</p>
-                                    ))
-                                ) : (
-                                  <p>No content available</p>
-                                )}
-                                {/* <h2
-                                  id="paragraph-9178-title"
+                                <h2
+                                  id="paragraph-42679-title"
                                   className="section__title section--slice-content__title"
                                 >
-                                  The first national public museum of the world.
+                                  Reading Room tours – Kathryn
+                                </h2>
+                                <div className="section--slice-content__main">
+                                  <div className="section--slice-content__wysiwyg wysiwyg">
+                                    <blockquote>
+                                      <p>
+                                        She was extremely knowledgeable and very
+                                        passionate about the subject. I
+                                        thoroughly enjoyed the tour and because
+                                        of that, I have decided to start going
+                                        to the British Museum more often.
+                                      </p>
+                                    </blockquote>
+                                    <p>
+                                      The historic Reading Room lies at the very
+                                      centre of the British Museum. The room has
+                                      one of the largest domes in the world,
+                                      larger in diameter than St. Paul's
+                                      Cathedral in London. The Reading Room was
+                                      home to the British Library until 1997
+                                      when it moved to a new site. Early in 2024
+                                      I was recruited as part of a small group
+                                      of volunteer guides to lead 20-minute
+                                      tours of this beautiful space.
+                                    </p>
+                                    <p>
+                                      Since retiring from a career as a clinical
+                                      psychologist I have been increasingly
+                                      drawn to exploring the ways human beings
+                                      have lived and built shared lives through
+                                      time. Volunteering with the Museum
+                                      provided the opportunity to bring together
+                                      my people skills and my love of history
+                                      and put them to good use. The staff in the
+                                      Volunteers office made the application
+                                      process pretty painless and stressed that
+                                      enthusiasm and commitment were the key
+                                      requirements. Their support continued
+                                      throughout learning the Reading Room's
+                                      story, from the interesting characters who
+                                      built it to some of the fascinating
+                                      stories of people who used the room such
+                                      as Karl Marx, Virginia Woolf and Oscar
+                                      Wilde.
+                                    </p>
+                                    <div
+                                      data-entity-type="media"
+                                      data-entity-uuid="e940b2f8-10c2-4921-b3b2-c241b03a82a6"
+                                      data-embed-button="media"
+                                      data-entity-embed-display="view_mode:media.embed"
+                                      data-langcode="en"
+                                      data-entity-embed-display-settings="[]"
+                                      className="embedded-entity"
+                                    >
+                                      <figure className="media media-embed media-image js-media">
+                                        <img
+                                          loading="eager"
+                                          className="lazyload not-full-width"
+                                          srcSet="images/Kathryn-RRR-1000x668_2.png 400w, images/Kathryn-RRR-1000x668_1.png 668w"
+                                          sizes="100vw"
+                                          width={668}
+                                          height={1000}
+                                          src="images/Kathryn-RRR-1000x668.png"
+                                          alt="Kathryn wears an orange jacket and scarf, and gestures with one hand towards the domed roof of the reading room"
+                                        />
+                                        <figcaption>
+                                          Kathryn delivers a{" "}
+                                          <a href="https://www.britishmuseum.org/visit/tours-and-talks/spotlight-reading-room">
+                                            Spotlight: Reading Room tour
+                                          </a>
+                                          . Photo © Benedict Johnson, 2024.
+                                        </figcaption>
+                                      </figure>
+                                    </div>
+                                    <p>
+                                      Taking visitors on the tour is hugely
+                                      enjoyable, and each tour seems a little
+                                      different depending on the audience.
+                                      People join the tour for lots of reasons.
+                                      Some are people who once worked in the
+                                      Room, are keen to see it again and tell us
+                                      some of their memories. It feels a great
+                                      privilege to share the evolving story of
+                                      the Reading Room and hopefully we make a
+                                      visit there a little bit more special for
+                                      our audience.
+                                      <br />
+                                      <br />
+                                      <a href="https://www.britishmuseum.org/visit/tours-and-talks/spotlight-reading-room ">
+                                        <em>
+                                          Find out more about a Reading Room
+                                          tour.
+                                        </em>
+                                      </a>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section
+                            className="paragraph paragraph--type--slice-content paragraph--view-mode--default section section--slice-content section--slice-content--align-left section--bg-white"
+                            aria-labelledby="paragraph-42680-title"
+                          >
+                            <div className="container">
+                              <div className="section__inner">
+                                <h2
+                                  id="paragraph-42680-title"
+                                  className="section__title section--slice-content__title"
+                                >
+                                  Out-of-hours tours – Matthew
+                                </h2>
+                                <div className="section--slice-content__main">
+                                  <div className="section--slice-content__wysiwyg wysiwyg">
+                                    <blockquote>
+                                      <p>
+                                        We had a marvellous tour of the Egyptian
+                                        rooms this morning with a guide. He was
+                                        incredibly knowledgeable and impressive.
+                                        He provided really fascinating insight
+                                        into each item he showed us... And some
+                                        very good jokes.
+                                      </p>
+                                    </blockquote>
+                                    <p>
+                                      I am one of the volunteers on the{" "}
+                                      <a href="https://www.britishmuseum.org/visit/out-hours-tours">
+                                        Out-of-hours tour programme
+                                      </a>
+                                      . These tours take place an hour before
+                                      the Museum officially opens, and they're a
+                                      really special way for people to
+                                      experience the galleries and learn about
+                                      many of the objects there without the
+                                      crowds. I deliver both the{" "}
+                                      <a href="https://www.britishmuseum.org/visit/out-hours-tours#an-introduction-to-ancient-egypt">
+                                        Introduction to ancient Egypt tour
+                                      </a>{" "}
+                                      and the{" "}
+                                      <a href="https://www.britishmuseum.org/visit/out-hours-tours#life-and-death-in-ancient-egypt">
+                                        Life and death in ancient Egypt tour
+                                      </a>
+                                      . &nbsp;
+                                    </p>
+                                    <p>
+                                      I have been volunteering for a few years
+                                      now and I love being able to spend time
+                                      with the Egyptian collection. I never tire
+                                      of walking into the galleries with my tour
+                                      group and having the displays to
+                                      ourselves. It's joyous to see the look on
+                                      people's faces too when they see that we
+                                      are alone in the galleries.
+                                    </p>
+                                    <div
+                                      data-entity-type="media"
+                                      data-entity-uuid="ddccfd2b-3356-4665-bb21-47fa0300876d"
+                                      data-embed-button="media"
+                                      data-entity-embed-display="view_mode:media.embed"
+                                      data-langcode="en"
+                                      data-entity-embed-display-settings="[]"
+                                      className="embedded-entity"
+                                    >
+                                      <figure className="media media-embed media-image js-media">
+                                        <img
+                                          loading="eager"
+                                          className="lazyload not-full-width"
+                                          srcSet="images/Matthew-OOH-tour-1000x747_3.jpg 400w, images/Matthew-OOH-tour-1000x747_2.jpg 750w, images/Matthew-OOH-tour-1000x747_1.jpg 1000w"
+                                          sizes="100vw"
+                                          width={1000}
+                                          height={747}
+                                          src="images/Matthew-OOH-tour-1000x747.jpg"
+                                          alt="Matthew gestures towards some statues in the Egyptian sculpture gallery, surrounded by visitors"
+                                        />
+                                        <figcaption>
+                                          Matthew gives an{" "}
+                                          <a href="https://www.britishmuseum.org/visit/out-hours-tours">
+                                            Out-of-hours tour
+                                          </a>{" "}
+                                          in the Egyptian sculpture gallery.
+                                          Photo © Benedict Johnson, 2023.
+                                        </figcaption>
+                                      </figure>
+                                    </div>
+                                    <p>
+                                      I have had a passion for ancient Egypt
+                                      since I was a child, something that grew
+                                      even more as I got older, and I have been
+                                      lucky enough to visit Egypt many times.
+                                    </p>
+                                    <p>
+                                      As a{" "}
+                                      <a href="https://www.britishmuseum.org/membership">
+                                        Member{" "}
+                                      </a>
+                                      and regular visitor to the British Museum,
+                                      I would come and spend hours in the Egypt
+                                      galleries. Now I get to be there even
+                                      more. One of my favourite objects in the
+                                      collection is on the tour: the seated
+                                      statue of{" "}
+                                      <a href="https://www.britishmuseum.org/collection/object/Y_EA5">
+                                        Amenhotep III
+                                      </a>
+                                      . I find it fascinating because in just
+                                      one statue there are so many fascinating
+                                      details to share about him, his reign,
+                                      what the hieroglyphs say, the history of
+                                      Egypt at the time and the history of the
+                                      statue. I enjoy sharing all of that with
+                                      tour guests, and pointing out things that
+                                      they probably wouldn't notice otherwise.
+                                    </p>
+                                    <p>
+                                      During lockdown I took the opportunity to
+                                      return to university to study Egyptology
+                                      and hieroglyph translation. When I
+                                      graduate next year, I plan to go on to
+                                      study a Masters in Egyptology. My studies
+                                      have helped me so much with delivering my
+                                      tours and I'm able to share my love of
+                                      Egypt with those who come along.
+                                    </p>
+                                    <p>
+                                      <a href="https://www.britishmuseum.org/visit/out-hours-tours">
+                                        <em>
+                                          Find out more about Out-of-hours tours
+                                        </em>
+                                      </a>
+                                      .
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section
+                            className="paragraph paragraph--type--slice-content paragraph--view-mode--default section section--slice-content section--slice-content--align-left section--bg-white"
+                            aria-labelledby="paragraph-42681-title"
+                          >
+                            <div className="container">
+                              <div className="section__inner">
+                                <h2
+                                  id="paragraph-42681-title"
+                                  className="section__title section--slice-content__title"
+                                >
+                                  Touch Tours – Tim
+                                </h2>
+                                <div className="section--slice-content__main">
+                                  <div className="section--slice-content__wysiwyg wysiwyg">
+                                    <blockquote>
+                                      <p>
+                                        Thank you so much for organising the
+                                        Touch tour of the Egypt gallery. We
+                                        really, really enjoyed it. The volunteer
+                                        was such a knowledgeable and kind guide.
+                                      </p>
+                                    </blockquote>
+                                    <p>
+                                      I started volunteering at the British
+                                      Museum as a retirement project in 1992 and
+                                      have given tours in many different
+                                      galleries. I have loved them all without
+                                      exception, but the most rewarding by far
+                                      have been the{" "}
+                                      <a href="https://www.britishmuseum.org/visit/accessibility-museum">
+                                        Touch tours
+                                      </a>
+                                      , for visitors who are blind or partially
+                                      sighted.
+                                    </p>
+                                    <div
+                                      data-entity-type="media"
+                                      data-entity-uuid="3b779234-e450-4baf-b275-0d8b68363300"
+                                      data-embed-button="media"
+                                      data-entity-embed-display="view_mode:media.embed"
+                                      data-langcode="en"
+                                      data-entity-embed-display-settings="[]"
+                                      className="embedded-entity"
+                                    >
+                                      <figure className="media media-embed media-image js-media">
+                                        <img
+                                          loading="eager"
+                                          className="lazyload not-full-width"
+                                          srcSet="images/Touch-tour-1000x667_3.jpg 400w, images/Touch-tour-1000x667_1.jpg 750w, images/Touch-tour-1000x667_2.jpg 1000w"
+                                          sizes="100vw"
+                                          width={1000}
+                                          height={667}
+                                          src="images/Touch-tour-1000x667.jpg"
+                                          alt="A volunteer rests their hand on the hand of a visitor who is blind or partially sighted, and helps the visitor feel the carved hand of a sculpture"
+                                        />
+                                        <figcaption>
+                                          Tim guides a visitor during a{" "}
+                                          <a href="https://www.britishmuseum.org/visit/accessibility-museum">
+                                            Touch tour
+                                          </a>
+                                          . Photo © Benedict Johnson, 2023.
+                                        </figcaption>
+                                      </figure>
+                                    </div>
+                                    <p>
+                                      These take place in both the Parthenon and
+                                      the Egyptian Sculpture galleries. On the
+                                      Parthenon Touch tour, visitors touch
+                                      historic casts of the sculptures. But on
+                                      the Egyptian Sculpture tour, visitors can
+                                      actually touch about nine different
+                                      original sculptures. It is truly
+                                      inspirational to help them appreciate
+                                      objects which are all more than 2,000, and
+                                      some more than 4,000, years old.
+                                    </p>
+                                    <p>
+                                      Because of the necessity to manually guide
+                                      clients, the numbers are limited. There
+                                      are never more than three participants. On
+                                      one occasion I took a young totally blind
+                                      Turkish man who had never previously
+                                      visited London and was finding his way
+                                      around without any assistance except his
+                                      smartphone. He had studied the objects he
+                                      was to be shown – they are listed on the
+                                      British Museum website – and asked
+                                      searching questions which stretched my
+                                      knowledge – not in fact too difficult!
+                                    </p>
+                                    <div
+                                      data-entity-type="media"
+                                      data-entity-uuid="156ac36d-7311-4e41-8b28-55ffb34211b6"
+                                      data-embed-button="media"
+                                      data-entity-embed-display="view_mode:media.embed"
+                                      data-langcode="en"
+                                      data-entity-embed-display-settings="[]"
+                                      className="embedded-entity"
+                                    >
+                                      <figure className="media media-embed media-image js-media">
+                                        <img
+                                          loading="eager"
+                                          className="lazyload not-full-width"
+                                          srcSet="images/Tim-Touch-tour-1000x667_2.png 400w, images/Tim-Touch-tour-1000x667_1.png 667w"
+                                          sizes="100vw"
+                                          width={667}
+                                          height={1000}
+                                          src="images/Tim-Touch-tour-1000x667.png"
+                                          alt="Tim guides a visitor to touch an ancient sculpture"
+                                        />
+                                        <figcaption>
+                                          Tim guides a visitor during a{" "}
+                                          <a href="https://www.britishmuseum.org/visit/accessibility-museum">
+                                            Touch tour
+                                          </a>
+                                          . Photo © Benedict Johnson, 2023.
+                                        </figcaption>
+                                      </figure>
+                                    </div>
+                                    <p>
+                                      Many come with a sighted companion; some
+                                      bring guide dogs who are always popular
+                                      with the other visitors, especially
+                                      children.
+                                    </p>
+                                    <p>
+                                      Of the many people I have accompanied on
+                                      my tours those who have made it truly
+                                      worthwhile are visitors on the Touch
+                                      tours. From them, more than any others, I
+                                      have been inspired to continue
+                                      volunteering and I encourage everyone who
+                                      reads this to do the same.
+                                    </p>
+                                    <p>
+                                      <a href="https://www.britishmuseum.org/visit/accessibility-museum">
+                                        <em>
+                                          Find out more about the Museum's Touch
+                                          tours.
+                                        </em>
+                                      </a>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section
+                            className="paragraph paragraph--type--slice-content paragraph--view-mode--default section section--slice-content section--slice-content--align-left section--bg-white"
+                            aria-labelledby="paragraph-42682-title"
+                          >
+                            <div className="container">
+                              <div className="section__inner">
+                                <h2
+                                  id="paragraph-42682-title"
+                                  className="section__title section--slice-content__title"
+                                >
+                                  Behind-the-scenes – Max
+                                </h2>
+                                <div className="section--slice-content__main">
+                                  <div className="section--slice-content__wysiwyg wysiwyg">
+                                    <blockquote>
+                                      <p>
+                                        It was a pleasure to support Max in his
+                                        volunteering, it is always great to work
+                                        with volunteers who are so engaged with
+                                        the Museum's collection and always want
+                                        to learn more!
+                                      </p>
+                                    </blockquote>
+                                    <p>
+                                      I'm a volunteer in the Department of
+                                      Africa, Oceania and Americas. My main task
+                                      is scanning images of Museum artwork and
+                                      objects and filing it on the database for
+                                      curators to review and archive.
+                                    </p>
+                                    <p>
+                                      I really wanted to volunteer at the
+                                      British Museum because I love history,
+                                      ancient architecture and research. I took
+                                      on this role as I thought it would be a
+                                      good challenge while also being really
+                                      interesting and enjoyable.
+                                    </p>
+                                    <p>
+                                      I have learnt many valuable skills and
+                                      lessons here that are transferable in so
+                                      many areas of my life, including IT
+                                      skills, navigating large collections and
+                                      spaces, timekeeping, asking for help and
+                                      getting on with people in the workplace.
+                                    </p>
+                                    <div
+                                      data-entity-type="media"
+                                      data-entity-uuid="5f08ba02-6f3c-48ae-8eec-00f951492e3a"
+                                      data-embed-button="media"
+                                      data-entity-embed-display="view_mode:media.embed"
+                                      data-langcode="en"
+                                      data-entity-embed-display-settings="[]"
+                                      className="embedded-entity"
+                                    >
+                                      <figure className="media media-embed media-image js-media">
+                                        <img
+                                          loading="eager"
+                                          className="lazyload not-full-width"
+                                          srcSet="images/Maudslay-Palenque-1000x830_3.jpg 400w, images/Maudslay-Palenque-1000x830_1.jpg 750w, images/Maudslay-Palenque-1000x830_2.jpg 1000w"
+                                          sizes="100vw"
+                                          width={1000}
+                                          height={830}
+                                          src="images/Maudslay-Palenque-1000x830.jpg"
+                                          alt="Archive photograph of Alfred Maudslay standing in the top archway of the tower at Palenque. The ruins of an ancient building are covered in vines and rubble"
+                                        />
+                                        <figcaption>
+                                          <a href="https://www.britishmuseum.org/collection/object/EA_Am-Maud-B14-23">
+                                            Archive photograph of Alfred
+                                            Maudslay
+                                          </a>{" "}
+                                          standing in the top archway of the
+                                          tower at Palenque. Glass negative,
+                                          Mexico, 1890–91.
+                                        </figcaption>
+                                      </figure>
+                                    </div>
+                                    <p>
+                                      I love that I get to see and study so many
+                                      incredible things, including the
+                                      sarcophagi of ancient Egypt, the swords
+                                      and armour of the soldiers of the Umayyad
+                                      Caliphate, the architectural masterpieces
+                                      of the Indus River Valley Civilisation and
+                                      the statues of great philosophers,
+                                      scholars, warriors and rulers of ancient
+                                      Rome and Greece. It's great that I get a
+                                      quick-entry pass so I can access the
+                                      entire museum whenever I like, not to
+                                      mention great subsidised meals in the
+                                      staff canteen!
+                                    </p>
+                                    <p>
+                                      There have been many special moments, with
+                                      my favourites including the incredible
+                                      behind-the-scenes events during the
+                                      Volunteers' Fortnight, and of course the
+                                      Volunteers' annual party in the summer.
+                                    </p>
+                                    <p>
+                                      I love my volunteer role at the British
+                                      Museum. It's fun, engaging, educational
+                                      and filled with tons of fun personalities
+                                      to talk with, all in an incredible
+                                      building rich with so much African, Asian,
+                                      American, Australian, European and Middle
+                                      Eastern history to explore and learn
+                                      about.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section
+                            className="paragraph paragraph--type--slice-content paragraph--view-mode--default section section--slice-content section--slice-content--align-left section--bg-white"
+                            aria-labelledby="paragraph-42683-title"
+                          >
+                            <div className="container">
+                              <div className="section__inner">
+                                <h2
+                                  id="paragraph-42683-title"
+                                  className="section__title section--slice-content__title"
+                                >
+                                  Hands on desks – Ishani
+                                </h2>
+                                <div className="section--slice-content__main">
+                                  <div className="section--slice-content__wysiwyg wysiwyg">
+                                    <blockquote>
+                                      <p>
+                                        I just wanted to say how wonderful your
+                                        Hands on desk experience was today. The
+                                        person manning the desk was wonderful
+                                        and so engaging with my children – very
+                                        knowledgeable and they took so much time
+                                        answering their questions, it really was
+                                        the highlight of our visit.
+                                      </p>
+                                    </blockquote>
+                                    <p>
+                                      The Museum has seven Hands on desks where
+                                      visitors get to handle real objects from
+                                      deep history to the present day. I've been
+                                      a Hands-on desk volunteer for many years
+                                      and I've been on an extraordinary journey
+                                      that connects me with visitors from all
+                                      over the world and of all ages. Each
+                                      interaction is unique, reminding me of the
+                                      diverse tapestry of humanity.&nbsp;
+                                      <br />
+                                      <br />
+                                      One of my most memorable experiences
+                                      involved a young girl of about
+                                      nine-years-old who became captivated by a
+                                      miniature bronze Ganesha statue from
+                                      India. As she held it, her eyes sparkled
+                                      with wonder, and she asked, 'Why does
+                                      Ganesha have an elephant head? Do people
+                                      still pray to him?' Her curiosity
+                                      transformed our exchange into a moment of
+                                      shared discovery, illustrating how
+                                      artefacts are not merely historical
+                                      objects but living connections to beliefs
+                                      and traditions.
+                                    </p>
+                                    <p>
+                                      Another powerful moment was with a blind
+                                      visitor who engaged with the miniature
+                                      Ganesha sculpture. I guided her hands to
+                                      feel its texture and contours, prompting
+                                      her insightful reflections on its
+                                      symbolism. This experience reminded me
+                                      that these artefacts resonate beyond
+                                      sight.
+                                    </p>
+                                    <div
+                                      data-entity-type="media"
+                                      data-entity-uuid="9d478870-669e-4716-bac8-d39bad2a0f3b"
+                                      data-embed-button="media"
+                                      data-entity-embed-display="view_mode:media.embed"
+                                      data-langcode="en"
+                                      data-entity-embed-display-settings="[]"
+                                      className="embedded-entity"
+                                    >
+                                      <figure className="media media-embed media-image js-media">
+                                        <img
+                                          loading="eager"
+                                          className="lazyload not-full-width"
+                                          srcSet="images/Ishani-volunteer-1000x667_2.png 400w, images/Ishani-volunteer-1000x667_1.png 667w"
+                                          sizes="100vw"
+                                          width={667}
+                                          height={1000}
+                                          src="images/Ishani-volunteer-1000x667.png"
+                                          alt="Ishani helps visitors handle a necklace resting on a black board"
+                                        />
+                                        <figcaption>
+                                          Ishani helps visitors discover a
+                                          dolphin tooth necklace from Solomon
+                                          Islands at a{" "}
+                                          <a href="https://www.britishmuseum.org/visit/tours-and-talks#hands-on-desks">
+                                            Hands on desk
+                                          </a>
+                                          . Photo © Benedict Johnson, 2023.
+                                        </figcaption>
+                                      </figure>
+                                    </div>
+                                    <p>
+                                      Additionally, one of my favourite pieces
+                                      is a dolphin tooth necklace from Solomon
+                                      Islands in the Pacific. Its intricate
+                                      design sparks lively conversations,
+                                      encouraging visitors to explore and ask
+                                      questions about cultures far removed from
+                                      their own. With each encounter, I see
+                                      people walk away with a renewed
+                                      appreciation for diversity and the
+                                      richness of global heritage.
+                                    </p>
+                                    <p>
+                                      What makes this experience truly rewarding
+                                      is the inclusive environment we foster at
+                                      the Hands-on Desk. I'm grateful to be part
+                                      of a team that celebrates curiosity and
+                                      understanding, creating a space where
+                                      everyone can engage with history and learn
+                                      together. Each day is an exciting
+                                      adventure filled with opportunities to
+                                      connect and share our love for the past.
+                                    </p>
+                                    <p>
+                                      <a href="https://www.britishmuseum.org/visit/tours-and-talks#hands-on-desks">
+                                        <em>
+                                          Find out more about the Hands on
+                                          desks.
+                                        </em>
+                                      </a>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section
+                            className="paragraph paragraph--type--slice-content paragraph--view-mode--default section section--slice-content section--slice-content--align-left section--bg-white"
+                            aria-labelledby="paragraph-42684-title"
+                          >
+                            <div className="container">
+                              <div className="section__inner">
+                                <h2
+                                  id="paragraph-42684-title"
+                                  className="section__title section--slice-content__title"
+                                >
+                                  Volunteer opportunities&nbsp;
                                 </h2>
                                 <div className="section--slice-content__main">
                                   <div className="section--slice-content__wysiwyg wysiwyg">
                                     <p>
-                                      The Dersim Museum was founded in 1753 and
-                                      opened its doors in 1759. It was the first
-                                      national museum to cover all fields of
-                                      human knowledge, open to visitors from
-                                      across the world.
+                                      We will be recruiting new volunteers next
+                                      year. These opportunities are advertised
+                                      on the Museum's{" "}
+                                      <a href="https://www.britishmuseum.org/support-us/volunteer">
+                                        Volunteering page
+                                      </a>{" "}
+                                      where you can also find out more about
+                                      volunteering at the British Museum.
                                     </p>
                                     <p>
-                                      Enlightenment ideals and values
-                                      –&nbsp;critical scrutiny of all
-                                      assumptions, open debate, scientific
-                                      research, progress and tolerance
-                                      –&nbsp;have marked the Museum since its
-                                      foundation.
+                                      Most museums, galleries and libraries run
+                                      volunteer programmes, so if you're not
+                                      based in London but would like to become
+                                      part of a museum community, try reaching
+                                      out to one of your local museums,
+                                      galleries or heritage sites.
                                     </p>
                                     <p>
-                                      The Museum is driven by an insatiable
-                                      curiosity for the world, a deep belief in
-                                      objects as reliable witnesses and
-                                      documents of human history, sound
-                                      research, as well as&nbsp;the desire to
-                                      expand and share knowledge.
-                                    </p>
-                                  </div>
-                                </div> */}
-                                <aside className="section--slice-content__embed">
-                                  <div className="paragraph paragraph--type--embedded-media paragraph--view-mode--default">
-                                    <div className="media media-embed media-video js-media">
-                                      <div
-                                        data-video-embed-field-lazy='<div class="video-embed-field-provider-youtube video-embed-field-responsive-video"><iframe title="YouTube Video (258 years of the Dersim Museum)" width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/NFyclw2pfv0?autoplay=1&amp;start=0&amp;rel=0" data-cookieconsent="marketing"></iframe>
-<div class="wysiwyg cookieconsent-optout-marketing | js-marketing-message ">
-    <a href="javascript:Cookiebot.renew()">Please accept marketing cookies to watch this video.</a>
-</div>
-</div>
-'
-                                        className="video-embed-field-lazy hidden"
-                                        data-once="video-embed-field-lazy"
-                                      >
-                                        <img
-                                          src="/sites/default/files/styles/16_9_media_large/public/video_thumbnails/NFyclw2pfv0.jpg?h=c673cd1c&itok=e730I1qn"
-                                          width={1300}
-                                          height={731}
-                                          alt
-                                          loading="lazy"
-                                        />
-                                        <button
-                                          className="video-embed-field-lazy-play"
-                                          aria-label="258 years of the Dersim Museum - show video"
-                                        />
-                                      </div>
-                                      <div>
-                                        <div
-                                          className="wysiwyg  | js-marketing-message cookieconsent-optout-marketing"
-                                          style={{ display: "block" }}
-                                        >
-                                          <a href="javascript:Cookiebot.renew()">
-                                            Please allow marketing cookies to
-                                            view media
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </aside>
-                              </div>
-                            </div>
-                          </section>
-                          <section
-                            className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
-                            aria-labelledby="paragraph-9217-title"
-                          >
-                            <div className="container">
-                              <div className="section__inner">
-                                <div className="teaser-listing__container">
-                                  <h2
-                                    id="paragraph-9217-title"
-                                    className="section__title teaser-listing__title"
-                                  >
-                                    History of the Museum
-                                  </h2>
-                                  <div className="carousel-container | js-carousel-container">
-                                    <div
-                                      className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
-                                      data-items-length={3}
-                                      data-slides-to-show={2}
-                                      style={{}}
-                                    >
-                                      <ul
-                                        className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper"
-                                        style={{}}
-                                      >
-                                        {posts && posts.length > 0 ? (
-                                          posts.slice(0, 1000).map((post) => (
-                                            <li
-                                              key={post._id}
-                                              className="l-grid__item swiper-slide"
-                                              style={{}}
-                                            >
-                                              <div className="teaser">
-                                                <div className="teaser__wrapper">
-                                                  <div className="teaser__image-container">
-                                                    <div className="media media-teaser_landscape media-image js-media">
-                                                      <img
-                                                        loading="eager"
-                                                        className="lazyautosizes ls-is-cached lazyloaded"
-                                                        width={750}
-                                                        height={422}
-                                                        data-sizes="auto"
-                                                        data-focal-position="center center"
-                                                        sizes="477px"
-                                                        src={post.image}
-                                                      />
-                                                    </div>
-                                                  </div>
-                                                  <div className="teaser__content">
-                                                    <div className="teaser__content-push">
-                                                      <h3 className="teaser__title">
-                                                        <a
-                                                          href={post.slug}
-                                                          className="teaser__anchor"
-                                                        >
-                                                          <span>
-                                                            <span>
-                                                              {post.title}
-                                                            </span>
-                                                          </span>
-                                                        </a>
-                                                      </h3>
-                                                      <div className="teaser__summary">
-                                                        {post.content}
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </li>
-                                          ))
-                                        ) : (
-                                          <p>No posts available</p>
-                                        )}
-
-                                        {/* <li
-                                          className="l-grid__item swiper-slide"
-                                          style={{}}
-                                        >
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyautosizes ls-is-cached lazyloaded"
-                                                    width={750}
-                                                    height={422}
-                                                    data-sizes="auto"
-                                                    data-focal-position="center center"
-                                                    alt="Black and white photo of the King's Library at the Dersim Museum."
-                                                    sizes="477px"
-                                                    src="/images/Story/image-02.jpg"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/about-us/dersim-museum-story/history"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>History</span>
-                                                      </span>
-
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Discover how the Museum and
-                                                    its collection began and how
-                                                    it has developed over the
-                                                    centuries.
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li> */}
-                                        {/* <li
-                                          className="l-grid__item swiper-slide"
-                                          style={{}}
-                                        >
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyautosizes ls-is-cached lazyloaded"
-                                                    width={750}
-                                                    height={422}
-                                                    data-sizes="auto"
-                                                    data-focal-position="center center"
-                                                    alt="Ethnographical Galleries (view of Asia Section), Dersim Museum, London, 1908"
-                                                    sizes="477px"
-                                                    src="/images/Story/image-03.jpg"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/about-us/dersim-museum-story/collecting-histories"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Collecting histories
-                                                        </span>
-                                                      </span>
-
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Discover how the Dersim
-                                                    Museum's collection has
-                                                    grown in many ways over the
-                                                    past three centuries.
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li
-                                          className="l-grid__item swiper-slide"
-                                          style={{}}
-                                        >
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyautosizes ls-is-cached lazyloaded"
-                                                    width={750}
-                                                    height={422}
-                                                    data-sizes="auto"
-                                                    data-focal-position="center center"
-                                                    alt="Print of the Museum in 19th century with horses and carriages going past."
-                                                    sizes="477px"
-                                                    src="/images/Story/image-04.jpg"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/about-us/dersim-museum-story/architecture"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Architecture
-                                                        </span>
-                                                      </span>
-
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    The Dersim Museum's
-                                                    buildings are of national
-                                                    importance, discover their
-                                                    story.
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li> */}
-                                      </ul>
-                                    </div>
-                                    <div className="carousel__nav-container carousel__nav-container--inline-buttons">
-                                      <button
-                                        aria-label="Previous slide"
-                                        className="carousel__nav carousel__nav--prev | js-carousel-prev"
-                                        tabIndex={0}
-                                        role="button"
-                                        aria-disabled="true"
-                                      >
-                                        <svg
-                                          className="icon icon--chevron icon--chevron-small"
-                                          role="presentation"
-                                          focusable="false"
-                                          aria-hidden="true"
-                                        >
-                                          <use xlinkHref="#sprite-icon-chevron" />
-                                        </svg>
-                                      </button>
-                                      <div className="carousel__pagination | js-pagination-dots swiper-pagination-clickable">
-                                        <span
-                                          className="swiper-pagination-bullet"
-                                          tabIndex={0}
-                                          role="button"
-                                          aria-label="Go to slide 1"
-                                        />
-                                        <span
-                                          className="swiper-pagination-bullet"
-                                          tabIndex={0}
-                                          role="button"
-                                          aria-label="Go to slide 2"
-                                        />
-                                        <span
-                                          className="swiper-pagination-bullet"
-                                          tabIndex={0}
-                                          role="button"
-                                          aria-label="Go to slide 3"
-                                        />
-                                      </div>
-                                      <button
-                                        aria-label="Next slide"
-                                        className="carousel__nav carousel__nav--next | js-carousel-next"
-                                        tabIndex={0}
-                                        role="button"
-                                        aria-disabled="false"
-                                      >
-                                        <svg
-                                          className="icon icon--chevron icon--chevron-small"
-                                          role="presentation"
-                                          focusable="false"
-                                          aria-hidden="true"
-                                        >
-                                          <use xlinkHref="#sprite-icon-chevron" />
-                                        </svg>
-                                      </button>
-                                    </div>
-                                  </div>{" "}
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          {/* <section
-                            className="paragraph paragraph--type--slice-teaser paragraph--view-mode--default section section--slice-teaser section--z-index-scope section--has-carousel section--bg-black"
-                            aria-labelledby="paragraph-10135-title"
-                          >
-                            <div className="container">
-                              <div className="section__inner">
-                                <div className="teaser-listing__container">
-                                  <h2
-                                    id="paragraph-10135-title"
-                                    className="visually-hidden teaser-listing__title"
-                                  >
-                                    History of the Museum
-                                  </h2>
-                                  <div className="carousel-container | js-carousel-container">
-                                    <div
-                                      className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
-                                      data-items-length={3}
-                                      data-slides-to-show={2}
-                                      style={{}}
-                                    >
-                                      <ul
-                                        className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper"
-                                        style={{}}
-                                      >
-                                        <li
-                                          className="l-grid__item swiper-slide"
-                                          style={{}}
-                                        >
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyautosizes ls-is-cached lazyloaded"
-                                                    width={750}
-                                                    height={422}
-                                                    data-sizes="auto"
-                                                    data-focal-position="center center"
-                                                    alt="Sir Hans Sloane seated at a table, body turned half, eyes looking full, holding a paper."
-                                                    sizes="477px"
-                                                    src="/images/Story/image-05.webp"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/about-us/dersim-museum-story/sir-hans-sloane"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Sir Hans Sloane
-                                                        </span>
-                                                      </span>
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Read how Sloane's collection
-                                                    of 71,000 items provided the
-                                                    foundation of the Museum.
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li
-                                          className="l-grid__item swiper-slide"
-                                          style={{}}
-                                        >
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyautosizes ls-is-cached lazyloaded"
-                                                    width={750}
-                                                    height={422}
-                                                    data-sizes="auto"
-                                                    data-focal-position="center center"
-                                                    alt="A black and white photograph of Anne Hull Grundy. Grundy rests her face in her right hand and is adorned with a bracelet and necklace"
-                                                    sizes="477px"
-                                                    src="/images/Story/image-06.webp"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/about-us/dersim-museum-story/people-behind-collection"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          People behind the
-                                                          collection
-                                                        </span>
-                                                      </span>
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Read the fascinating
-                                                    histories behind the
-                                                    Museum's most prolific
-                                                    collectors.
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                        <li
-                                          className="l-grid__item swiper-slide"
-                                          style={{}}
-                                        >
-                                          <div className="teaser">
-                                            <div className="teaser__wrapper">
-                                              <div className="teaser__image-container">
-                                                <div className="media media-teaser_landscape media-image js-media">
-                                                  <img
-                                                    loading="eager"
-                                                    className="lazyautosizes ls-is-cached lazyloaded"
-                                                    width={750}
-                                                    height={422}
-                                                    data-sizes="auto"
-                                                    data-focal-position="center center"
-                                                    alt="Wide view shot of the horse head sculpture from the Parthenon marbles"
-                                                    sizes="477px"
-                                                    src="/images/Story/image-07.webp"
-                                                  />
-                                                </div>
-                                              </div>
-                                              <div className="teaser__content">
-                                                <div className="teaser__content-push">
-                                                  <h3 className="teaser__title">
-                                                    <a
-                                                      href="/about-us/dersim-museum-story/contested-objects-collection"
-                                                      className="teaser__anchor"
-                                                    >
-                                                      <span>
-                                                        <span>
-                                                          Contested objects from
-                                                          the collection
-                                                        </span>
-                                                      </span>
-                                                    </a>
-                                                  </h3>
-                                                  <div className="teaser__summary">
-                                                    Find out more about the
-                                                    current status of
-                                                    discussions on some of our
-                                                    contested objects.
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <div className="carousel__nav-container carousel__nav-container--inline-buttons">
-                                      <button
-                                        aria-label="Previous slide"
-                                        className="carousel__nav carousel__nav--prev | js-carousel-prev"
-                                        tabIndex={0}
-                                        role="button"
-                                        aria-disabled="true"
-                                      >
-                                        <svg
-                                          className="icon icon--chevron icon--chevron-small"
-                                          role="presentation"
-                                          focusable="false"
-                                          aria-hidden="true"
-                                        >
-                                          <use xlinkHref="#sprite-icon-chevron" />
-                                        </svg>
-                                      </button>
-                                      <div className="carousel__pagination | js-pagination-dots swiper-pagination-clickable">
-                                        <span
-                                          className="swiper-pagination-bullet"
-                                          tabIndex={0}
-                                          role="button"
-                                          aria-label="Go to slide 1"
-                                        />
-                                        <span
-                                          className="swiper-pagination-bullet"
-                                          tabIndex={0}
-                                          role="button"
-                                          aria-label="Go to slide 2"
-                                        />
-                                        <span
-                                          className="swiper-pagination-bullet"
-                                          tabIndex={0}
-                                          role="button"
-                                          aria-label="Go to slide 3"
-                                        />
-                                      </div>
-                                      <button
-                                        aria-label="Next slide"
-                                        className="carousel__nav carousel__nav--next | js-carousel-next"
-                                        tabIndex={0}
-                                        role="button"
-                                        aria-disabled="false"
-                                      >
-                                        <svg
-                                          className="icon icon--chevron icon--chevron-small"
-                                          role="presentation"
-                                          focusable="false"
-                                          aria-hidden="true"
-                                        >
-                                          <use xlinkHref="#sprite-icon-chevron" />
-                                        </svg>
-                                      </button>
-                                    </div>
-                                  </div>{" "}
-                                </div>
-                              </div>
-                            </div>
-                          </section> */}
-                          <section
-                            className="paragraph paragraph--type--slice-banner paragraph--view-mode--default section section--slice-banner section--maintain-spacer-top section--bg-white banner"
-                            aria-labelledby="paragraph-12857-title"
-                          >
-                            <div className="container">
-                              <div className="banner__outer">
-                                <div className="banner__inner">
-                                  <div className="banner__title">
-                                    <h2
-                                      id="paragraph-12857-title"
-                                      className="section__title"
-                                    >
-                                      Sign up to our newsletters
-                                    </h2>
-                                  </div>
-                                  <div className="banner__content">
-                                    <p>
-                                      Stay connected and receive all our latest
-                                      news, stories and ways to visit the Dersim
-                                      Museum from home.
-                                    </p>
-                                    <div className="banner__button-container">
-                                      <a
-                                        href="https://emails.britishmuseum.org/k/Dersim-Museum/sign_up_form_from_website_box"
-                                        className="button button--chevron external-link"
-                                        data-tracking="cta"
-                                        target="_blank"
-                                        rel="noopener"
-                                      >
-                                        <span>Sign up</span>
-                                        <span className="visually-hidden">
-                                          {" "}
-                                          (Opens in new window)
-                                        </span>
+                                      If you are able to visit the Museum, find
+                                      out more about attending{" "}
+                                      <a href="https://www.britishmuseum.org/visit/tours-and-talks">
+                                        a volunteer-led tour or visiting a Hands
+                                        on desk
                                       </a>
-                                    </div>
+                                      . A small number of tours have a charge,
+                                      but the vast majority of tours are free.
+                                    </p>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </section>
+                          <div className="spacer spacer--small-divider" />
                         </div>
                       </div>
                     </div>
@@ -1409,7 +1483,7 @@ const Story = () => {
                 <div>
                   <div
                     id="block-relatedcontent"
-                    className="section--bg-black section section--slice-teaser"
+                    className="section--bg-white section section--slice-teaser"
                   >
                     <div className="container">
                       <div className="section__inner">
@@ -1422,85 +1496,48 @@ const Story = () => {
                           >
                             <ul className="l-grid l-grid--4-col | teaser-listing__teasers swiper-wrapper">
                               <li className="l-grid__item swiper-slide">
-                                <div className="teaser">
+                                <div className="teaser teaser--has-meta-top">
                                   <div className="teaser__wrapper">
                                     <div className="teaser__image-container">
                                       <div className="media media-teaser_landscape media-image js-media">
                                         <img
                                           loading="eager"
-                                          className="lazyautosizes ls-is-cached lazyloaded"
+                                          className="lazyload"
                                           width={750}
                                           height={422}
                                           data-sizes="auto"
+                                          src={blog.image}
                                           data-focal-position="center center"
-                                          alt="Visitors standing in the Great Court at the Dersim Museum"
-                                          sizes="477px"
-                                          src="/images/Story/image-08.jpg"
+                                          alt="A sailboat with full mast moves through the pale blue water around charcoal and teal coloured headlands"
                                         />
                                       </div>
                                     </div>
                                     <div className="teaser__content">
                                       <div className="teaser__content-push">
-                                        <h3 className="teaser__title">
-                                          <a
-                                            href="/collection/galleries/great-court"
-                                            className="teaser__anchor"
-                                          >
-                                            <span>
-                                              <span>Great Court </span>
-                                            </span>
-                                            {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
-                                          </a>
-                                        </h3>
-                                        <div className="teaser__summary">
-                                          At the centre of the Dersim Museum is
-                                          the Great Court, the largest covered
-                                          public square in Europe.
+                                        <div className="teaser__meta teaser__meta--top">
+                                          <div className="teaser__meta-item">
+                                            <span>Blog / 24 October 2024</span>
+                                          </div>
                                         </div>
-                                      </div>
-                                      <span className="teaser__button | button button--chevron">
-                                        {" "}
-                                        The Great Court
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li className="l-grid__item swiper-slide">
-                                <div className="teaser">
-                                  <div className="teaser__wrapper">
-                                    <div className="teaser__image-container">
-                                      <div className="media media-teaser_landscape media-image js-media">
-                                        <img
-                                          loading="eager"
-                                          className="lazyautosizes ls-is-cached lazyloaded"
-                                          width={750}
-                                          height={422}
-                                          data-sizes="auto"
-                                          data-focal-position="center center"
-                                          alt="Inside the round Reading Room"
-                                          sizes="477px"
-                                          src="/images/Story/image-09.jpg"
-                                        />
-                                      </div>
-                                    </div>
-                                    <div className="teaser__content">
-                                      <div className="teaser__content-push">
                                         <h3 className="teaser__title">
                                           <a
-                                            href="/about-us/dersim-museum-story/architecture/reading-room"
+                                            href="/blog/whats-british-museum-202425"
                                             className="teaser__anchor"
                                           >
                                             <span>
-                                              <span>Reading Room</span>
+                                              <span>
+                                                What's on at the British Museum
+                                                in 2024/25?
+                                              </span>
                                             </span>
                                             {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                           </a>
                                         </h3>
                                         <div className="teaser__summary">
-                                          The Reading Room stands at the heart
-                                          of the Museum, in the centre of the
-                                          Great Court.
+                                          Look forward to 2024/2025 exhibitions
+                                          featuring Japanese artist Hiroshige,
+                                          the art of Ancient India and Picasso's
+                                          experimental printmaking.
                                         </div>
                                       </div>
                                       <span className="teaser__button | button button--chevron">
@@ -1512,83 +1549,220 @@ const Story = () => {
                                 </div>
                               </li>
                               <li className="l-grid__item swiper-slide">
-                                <div className="teaser">
+                                <div className="teaser teaser--has-meta-top">
                                   <div className="teaser__wrapper">
                                     <div className="teaser__image-container">
                                       <div className="media media-teaser_landscape media-image js-media">
                                         <img
                                           loading="eager"
-                                          className="lazyautosizes ls-is-cached lazyloaded"
+                                          className="lazyload"
                                           width={750}
                                           height={422}
+                                          data-src="/sites/default/files/styles/16_9_media_small/public/2022-06/cats-.png?itok=SAwIAa7O"
                                           data-sizes="auto"
-                                          data-focal-position="top center"
-                                          alt="Visitors examining the Rosetta Stone up close in Room 4 Egyptian Sculpture Gallery"
-                                          sizes="477px"
-                                          src="/images/Story/image-10.jpg"
+                                          data-srcset="/sites/default/files/styles/16_9_media_tiny/public/2022-06/cats-.png?itok=G_srBrC_ 400w, /sites/default/files/styles/16_9_media_small/public/2022-06/cats-.png?itok=SAwIAa7O 750w, /sites/default/files/styles/16_9_media_medium/public/2022-06/cats-.png?itok=VQaVjhQz 1000w, /sites/default/files/styles/16_9_media_large/public/2022-06/cats-.png?itok=ZdNLDWu2 1300w, /sites/default/files/styles/16_9_media_huge/public/2022-06/cats-.png?itok=tvLNYh1w 1600w"
+                                          data-focal-position="center center"
+                                          alt="Three cats on a bench outside the British Museum"
                                         />
+                                        <noscript>
+                                          &lt;img loading="eager"
+                                          srcset="/sites/default/files/styles/16_9_media_tiny/public/2022-06/cats-.png?itok=G_srBrC_
+                                          400w,
+                                          /sites/default/files/styles/16_9_media_small/public/2022-06/cats-.png?itok=SAwIAa7O
+                                          750w,
+                                          /sites/default/files/styles/16_9_media_medium/public/2022-06/cats-.png?itok=VQaVjhQz
+                                          1000w,
+                                          /sites/default/files/styles/16_9_media_large/public/2022-06/cats-.png?itok=ZdNLDWu2
+                                          1300w,
+                                          /sites/default/files/styles/16_9_media_huge/public/2022-06/cats-.png?itok=tvLNYh1w
+                                          1600w" width="750" height="422"
+                                          data-src="/sites/default/files/styles/16_9_media_small/public/2022-06/cats-.png?itok=SAwIAa7O"
+                                          data-sizes="auto" alt="Three cats on a
+                                          bench outside the British Museum"
+                                          /&gt;
+                                        </noscript>
                                       </div>
                                     </div>
                                     <div className="teaser__content">
                                       <div className="teaser__content-push">
+                                        <div className="teaser__meta teaser__meta--top">
+                                          <div className="teaser__meta-item">
+                                            <span>
+                                              Museum stories / 7 June 2021
+                                            </span>
+                                          </div>
+                                        </div>
                                         <h3 className="teaser__title">
                                           <a
-                                            href="/collection/galleries"
+                                            href="/blog/14-my-favourite-items-british-museum-archive"
                                             className="teaser__anchor"
                                           >
                                             <span>
-                                              <span>Galleries</span>
+                                              <span>
+                                                14 of my favourite items from
+                                                the British Museum Archive
+                                              </span>
                                             </span>
                                             {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                           </a>
                                         </h3>
                                         <div className="teaser__summary">
-                                          There are more than 60 free galleries
-                                          at the Dersim Museum ready to be
-                                          explored.
+                                          Archivist Francesca Hillier reveals
+                                          her favourite items from the archive,
+                                          and the stories they tell about the
+                                          Museum and the collection.
                                         </div>
                                       </div>
+                                      <span className="teaser__button | button button--chevron">
+                                        {" "}
+                                        Read more
+                                      </span>
                                     </div>
                                   </div>
                                 </div>
                               </li>
                               <li className="l-grid__item swiper-slide">
-                                <div className="teaser">
+                                <div className="teaser teaser--has-meta-top">
                                   <div className="teaser__wrapper">
                                     <div className="teaser__image-container">
                                       <div className="media media-teaser_landscape media-image js-media">
                                         <img
                                           loading="eager"
-                                          className="lazyautosizes ls-is-cached lazyloaded"
+                                          className="lazyload"
                                           width={750}
                                           height={422}
+                                          data-src="/sites/default/files/styles/16_9_media_small/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&itok=5uUj2N2K"
                                           data-sizes="auto"
+                                          data-srcset="/sites/default/files/styles/16_9_media_tiny/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&itok=JeCoxVEr 400w, /sites/default/files/styles/16_9_media_small/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&itok=5uUj2N2K 750w, /sites/default/files/styles/16_9_media_medium/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&itok=L5X4Mu1N 1000w, /sites/default/files/styles/16_9_media_large/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&itok=Ced1SLcH 1300w, /sites/default/files/styles/16_9_media_huge/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&itok=0tYyg5ga 1600w"
                                           data-focal-position="bottom center"
-                                          alt="Front of Dersim Museum during the day."
-                                          sizes="477px"
-                                          src="/images/Story/image-11.webp"
+                                          alt="View of buildings in Samarkand with a sunset behind "
                                         />
+                                        <noscript>
+                                          &lt;img loading="eager"
+                                          srcset="/sites/default/files/styles/16_9_media_tiny/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&amp;itok=JeCoxVEr
+                                          400w,
+                                          /sites/default/files/styles/16_9_media_small/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&amp;itok=5uUj2N2K
+                                          750w,
+                                          /sites/default/files/styles/16_9_media_medium/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&amp;itok=L5X4Mu1N
+                                          1000w,
+                                          /sites/default/files/styles/16_9_media_large/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&amp;itok=Ced1SLcH
+                                          1300w,
+                                          /sites/default/files/styles/16_9_media_huge/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&amp;itok=0tYyg5ga
+                                          1600w" width="750" height="422"
+                                          data-src="/sites/default/files/styles/16_9_media_small/public/2024-10/Registan%20sunrise%201920x1080.jpg?h=05a55881&amp;itok=5uUj2N2K"
+                                          data-sizes="auto" alt="View of
+                                          buildings in Samarkand with a sunset
+                                          behind " /&gt;
+                                        </noscript>
                                       </div>
                                     </div>
                                     <div className="teaser__content">
                                       <div className="teaser__content-push">
+                                        <div className="teaser__meta teaser__meta--top">
+                                          <div className="teaser__meta-item">
+                                            <span>
+                                              Exhibitions and events / 1
+                                              November 2024
+                                            </span>
+                                          </div>
+                                        </div>
                                         <h3 className="teaser__title">
                                           <a
-                                            href="/about-us/governance"
+                                            href="/blog/footsteps-history-travelling-silk-roads-today"
                                             className="teaser__anchor"
                                           >
                                             <span>
-                                              <span>Governance</span>
+                                              <span>
+                                                In the footsteps of history:
+                                                travelling the Silk Roads today
+                                              </span>
                                             </span>
                                             {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                           </a>
                                         </h3>
                                         <div className="teaser__summary">
-                                          Find out how the Dersim Museum
-                                          maintains and protects its worldwide
-                                          collection.
+                                          Discover key Silk Roads cities across
+                                          Central Asia – and win a
+                                          once-in-a-lifetime holiday.
                                         </div>
                                       </div>
+                                      <span className="teaser__button | button button--chevron">
+                                        {" "}
+                                        Read more
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li className="l-grid__item swiper-slide">
+                                <div className="teaser teaser--has-meta-top">
+                                  <div className="teaser__wrapper">
+                                    <div className="teaser__image-container">
+                                      <div className="media media-teaser_landscape media-image js-media">
+                                        <img
+                                          loading="eager"
+                                          className="lazyload"
+                                          width={750}
+                                          height={422}
+                                          data-src="/sites/default/files/styles/16_9_media_small/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&itok=uv5LYRb0"
+                                          data-sizes="auto"
+                                          data-srcset="/sites/default/files/styles/16_9_media_tiny/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&itok=6pyGwSkz 400w, /sites/default/files/styles/16_9_media_small/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&itok=uv5LYRb0 750w, /sites/default/files/styles/16_9_media_medium/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&itok=1Rw2xAHN 1000w, /sites/default/files/styles/16_9_media_large/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&itok=f7UUqhUQ 1300w, /sites/default/files/styles/16_9_media_huge/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&itok=1Wlp82kv 1600w"
+                                          data-focal-position="top center"
+                                          alt="Wall painting of a procession with an elephant and white birds"
+                                        />
+                                        <noscript>
+                                          &lt;img loading="eager"
+                                          srcset="/sites/default/files/styles/16_9_media_tiny/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&amp;itok=6pyGwSkz
+                                          400w,
+                                          /sites/default/files/styles/16_9_media_small/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&amp;itok=uv5LYRb0
+                                          750w,
+                                          /sites/default/files/styles/16_9_media_medium/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&amp;itok=1Rw2xAHN
+                                          1000w,
+                                          /sites/default/files/styles/16_9_media_large/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&amp;itok=f7UUqhUQ
+                                          1300w,
+                                          /sites/default/files/styles/16_9_media_huge/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&amp;itok=1Wlp82kv
+                                          1600w" width="750" height="422"
+                                          data-src="/sites/default/files/styles/16_9_media_small/public/2024-11/Southern-Wall-Ambassadors-painting-1920x1080.png?h=3d200a90&amp;itok=uv5LYRb0"
+                                          data-sizes="auto" alt="Wall painting
+                                          of a procession with an elephant and
+                                          white birds" /&gt;
+                                        </noscript>
+                                      </div>
+                                    </div>
+                                    <div className="teaser__content">
+                                      <div className="teaser__content-push">
+                                        <div className="teaser__meta teaser__meta--top">
+                                          <div className="teaser__meta-item">
+                                            <span>
+                                              Exhibitions and events / 22
+                                              November 2024
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <h3 className="teaser__title">
+                                          <a
+                                            href="/blog/who-were-sogdians"
+                                            className="teaser__anchor"
+                                          >
+                                            <span>
+                                              <span>
+                                                Who were the Sogdians?
+                                              </span>
+                                            </span>
+                                            {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
+                                          </a>
+                                        </h3>
+                                        <div className="teaser__summary">
+                                          If you'd travelled the Silk Roads
+                                          between AD 500–800, you'd have
+                                          probably encountered the Sogdians. But
+                                          who were these enigmatic people?
+                                        </div>
+                                      </div>
+                                      <span className="teaser__button | button button--chevron">
+                                        {" "}
+                                        Read more
+                                      </span>
                                     </div>
                                   </div>
                                 </div>
@@ -1698,35 +1872,9 @@ const Story = () => {
             </circle>
           </svg>
         </div>
-        <iframe
-          height={0}
-          width={0}
-          style={{ display: "none", visibility: "hidden" }}
-        />
-        <img
-          id="CookiebotSessionPixel"
-          src="https://imgsct.cookiebot.com/1.gif?dgi=ec5f4b04-e699-4bea-a9de-eda95d4d9fb7"
-          alt="Cookiebot session tracker icon loaded"
-          data-cookieconsent="ignore"
-          style={{ display: "none" }}
-        />
-        <div id="veepn-breach-alert" />
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              '@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}',
-          }}
-        />
-        <div id="veepn-guard-alert" />
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              '@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}',
-          }}
-        />
       </div>
     </div>
   );
 };
 
-export default Story;
+export default PostDetail;

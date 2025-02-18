@@ -46,7 +46,7 @@ const Profile = () => {
 
     try {
       const response = await axios.put(
-        `https://dersim-new-blog-backend.vercel.app/api/user/update/${currentUser._id}`,
+        `http://localhost:5000/api/user/update/${currentUser._id}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

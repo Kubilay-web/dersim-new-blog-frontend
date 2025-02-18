@@ -10,9 +10,7 @@ const Search = () => {
   // Sayfa verilerini API'den al
   useEffect(() => {
     const fetchPages = async () => {
-      const response = await fetch(
-        "https://dersim-new-blog-backend.vercel.app/api/blogs"
-      ); // API URL'si
+      const response = await fetch("http://localhost:5000/api/blogs"); // API URL'si
       const data = await response.json();
 
       console.log("Gelen veri:", data); // API'den gelen veri

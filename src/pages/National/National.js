@@ -8,7 +8,7 @@ const National = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -21,6 +21,24 @@ const National = () => {
     const category1 = "National";
 
     fetchPosts(category1, setPosts);
+  }, []);
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1f9e8b2864c833c0991d";
+
+    fetchContentById(someContentId, setContent);
   }, []);
 
   return (
@@ -516,10 +534,23 @@ const National = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-6721-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-6721-title"
+                                className="hero__title"
+                              >
+                                <strong>{item.title}</strong>
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-6721-title" className="hero__title">
                             {" "}
                             <strong>National</strong>
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -721,7 +752,16 @@ const National = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}>{item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               The Dersim Museum works across the Dersim in
                               partnership with more than 200 cultural
                               organisations.&nbsp;
@@ -742,7 +782,7 @@ const National = () => {
                                 reflecting diverse viewpoints, lived experiences
                                 and collective ideas.
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

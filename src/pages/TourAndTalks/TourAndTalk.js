@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const TourAndTalk = () => {
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1e188b2864c833c09901";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
+
   return (
     <div>
       <div>
@@ -496,10 +514,23 @@ const TourAndTalk = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-1313-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-1313-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-1313-title" className="hero__title">
                             {" "}
                             Tours and talks
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -806,7 +837,17 @@ const TourAndTalk = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+
+                            {/* <p className="h3">
                               Get to know the collection through tours, talks
                               and Hands on desks.
                             </p>
@@ -847,7 +888,7 @@ const TourAndTalk = () => {
                                   always able to advise on this in advance.
                                 </span>
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

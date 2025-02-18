@@ -31,9 +31,7 @@ const Subscription = () => {
   useEffect(() => {
     const fetchSubscriptions = async () => {
       try {
-        const response = await fetch(
-          "https://dersim-new-blog-backend.vercel.app/api/subscribe/get"
-        );
+        const response = await fetch("http://localhost:5000/api/subscribe/get");
         const data = await response.json();
         setSubscriptions(data);
       } catch (error) {

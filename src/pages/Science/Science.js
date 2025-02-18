@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 
 const Science = () => {
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af23038b2864c833c09928";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
+
   return (
     <div>
       <div>
@@ -517,13 +535,26 @@ const Science = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-6933-title"
+                                className="hero__title hero__title--small"
+                              >
+                                <strong>{item.title}</strong>
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1
                             id="paragraph-6933-title"
                             className="hero__title hero__title--small"
                           >
                             {" "}
                             Scientific study of the Dersim Museum collection
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -685,7 +716,16 @@ const Science = () => {
                             <div className="section--intro__info-slices section--intro__info-slices-no-title"></div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}>{item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               Find out how to apply to access collection
                               material for external scientific research.&nbsp;
                             </p>
@@ -696,7 +736,7 @@ const Science = () => {
                                 researchers. Details of how to apply are
                                 explained below.&nbsp;
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

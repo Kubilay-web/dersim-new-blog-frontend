@@ -92,6 +92,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile/Profile";
+import PostDetail from "./components/PostDetail/PostDetail";
 
 function App() {
   return (
@@ -272,6 +273,7 @@ function App() {
           <Route path="/about-us/masterplan" element={<Masterplan />} />
 
           <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/:slug" element={<PostDetail />} />
 
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<Register />} />

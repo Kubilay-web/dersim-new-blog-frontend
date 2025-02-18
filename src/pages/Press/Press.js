@@ -8,7 +8,7 @@ const Press = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -21,6 +21,24 @@ const Press = () => {
     const category1 = "Contested objects from the collection";
 
     fetchPosts(category1, setPosts);
+  }, []);
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1f108b2864c833c09915";
+
+    fetchContentById(someContentId, setContent);
   }, []);
 
   return (
@@ -521,13 +539,26 @@ const Press = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-10517-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1
                             id="paragraph-10517-title"
                             className="hero__title"
                           >
                             {" "}
                             Press
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -805,7 +836,16 @@ const Press = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               Find the latest press releases, access to images
                               for news reporting, plus how to arrange press
                               photography and news filming at the Museum.
@@ -821,7 +861,7 @@ const Press = () => {
                                 To review exhibitions, please apply for tickets
                                 at least 48 hours in advance to ensure access.
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

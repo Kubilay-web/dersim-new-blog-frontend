@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
@@ -17,7 +17,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "https://dersim-new-blog-backend.vercel.app/api/contact/contact",
+        "http://localhost:5000/api/contact/contact",
         {
           NameSurname: nameSurname,
           Email: email,
@@ -49,6 +49,48 @@ const Contact = () => {
       }, 3000);
     }
   };
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1f568b2864c833c09917";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
+
+  //Accordion
+
+  const [accordionData, setAccordionData] = useState([]); // Accordion verileri
+
+  const fetchAccordionData = async (categoryId) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId}`
+      );
+      const data = await res.json();
+      setAccordionData(data); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId}:`,
+        error
+      );
+    }
+  };
+
+  useEffect(() => {
+    const categoryId = "Governance";
+    fetchAccordionData(categoryId, setAccordionData);
+  }, []);
 
   return (
     <div>
@@ -551,10 +593,23 @@ const Contact = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-5941-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-5941-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-5941-title" className="hero__title">
                             {" "}
                             Contact us
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -777,11 +832,20 @@ const Contact = () => {
                             <div className="section--intro__info-slices section--intro__info-slices-no-title"></div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content.slice(0, 1).map((item, index) => (
+                                <p key={index} className="h3">
+                                  {item.body}
+                                </p>
+                              ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               Take a look at our FAQs for answers to our most
                               common queries, or get in touch using the contact
                               form below.
-                            </p>
+                            </p> */}
                             <div className="wysiwyg"></div>
                           </div>
                         </div>
@@ -800,6 +864,70 @@ const Contact = () => {
                           >
                             <div className="container">
                               <div className="section__inner">
+                                {accordionData && accordionData.length > 0 ? (
+                                  accordionData
+                                    .slice(0, 1)
+                                    .map((item, index) => (
+                                      <h2
+                                        key={index}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item.categoryId}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
+
+                                {accordionData.length > 0 ? (
+                                  <ul>
+                                    {accordionData.map((item, index) => (
+                                      <div
+                                        key={index}
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
+                                      >
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            id={`accordion-btn-${index}`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}`} // Benzersiz content id
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item.title}</span>
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index}`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}`} // Button id ile eşleşiyor
+                                        >
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
+
+                              {/* <div className="section__inner">
                                 <h2
                                   id="paragraph-14624-title"
                                   className="section__title"
@@ -2058,7 +2186,7 @@ const Contact = () => {
                                     </p>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                           </section>
                           <div className="spacer spacer--small-divider" />

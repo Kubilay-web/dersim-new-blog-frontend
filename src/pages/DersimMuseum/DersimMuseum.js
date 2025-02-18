@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const DersimMuseum = () => {
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67b31ebc7ffef8be106d2941";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
+
   return (
     <div>
       <div>
@@ -502,10 +520,23 @@ const DersimMuseum = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container hero__content-container--boxed ">
-                          <h1 id="paragraph-6064-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-6064-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-6064-title" className="hero__title">
                             {" "}
                             American Friends of the Dersim Museum
-                          </h1>
+                          </h1> */}
                           <div className="hero__sponsors">
                             <div className="paragraph paragraph--type--sponsor paragraph--view-mode--default hero__sponsor -has-logo">
                               <div className="hero__sponsor-image">
@@ -712,7 +743,16 @@ const DersimMuseum = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               Bringing the Dersim Museum to our American
                               friends.
                             </p>
@@ -725,7 +765,7 @@ const DersimMuseum = () => {
                                 abroad,&nbsp;while supporting the life and
                                 growth&nbsp;of the Museum.
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

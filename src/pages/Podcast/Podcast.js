@@ -8,7 +8,7 @@ const Podcast = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -16,6 +16,24 @@ const Podcast = () => {
       console.error(`Failed to fetch posts for category ${category}:`, error);
     }
   };
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67b2ee637ffef8be106d27f4";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
 
   useEffect(() => {
     const category1 = "Explore more treasures in our collection";
@@ -516,13 +534,26 @@ const Podcast = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-13123-title"
+                                className="hero__title hero__title--small"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1
                             id="paragraph-13123-title"
                             className="hero__title hero__title--small"
                           >
                             {" "}
                             The Dersim Museum podcast
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -772,7 +803,16 @@ const Podcast = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               The Dersim Museum podcast delves into every aspect
                               of the Museum, from archives to Egyptian black
                               goo, from conservation to Doctor Who, in
@@ -795,7 +835,7 @@ const Podcast = () => {
                                   behind objects from the Museum's collection.
                                 </span>
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

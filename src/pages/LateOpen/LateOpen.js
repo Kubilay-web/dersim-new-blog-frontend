@@ -9,7 +9,7 @@ const LateOpen = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -18,10 +18,51 @@ const LateOpen = () => {
     }
   };
 
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1e828b2864c833c09909";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
+
   useEffect(() => {
     const category1 = "Exhibitions and events";
 
     fetchPosts(category1, setPosts);
+  }, []);
+
+  const [accordionData, setAccordionData] = useState([]); // Accordion verileri
+
+  const fetchAccordionData = async (categoryId) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId}`
+      );
+      const data = await res.json();
+      setAccordionData(data); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId}:`,
+        error
+      );
+    }
+  };
+
+  useEffect(() => {
+    const categoryId = "Gallery information for late opening on Fridays";
+
+    fetchAccordionData(categoryId, setAccordionData);
   }, []);
 
   return (
@@ -520,10 +561,23 @@ const LateOpen = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-3135-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-3135-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-3135-title" className="hero__title">
                             {" "}
                             Late opening on Fridays
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -809,7 +863,16 @@ const LateOpen = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               Start your weekend at the Dersim Museum with late
                               opening on Fridays.
                             </p>
@@ -832,7 +895,7 @@ const LateOpen = () => {
                                 in Europe.
                               </p>
                               <p>&nbsp;</p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
@@ -1280,6 +1343,72 @@ const LateOpen = () => {
                                 className="js-jump-link-anchor"
                                 id="gallery-information"
                               />
+
+                              <div className="section__inner">
+                                {accordionData && accordionData.length > 0 ? (
+                                  accordionData
+                                    .slice(0, 1)
+                                    .map((item, index) => (
+                                      <h2
+                                        key={index}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item.categoryId}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
+
+                                {accordionData.length > 0 ? (
+                                  <ul>
+                                    {accordionData.map((item, index) => (
+                                      <div
+                                        key={index}
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
+                                      >
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            id={`accordion-btn-${index}`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}`} // Benzersiz content id
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item.title}</span>
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index}`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}`} // Button id ile eşleşiyor
+                                        >
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
+
+                              {/* 
                               <div className="section__inner">
                                 <h2
                                   id="paragraph-22089-title"
@@ -2099,7 +2228,7 @@ const LateOpen = () => {
                                     </p>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                           </section>
                           <div className="spacer spacer--small-divider" />

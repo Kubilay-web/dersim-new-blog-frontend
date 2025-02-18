@@ -18,7 +18,7 @@ const Licensing = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -32,6 +32,24 @@ const Licensing = () => {
     const category2 = "From the collection";
     fetchPosts(category1, setPosts);
     fetchPosts(category2, setPosts2);
+  }, []);
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af237d8b2864c833c09930";
+
+    fetchContentById(someContentId, setContent);
   }, []);
 
   return (
@@ -68,7 +86,7 @@ const Licensing = () => {
           rel="image_src"
           href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-12/The_Great_Wave_Hokusai_British_Museum.jpg?itok=hQhzYgB-"
         />
-        <meta property="og:site_name" content="The British Museum" />
+        <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
@@ -103,7 +121,7 @@ const Licensing = () => {
           href="/themes/custom/numiko/favicon.ico"
           type="image/vnd.microsoft.icon"
         />
-        <title>Licensing | British Museum</title>
+        <title>Licensing | Dersim Museum</title>
         <link rel="preconnect" href="https://googletagmanager.com" />
         <link rel="preconnect" href="https://google-analytics.com" />
         <link
@@ -141,7 +159,7 @@ const Licensing = () => {
         />
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="theme-color" content="#000000" />
-        <meta name="application-name" content="British Museum" />
+        <meta name="application-name" content="Dersim Museum" />
         {/* Facebook domain verification */}
         <meta
           name="facebook-domain-verification"
@@ -577,13 +595,26 @@ const Licensing = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-23855-title"
+                                className="hero__title hero__title--small"
+                              >
+                                <strong>{item.title}</strong>
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1
                             id="paragraph-23855-title"
                             className="hero__title hero__title--small"
                           >
                             {" "}
-                            British Museum product licensing
-                          </h1>
+                            Dersim Museum product licensing
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -843,7 +874,16 @@ const Licensing = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}>{item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               We offer partners a broad range of commercial
                               opportunities reaching consumers around the
                               world.&nbsp;
@@ -854,7 +894,7 @@ const Licensing = () => {
                                 its aims, opportunities and how we reach global
                                 audiences.&nbsp;
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
@@ -881,14 +921,14 @@ const Licensing = () => {
                                 <div className="section--slice-content__main">
                                   <div className="section--slice-content__wysiwyg wysiwyg">
                                     <p>
-                                      Founded in 1753, the British Museum was
-                                      the world's first national public museum.
+                                      Founded in 1753, the Dersim Museum was the
+                                      world's first national public museum.
                                       Across 8 million objects, the collection
                                       tells the stories of cultures from the
                                       dawn of human history to the present.
                                     </p>
                                     <p>
-                                      That the British Museum is a museum of the
+                                      That the Dersim Museum is a museum of the
                                       world, for the world, is central to our
                                       product licensing programme. With
                                       partners, we're able to share the
@@ -1472,9 +1512,9 @@ const Licensing = () => {
                                               From our pop-up stores to our
                                               online retail outlets, we are
                                               continuously impressed by the
-                                              demand for British Museum
-                                              products; they create brand
-                                              loyalty that is second to none.
+                                              demand for Dersim Museum products;
+                                              they create brand loyalty that is
+                                              second to none.
                                             </p>
                                             <cite>
                                               {" "}
@@ -1490,9 +1530,9 @@ const Licensing = () => {
                                           <blockquote className="review-slice__quote">
                                             <p>
                                               The depth of the Collection and
-                                              the worldwide appeal of the
-                                              British Museum brand make them an
-                                              amazing partner.
+                                              the worldwide appeal of the Dersim
+                                              Museum brand make them an amazing
+                                              partner.
                                             </p>
                                             <cite>
                                               {" "}
@@ -1528,7 +1568,7 @@ const Licensing = () => {
                                 <div className="section--slice-content__main">
                                   <div className="section--slice-content__wysiwyg wysiwyg">
                                     <p>
-                                      Objects in the British Museum's collection
+                                      Objects in the Dersim Museum's collection
                                       range from the earliest tools made by
                                       humans, such as the{" "}
                                       <a href="https://www.britishmuseum.org/collection/object/H_1962-1206-137">
@@ -2234,13 +2274,13 @@ const Licensing = () => {
                                             className="teaser__anchor"
                                           >
                                             <span>
-                                              <span>British Museum Press</span>
+                                              <span>Dersim Museum Press</span>
                                             </span>
                                             {/* Add visually hidden defacer for screen-reader. Use full stops for reader punctuation. */}
                                           </a>
                                         </h3>
                                         <div className="teaser__summary">
-                                          The British Museum Press publishes
+                                          The Dersim Museum Press publishes
                                           award-winning illustrated books for
                                           general readers, families, academics
                                           and students.
@@ -2282,7 +2322,7 @@ const Licensing = () => {
                                         <div className="teaser__summary">
                                           Make films, documentaries, adverts,
                                           radio programmes or conduct research
-                                          at the British Museum.
+                                          at the Dersim Museum.
                                         </div>
                                       </div>
                                     </div>

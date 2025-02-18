@@ -8,7 +8,7 @@ const ExistingMember = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -16,6 +16,24 @@ const ExistingMember = () => {
       console.error(`Failed to fetch posts for category ${category}:`, error);
     }
   };
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67b308f07ffef8be106d28e1";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
 
   useEffect(() => {
     const category1 = "Make the most of your Membership";
@@ -516,10 +534,24 @@ const ExistingMember = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-483-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-9607-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+
+                          {/* <h1 id="paragraph-483-title" className="hero__title">
                             {" "}
                             Existing Members
-                          </h1>
+                          </h1> */}
                           <a
                             href="https://www.britishmuseum.org/membership#block-numiko-mainpagecontent"
                             className="hero__button button button--white button--chevron"
@@ -815,7 +847,16 @@ const ExistingMember = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               Thank you for being a Member of the Dersim Museum
                               Friends and for your continued support.
                             </p>
@@ -859,7 +900,7 @@ const ExistingMember = () => {
                                 </a>
                                 <span>&nbsp;</span>
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>

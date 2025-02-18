@@ -1,9 +1,93 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 
 const GroupVisit = () => {
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1dd18b2864c833c098fb";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
+
+  //Accordions
+
+  const [accordionData, setAccordionData] = useState([]); // Accordion verileri
+  const [accordionData2, setAccordionData2] = useState([]); // Accordion verileri
+  const [accordionData3, setAccordionData3] = useState([]); // Accordion verileri
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    // Eğer tıklanan accordion zaten açıksa, kapatıyoruz. Aksi takdirde açıyoruz.
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const fetchAccordionData = async (categoryId) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId}`
+      );
+      const data = await res.json();
+      setAccordionData(data); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId}:`,
+        error
+      );
+    }
+  };
+
+  const fetchAccordionData2 = async (categoryId2) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId2}`
+      );
+      const data2 = await res.json();
+      setAccordionData2(data2); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId2}:`,
+        error
+      );
+    }
+  };
+
+  const fetchAccordionData3 = async (categoryId3) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId3}`
+      );
+      const data3 = await res.json();
+      setAccordionData3(data3); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId3}:`,
+        error
+      );
+    }
+  };
+
+  useEffect(() => {
+    const categoryId = "Group visits";
+    const categoryId2 = "Private guided tours for groups";
+    const categoryId3 = "FAQs";
+    fetchAccordionData(categoryId, setAccordionData);
+    fetchAccordionData2(categoryId2, setAccordionData2);
+    fetchAccordionData3(categoryId3, setAccordionData3);
+  }, []);
+
   return (
     <div>
       <div>
@@ -514,10 +598,24 @@ const GroupVisit = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-730-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-730-title"
+                                className="hero__title"
+                              >
+                                {" "}
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-730-title" className="hero__title">
                             {" "}
                             Group visits
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -805,7 +903,17 @@ const GroupVisit = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+
+                            {/* <p className="h3">
                               We welcome groups of any size to the Museum.
                             </p>
                             <div className="wysiwyg">
@@ -896,7 +1004,7 @@ const GroupVisit = () => {
                                   .
                                 </li>
                               </ul>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
@@ -1005,7 +1113,56 @@ const GroupVisit = () => {
                                 >
                                   title
                                 </h2>
-                                <div
+
+                                <div className="section__inner">
+                                  {accordionData.length > 0 ? (
+                                    <ul>
+                                      {accordionData.map((item, index) => (
+                                        <div
+                                          key={index}
+                                          className="accordion__item | js-accordion-item"
+                                          data-js-collapse-first="true"
+                                        >
+                                          <h3 className="accordion__heading">
+                                            <button
+                                              className="accordion__button | js-accordion-btn"
+                                              id={`accordion-btn-${index}`} // Benzersiz id
+                                              aria-expanded="false"
+                                              aria-controls={`accordion-content-${index}`} // Benzersiz content id
+                                            >
+                                              <svg
+                                                className="icon icon--plus"
+                                                role="presentation"
+                                                focusable="false"
+                                                aria-hidden="true"
+                                              >
+                                                <use xlinkHref="#sprite-icon-plus" />
+                                              </svg>
+                                              <span>{item.title}</span>
+                                            </button>
+                                          </h3>
+                                          <div
+                                            className="accordion__content | js-accordion-content"
+                                            id={`accordion-content-${index}`} // Benzersiz content id
+                                            aria-hidden="true"
+                                            aria-labelledby={`accordion-btn-${index}`} // Button id ile eşleşiyor
+                                          >
+                                            <ul>
+                                              <li>{item.content}</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </ul>
+                                  ) : (
+                                    <p>
+                                      No accordion data available for this
+                                      category.
+                                    </p>
+                                  )}
+                                </div>
+
+                                {/* <div
                                   className="accordion__item | js-accordion-item"
                                   data-js-collapse-first="true"
                                 >
@@ -1121,7 +1278,7 @@ const GroupVisit = () => {
                                       </li>
                                     </ul>
                                   </div>
-                                </div>
+                                </div> */}
                               </div>
                             </div>
                           </section>
@@ -1230,6 +1387,70 @@ const GroupVisit = () => {
                           >
                             <div className="container">
                               <div className="section__inner">
+                                {accordionData2 && accordionData2.length > 0 ? (
+                                  accordionData2
+                                    .slice(0, 1)
+                                    .map((item, index) => (
+                                      <h2
+                                        key={index}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item.categoryId}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
+
+                                {accordionData2.length > 0 ? (
+                                  <ul>
+                                    {accordionData2.map((item, index) => (
+                                      <div
+                                        key={index}
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
+                                      >
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            id={`accordion-btn-${index}`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}`} // Benzersiz content id
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item.title}</span>
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index}`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}`} // Button id ile eşleşiyor
+                                        >
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
+
+                              {/* <div className="section__inner">
                                 <h2
                                   id="paragraph-25763-title"
                                   className="section__title"
@@ -1515,7 +1736,7 @@ const GroupVisit = () => {
                                     </ul>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                           </section>
                           <section
@@ -1676,7 +1897,85 @@ const GroupVisit = () => {
                           >
                             <div className="container">
                               <a className="js-jump-link-anchor" id="faqs" />
+
                               <div className="section__inner">
+                                {/* Kategori başlığını dinamik olarak alıyoruz */}
+                                {accordionData3 && accordionData3.length > 0 ? (
+                                  accordionData3
+                                    .slice(0, 1)
+                                    .map((item2, index2) => (
+                                      <h2
+                                        key={index2}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item2.categoryId}{" "}
+                                        {/* Kategori adını dinamik olarak ekliyoruz */}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
+
+                                {/* Accordion içeriğini dinamik hale getiriyoruz */}
+                                {accordionData3.length > 0 ? (
+                                  <ul>
+                                    {accordionData3.map((item2, index) => (
+                                      <div
+                                        key={index} // Her accordion öğesi için benzersiz key
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
+                                      >
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            aria-expanded={
+                                              openIndex === index
+                                                ? "true"
+                                                : "false"
+                                            } // Açık mı kapalı mı kontrol et
+                                            aria-controls={`accordion-content-${index}`} // Benzersiz content id
+                                            onClick={() =>
+                                              toggleAccordion(index)
+                                            } // Butona tıklanınca toggleAccordion fonksiyonu çalışır
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item2.title}</span>{" "}
+                                            {/* Başlık dinamik olarak item2'den alınıyor */}
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index}`} // Benzersiz content id
+                                          aria-hidden={
+                                            openIndex === index
+                                              ? "false"
+                                              : "true"
+                                          } // İçerik açıldığında "aria-hidden" false olmalı
+                                          aria-labelledby={`accordion-${index}`} // Button id ile eşleşiyor
+                                        >
+                                          <p>{item2.content}</p>{" "}
+                                          {/* İçerik dinamik olarak item2'den alınıyor */}
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
+
+                              {/* <div className="section__inner">
                                 <h2
                                   id="paragraph-25775-title"
                                   className="section__title"
@@ -2292,7 +2591,7 @@ const GroupVisit = () => {
                                     </p>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                           </section>
                           <section

@@ -7,11 +7,12 @@ const FamilyVisit = () => {
   const [posts, setPosts] = useState([]);
   const [posts2, setPosts2] = useState([]);
   const [posts3, setPosts3] = useState([]);
+  const [content, setContent] = useState([]);
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -20,14 +21,57 @@ const FamilyVisit = () => {
     }
   };
 
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]); // Eğer bir içerik döndürüyorsa array içinde tek bir içerik döndürüyoruz
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
   useEffect(() => {
     const category1 = "Explore the Museum";
     const category2 = "Family events";
     const category3 = "Also for families";
+    const someContentId = "67af1db88b2864c833c098f9";
 
     fetchPosts(category1, setPosts);
     fetchPosts(category2, setPosts2);
     fetchPosts(category3, setPosts3);
+    fetchContentById(someContentId, setContent);
+  }, []);
+
+  const [accordionData, setAccordionData] = useState([]); // Accordion verileri
+
+  // Her bir accordion öğesinin durumunu tutacak state
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index2) => {
+    // Eğer tıklanan accordion zaten açıksa, kapatıyoruz. Aksi takdirde açıyoruz.
+    setOpenIndex(openIndex === index2 ? null : index2);
+  };
+
+  const fetchAccordionData = async (categoryId) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId}`
+      );
+      const data = await res.json();
+      setAccordionData(data); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId}:`,
+        error
+      );
+    }
+  };
+
+  useEffect(() => {
+    const categoryId = "Facilities for families";
+
+    fetchAccordionData(categoryId, setAccordionData);
   }, []);
 
   return (
@@ -542,8 +586,15 @@ const FamilyVisit = () => {
                       <div className="hero__inner">
                         <div className="hero__content-container">
                           <h1 id="paragraph-1315-title" className="hero__title">
-                            {" "}
-                            Family visits
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}>{item.title}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
                           </h1>
                         </div>
                         <div className="hero__controls">
@@ -857,7 +908,17 @@ const FamilyVisit = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}>{item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+
+                            {/* <p className="h3">
                               Families with children of all ages can enjoy a
                               range of free gallery activities.
                             </p>
@@ -913,7 +974,7 @@ const FamilyVisit = () => {
                                 </a>
                                 .
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
@@ -1687,7 +1748,72 @@ const FamilyVisit = () => {
                                 className="js-jump-link-anchor"
                                 id="family-facilities"
                               />
+
                               <div className="section__inner">
+                                {accordionData && accordionData.length > 0 ? (
+                                  accordionData
+                                    .slice(0, 1)
+                                    .map((item, index) => (
+                                      <h2
+                                        key={index}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item.categoryId}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
+
+                                {accordionData.length > 0 ? (
+                                  <ul>
+                                    {accordionData.map((item, index) => (
+                                      <div
+                                        key={index}
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
+                                      >
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            id={`accordion-btn-${index}`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}`} // Benzersiz content id
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item.title}</span>
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index}`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}`} // Button id ile eşleşiyor
+                                        >
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
+
+                              {/* <div className="section__inner">
                                 <h2
                                   id="paragraph-19232-title"
                                   className="section__title"
@@ -2194,7 +2320,7 @@ const FamilyVisit = () => {
                                     </div>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                           </section>
                           <div className="spacer spacer--small-divider" />

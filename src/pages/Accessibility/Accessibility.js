@@ -1,8 +1,85 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 const Accessibility = () => {
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1e4f8b2864c833c09905";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
+
+  const [accordionData, setAccordionData] = useState([]); // Accordion verileri
+  const [accordionData2, setAccordionData2] = useState([]); // Accordion verileri
+  const [accordionData3, setAccordionData3] = useState([]); // Accordion verileri
+
+  const fetchAccordionData = async (categoryId) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId}`
+      );
+      const data = await res.json();
+      setAccordionData(data); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId}:`,
+        error
+      );
+    }
+  };
+
+  const fetchAccordionData2 = async (categoryId2) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId2}`
+      );
+      const data2 = await res.json();
+      setAccordionData2(data2); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId2}:`,
+        error
+      );
+    }
+  };
+
+  const fetchAccordionData3 = async (categoryId3) => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/accordion/accordion-category/${categoryId3}`
+      );
+      const data3 = await res.json();
+      setAccordionData3(data3); // Accordion verilerini güncelliyoruz
+    } catch (error) {
+      console.error(
+        `Failed to fetch accordion data for category ${categoryId3}:`,
+        error
+      );
+    }
+  };
+
+  useEffect(() => {
+    const categoryId = "Getting to the Museum";
+    const categoryId2 = "Accessibility around the Museum";
+    const categoryId3 = "Accessible resources";
+
+    fetchAccordionData(categoryId, setAccordionData);
+    fetchAccordionData2(categoryId2, setAccordionData2);
+    fetchAccordionData3(categoryId3, setAccordionData3);
+  }, []);
+
   return (
     <div>
       <div>
@@ -513,13 +590,26 @@ const Accessibility = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-1319-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1
                             id="paragraph-1319-title"
                             className="hero__title hero__title--small"
                           >
                             {" "}
                             Accessibility at the Museum
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -811,7 +901,17 @@ const Accessibility = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}> {item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+
+                            {/* <p className="h3">
                               Find out how to make the most of your visit to the
                               Museum.
                             </p>
@@ -871,7 +971,7 @@ const Accessibility = () => {
                                 </li>
                                 <li>Phone: +44 (0)20 7323 8181</li>
                               </ul>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
@@ -1004,7 +1104,72 @@ const Accessibility = () => {
                                 className="js-jump-link-anchor"
                                 id="getting-to-the-museum"
                               />
+
                               <div className="section__inner">
+                                {accordionData && accordionData.length > 0 ? (
+                                  accordionData
+                                    .slice(0, 1)
+                                    .map((item, index) => (
+                                      <h2
+                                        key={index}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item.categoryId}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
+
+                                {accordionData.length > 0 ? (
+                                  <ul>
+                                    {accordionData.map((item, index) => (
+                                      <div
+                                        key={index}
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
+                                      >
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            id={`accordion-btn-${index}`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index}`} // Benzersiz content id
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item.title}</span>
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index}`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index}`} // Button id ile eşleşiyor
+                                        >
+                                          <ul>
+                                            <li>{item.content}</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
+
+                              {/* <div className="section__inner">
                                 <h2
                                   id="paragraph-18594-title"
                                   className="section__title"
@@ -1293,7 +1458,7 @@ const Accessibility = () => {
                                     </ul>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                           </section>
                           <div className="spacer spacer--small-divider" />
@@ -1306,7 +1471,72 @@ const Accessibility = () => {
                                 className="js-jump-link-anchor"
                                 id="accessibility-around-the-museum"
                               />
+
                               <div className="section__inner">
+                                {accordionData2 && accordionData2.length > 0 ? (
+                                  accordionData2
+                                    .slice(0, 1)
+                                    .map((item, index2) => (
+                                      <h2
+                                        key={index2}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item.categoryId}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
+
+                                {accordionData2.length > 0 ? (
+                                  <ul>
+                                    {accordionData2.map((item2, index2) => (
+                                      <div
+                                        key={index2}
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
+                                      >
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            id={`accordion-btn-${index2}-second`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index2}-second`} // Benzersiz content id
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item2.title}</span>
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index2}-second`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index2}-second`} // Button id ile eşleşiyor
+                                        >
+                                          <ul>
+                                            <li>{item2.content}</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
+
+                              {/* <div className="section__inner">
                                 <h2
                                   id="paragraph-18606-title"
                                   className="section__title"
@@ -2141,7 +2371,7 @@ const Accessibility = () => {
                                     </p>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                           </section>
                           <div className="spacer spacer--small-divider" />
@@ -2154,7 +2384,72 @@ const Accessibility = () => {
                                 className="js-jump-link-anchor"
                                 id="accessible-resources"
                               />
+
                               <div className="section__inner">
+                                {accordionData3 && accordionData3.length > 0 ? (
+                                  accordionData3
+                                    .slice(0, 1)
+                                    .map((item, index2) => (
+                                      <h2
+                                        key={index2}
+                                        id="paragraph-18453-title"
+                                        className="section__title"
+                                      >
+                                        {item.categoryId}
+                                      </h2>
+                                    ))
+                                ) : (
+                                  <p>No content available</p>
+                                )}
+
+                                {accordionData3.length > 0 ? (
+                                  <ul>
+                                    {accordionData3.map((item2, index2) => (
+                                      <div
+                                        key={index2}
+                                        className="accordion__item | js-accordion-item"
+                                        data-js-collapse-first="true"
+                                      >
+                                        <h3 className="accordion__heading">
+                                          <button
+                                            className="accordion__button | js-accordion-btn"
+                                            id={`accordion-btn-${index2}-third`} // Benzersiz id
+                                            aria-expanded="false"
+                                            aria-controls={`accordion-content-${index2}-third`} // Benzersiz content id
+                                          >
+                                            <svg
+                                              className="icon icon--plus"
+                                              role="presentation"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                            >
+                                              <use xlinkHref="#sprite-icon-plus" />
+                                            </svg>
+                                            <span>{item2.title}</span>
+                                          </button>
+                                        </h3>
+                                        <div
+                                          className="accordion__content | js-accordion-content"
+                                          id={`accordion-content-${index2}-third`} // Benzersiz content id
+                                          aria-hidden="true"
+                                          aria-labelledby={`accordion-btn-${index2}-third`} // Button id ile eşleşiyor
+                                        >
+                                          <ul>
+                                            <li>{item2.content}</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p>
+                                    No accordion data available for this
+                                    category.
+                                  </p>
+                                )}
+                              </div>
+
+                              {/* <div className="section__inner">
                                 <h2
                                   id="paragraph-18615-title"
                                   className="section__title"
@@ -2884,7 +3179,7 @@ const Accessibility = () => {
                                     </p>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                           </section>
                           <div className="spacer spacer--small-divider" />

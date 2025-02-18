@@ -8,7 +8,7 @@ const Resources = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -21,6 +21,24 @@ const Resources = () => {
     const category1 = "Resources";
 
     fetchPosts(category1, setPosts);
+  }, []);
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af24078b2864c833c09938";
+
+    fetchContentById(someContentId, setContent);
   }, []);
 
   return (
@@ -513,10 +531,23 @@ const Resources = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-8088-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-8088-title"
+                                className="hero__title"
+                              >
+                                <strong>{item.title}</strong>
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-8088-title" className="hero__title">
                             {" "}
                             Resources
-                          </h1>
+                          </h1> */}
                         </div>
                         <div className="hero__controls">
                           <div className="hero__caption | js-hero-caption">
@@ -669,13 +700,22 @@ const Resources = () => {
                             <div className="section--intro__info-slices section--intro__info-slices-no-title"></div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content.slice(0, 1).map((item, index) => (
+                                <p className="h3" key={index}>
+                                  {item.body}
+                                </p>
+                              ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               A world of information is available, free to all
                               at the Dersim Museum. To access the library,
                               archives and study rooms you simply need to
                               pre-book.
                             </p>
-                            <div className="wysiwyg"></div>
+                            <div className="wysiwyg"></div> */}
                           </div>
                         </div>
                       </div>

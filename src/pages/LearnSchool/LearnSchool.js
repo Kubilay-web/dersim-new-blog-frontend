@@ -9,7 +9,7 @@ const LearnSchool = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -17,6 +17,24 @@ const LearnSchool = () => {
       console.error(`Failed to fetch posts for category ${category}:`, error);
     }
   };
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67b2efe77ffef8be106d2808";
+
+    fetchContentById(someContentId, setContent);
+  }, []);
 
   useEffect(() => {
     const category1 = "Explore our sessions and resources";
@@ -519,10 +537,23 @@ const LearnSchool = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-7327-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-7327-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-7327-title" className="hero__title">
                             {" "}
                             Schools
-                          </h1>
+                          </h1> */}
                         </div>
                       </div>
                     </div>
@@ -712,7 +743,16 @@ const LearnSchool = () => {
                                 </h2>
                                 <div className="section--slice-content__main">
                                   <div className="section--slice-content__wysiwyg wysiwyg">
-                                    <h3 className="x">
+                                    {content && content.length > 0 ? (
+                                      content
+                                        .slice(0, 1)
+                                        .map((item, index) => (
+                                          <p key={index}> {item.body}</p>
+                                        ))
+                                    ) : (
+                                      <p>No content available</p>
+                                    )}
+                                    {/* <h3 className="x">
                                       Experience and engage with the Museum's
                                       unique collection from across the world.
                                     </h3>
@@ -722,7 +762,7 @@ const LearnSchool = () => {
                                       offer curriculum-focused on-site sessions,
                                       teacher visit guides and classroom
                                       resources.
-                                    </p>
+                                    </p> */}
                                     <p className="x">&nbsp;</p>
                                   </div>
                                 </div>

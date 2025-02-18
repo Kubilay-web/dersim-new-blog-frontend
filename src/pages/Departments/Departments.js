@@ -9,7 +9,7 @@ const Departments = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `http://localhost:5000/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -24,6 +24,24 @@ const Departments = () => {
 
     fetchPosts(category1, setPosts);
     fetchPosts(category2, setPosts2);
+  }, []);
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (id, setPostFunc) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const data = await res.json();
+      setPostFunc([data]);
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${id}:`, error);
+    }
+  };
+
+  useEffect(() => {
+    const someContentId = "67af1f828b2864c833c0991b";
+
+    fetchContentById(someContentId, setContent);
   }, []);
 
   return (
@@ -510,10 +528,23 @@ const Departments = () => {
                     <div className="container">
                       <div className="hero__inner">
                         <div className="hero__content-container">
-                          <h1 id="paragraph-8401-title" className="hero__title">
+                          {content && content.length > 0 ? (
+                            content.slice(0, 1).map((item, index) => (
+                              <h1
+                                key={index}
+                                id="paragraph-8401-title"
+                                className="hero__title"
+                              >
+                                {item.title}
+                              </h1>
+                            ))
+                          ) : (
+                            <p>No content available</p>
+                          )}
+                          {/* <h1 id="paragraph-8401-title" className="hero__title">
                             {" "}
                             Departments
-                          </h1>
+                          </h1> */}
                         </div>
                       </div>
                     </div>
@@ -690,7 +721,16 @@ const Departments = () => {
                             </div>
                           </div>
                           <div className="section--intro__content">
-                            <p className="h3">
+                            {content && content.length > 0 ? (
+                              content
+                                .slice(0, 1)
+                                .map((item, index) => (
+                                  <p key={index}>{item.body}</p>
+                                ))
+                            ) : (
+                              <p>No content available</p>
+                            )}
+                            {/* <p className="h3">
                               Find out how our Museum departments work with,
                               research and care for the collection.
                             </p>
@@ -716,7 +756,7 @@ const Departments = () => {
                                 <li>Stories about our work</li>
                                 <li>The history of the collection.&nbsp;</li>
                               </ul>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
