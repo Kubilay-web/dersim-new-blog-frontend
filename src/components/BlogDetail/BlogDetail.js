@@ -14,7 +14,9 @@ const BlogDetail = () => {
     // Sluga göre blogu çekiyoruz
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/blogs/${slug}`);
+        const response = await fetch(
+          `https://dersim-new-blog-backend.vercel.app/api/blogs/${slug}`
+        );
         const data = await response.json();
         if (response.ok) {
           setBlog(data); // Blog verisini alıp state'e kaydediyoruz

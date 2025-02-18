@@ -35,7 +35,7 @@
 //     try {
 //       setLoading(true);
 //       const res = await axios.get(
-//         `http://localhost:5000/api/post/getposts/category?category=${category}`
+//         `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
 //       );
 //       setPosts(res.data.posts);
 //       setLoading(false);
@@ -51,7 +51,7 @@
 //     const fetchHomepageData = async () => {
 //       try {
 //         const response = await axios.get(
-//           "http://localhost:5000/api/home/homepage"
+//           "https://dersim-new-blog-backend.vercel.app/api/home/homepage"
 //         );
 //         setHomepageData(response.data);
 //         setLoading(false);
@@ -101,14 +101,14 @@
 //       if (editingPost) {
 //         // Post güncelleme
 //         await axios.put(
-//           `http://localhost:5000/api/post/updatepost/${editingPost._id}`,
+//           `https://dersim-new-blog-backend.vercel.app/api/post/updatepost/${editingPost._id}`,
 //           postFormData
 //         );
 //         alert("Post başarıyla güncellendi!");
 //       } else {
 //         // Yeni post oluşturma
 //         await axios.post(
-//           "http://localhost:5000/api/post/create",
+//           "https://dersim-new-blog-backend.vercel.app/api/post/create",
 //           postFormData
 //         );
 //         alert("Post başarıyla oluşturuldu!");
@@ -126,7 +126,7 @@
 //     if (window.confirm("Bu postu silmek istediğinizden emin misiniz?")) {
 //       try {
 //         await axios.delete(
-//           `http://localhost:5000/api/post/deletepost/${postId}`
+//           `https://dersim-new-blog-backend.vercel.app/api/post/deletepost/${postId}`
 //         );
 //         alert("Post başarıyla silindi!");
 //         fetchPosts(selectedTitle);

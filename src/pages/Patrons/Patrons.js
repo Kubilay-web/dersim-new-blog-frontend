@@ -8,7 +8,7 @@ const Patrons = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/post/getposts/category?category=${category}`
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -21,7 +21,9 @@ const Patrons = () => {
 
   const fetchContentById = async (id, setPostFunc) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/contents/${id}`
+      );
       const data = await res.json();
       setPostFunc([data]);
     } catch (error) {

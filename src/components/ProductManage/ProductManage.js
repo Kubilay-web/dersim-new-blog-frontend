@@ -40,7 +40,7 @@ const ProductManage = () => {
   // Fetch products from the API
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products") // Corrected the URL format
+      .get("https://dersim-new-blog-backend.vercel.app/api/products") // Corrected the URL format
       .then((response) => {
         setProducts(response.data);
       })
@@ -64,13 +64,16 @@ const ProductManage = () => {
       if (currentProductId) {
         // Update product
         await axios.put(
-          `http://localhost:5000/api/products/${currentProductId}`, // Corrected the URL format
+          `https://dersim-new-blog-backend.vercel.app/api/products/${currentProductId}`, // Corrected the URL format
           formData
         );
         alert("Product updated successfully");
       } else {
         // Create new product
-        await axios.post("http://localhost:5000/api/products", formData); // Corrected the URL format
+        await axios.post(
+          "https://dersim-new-blog-backend.vercel.app/api/products",
+          formData
+        ); // Corrected the URL format
         alert("Product created successfully");
       }
 
@@ -88,7 +91,9 @@ const ProductManage = () => {
   // Load products after creation or update
   const loadProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/products"); // Corrected the URL format
+      const response = await axios.get(
+        "https://dersim-new-blog-backend.vercel.app/api/products"
+      ); // Corrected the URL format
       setProducts(response.data);
     } catch (error) {
       console.error("Error loading products:", error);
@@ -98,7 +103,9 @@ const ProductManage = () => {
   // Handle deleting a product
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`); // Corrected the URL format
+      await axios.delete(
+        `https://dersim-new-blog-backend.vercel.app/api/products/${id}`
+      ); // Corrected the URL format
       alert("Product deleted successfully");
       loadProducts(); // Reload the products after deletion
     } catch (error) {

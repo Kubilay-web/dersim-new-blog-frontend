@@ -8,7 +8,9 @@ const Volunteer = () => {
 
   const fetchContentById = async (id, setPostFunc) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/contents/${id}`
+      );
       const data = await res.json();
       setPostFunc([data]);
     } catch (error) {
@@ -29,7 +31,7 @@ const Volunteer = () => {
   const fetchAccordionData = async (categoryId) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accordion/accordion-category/${categoryId}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId}`
       );
       const data = await res.json();
       setAccordionData(data); // Accordion verilerini güncelliyoruz

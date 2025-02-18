@@ -19,7 +19,7 @@ const Exhibition = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/post/getposts/category?category=${category}`
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -56,7 +56,9 @@ const Exhibition = () => {
   const fetchPostsAll = async () => {
     setLoading(true); // Veriler yükleniyor durumuna alıyoruz
     try {
-      const res = await fetch("http://localhost:5000/api/post/getPosts");
+      const res = await fetch(
+        "https://dersim-new-blog-backend.vercel.app/api/post/getPosts"
+      );
       const data = await res.json();
       setPostsAll(data.posts); // Gelen veriyi state'e kaydet
       setLoading(false); // Veriler yüklendi

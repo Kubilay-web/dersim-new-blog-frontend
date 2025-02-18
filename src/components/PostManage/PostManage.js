@@ -38,7 +38,7 @@ const PostManage = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:5000/api/post/getposts"
+        "https://dersim-new-blog-backend.vercel.app/api/post/getposts"
       ); // Backend URL
       setPosts(response.data.posts);
     } catch (error) {
@@ -66,7 +66,7 @@ const PostManage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/post/create",
+        "https://dersim-new-blog-backend.vercel.app/api/post/create",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -96,7 +96,7 @@ const PostManage = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/post/updatepost/${postDetails._id}`,
+        `https://dersim-new-blog-backend.vercel.app/api/post/updatepost/${postDetails._id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -115,7 +115,9 @@ const PostManage = () => {
   // Postu sil
   const handleDeletePost = async (postId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/post/deletepost/${postId}`); // Backend URL
+      await axios.delete(
+        `https://dersim-new-blog-backend.vercel.app/api/post/deletepost/${postId}`
+      ); // Backend URL
       setPosts(posts.filter((post) => post._id !== postId));
       toast.success("Yazı başarıyla silindi!");
     } catch (error) {

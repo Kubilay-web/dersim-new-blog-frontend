@@ -11,7 +11,7 @@ function AccordionManage() {
     if (categoryId) {
       const fetchAccordionData = async () => {
         const response = await fetch(
-          `http://localhost:5000/api/accordion/accordion-category/${categoryId}`
+          `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId}`
         );
         const data = await response.json();
 
@@ -43,7 +43,7 @@ function AccordionManage() {
   const handleCreateSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      `http://localhost:5000/api/accordion/accordion-category/${categoryId}/create`,
+      `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId}/create`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -69,7 +69,7 @@ function AccordionManage() {
   const handleTitleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      `http://localhost:5000/api/accordion/accordion-title/${categoryId}`,
+      `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-title/${categoryId}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

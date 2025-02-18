@@ -26,7 +26,7 @@ const Visit = () => {
   const fetchPosts = async (category, setPostFunc) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/post/getposts/category?category=${category}`
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -37,7 +37,9 @@ const Visit = () => {
 
   const fetchContentById = async (id, setPostFunc) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/contents/${id}`);
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/contents/${id}`
+      );
       const data = await res.json();
       setPostFunc([data]); // Eğer bir içerik döndürüyorsa array içinde tek bir içerik döndürüyoruz
     } catch (error) {
@@ -48,7 +50,7 @@ const Visit = () => {
   const fetchAccordionData = async (categoryId) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accordion/accordion-category/${categoryId}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId}`
       );
       const data = await res.json();
       setAccordionData(data); // Accordion verilerini güncelliyoruz
@@ -63,7 +65,7 @@ const Visit = () => {
   const fetchAccordionData2 = async (categoryId2) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accordion/accordion-category/${categoryId2}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId2}`
       );
       const data2 = await res.json();
       setAccordionData2(data2); // Accordion verilerini güncelliyoruz
@@ -78,7 +80,7 @@ const Visit = () => {
   const fetchAccordionData3 = async (categoryId3) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accordion/accordion-category/${categoryId3}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId3}`
       );
       const data3 = await res.json();
       setAccordionData3(data3); // Accordion verilerini güncelliyoruz
@@ -93,7 +95,7 @@ const Visit = () => {
   const fetchAccordionData4 = async (categoryId4) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accordion/accordion-category/${categoryId4}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId4}`
       );
       const data4 = await res.json();
       setAccordionData4(data4); // Accordion verilerini güncelliyoruz
@@ -108,7 +110,7 @@ const Visit = () => {
   const fetchAccordionData5 = async (categoryId5) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accordion/accordion-category/${categoryId5}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId5}`
       );
       const data5 = await res.json();
       setAccordionData5(data5); // Accordion verilerini güncelliyoruz
@@ -123,7 +125,7 @@ const Visit = () => {
   const fetchAccordionData6 = async (categoryId6) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/accordion/accordion-category/${categoryId6}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId6}`
       );
       const data6 = await res.json();
       setAccordionData6(data6); // Accordion verilerini güncelliyoruz
