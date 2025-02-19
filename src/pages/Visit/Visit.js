@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
+import "react-quill-new/dist/quill.snow.css"; // Quill için stil dosyasını import ettik
 
 const Visit = () => {
   const [posts, setPosts] = useState([]);
@@ -1055,11 +1056,14 @@ const Visit = () => {
                           </div>
                           <div className="section--intro__content">
                             {content && content.length > 0 ? (
-                              content
-                                .slice(0, 2)
-                                .map((item, index) => (
-                                  <p key={index}>{item.body}</p>
-                                ))
+                              content.slice(0, 2).map((item, index) => (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.body,
+                                  }}
+                                  key={index}
+                                />
+                              ))
                             ) : (
                               <p>No content available</p>
                             )}
@@ -1183,6 +1187,7 @@ const Visit = () => {
                                                         width={750}
                                                         height={422}
                                                         src={post.image}
+                                                        alt={post.title} // Eklenmiş alt text
                                                       />
                                                     </div>
                                                   </div>
@@ -1200,9 +1205,12 @@ const Visit = () => {
                                                           </span>
                                                         </a>
                                                       </h3>
-                                                      <div className="teaser__summary">
-                                                        {post.content}
-                                                      </div>
+                                                      {/* HTML içeriği güvenli şekilde render etmek için */}
+                                                      <div
+                                                        dangerouslySetInnerHTML={{
+                                                          __html: post.content,
+                                                        }} // __html kullanıldı
+                                                      />
                                                     </div>
                                                   </div>
                                                 </div>
@@ -1462,7 +1470,11 @@ const Visit = () => {
                                           aria-labelledby={`accordion-btn-${index}`} // Button id ile eşleşiyor
                                         >
                                           <ul>
-                                            <li>{item.content}</li>
+                                            <li
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.content,
+                                              }}
+                                            />
                                           </ul>
                                         </div>
                                       </div>

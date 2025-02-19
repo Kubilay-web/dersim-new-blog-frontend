@@ -1184,14 +1184,9 @@ const Collection = () => {
                           </button>
                         </div>
                         <div className="carousel-container | js-carousel-container">
-                          <div
-                            className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col"
-                            data-items-length={3}
-                            data-slides-to-show={2}
-                            style={{}}
-                          >
+                          <div className="teaser-listing carousel carousel--2-col swiper-container | js-carousel-2-col">
                             <ul
-                              className="l-grid l-grid--3-col | teaser-listing__teasers swiper-wrapper"
+                              className="l-grid l-grid--2-col | teaser-listing__teasers swiper-wrapper"
                               style={{}}
                             >
                               {filteredPosts.length > 0 ? (
