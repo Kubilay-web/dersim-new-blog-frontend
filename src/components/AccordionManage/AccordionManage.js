@@ -370,41 +370,38 @@ function AccordionManage() {
           className="form-select"
         >
           <option value="">Bir Kategori Seçin</option>
-          <option value="Ticket information">Ticket information</option>
-          <option value="Gallery information">Gallery information</option>
-          <option value="Full opening hours">Full opening hours</option>
-          <option value="Visit">Visit</option>
-          <option value="Entering the museum">Entering the museum</option>
-          <option value="Facilities">Facilities</option>
-          <option value="Facilities for families">
-            Facilities for families
-          </option>
-          <option value="Group visits">Group visits</option>
-          <option value="Private guided tours for groups">
-            Private guided tours for groups
-          </option>
-          <option value="FAQs">FAQs</option>
-          <option value="FAQs-Out-of-hours">FAQs-Out-of-hours</option>
-          <option value="Getting to the Museum">Getting to the Museum</option>
-          <option value="Accessibility around the Museum">
-            Accessibility around the Museum
-          </option>
-          <option value="Accessible resources">Accessible resources</option>
-          <option value="Gallery information for late opening on Fridays">
-            Gallery information for late opening on Fridays
-          </option>
-          <option value="FAQs-Support">FAQs-Support</option>
-          <option value="Governance">Governance</option>
-          <option value="Access to information about the Dersim Museum">
-            Access to information about the Dersim Museum
-          </option>
-          <option value="FAQs-Contact">FAQs-Contact</option>
-          <option value="Phone numbers">Phone numbers</option>
-          <option value="Making your request">Making your request</option>
-          <option value="Application process">Application process</option>
-          <option value="Accredited suppliers">Accredited suppliers</option>
-          <option value="Further information">Further information</option>
-          <option value="Study room information">Study room information</option>
+          {/* Kategoriler buraya listelenecek */}
+          {[
+            "Ticket information",
+            "Gallery information",
+            "Full opening hours",
+            "Visit",
+            "Entering the museum",
+            "Facilities",
+            "Facilities for families",
+            "Group visits",
+            "Private guided tours for groups",
+            "FAQs",
+            "FAQs-Out-of-hours",
+            "Getting to the Museum",
+            "Accessibility around the Museum",
+            "Accessible resources",
+            "Gallery information for late opening on Fridays",
+            "FAQs-Support",
+            "Governance",
+            "Access to information about the Dersim Museum",
+            "FAQs-Contact",
+            "Phone numbers",
+            "Making your request",
+            "Application process",
+            "Accredited suppliers",
+            "Further information",
+            "Study room information",
+          ].map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
       </div>
 
@@ -423,16 +420,26 @@ function AccordionManage() {
           />
         </div>
         <div className="mb-3">
-          <input
-            type="text"
-            name="title"
-            placeholder="Accordion Başlığı"
+          <ReactQuill
             value={formData.title}
-            onChange={(e) =>
-              setFormData({ ...formData, title: e.target.value })
-            }
-            className="form-control"
-            required
+            onChange={(title) => setFormData({ ...formData, title })}
+            placeholder="Accordion Başlığı"
+            modules={{
+              toolbar: [
+                [{ header: "1" }, { header: "2" }, { font: [] }],
+                [{ list: "ordered" }, { list: "bullet" }],
+                [{ align: [] }],
+                ["bold", "italic", "underline", "strike"],
+                ["blockquote", "code-block"],
+                ["link", "image"], // resim ekleme
+                [{ color: [] }, { background: [] }],
+                ["clean"],
+
+                // Yeni eklenen özellikler
+                [{ "line-height": ["1", "1.5", "2", "2.5"] }], // satır aralığı
+                [{ size: ["small", "normal", "large", "huge"] }], // yazı boyutu
+              ],
+            }}
           />
         </div>
         <div className="mb-3">
@@ -481,16 +488,26 @@ function AccordionManage() {
               />
             </div>
             <div className="mb-3">
-              <input
-                type="text"
-                name="title"
-                placeholder="Başlık"
+              <ReactQuill
                 value={formData.title}
-                onChange={(e) =>
-                  setFormData({ ...formData, title: e.target.value })
-                }
-                className="form-control"
-                required
+                onChange={(title) => setFormData({ ...formData, title })}
+                placeholder="Başlık"
+                modules={{
+                  toolbar: [
+                    [{ header: "1" }, { header: "2" }, { font: [] }],
+                    [{ list: "ordered" }, { list: "bullet" }],
+                    [{ align: [] }],
+                    ["bold", "italic", "underline", "strike"],
+                    ["blockquote", "code-block"],
+                    ["link", "image"], // resim ekleme
+                    [{ color: [] }, { background: [] }],
+                    ["clean"],
+
+                    // Yeni eklenen özellikler
+                    [{ "line-height": ["1", "1.5", "2", "2.5"] }], // satır aralığı
+                    [{ size: ["small", "normal", "large", "huge"] }], // yazı boyutu
+                  ],
+                }}
               />
             </div>
             <div className="mb-3">
@@ -531,7 +548,12 @@ function AccordionManage() {
               key={accordion._id}
               className="list-group-item d-flex justify-content-between align-items-center"
             >
-              <strong>{accordion.title}</strong>:
+              <strong
+                dangerouslySetInnerHTML={{
+                  __html: accordion.title,
+                }}
+              ></strong>
+              :
               <div
                 dangerouslySetInnerHTML={{
                   __html: accordion.content,
