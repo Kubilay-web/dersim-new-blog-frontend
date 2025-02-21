@@ -59,17 +59,17 @@ const Story = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/about-us/dersim-museum-story"
+          href="http://localhost:3000/about-us/dersim-museum-story"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/about-us/dersim-museum-story"
+          content="http://localhost:3000/about-us/dersim-museum-story"
         />
         <meta property="og:title" content="The Dersim Museum Story" />
         <meta
@@ -78,7 +78,7 @@ const Story = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -89,7 +89,7 @@ const Story = () => {
         <meta name="twitter:title" content="The Dersim Museum Story" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/British_Museum_Augustus_Butler_1000x500.jpg?itok=QCSNj-wB"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -644,7 +644,7 @@ const Story = () => {
                                 The Dersim Museum, print made by Augustus
                                 Butler. Lithograph, 1853.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/P_1880-1113-4426">
+                              <a href="http://localhost:3000/collection/object/P_1880-1113-4426">
                                 <span>View Collection online</span>
                               </a>
                             </div>
@@ -702,7 +702,7 @@ const Story = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/about-us/dersim-museum-story"
+                                href="http://localhost:3000/about-us/dersim-museum-story"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -718,7 +718,7 @@ const Story = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us/dersim-museum-story"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/about-us/dersim-museum-story"
                               target="_blank"
                               rel="noopener"
                             >
@@ -742,7 +742,7 @@ const Story = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=The%20British%20Museum%20Story&url=https://www.britishmuseum.org/about-us/dersim-museum-story"
+                              href="https://twitter.com/intent/tweet?text=The%20British%20Museum%20Story&url=http://localhost:3000/about-us/dersim-museum-story"
                               target="_blank"
                               rel="noopener"
                             >

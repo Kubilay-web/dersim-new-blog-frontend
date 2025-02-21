@@ -78,13 +78,10 @@ const Search = () => {
           }}
         />
         <meta name="description" content="Search the British Museum website." />
-        <link rel="canonical" href="https://www.britishmuseum.org/search" />
+        <link rel="canonical" href="http://localhost:3000/search" />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/search"
-        />
+        <meta property="og:url" content="http://localhost:3000/search" />
         <meta property="og:title" content="Search" />
         <meta
           property="og:description"
@@ -734,7 +731,7 @@ const Search = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/collection"
+                                                      href="http://localhost:3000/collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

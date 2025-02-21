@@ -19,17 +19,17 @@ const CookMedieval = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/blog/how-cook-medieval-feast-11-recipes-middle-ages"
+          href="http://localhost:3000/blog/how-cook-medieval-feast-11-recipes-middle-ages"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-07/Medieval-feasting-plaque-1920x1137.jpg?itok=YF2cGjBI"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-07/Medieval-feasting-plaque-1920x1137.jpg?itok=YF2cGjBI"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/blog/how-cook-medieval-feast-11-recipes-middle-ages"
+          content="http://localhost:3000/blog/how-cook-medieval-feast-11-recipes-middle-ages"
         />
         <meta
           property="og:title"
@@ -41,7 +41,7 @@ const CookMedieval = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-07/Medieval-feasting-plaque-1920x1137.jpg?itok=YF2cGjBI"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-07/Medieval-feasting-plaque-1920x1137.jpg?itok=YF2cGjBI"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -55,7 +55,7 @@ const CookMedieval = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-07/Medieval-feasting-plaque-1920x1137.jpg?itok=YF2cGjBI"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-07/Medieval-feasting-plaque-1920x1137.jpg?itok=YF2cGjBI"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -579,7 +579,7 @@ const CookMedieval = () => {
                                 the Dersim Museum associated with the church at
                                 Tring, Hertfordshire. 14th century.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/H_1922-0412-8-CR">
+                              <a href="http://localhost:3000/collection/object/H_1922-0412-8-CR">
                                 <span>Collection online</span>
                               </a>
                             </div>
@@ -637,7 +637,7 @@ const CookMedieval = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/blog/how-cook-medieval-feast-11-recipes-middle-ages"
+                                href="http://localhost:3000/blog/how-cook-medieval-feast-11-recipes-middle-ages"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -654,7 +654,7 @@ const CookMedieval = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/blog/how-cook-medieval-feast-11-recipes-middle-ages"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/blog/how-cook-medieval-feast-11-recipes-middle-ages"
                               target="_blank"
                               rel="noopener"
                             >
@@ -678,7 +678,7 @@ const CookMedieval = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=How%20to%20cook%20a%20medieval%20feast%3A%2011%20recipes%20from%20the%20Middle%20Ages&url=https://www.britishmuseum.org/blog/how-cook-medieval-feast-11-recipes-middle-ages"
+                              href="https://twitter.com/intent/tweet?text=How%20to%20cook%20a%20medieval%20feast%3A%2011%20recipes%20from%20the%20Middle%20Ages&url=http://localhost:3000/blog/how-cook-medieval-feast-11-recipes-middle-ages"
                               target="_blank"
                               rel="noopener"
                             >

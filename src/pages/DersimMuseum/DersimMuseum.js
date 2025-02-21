@@ -39,17 +39,17 @@ const DersimMuseum = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/support-us/american-friends-british-museum"
+          href="http://localhost:3000/support-us/american-friends-british-museum"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Junction-Boulevard-Queens-Michael-W-Arike.jpg?itok=KWHzNuAp"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Junction-Boulevard-Queens-Michael-W-Arike.jpg?itok=KWHzNuAp"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/support-us/american-friends-british-museum"
+          content="http://localhost:3000/support-us/american-friends-british-museum"
         />
         <meta
           property="og:title"
@@ -75,7 +75,7 @@ const DersimMuseum = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Junction-Boulevard-Queens-Michael-W-Arike.jpg?itok=KWHzNuAp"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Junction-Boulevard-Queens-Michael-W-Arike.jpg?itok=KWHzNuAp"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -666,7 +666,7 @@ const DersimMuseum = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/support-us/american-friends-british-museum"
+                                href="http://localhost:3000/support-us/american-friends-british-museum"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -682,7 +682,7 @@ const DersimMuseum = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/support-us/american-friends-british-museum"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/support-us/american-friends-british-museum"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -702,7 +702,7 @@ const DersimMuseum = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=American%20Friends%20of%20the%20British%20Museum&url=https://www.britishmuseum.org/support-us/american-friends-british-museum"
+                              href="https://twitter.com/intent/tweet?text=American%20Friends%20of%20the%20British%20Museum&url=http://localhost:3000/support-us/american-friends-british-museum"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

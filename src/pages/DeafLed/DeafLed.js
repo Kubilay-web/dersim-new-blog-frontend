@@ -24,17 +24,17 @@ const DeafLed = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/events/deaf-led-bsl-tour-silk-roads"
+          href="http://localhost:3000/events/deaf-led-bsl-tour-silk-roads"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Silk_Roads_embroidered_textile_teaser.jpg?itok=uoK7ngib"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Silk_Roads_embroidered_textile_teaser.jpg?itok=uoK7ngib"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/events/deaf-led-bsl-tour-silk-roads"
+          content="http://localhost:3000/events/deaf-led-bsl-tour-silk-roads"
         />
         <meta property="og:title" content="Deaf-led BSL tour of Silk Roads" />
         <meta
@@ -54,7 +54,7 @@ const DeafLed = () => {
         <meta name="twitter:title" content="Deaf-led BSL tour of Silk Roads" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Silk_Roads_embroidered_textile_teaser.jpg?itok=uoK7ngib"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Silk_Roads_embroidered_textile_teaser.jpg?itok=uoK7ngib"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -625,7 +625,7 @@ const DeafLed = () => {
                                     'Miraculous Image of Liangzhou'. Embroidery,
                                     China, 8th century AD.
                                   </p>
-                                  <a href="https://www.britishmuseum.org/collection/object/A_MAS-0-1129">
+                                  <a href="http://localhost:3000/collection/object/A_MAS-0-1129">
                                     <span>View on Collection online</span>
                                   </a>
                                 </div>
@@ -685,7 +685,7 @@ const DeafLed = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/events/deaf-led-bsl-tour-silk-roads"
+                                href="http://localhost:3000/events/deaf-led-bsl-tour-silk-roads"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -701,7 +701,7 @@ const DeafLed = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/events/deaf-led-bsl-tour-silk-roads"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/events/deaf-led-bsl-tour-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -721,7 +721,7 @@ const DeafLed = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Deaf-led%20BSL%20tour%20of%20Silk%20Roads&url=https://www.britishmuseum.org/events/deaf-led-bsl-tour-silk-roads"
+                              href="https://twitter.com/intent/tweet?text=Deaf-led%20BSL%20tour%20of%20Silk%20Roads&url=http://localhost:3000/events/deaf-led-bsl-tour-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

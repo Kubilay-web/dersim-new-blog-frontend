@@ -39,17 +39,17 @@ const Travel = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/commercial/travel-trade-tours"
+          href="http://localhost:3000/commercial/travel-trade-tours"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R18%2010_Parthenon1920x1080.jpg?itok=TAEdPQOh"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R18%2010_Parthenon1920x1080.jpg?itok=TAEdPQOh"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/commercial/travel-trade-tours"
+          content="http://localhost:3000/commercial/travel-trade-tours"
         />
         <meta property="og:title" content="Travel trade tours" />
         <meta
@@ -69,7 +69,7 @@ const Travel = () => {
         <meta name="twitter:title" content="Travel trade tours" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R18%2010_Parthenon1920x1080.jpg?itok=TAEdPQOh"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R18%2010_Parthenon1920x1080.jpg?itok=TAEdPQOh"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -642,7 +642,7 @@ const Travel = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/commercial/travel-trade-tours"
+                                href="http://localhost:3000/commercial/travel-trade-tours"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -658,7 +658,7 @@ const Travel = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/commercial/travel-trade-tours"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/commercial/travel-trade-tours"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -678,7 +678,7 @@ const Travel = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Travel%20trade%20tours&url=https://www.britishmuseum.org/commercial/travel-trade-tours"
+                              href="https://twitter.com/intent/tweet?text=Travel%20trade%20tours&url=http://localhost:3000/commercial/travel-trade-tours"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -987,7 +987,7 @@ const Travel = () => {
                                     </p>
                                     <p>
                                       <a
-                                        data-gc-link="https://www.britishmuseum.org/pdf/sample_breakfast_menu.pdf"
+                                        data-gc-link="http://localhost:3000/pdf/sample_breakfast_menu.pdf"
                                         href="/sites/default/files/2019-10/sample_breakfast_menu.pdf"
                                       >
                                         Download a sample breakfast menu

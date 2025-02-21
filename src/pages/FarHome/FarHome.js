@@ -19,17 +19,17 @@ const FarHome = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/blog/far-home-travelling-silk-roads"
+          href="http://localhost:3000/blog/far-home-travelling-silk-roads"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-09/Elephant%20manuscript%201600x825.jpg?itok=UYPmnxYJ"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-09/Elephant%20manuscript%201600x825.jpg?itok=UYPmnxYJ"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/blog/far-home-travelling-silk-roads"
+          content="http://localhost:3000/blog/far-home-travelling-silk-roads"
         />
         <meta
           property="og:title"
@@ -55,7 +55,7 @@ const FarHome = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-09/Elephant%20manuscript%201600x825.jpg?itok=UYPmnxYJ"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-09/Elephant%20manuscript%201600x825.jpg?itok=UYPmnxYJ"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -617,7 +617,7 @@ const FarHome = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/blog/far-home-travelling-silk-roads"
+                                href="http://localhost:3000/blog/far-home-travelling-silk-roads"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -633,7 +633,7 @@ const FarHome = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/blog/far-home-travelling-silk-roads"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/blog/far-home-travelling-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -653,7 +653,7 @@ const FarHome = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Far%20from%20home%3A%20travelling%20the%20Silk%20Roads&url=https://www.britishmuseum.org/blog/far-home-travelling-silk-roads"
+                              href="https://twitter.com/intent/tweet?text=Far%20from%20home%3A%20travelling%20the%20Silk%20Roads&url=http://localhost:3000/blog/far-home-travelling-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -712,7 +712,7 @@ const FarHome = () => {
                                 <p>
                                   Discover more stories from the Silk Roads in
                                   our{" "}
-                                  <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                  <a href="http://localhost:3000/exhibitions/silk-roads">
                                     major new exhibition
                                   </a>{" "}
                                   (until 23 February 2025)
@@ -739,7 +739,7 @@ const FarHome = () => {
                                 from Scandinavia to Madagascar. We asked the
                                 curators of the Dersim Museum's latest
                                 exhibition,{" "}
-                                <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                <a href="http://localhost:3000/exhibitions/silk-roads">
                                   <em>Silk Roads</em>
                                 </a>
                                 , to tell the stories of people – and animals –
@@ -823,7 +823,7 @@ const FarHome = () => {
                                           alt="Wooden painted panel of a princess with a basket of silk worm cocoons."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/A_1907-1111-73">
+                                          <a href="http://localhost:3000/collection/object/A_1907-1111-73">
                                             Painting on a wooden panel
                                           </a>{" "}
                                           of the 'silk princess', China,
@@ -1020,7 +1020,7 @@ const FarHome = () => {
                                       and Mediterranean, and providing a
                                       critical link between Africa and Arabia.
                                       In the AD 500s the kingdom of{" "}
-                                      <a href="https://www.britishmuseum.org/blog/historical-city-travel-guide-aksum-6th-century-ad">
+                                      <a href="http://localhost:3000/blog/historical-city-travel-guide-aksum-6th-century-ad">
                                         Aksum
                                       </a>
                                       , centred in the highlands of present-day
@@ -1049,7 +1049,7 @@ const FarHome = () => {
                                         />
                                         <figcaption>
                                           Daniel Havell (1786–1826 fl.){" "}
-                                          <a href="https://www.britishmuseum.org/collection/object/P_Dd-1-21">
+                                          <a href="http://localhost:3000/collection/object/P_Dd-1-21">
                                             <em>Obelisk at Axum</em>
                                           </a>
                                           , after Henry Salt. From&nbsp;
@@ -1096,7 +1096,7 @@ const FarHome = () => {
                                           alt="Both sides of a gold coin showing King Kaleb, Christian crosses and Greek inscriptions "
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/C_1910-1207-1">
+                                          <a href="http://localhost:3000/collection/object/C_1910-1207-1">
                                             Gold coin of King Kaleb
                                           </a>{" "}
                                           with Christian crosses and Greek
@@ -1239,12 +1239,12 @@ const FarHome = () => {
                                           alt="Two coins, one gold showing a portrait of Charlemagne, the other a silver dirham of Harun al-Rashid  "
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/C_G3-FrGC-10">
+                                          <a href="http://localhost:3000/collection/object/C_G3-FrGC-10">
                                             Gold coin
                                           </a>{" "}
                                           of Charlemagne, minted in France, AD
                                           768–814.{" "}
-                                          <a href="https://www.britishmuseum.org/collection/object/C_1906-1204-41">
+                                          <a href="http://localhost:3000/collection/object/C_1906-1204-41">
                                             Silver dirham
                                           </a>{" "}
                                           of Harun al-Rashid, minted in Iraq, AD
@@ -1351,7 +1351,7 @@ const FarHome = () => {
                                           alt="Circular ivory pyxis, carved in relief with the Healing of the Demoniac"
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/H_1903-0514-1">
+                                          <a href="http://localhost:3000/collection/object/H_1903-0514-1">
                                             Ivory pyxis
                                           </a>
                                           , probably made in Aachen, Germany,
@@ -1404,7 +1404,7 @@ const FarHome = () => {
                                         Meet more figures whose lives are
                                         entwined with the Silk Roads at our{" "}
                                       </strong>
-                                      <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                      <a href="http://localhost:3000/exhibitions/silk-roads">
                                         <strong>major new exhibition</strong>
                                       </a>
                                       <strong>
@@ -1412,7 +1412,7 @@ const FarHome = () => {
                                         hear more about the story of the silk
                                         princess in the exhibition's{" "}
                                       </strong>
-                                      <a href="https://www.britishmuseum.org/visit/audio-app">
+                                      <a href="http://localhost:3000/visit/audio-app">
                                         <strong>audio tour</strong>
                                       </a>
                                       <strong>.&nbsp;</strong>

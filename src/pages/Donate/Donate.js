@@ -57,19 +57,16 @@ const Donate = () => {
           name="description"
           content="Your support is vital and helps the Museum to share the collection with the world."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/support-us/donate"
-        />
+        <link rel="canonical" href="http://localhost:3000/support-us/donate" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-07/assyrian-relief-sculpture-1920.jpg?itok=AWtHlYPO"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2020-07/assyrian-relief-sculpture-1920.jpg?itok=AWtHlYPO"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/support-us/donate"
+          content="http://localhost:3000/support-us/donate"
         />
         <meta property="og:title" content="Donate" />
         <meta
@@ -89,7 +86,7 @@ const Donate = () => {
         <meta name="twitter:title" content="Donate" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-07/assyrian-relief-sculpture-1920.jpg?itok=AWtHlYPO"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2020-07/assyrian-relief-sculpture-1920.jpg?itok=AWtHlYPO"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -557,7 +554,7 @@ const Donate = () => {
                             Donate to the Dersim Museum
                           </h1> */}
                           <a
-                            href="https://www.britishmuseum.org/support-us/donate-now"
+                            href="http://localhost:3000/support-us/donate-now"
                             className="hero__button button button--white button--chevron"
                             data-tracking="cta"
                           >
@@ -611,7 +608,7 @@ const Donate = () => {
                                 from the North Palace at Nineveh (now in modern
                                 Iraq), 645–635&nbsp;BC&nbsp;(Room 10).
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/W_1856-0909-16_8">
+                              <a href="http://localhost:3000/collection/object/W_1856-0909-16_8">
                                 <span>
                                   Wall panel relief on Collection online
                                 </span>
@@ -674,7 +671,7 @@ const Donate = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/support-us/donate"
+                                href="http://localhost:3000/support-us/donate"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -690,7 +687,7 @@ const Donate = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/support-us/donate"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/support-us/donate"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -710,7 +707,7 @@ const Donate = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Donate&url=https://www.britishmuseum.org/support-us/donate"
+                              href="https://twitter.com/intent/tweet?text=Donate&url=http://localhost:3000/support-us/donate"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -763,7 +760,7 @@ const Donate = () => {
                                 <a
                                   data-tracking="cta"
                                   className="button button--chevron"
-                                  href="https://www.britishmuseum.org/support-us/donate-now"
+                                  href="http://localhost:3000/support-us/donate-now"
                                 >
                                   <span>Donate now</span>
                                 </a>

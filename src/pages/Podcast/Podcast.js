@@ -59,17 +59,17 @@ const Podcast = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/the-british-museum-podcast"
+          href="http://localhost:3000/the-british-museum-podcast"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-07/Castellani-brooch-2.jpg?itok=93Gi8C0P"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2020-07/Castellani-brooch-2.jpg?itok=93Gi8C0P"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/the-british-museum-podcast"
+          content="http://localhost:3000/the-british-museum-podcast"
         />
         <meta property="og:title" content="The Dersim Museum podcast" />
         <meta
@@ -89,7 +89,7 @@ const Podcast = () => {
         <meta name="twitter:title" content="The Dersim Museum podcast" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-07/Castellani-brooch-2.jpg?itok=93Gi8C0P"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2020-07/Castellani-brooch-2.jpg?itok=93Gi8C0P"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -645,7 +645,7 @@ const Podcast = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/the-british-museum-podcast"
+                                href="http://localhost:3000/the-british-museum-podcast"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -661,7 +661,7 @@ const Podcast = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/the-british-museum-podcast"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/the-british-museum-podcast"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -681,7 +681,7 @@ const Podcast = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=The%20British%20Museum%20podcast&url=https://www.britishmuseum.org/the-british-museum-podcast"
+                              href="https://twitter.com/intent/tweet?text=The%20British%20Museum%20podcast&url=http://localhost:3000/the-british-museum-podcast"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -887,7 +887,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/Podcast_020_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/Podcast_020_transcript.docx">
                                           Read the transcript
                                         </a>
                                         .
@@ -944,7 +944,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_019_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_019_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1000,7 +1000,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_018_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_018_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1058,7 +1058,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_017_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_017_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1116,7 +1116,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_special_abolition_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_special_abolition_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1174,7 +1174,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_special_hans_sloane_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_special_hans_sloane_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1250,7 +1250,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_016_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_016_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1321,7 +1321,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_015_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_015_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1403,7 +1403,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_014_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_014_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1465,7 +1465,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_013_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_013_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1518,7 +1518,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_012_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_012_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1574,7 +1574,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_011_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_011_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1629,7 +1629,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_special_women__troy_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_special_women__troy_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1689,7 +1689,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_010_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_010_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1744,7 +1744,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_special_12_objects_christmas_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_special_12_objects_christmas_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1910,7 +1910,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_007_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_007_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -1965,7 +1965,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_006_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_006_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -2021,7 +2021,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_005_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_005_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -2076,7 +2076,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_004_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_004_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -2135,7 +2135,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_003_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_003_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -2190,7 +2190,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_002_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_002_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>
@@ -2247,7 +2247,7 @@ const Podcast = () => {
                                     <div className="caption">
                                       {" "}
                                       <p>
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2022-10/podcast_001_transcript.docx">
+                                        <a href="http://localhost:3000/sites/default/files/2022-10/podcast_001_transcript.docx">
                                           Read the transcript.
                                         </a>
                                       </p>

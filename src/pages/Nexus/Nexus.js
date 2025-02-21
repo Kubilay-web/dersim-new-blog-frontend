@@ -24,17 +24,17 @@ const Nexus = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/events/istanbul-nexus-silk-roads"
+          href="http://localhost:3000/events/istanbul-nexus-silk-roads"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-12/Hagia_Sophia_Istanbul_1920x1080.jpg?itok=L-Swfc0Q"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-12/Hagia_Sophia_Istanbul_1920x1080.jpg?itok=L-Swfc0Q"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/events/istanbul-nexus-silk-roads"
+          content="http://localhost:3000/events/istanbul-nexus-silk-roads"
         />
         <meta property="og:title" content="Istanbul: nexus on the Silk Roads" />
         <meta
@@ -57,7 +57,7 @@ const Nexus = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-12/Hagia_Sophia_Istanbul_1920x1080.jpg?itok=L-Swfc0Q"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-12/Hagia_Sophia_Istanbul_1920x1080.jpg?itok=L-Swfc0Q"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -621,7 +621,7 @@ const Nexus = () => {
                                     Hagia Sophia, Istanbul. Lithograph by Louis
                                     Haghe after Gaspard Fossati, 1852.
                                   </p>
-                                  <a href="https://www.britishmuseum.org/collection/object/P_1889-0603-109">
+                                  <a href="http://localhost:3000/collection/object/P_1889-0603-109">
                                     <span>View on Collection online</span>
                                   </a>
                                 </div>
@@ -681,7 +681,7 @@ const Nexus = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/events/istanbul-nexus-silk-roads"
+                                href="http://localhost:3000/events/istanbul-nexus-silk-roads"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -697,7 +697,7 @@ const Nexus = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/events/istanbul-nexus-silk-roads"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/events/istanbul-nexus-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -717,7 +717,7 @@ const Nexus = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Istanbul%3A%20nexus%20on%20the%20Silk%20Roads&url=https://www.britishmuseum.org/events/istanbul-nexus-silk-roads"
+                              href="https://twitter.com/intent/tweet?text=Istanbul%3A%20nexus%20on%20the%20Silk%20Roads&url=http://localhost:3000/events/istanbul-nexus-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1147,7 +1147,7 @@ const Nexus = () => {
                                       adviser to the Netflix film{" "}
                                       <em>The Dig </em>(2021). Brunning is also
                                       an adviser to the{" "}
-                                      <a href="https://www.britishmuseum.org/our-work/national/treasure-and-portable-antiquities-scheme">
+                                      <a href="http://localhost:3000/our-work/national/treasure-and-portable-antiquities-scheme">
                                         Portable Antiquities Scheme
                                       </a>
                                       at the Museum.&nbsp;

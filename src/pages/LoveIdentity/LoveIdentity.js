@@ -26,17 +26,17 @@ const LoveIdentity = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/collection/desire-love-and-identity"
+          href="http://localhost:3000/collection/desire-love-and-identity"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Earthenware_figures_Augusta_Kaiser-1000x500.jpg?itok=MS4bO066"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Earthenware_figures_Augusta_Kaiser-1000x500.jpg?itok=MS4bO066"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/collection/desire-love-and-identity"
+          content="http://localhost:3000/collection/desire-love-and-identity"
         />
         <meta property="og:title" content="Desire, love and identity" />
         <meta
@@ -45,7 +45,7 @@ const LoveIdentity = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Earthenware_figures_Augusta_Kaiser-1000x500.jpg?itok=MS4bO066"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Earthenware_figures_Augusta_Kaiser-1000x500.jpg?itok=MS4bO066"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -56,7 +56,7 @@ const LoveIdentity = () => {
         <meta name="twitter:title" content="Desire, love and identity" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Earthenware_figures_Augusta_Kaiser-1000x500.jpg?itok=MS4bO066"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Earthenware_figures_Augusta_Kaiser-1000x500.jpg?itok=MS4bO066"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -660,7 +660,7 @@ const LoveIdentity = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/collection/desire-love-and-identity"
+                                href="http://localhost:3000/collection/desire-love-and-identity"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -676,7 +676,7 @@ const LoveIdentity = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/collection/desire-love-and-identity"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/collection/desire-love-and-identity"
                               target="_blank"
                               rel="noopener"
                             >
@@ -700,7 +700,7 @@ const LoveIdentity = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Desire%2C%20love%20and%20identity&url=https://www.britishmuseum.org/collection/desire-love-and-identity"
+                              href="https://twitter.com/intent/tweet?text=Desire%2C%20love%20and%20identity&url=http://localhost:3000/collection/desire-love-and-identity"
                               target="_blank"
                               rel="noopener"
                             >
@@ -1378,7 +1378,7 @@ const LoveIdentity = () => {
                                           data-large-image-width={1600}
                                           data-large-image-height={2118}
                                           data-description="<strong>'Ladies of Llangollen'&nbsp;by Richard James Lane (1800–1872), about 1840.</strong>&nbsp;<br>
-This print depicts Sarah Ponsonby (left) and Eleanor Butler (right) late in life in their home at Plâs Newydd, Llangollen.&nbsp; <a href=&quot;https://www.britishmuseum.org/collection/object/P_1905-0419-5&quot;><span>Collection online</span></a>"
+This print depicts Sarah Ponsonby (left) and Eleanor Butler (right) late in life in their home at Plâs Newydd, Llangollen.&nbsp; <a href=&quot;http://localhost:3000/collection/object/P_1905-0419-5&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1419,7 +1419,7 @@ This print depicts Sarah Ponsonby (left) and Eleanor Butler (right) late in life
                                           data-large-image-width={939}
                                           data-large-image-height={699}
                                           data-description='<strong>Ain Sakhri&nbsp;lovers sculpture, found at Wadi Khareitoun, Judea, near Bethlehem.</strong><br>
-The natural shape of a calcite cobble has been used to represent the outline of two figures making love, face to face, in a sitting position. <a href="https://www.britishmuseum.org/collection/object/H_1958-1007-1"><span>Collection online</span></a>'
+The natural shape of a calcite cobble has been used to represent the outline of two figures making love, face to face, in a sitting position. <a href="http://localhost:3000/collection/object/H_1958-1007-1"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1458,7 +1458,7 @@ The natural shape of a calcite cobble has been used to represent the outline of 
                                           data-large-image-width={1294}
                                           data-large-image-height={2000}
                                           data-description="<strong>Chevalier d'Eon de Beaumont. Print, about 1813.</strong><br>
-Portrait of the Chevalier d'Eon, fencing in women's clothing, a dark dress with a chemisette and lace cap, illustration to Kirby's Wonderful Museum (1813). <a href=&quot;https://www.britishmuseum.org/collection/object/P_1886-1221-10&quot;><span>Collection online</span></a>"
+Portrait of the Chevalier d'Eon, fencing in women's clothing, a dark dress with a chemisette and lace cap, illustration to Kirby's Wonderful Museum (1813). <a href=&quot;http://localhost:3000/collection/object/P_1886-1221-10&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1509,7 +1509,7 @@ Portrait of the Chevalier d'Eon, fencing in women's clothing, a dark dress with 
                                           data-large-image-width={1600}
                                           data-large-image-height={1054}
                                           data-description="<strong>Porcelain chocolate cup with cover and saucer,&nbsp;1779–1781.</strong><br>
-One of two porcelain chocolate cups and saucers belonging to the 'Ladies of Llangollen', English, Derby and Bristol, 1780 and 1780–1800. <a href=&quot;https://www.britishmuseum.org/collection/object/H_1887-0307-VIII-34&quot;><span>Collection online</span></a>"
+One of two porcelain chocolate cups and saucers belonging to the 'Ladies of Llangollen', English, Derby and Bristol, 1780 and 1780–1800. <a href=&quot;http://localhost:3000/collection/object/H_1887-0307-VIII-34&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1559,7 +1559,7 @@ One of two porcelain chocolate cups and saucers belonging to the 'Ladies of Llan
                                           data-large-image-width={1600}
                                           data-large-image-height={2132}
                                           data-description='<strong>The Townley Discobolus, from Hadrian&apos;s Villa at Tivoli. Marble, 2nd century.</strong><br>
-This sculpture may have been part of a larger group of statuary (collection of statues/sculptures). The beautiful youth Hyacinth was struck and killed by a discus thrown by his lover, the god Apollo. The discus was blown off course by the jealous Zephyr. <a href="https://www.britishmuseum.org/collection/object/G_1805-0703-43"><span>Collection online</span></a>'
+This sculpture may have been part of a larger group of statuary (collection of statues/sculptures). The beautiful youth Hyacinth was struck and killed by a discus thrown by his lover, the god Apollo. The discus was blown off course by the jealous Zephyr. <a href="http://localhost:3000/collection/object/G_1805-0703-43"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >

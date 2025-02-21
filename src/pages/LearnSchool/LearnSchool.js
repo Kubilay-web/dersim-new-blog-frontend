@@ -60,20 +60,14 @@ const LearnSchool = () => {
           name="description"
           content="Our school materials, which are suitable for children of all ages worldwide, are highly recommended by teachers. Learn more about our educational services and download free classroom resources to enhance your school trip to the Museum."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/learn/schools"
-        />
+        <link rel="canonical" href="http://localhost:3000/learn/schools" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/SCHOOLS_Landingpage.jpg?itok=kA_gEGFY"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/SCHOOLS_Landingpage.jpg?itok=kA_gEGFY"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/learn/schools"
-        />
+        <meta property="og:url" content="http://localhost:3000/learn/schools" />
         <meta property="og:title" content="Schools" />
         <meta
           property="og:description"
@@ -92,7 +86,7 @@ const LearnSchool = () => {
         <meta name="twitter:title" content="Schools" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/SCHOOLS_Landingpage.jpg?itok=kA_gEGFY"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/SCHOOLS_Landingpage.jpg?itok=kA_gEGFY"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -609,7 +603,7 @@ const LearnSchool = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/learn/schools"
+                                href="http://localhost:3000/learn/schools"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -625,7 +619,7 @@ const LearnSchool = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/learn/schools"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/learn/schools"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -645,7 +639,7 @@ const LearnSchool = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Schools%20&url=https://www.britishmuseum.org/learn/schools"
+                              href="https://twitter.com/intent/tweet?text=Schools%20&url=http://localhost:3000/learn/schools"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

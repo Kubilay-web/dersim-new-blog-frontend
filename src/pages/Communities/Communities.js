@@ -37,19 +37,16 @@ const Communities = () => {
           name="description"
           content="Search our comprehensive list of courses, events and activities for adult learners at the Dersim Museum, including CityLit courses, workshops and much more."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/learn/communities"
-        />
+        <link rel="canonical" href="http://localhost:3000/learn/communities" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Communities%2C%20british%20museum.jpg?itok=wrUDHVCR"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Communities%2C%20british%20museum.jpg?itok=wrUDHVCR"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/learn/communities"
+          content="http://localhost:3000/learn/communities"
         />
         <meta property="og:title" content="Communities" />
         <meta
@@ -69,7 +66,7 @@ const Communities = () => {
         <meta name="twitter:title" content="Communities" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Communities%2C%20british%20museum.jpg?itok=wrUDHVCR"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Communities%2C%20british%20museum.jpg?itok=wrUDHVCR"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -635,7 +632,7 @@ const Communities = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/learn/communities"
+                                href="http://localhost:3000/learn/communities"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -651,7 +648,7 @@ const Communities = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/learn/communities"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/learn/communities"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -671,7 +668,7 @@ const Communities = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Communities&url=https://www.britishmuseum.org/learn/communities"
+                              href="https://twitter.com/intent/tweet?text=Communities&url=http://localhost:3000/learn/communities"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

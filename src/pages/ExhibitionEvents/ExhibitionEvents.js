@@ -36,11 +36,8 @@ const ExhibitionEvents = () => {
           href="/themes/custom/numiko/favicon.ico"
           type="image/vnd.microsoft.icon"
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/exhibitions-events"
-        />
-        <link rel="shortlink" href="https://www.britishmuseum.org/node/115" />
+        <link rel="canonical" href="http://localhost:3000/exhibitions-events" />
+        <link rel="shortlink" href="http://localhost:3000/node/115" />
         <title>
           Exhibitions and events | Members' exclusive | British Museum
         </title>

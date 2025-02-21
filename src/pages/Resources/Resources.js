@@ -57,17 +57,14 @@ const Resources = () => {
           name="description"
           content="We're proud to offer a variety of resources. Discover how to access our library and comprehensive archives, departmental study rooms, read our blog or search the collection."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/resources" />
+        <link rel="canonical" href="http://localhost:3000/resources" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Patrons-event-prints_0.jpg?itok=hZ9pUWCz"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Patrons-event-prints_0.jpg?itok=hZ9pUWCz"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/resources"
-        />
+        <meta property="og:url" content="http://localhost:3000/resources" />
         <meta property="og:title" content="Resources" />
         <meta
           property="og:description"
@@ -86,7 +83,7 @@ const Resources = () => {
         <meta name="twitter:title" content="Resources" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Patrons-event-prints_0.jpg?itok=hZ9pUWCz"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Patrons-event-prints_0.jpg?itok=hZ9pUWCz"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -635,7 +632,7 @@ const Resources = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/resources"
+                                href="http://localhost:3000/resources"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -651,7 +648,7 @@ const Resources = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/resources"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/resources"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -671,7 +668,7 @@ const Resources = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Resources&url=https://www.britishmuseum.org/resources"
+                              href="https://twitter.com/intent/tweet?text=Resources&url=http://localhost:3000/resources"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -916,7 +913,7 @@ const Resources = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/collection"
+                                                      href="http://localhost:3000/collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

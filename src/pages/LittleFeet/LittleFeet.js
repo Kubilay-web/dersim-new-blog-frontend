@@ -24,17 +24,17 @@ const LittleFeet = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
+          href="http://localhost:3000/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Little_Feet_exhibition_explorer_teaser.jpg?itok=CrAKRAF8"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Little_Feet_exhibition_explorer_teaser.jpg?itok=CrAKRAF8"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
+          content="http://localhost:3000/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
         />
         <meta property="og:title" content="Little Feet: exhibition explorer" />
         <meta
@@ -54,7 +54,7 @@ const LittleFeet = () => {
         <meta name="twitter:title" content="Little Feet: exhibition explorer" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Little_Feet_exhibition_explorer_teaser.jpg?itok=CrAKRAF8"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Little_Feet_exhibition_explorer_teaser.jpg?itok=CrAKRAF8"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -667,7 +667,7 @@ const LittleFeet = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
+                                href="http://localhost:3000/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -683,7 +683,7 @@ const LittleFeet = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -703,7 +703,7 @@ const LittleFeet = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Little%20Feet%3A%20exhibition%20explorer&url=https://www.britishmuseum.org/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
+                              href="https://twitter.com/intent/tweet?text=Little%20Feet%3A%20exhibition%20explorer&url=http://localhost:3000/events/little-feet-silk-roads-exhibition-explorer-17-Jan"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

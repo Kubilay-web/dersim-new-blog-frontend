@@ -55,17 +55,17 @@ const PostDetail = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/blog/celebrating-volunteers-british-museum"
+          href="http://localhost:3000/blog/celebrating-volunteers-british-museum"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-12/Volunteers-blog-hero-1920x1080.jpg?itok=zK4Kn2EV"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-12/Volunteers-blog-hero-1920x1080.jpg?itok=zK4Kn2EV"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/blog/celebrating-volunteers-british-museum"
+          content="http://localhost:3000/blog/celebrating-volunteers-british-museum"
         />
         <meta
           property="og:title"
@@ -91,7 +91,7 @@ const PostDetail = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-12/Volunteers-blog-hero-1920x1080.jpg?itok=zK4Kn2EV"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-12/Volunteers-blog-hero-1920x1080.jpg?itok=zK4Kn2EV"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -652,7 +652,7 @@ const PostDetail = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/blog/celebrating-volunteers-british-museum"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/blog/celebrating-volunteers-british-museum"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -672,7 +672,7 @@ const PostDetail = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Celebrating%20volunteers%20at%20the%20British%20Museum%20&url=https://www.britishmuseum.org/blog/celebrating-volunteers-british-museum"
+                              href="https://twitter.com/intent/tweet?text=Celebrating%20volunteers%20at%20the%20British%20Museum%20&url=http://localhost:3000/blog/celebrating-volunteers-british-museum"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -723,7 +723,7 @@ const PostDetail = () => {
                               </div>
                               <div className="paragraph paragraph--type--info-content paragraph--view-mode--default section--intro__info-content wysiwyg">
                                 <p>
-                                  <a href="https://www.britishmuseum.org/support-us/volunteer">
+                                  <a href="http://localhost:3000/support-us/volunteer">
                                     <span>
                                       Find out more about volunteering
                                     </span>
@@ -764,11 +764,11 @@ const PostDetail = () => {
                                 collection year in, year out, through gallery
                                 talks and object handling. We regularly get
                                 positive feedback from visitors who've been on a{" "}
-                                <a href="https://www.britishmuseum.org/visit/tours-and-talks">
+                                <a href="http://localhost:3000/visit/tours-and-talks">
                                   volunteer-led tour
                                 </a>
                                 , or who have visited a{" "}
-                                <a href="https://www.britishmuseum.org/visit/tours-and-talks#hands-on-desks">
+                                <a href="http://localhost:3000/visit/tours-and-talks#hands-on-desks">
                                   Hands-on desk
                                 </a>
                                 . The volunteers are incredible, and we're
@@ -871,7 +871,7 @@ const PostDetail = () => {
                                         />
                                         <figcaption>
                                           Kathryn delivers a{" "}
-                                          <a href="https://www.britishmuseum.org/visit/tours-and-talks/spotlight-reading-room">
+                                          <a href="http://localhost:3000/visit/tours-and-talks/spotlight-reading-room">
                                             Spotlight: Reading Room tour
                                           </a>
                                           . Photo © Benedict Johnson, 2024.
@@ -892,7 +892,7 @@ const PostDetail = () => {
                                       our audience.
                                       <br />
                                       <br />
-                                      <a href="https://www.britishmuseum.org/visit/tours-and-talks/spotlight-reading-room ">
+                                      <a href="http://localhost:3000/visit/tours-and-talks/spotlight-reading-room ">
                                         <em>
                                           Find out more about a Reading Room
                                           tour.
@@ -930,7 +930,7 @@ const PostDetail = () => {
                                     </blockquote>
                                     <p>
                                       I am one of the volunteers on the{" "}
-                                      <a href="https://www.britishmuseum.org/visit/out-hours-tours">
+                                      <a href="http://localhost:3000/visit/out-hours-tours">
                                         Out-of-hours tour programme
                                       </a>
                                       . These tours take place an hour before
@@ -939,11 +939,11 @@ const PostDetail = () => {
                                       experience the galleries and learn about
                                       many of the objects there without the
                                       crowds. I deliver both the{" "}
-                                      <a href="https://www.britishmuseum.org/visit/out-hours-tours#an-introduction-to-ancient-egypt">
+                                      <a href="http://localhost:3000/visit/out-hours-tours#an-introduction-to-ancient-egypt">
                                         Introduction to ancient Egypt tour
                                       </a>{" "}
                                       and the{" "}
-                                      <a href="https://www.britishmuseum.org/visit/out-hours-tours#life-and-death-in-ancient-egypt">
+                                      <a href="http://localhost:3000/visit/out-hours-tours#life-and-death-in-ancient-egypt">
                                         Life and death in ancient Egypt tour
                                       </a>
                                       . &nbsp;
@@ -980,7 +980,7 @@ const PostDetail = () => {
                                         />
                                         <figcaption>
                                           Matthew gives an{" "}
-                                          <a href="https://www.britishmuseum.org/visit/out-hours-tours">
+                                          <a href="http://localhost:3000/visit/out-hours-tours">
                                             Out-of-hours tour
                                           </a>{" "}
                                           in the Egyptian sculpture gallery.
@@ -996,7 +996,7 @@ const PostDetail = () => {
                                     </p>
                                     <p>
                                       As a{" "}
-                                      <a href="https://www.britishmuseum.org/membership">
+                                      <a href="http://localhost:3000/membership">
                                         Member{" "}
                                       </a>
                                       and regular visitor to the British Museum,
@@ -1005,7 +1005,7 @@ const PostDetail = () => {
                                       more. One of my favourite objects in the
                                       collection is on the tour: the seated
                                       statue of{" "}
-                                      <a href="https://www.britishmuseum.org/collection/object/Y_EA5">
+                                      <a href="http://localhost:3000/collection/object/Y_EA5">
                                         Amenhotep III
                                       </a>
                                       . I find it fascinating because in just
@@ -1028,7 +1028,7 @@ const PostDetail = () => {
                                       Egypt with those who come along.
                                     </p>
                                     <p>
-                                      <a href="https://www.britishmuseum.org/visit/out-hours-tours">
+                                      <a href="http://localhost:3000/visit/out-hours-tours">
                                         <em>
                                           Find out more about Out-of-hours tours
                                         </em>
@@ -1069,7 +1069,7 @@ const PostDetail = () => {
                                       galleries. I have loved them all without
                                       exception, but the most rewarding by far
                                       have been the{" "}
-                                      <a href="https://www.britishmuseum.org/visit/accessibility-museum">
+                                      <a href="http://localhost:3000/visit/accessibility-museum">
                                         Touch tours
                                       </a>
                                       , for visitors who are blind or partially
@@ -1097,7 +1097,7 @@ const PostDetail = () => {
                                         />
                                         <figcaption>
                                           Tim guides a visitor during a{" "}
-                                          <a href="https://www.britishmuseum.org/visit/accessibility-museum">
+                                          <a href="http://localhost:3000/visit/accessibility-museum">
                                             Touch tour
                                           </a>
                                           . Photo © Benedict Johnson, 2023.
@@ -1152,7 +1152,7 @@ const PostDetail = () => {
                                         />
                                         <figcaption>
                                           Tim guides a visitor during a{" "}
-                                          <a href="https://www.britishmuseum.org/visit/accessibility-museum">
+                                          <a href="http://localhost:3000/visit/accessibility-museum">
                                             Touch tour
                                           </a>
                                           . Photo © Benedict Johnson, 2023.
@@ -1175,7 +1175,7 @@ const PostDetail = () => {
                                       reads this to do the same.
                                     </p>
                                     <p>
-                                      <a href="https://www.britishmuseum.org/visit/accessibility-museum">
+                                      <a href="http://localhost:3000/visit/accessibility-museum">
                                         <em>
                                           Find out more about the Museum's Touch
                                           tours.
@@ -1254,7 +1254,7 @@ const PostDetail = () => {
                                           alt="Archive photograph of Alfred Maudslay standing in the top archway of the tower at Palenque. The ruins of an ancient building are covered in vines and rubble"
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/EA_Am-Maud-B14-23">
+                                          <a href="http://localhost:3000/collection/object/EA_Am-Maud-B14-23">
                                             Archive photograph of Alfred
                                             Maudslay
                                           </a>{" "}
@@ -1386,7 +1386,7 @@ const PostDetail = () => {
                                           Ishani helps visitors discover a
                                           dolphin tooth necklace from Solomon
                                           Islands at a{" "}
-                                          <a href="https://www.britishmuseum.org/visit/tours-and-talks#hands-on-desks">
+                                          <a href="http://localhost:3000/visit/tours-and-talks#hands-on-desks">
                                             Hands on desk
                                           </a>
                                           . Photo © Benedict Johnson, 2023.
@@ -1417,7 +1417,7 @@ const PostDetail = () => {
                                       connect and share our love for the past.
                                     </p>
                                     <p>
-                                      <a href="https://www.britishmuseum.org/visit/tours-and-talks#hands-on-desks">
+                                      <a href="http://localhost:3000/visit/tours-and-talks#hands-on-desks">
                                         <em>
                                           Find out more about the Hands on
                                           desks.
@@ -1447,7 +1447,7 @@ const PostDetail = () => {
                                       We will be recruiting new volunteers next
                                       year. These opportunities are advertised
                                       on the Museum's{" "}
-                                      <a href="https://www.britishmuseum.org/support-us/volunteer">
+                                      <a href="http://localhost:3000/support-us/volunteer">
                                         Volunteering page
                                       </a>{" "}
                                       where you can also find out more about
@@ -1464,7 +1464,7 @@ const PostDetail = () => {
                                     <p>
                                       If you are able to visit the Museum, find
                                       out more about attending{" "}
-                                      <a href="https://www.britishmuseum.org/visit/tours-and-talks">
+                                      <a href="http://localhost:3000/visit/tours-and-talks">
                                         a volunteer-led tour or visiting a Hands
                                         on desk
                                       </a>

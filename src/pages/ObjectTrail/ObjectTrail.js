@@ -63,17 +63,17 @@ const ObjectTrail = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/visit/object-trails"
+          href="http://localhost:3000/visit/object-trails"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/royal-game-of-ur.jpg?itok=9pptj-ZK"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/royal-game-of-ur.jpg?itok=9pptj-ZK"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/visit/object-trails"
+          content="http://localhost:3000/visit/object-trails"
         />
         <meta property="og:title" content="Object trails" />
         <meta
@@ -93,7 +93,7 @@ const ObjectTrail = () => {
         <meta name="twitter:title" content="Object trails" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/royal-game-of-ur.jpg?itok=9pptj-ZK"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/royal-game-of-ur.jpg?itok=9pptj-ZK"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -605,7 +605,7 @@ const ObjectTrail = () => {
                                 The Royal Game of Ur, originally played in the
                                 early third millennium BC.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/W_1928-1009-379-h">
+                              <a href="http://localhost:3000/collection/object/W_1928-1009-379-h">
                                 <span>
                                   The Royal Game of Ur on Collection online
                                 </span>
@@ -665,7 +665,7 @@ const ObjectTrail = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit/object-trails"
+                                href="http://localhost:3000/visit/object-trails"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -681,7 +681,7 @@ const ObjectTrail = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit/object-trails"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit/object-trails"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -701,7 +701,7 @@ const ObjectTrail = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Object%20trails&url=https://www.britishmuseum.org/visit/object-trails"
+                              href="https://twitter.com/intent/tweet?text=Object%20trails&url=http://localhost:3000/visit/object-trails"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

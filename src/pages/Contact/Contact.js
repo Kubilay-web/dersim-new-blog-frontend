@@ -140,17 +140,17 @@ const Contact = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/about-us/contact-us"
+          href="http://localhost:3000/about-us/contact-us"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R95%2010_Korea%20Hotung%20ceramics.jpg?itok=FycMBfPy"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R95%2010_Korea%20Hotung%20ceramics.jpg?itok=FycMBfPy"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/about-us/contact-us"
+          content="http://localhost:3000/about-us/contact-us"
         />
         <meta property="og:title" content="Contact us" />
         <meta
@@ -170,7 +170,7 @@ const Contact = () => {
         <meta name="twitter:title" content="Contact us" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R95%2010_Korea%20Hotung%20ceramics.jpg?itok=FycMBfPy"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R95%2010_Korea%20Hotung%20ceramics.jpg?itok=FycMBfPy"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -731,7 +731,7 @@ const Contact = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/about-us/contact-us"
+                                href="http://localhost:3000/about-us/contact-us"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -747,7 +747,7 @@ const Contact = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us/contact-us"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/about-us/contact-us"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -767,7 +767,7 @@ const Contact = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Contact%20us&url=https://www.britishmuseum.org/about-us/contact-us"
+                              href="https://twitter.com/intent/tweet?text=Contact%20us&url=http://localhost:3000/about-us/contact-us"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -986,7 +986,7 @@ const Contact = () => {
                                       Yes, entry to the Museum to view the
                                       permanent collection is free. All visitors
                                       (except&nbsp;
-                                      <a href="https://www.britishmuseum.org/membership">
+                                      <a href="http://localhost:3000/membership">
                                         Members
                                       </a>
                                       ) are advised to&nbsp;
@@ -1220,7 +1220,7 @@ const Contact = () => {
                                       Please note that galleries start closing
                                       up to 10 minutes before the stated closing
                                       time. See full{" "}
-                                      <a href="https://www.britishmuseum.org/visit#opening-hours">
+                                      <a href="http://localhost:3000/visit#opening-hours">
                                         opening hours
                                       </a>
                                       .&nbsp;
@@ -1273,7 +1273,7 @@ const Contact = () => {
                                       Wheeled cases, sports equipment and large
                                       items of luggage are not allowed on the
                                       premises. See the&nbsp;
-                                      <a href="https://www.britishmuseum.org/visit#entering-the-museum">
+                                      <a href="http://localhost:3000/visit#entering-the-museum">
                                         Visit page
                                       </a>
                                       &nbsp;for a full list of restrictions.
@@ -1285,7 +1285,7 @@ const Contact = () => {
                                       The new visitor and Member cloakroom is
                                       located near the Main entrance on Great
                                       Russell Street. See the{" "}
-                                      <a href="https://www.britishmuseum.org/visit#facilities">
+                                      <a href="http://localhost:3000/visit#facilities">
                                         Visit page
                                       </a>{" "}
                                       for more information.
@@ -1454,7 +1454,7 @@ const Contact = () => {
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/events/out-hours-tour-introduction-british-museum">
+                                        <a href="http://localhost:3000/events/out-hours-tour-introduction-british-museum">
                                           Out-of-hours: an introduction to the
                                           Dersim Museum
                                         </a>
@@ -1578,7 +1578,7 @@ const Contact = () => {
                                     <p>
                                       There are a variety of free
                                       downloadable&nbsp;
-                                      <a href="https://www.britishmuseum.org/visit/family-visits/museum-explorer-trails">
+                                      <a href="http://localhost:3000/visit/family-visits/museum-explorer-trails">
                                         Museum explorer trails
                                       </a>{" "}
                                       for your family to enjoy while at the
@@ -1598,11 +1598,11 @@ const Contact = () => {
                                       &nbsp;(featured in six galleries) and
                                       challenge your family to a variety of
                                       tasks. Pose with mighty emperors in{" "}
-                                      <a href="https://www.britishmuseum.org/visit/family-visits/museum-missions/roman-empire">
+                                      <a href="http://localhost:3000/visit/family-visits/museum-missions/roman-empire">
                                         Room 70
                                       </a>
                                       , or hunt for hieroglyphs among{" "}
-                                      <a href="https://www.britishmuseum.org/visit/family-visits/museum-missions/egyptian-sculpture">
+                                      <a href="http://localhost:3000/visit/family-visits/museum-missions/egyptian-sculpture">
                                         Egyptian sculptures
                                       </a>
                                       .
@@ -1648,7 +1648,7 @@ const Contact = () => {
                                       For more information on family facilities,
                                       please see our{" "}
                                       <a
-                                        href="https://www.britishmuseum.org/visit/family-visits"
+                                        href="http://localhost:3000/visit/family-visits"
                                         title="Family visits"
                                       >
                                         Family visits page
@@ -1712,7 +1712,7 @@ const Contact = () => {
                                     </p>
                                     <p>
                                       For accessible events, please check the{" "}
-                                      <a href="https://www.britishmuseum.org/exhibitions-events/accessible-event">
+                                      <a href="http://localhost:3000/exhibitions-events/accessible-event">
                                         Accessible events calendar
                                       </a>
                                       .
@@ -1768,17 +1768,17 @@ const Contact = () => {
                                         –&nbsp;advance booking recommended
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/visit/food-and-drink#court-cafe">
+                                        <a href="http://localhost:3000/visit/food-and-drink#court-cafe">
                                           Court Cafés​​​​
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/visit/food-and-drink#Pizzeria">
+                                        <a href="http://localhost:3000/visit/food-and-drink#Pizzeria">
                                           Pizzeria
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/visit/food-and-drink#outdoor-dining">
+                                        <a href="http://localhost:3000/visit/food-and-drink#outdoor-dining">
                                           Outdoor dining
                                         </a>
                                       </li>
@@ -1841,7 +1841,7 @@ const Contact = () => {
                                     </p>
                                     <p>
                                       Plan a{" "}
-                                      <a href="https://www.britishmuseum.org/learn/schools/school-visits#booking-your-visit">
+                                      <a href="http://localhost:3000/learn/schools/school-visits#booking-your-visit">
                                         self-led visit to the Museum
                                       </a>{" "}
                                       to explore the permanent collection or
@@ -2118,7 +2118,7 @@ const Contact = () => {
                                     <p>
                                       You can find&nbsp;high-resolution images
                                       for non-commercial use on&nbsp;
-                                      <a href="https://www.britishmuseum.org/collection">
+                                      <a href="http://localhost:3000/collection">
                                         Collection online
                                       </a>
                                       . Search individual objects to see what's

@@ -19,17 +19,17 @@ const SriLanka = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
+          href="http://localhost:3000/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-09/Sutton-hoo-garnets-cloisone-buckle-hero-1920x1080_0.png?itok=uDOjAbOa"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-09/Sutton-hoo-garnets-cloisone-buckle-hero-1920x1080_0.png?itok=uDOjAbOa"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
+          content="http://localhost:3000/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
         />
         <meta
           property="og:title"
@@ -55,7 +55,7 @@ const SriLanka = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-09/Sutton-hoo-garnets-cloisone-buckle-hero-1920x1080_0.png?itok=uDOjAbOa"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-09/Sutton-hoo-garnets-cloisone-buckle-hero-1920x1080_0.png?itok=uDOjAbOa"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -558,7 +558,7 @@ const SriLanka = () => {
                                 Detail from the gold imitation buckle with
                                 garnets, Sutton Hoo, Suffolk.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-10">
+                              <a href="http://localhost:3000/collection/object/H_1939-1010-10">
                                 <span>View on Collection online</span>
                               </a>
                             </div>
@@ -635,7 +635,7 @@ const SriLanka = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
+                                href="http://localhost:3000/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -652,7 +652,7 @@ const SriLanka = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -672,7 +672,7 @@ const SriLanka = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Sri%20Lanka%20to%20Suffolk%3A%20Sutton%20Hoo%20and%20the%20Silk%20Roads&url=https://www.britishmuseum.org/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
+                              href="https://twitter.com/intent/tweet?text=Sri%20Lanka%20to%20Suffolk%3A%20Sutton%20Hoo%20and%20the%20Silk%20Roads&url=http://localhost:3000/exhibitions/silk-roads/sri-lanka-suffolk-sutton-hoo-and-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -830,7 +830,7 @@ const SriLanka = () => {
                                   See some of the Sutton Hoo garnets and
                                   discover more stories in our major new
                                   exhibition,{" "}
-                                  <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                  <a href="http://localhost:3000/exhibitions/silk-roads">
                                     Silk Roads
                                   </a>{" "}
                                   (open until 23 February 2025)
@@ -840,7 +840,7 @@ const SriLanka = () => {
                                 <a
                                   data-tracking="cta"
                                   className="button button--chevron"
-                                  href="https://www.britishmuseum.org/exhibitions/silk-roads"
+                                  href="http://localhost:3000/exhibitions/silk-roads"
                                 >
                                   <span>Book tickets</span>
                                 </a>
@@ -860,7 +860,7 @@ const SriLanka = () => {
                                 <p>
                                   See more objects from the Sutton Hoo ship
                                   burial in the{" "}
-                                  <a href="https://www.britishmuseum.org/collection/galleries/sutton-hoo-and-europe">
+                                  <a href="http://localhost:3000/collection/galleries/sutton-hoo-and-europe">
                                     Sutton Hoo and Europe gallery
                                   </a>
                                   .
@@ -878,7 +878,7 @@ const SriLanka = () => {
                                 New research is revealing the epic journeys made
                                 by some of the gems adorning gold jewellery
                                 found inside the early medieval{" "}
-                                <a href="https://www.britishmuseum.org/collection/death-and-memory/anglo-saxon-ship-burial-sutton-hoo">
+                                <a href="http://localhost:3000/collection/death-and-memory/anglo-saxon-ship-burial-sutton-hoo">
                                   ship burial at Sutton Hoo
                                 </a>{" "}
                                 in this eastern English county – and the
@@ -892,7 +892,7 @@ const SriLanka = () => {
                                 loomed ahead. The discovery had been made a few
                                 months earlier by local archaeologist Basil
                                 Brown, invited by the landowner{" "}
-                                <a href="https://www.britishmuseum.org/about-us/dersim-museum-story/people-behind-collection/edith-pretty">
+                                <a href="http://localhost:3000/about-us/dersim-museum-story/people-behind-collection/edith-pretty">
                                   Edith Pretty
                                 </a>
                                 . It was to become one of the greatest
@@ -1036,7 +1036,7 @@ const SriLanka = () => {
                                       />
                                       <figcaption>
                                         Gold{" "}
-                                        <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-29">
+                                        <a href="http://localhost:3000/collection/object/H_1939-1010-29">
                                           sword-scabbard mounts
                                         </a>{" "}
                                         with garnets and glass, Sutton Hoo,
@@ -1127,7 +1127,7 @@ const SriLanka = () => {
                                         alt="Gold brooch with intricate detail and missing gems"
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/H_-1028-a-70">
+                                        <a href="http://localhost:3000/collection/object/H_-1028-a-70">
                                           Gold disc brooch
                                         </a>
                                         , King's Field, Faversham, Kent, early
@@ -1238,7 +1238,7 @@ const SriLanka = () => {
                                   />
                                   <figcaption>
                                     Detail of the eyebrows on the{" "}
-                                    <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-93">
+                                    <a href="http://localhost:3000/collection/object/H_1939-1010-93">
                                       helmet from Sutton Hoo
                                     </a>
                                     , Suffolk, early AD 600s.
@@ -1353,7 +1353,7 @@ const SriLanka = () => {
                                         alt="Gold pendant with intricate metalwork and red garnets"
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/H_-1140-70">
+                                        <a href="http://localhost:3000/collection/object/H_-1140-70">
                                           Gold pendant
                                         </a>{" "}
                                         with garnets and glass, King's Field,
@@ -1439,7 +1439,7 @@ const SriLanka = () => {
                                     <p>
                                       Just over four decades later, in 2023,
                                       research for the Dersim Museum's{" "}
-                                      <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                      <a href="http://localhost:3000/exhibitions/silk-roads">
                                         <em>Silk Roads</em>
                                       </a>{" "}
                                       exhibition provided a fresh opportunity to
@@ -1493,7 +1493,7 @@ const SriLanka = () => {
                                       />
                                       <figcaption>
                                         Gold{" "}
-                                        <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-27">
+                                        <a href="http://localhost:3000/collection/object/H_1939-1010-27">
                                           sword-scabbard button
                                         </a>{" "}
                                         with garnets, Sutton Hoo, Suffolk, early
@@ -1529,7 +1529,7 @@ const SriLanka = () => {
                                     alt="Gold purse lid inlaid with white stone and red gems in intricate patterns"
                                   />
                                   <figcaption>
-                                    <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-2-a-l">
+                                    <a href="http://localhost:3000/collection/object/H_1939-1010-2-a-l">
                                       Gold purse-lid
                                     </a>{" "}
                                     with garnets and glass, Sutton Hoo, Suffolk,
@@ -1745,7 +1745,7 @@ const SriLanka = () => {
                                       />
                                       <figcaption>
                                         The gold and garnet{" "}
-                                        <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-10">
+                                        <a href="http://localhost:3000/collection/object/H_1939-1010-10">
                                           imitation buckle
                                         </a>{" "}
                                         from Sutton Hoo, set up in front of
@@ -1821,7 +1821,7 @@ const SriLanka = () => {
                                       <figcaption>
                                         Diagram numbering the garnets analysed
                                         by AGLAE on a{" "}
-                                        <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-10">
+                                        <a href="http://localhost:3000/collection/object/H_1939-1010-10">
                                           shoulder-clasp
                                         </a>{" "}
                                         from Sutton Hoo, Suffolk, AD 600s.
@@ -1858,7 +1858,7 @@ const SriLanka = () => {
                                   />
                                   <figcaption>
                                     Gold{" "}
-                                    <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-10">
+                                    <a href="http://localhost:3000/collection/object/H_1939-1010-10">
                                       imitation buckle
                                     </a>{" "}
                                     with garnets, Sutton Hoo, Suffolk, early AD

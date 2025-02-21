@@ -116,19 +116,16 @@ const GroupVisit = () => {
           name="description"
           content="Plan a personalised group visit to the Museum. Plus, directions, coach parking, special group discounts, unique group tours, accessibility needs, FAQs or buy exclusive souvenir guides for groups."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/visit/group-visits"
-        />
+        <link rel="canonical" href="http://localhost:3000/visit/group-visits" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R04%2005%20Egyptian%20sculpture%20copy.jpg?itok=72dBz5Cy"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R04%2005%20Egyptian%20sculpture%20copy.jpg?itok=72dBz5Cy"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/visit/group-visits"
+          content="http://localhost:3000/visit/group-visits"
         />
         <meta property="og:title" content="Group visits" />
         <meta
@@ -148,7 +145,7 @@ const GroupVisit = () => {
         <meta name="twitter:title" content="Group visits" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R04%2005%20Egyptian%20sculpture%20copy.jpg?itok=72dBz5Cy"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R04%2005%20Egyptian%20sculpture%20copy.jpg?itok=72dBz5Cy"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -603,13 +600,13 @@ const GroupVisit = () => {
                           {content && content.length > 0 ? (
                             content.slice(0, 1).map((item, index) => (
                               <h1
+                                dangerouslySetInnerHTML={{
+                                  __html: item.title,
+                                }}
                                 key={index}
                                 id="paragraph-730-title"
                                 className="hero__title"
-                              >
-                                {" "}
-                                {item.title}
-                              </h1>
+                              ></h1>
                             ))
                           ) : (
                             <p>No content available</p>
@@ -665,7 +662,7 @@ const GroupVisit = () => {
                                 A group of visitors in the Money gallery. ©
                                 Benedict Johnson.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/galleries/money">
+                              <a href="http://localhost:3000/collection/galleries/money">
                                 <span>Explore Room 68: Money</span>
                               </a>
                             </div>
@@ -723,7 +720,7 @@ const GroupVisit = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit/group-visits"
+                                href="http://localhost:3000/visit/group-visits"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -739,7 +736,7 @@ const GroupVisit = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit/group-visits"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit/group-visits"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -759,7 +756,7 @@ const GroupVisit = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Group%20visits&url=https://www.britishmuseum.org/visit/group-visits"
+                              href="https://twitter.com/intent/tweet?text=Group%20visits&url=http://localhost:3000/visit/group-visits"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -906,11 +903,14 @@ const GroupVisit = () => {
                           </div>
                           <div className="section--intro__content">
                             {content && content.length > 0 ? (
-                              content
-                                .slice(0, 1)
-                                .map((item, index) => (
-                                  <p key={index}> {item.body}</p>
-                                ))
+                              content.slice(0, 1).map((item, index) => (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.body,
+                                  }}
+                                  key={index}
+                                ></p>
+                              ))
                             ) : (
                               <p>No content available</p>
                             )}
@@ -931,7 +931,7 @@ const GroupVisit = () => {
                                 <li>
                                   Once you enter the Museum you're free to stay,
                                   within the stated&nbsp;
-                                  <a href="https://www.britishmuseum.org/visit#opening-hours">
+                                  <a href="http://localhost:3000/visit#opening-hours">
                                     opening hours
                                   </a>
                                   .
@@ -2350,19 +2350,19 @@ const GroupVisit = () => {
                                     </p>
                                     <ul>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/china-and-south-asia">
+                                        <a href="http://localhost:3000/collection/galleries/china-and-south-asia">
                                           Room 33: China and South Asia (
                                           <em>Sir Joseph Hotung Gallery</em>)
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/india-amaravati">
+                                        <a href="http://localhost:3000/collection/galleries/india-amaravati">
                                           Room 33a:&nbsp;India: Amaravati (
                                           <em>The Asahi Shimbun Gallery</em>)
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/chinese-jade">
+                                        <a href="http://localhost:3000/collection/galleries/chinese-jade">
                                           Room 33b: Chinese jade&nbsp;(
                                           <em>
                                             The Selwyn and Ellie Alleyne Gallery
@@ -2656,7 +2656,7 @@ const GroupVisit = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit"
+                                                      href="http://localhost:3000/visit"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -2736,7 +2736,7 @@ const GroupVisit = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events"
+                                                      href="http://localhost:3000/exhibitions-events"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

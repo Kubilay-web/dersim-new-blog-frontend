@@ -96,17 +96,17 @@ const Borrow = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/our-work/how-borrow-dersim-museum-objects"
+          href="http://localhost:3000/our-work/how-borrow-dersim-museum-objects"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Purse%20lid%20from%20the%20ship-burial%20at%20Sutton%20Hoo%2C%20British%20Musem.jpg?itok=P5Mg2hMy"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Purse%20lid%20from%20the%20ship-burial%20at%20Sutton%20Hoo%2C%20British%20Musem.jpg?itok=P5Mg2hMy"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/our-work/how-borrow-dersim-museum-objects"
+          content="http://localhost:3000/our-work/how-borrow-dersim-museum-objects"
         />
         <meta
           property="og:title"
@@ -132,7 +132,7 @@ const Borrow = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Purse%20lid%20from%20the%20ship-burial%20at%20Sutton%20Hoo%2C%20British%20Musem.jpg?itok=P5Mg2hMy"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Purse%20lid%20from%20the%20ship-burial%20at%20Sutton%20Hoo%2C%20British%20Musem.jpg?itok=P5Mg2hMy"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -645,7 +645,7 @@ const Borrow = () => {
                                 {" "}
                                 Purse-lid from the ship-burial at Sutton Hoo.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-2-a-l">
+                              <a href="http://localhost:3000/collection/object/H_1939-1010-2-a-l">
                                 <span>
                                   View the Sutton Hoo purse-lid on Collection
                                   online
@@ -706,7 +706,7 @@ const Borrow = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/our-work/how-borrow-dersim-museum-objects"
+                                href="http://localhost:3000/our-work/how-borrow-dersim-museum-objects"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -722,7 +722,7 @@ const Borrow = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/our-work/how-borrow-dersim-museum-objects"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/our-work/how-borrow-dersim-museum-objects"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -742,7 +742,7 @@ const Borrow = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=How%20to%20borrow%20British%20Museum%20objects&url=https://www.britishmuseum.org/our-work/how-borrow-dersim-museum-objects"
+                              href="https://twitter.com/intent/tweet?text=How%20to%20borrow%20British%20Museum%20objects&url=http://localhost:3000/our-work/how-borrow-dersim-museum-objects"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1637,7 +1637,7 @@ const Borrow = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/collection"
+                                                      href="http://localhost:3000/collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

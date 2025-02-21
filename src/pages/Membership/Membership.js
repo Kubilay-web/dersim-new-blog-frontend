@@ -57,17 +57,14 @@ const Membership = () => {
           name="description"
           content="Our Members receive exclusive treatment, enjoying free entry to exhibitions, private tours, screenings, lectures, plus dining and shop discounts. Become a Member today."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/membership" />
+        <link rel="canonical" href="http://localhost:3000/membership" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/lewis-chessmen-carved-scotland-british-museum.jpg?itok=cUweyjzP"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/lewis-chessmen-carved-scotland-british-museum.jpg?itok=cUweyjzP"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/membership"
-        />
+        <meta property="og:url" content="http://localhost:3000/membership" />
         <meta property="og:title" content="Membership" />
         <meta
           property="og:description"
@@ -86,7 +83,7 @@ const Membership = () => {
         <meta name="twitter:title" content="Membership" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/lewis-chessmen-carved-scotland-british-museum.jpg?itok=cUweyjzP"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/lewis-chessmen-carved-scotland-british-museum.jpg?itok=cUweyjzP"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -646,7 +643,7 @@ const Membership = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/membership"
+                                href="http://localhost:3000/membership"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -662,7 +659,7 @@ const Membership = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/membership"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/membership"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -682,7 +679,7 @@ const Membership = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Membership&url=https://www.britishmuseum.org/membership"
+                              href="https://twitter.com/intent/tweet?text=Membership&url=http://localhost:3000/membership"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -988,7 +985,7 @@ const Membership = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events"
+                                                      href="http://localhost:3000/exhibitions-events"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1070,7 +1067,7 @@ const Membership = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/membership/visiting-as-a-member"
+                                                      href="http://localhost:3000/membership/visiting-as-a-member"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1176,7 +1173,7 @@ const Membership = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/membership/existing-members"
+                                                      href="http://localhost:3000/membership/existing-members"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1216,7 +1213,7 @@ const Membership = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/members-exclusive-content"
+                                                      href="http://localhost:3000/members-exclusive-content"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1257,7 +1254,7 @@ const Membership = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/membership/membership-faqs"
+                                                      href="http://localhost:3000/membership/membership-faqs"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1298,7 +1295,7 @@ const Membership = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit/food-and-drink"
+                                                      href="http://localhost:3000/visit/food-and-drink"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1378,7 +1375,7 @@ const Membership = () => {
                                     </p>
                                     <div className="banner__button-container">
                                       <a
-                                        href="https://www.britishmuseum.org/membership/young-friends"
+                                        href="http://localhost:3000/membership/young-friends"
                                         className="button button--chevron"
                                         data-tracking="cta"
                                       >

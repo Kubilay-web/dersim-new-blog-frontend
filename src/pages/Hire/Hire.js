@@ -96,17 +96,17 @@ const Hire = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/commercial/commercial-hire"
+          href="http://localhost:3000/commercial/commercial-hire"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/4Q5A0560.jpg?itok=y56EKOJM"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/4Q5A0560.jpg?itok=y56EKOJM"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/commercial/commercial-hire"
+          content="http://localhost:3000/commercial/commercial-hire"
         />
         <meta property="og:title" content="Commercial hire" />
         <meta
@@ -123,7 +123,7 @@ const Hire = () => {
         <meta name="twitter:title" content="Commercial hire" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/4Q5A0560.jpg?itok=y56EKOJM"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/4Q5A0560.jpg?itok=y56EKOJM"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -692,7 +692,7 @@ const Hire = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/commercial/commercial-hire"
+                                href="http://localhost:3000/commercial/commercial-hire"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -708,7 +708,7 @@ const Hire = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/commercial/commercial-hire"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/commercial/commercial-hire"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -728,7 +728,7 @@ const Hire = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Commercial%20hire&url=https://www.britishmuseum.org/commercial/commercial-hire"
+                              href="https://twitter.com/intent/tweet?text=Commercial%20hire&url=http://localhost:3000/commercial/commercial-hire"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

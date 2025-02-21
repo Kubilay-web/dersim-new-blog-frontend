@@ -105,17 +105,17 @@ const FamilyVisit = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/visit/family-visits"
+          href="http://localhost:3000/visit/family-visits"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R22%2021b%20Ancient%20Greece%20Rome%20Americas.jpg?itok=WNfAEaGM"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R22%2021b%20Ancient%20Greece%20Rome%20Americas.jpg?itok=WNfAEaGM"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/visit/family-visits"
+          content="http://localhost:3000/visit/family-visits"
         />
         <meta property="og:title" content="Family visits" />
         <meta
@@ -135,7 +135,7 @@ const FamilyVisit = () => {
         <meta name="twitter:title" content="Family visits" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R22%2021b%20Ancient%20Greece%20Rome%20Americas.jpg?itok=WNfAEaGM"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R22%2021b%20Ancient%20Greece%20Rome%20Americas.jpg?itok=WNfAEaGM"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -589,11 +589,14 @@ const FamilyVisit = () => {
                         <div className="hero__content-container">
                           <h1 id="paragraph-1315-title" className="hero__title">
                             {content && content.length > 0 ? (
-                              content
-                                .slice(0, 1)
-                                .map((item, index) => (
-                                  <p key={index}>{item.title}</p>
-                                ))
+                              content.slice(0, 1).map((item, index) => (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.title,
+                                  }}
+                                  key={index}
+                                ></p>
+                              ))
                             ) : (
                               <p>No content available</p>
                             )}
@@ -700,7 +703,7 @@ const FamilyVisit = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit/family-visits"
+                                href="http://localhost:3000/visit/family-visits"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -716,7 +719,7 @@ const FamilyVisit = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit/family-visits"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit/family-visits"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -736,7 +739,7 @@ const FamilyVisit = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Family%20visits&url=https://www.britishmuseum.org/visit/family-visits"
+                              href="https://twitter.com/intent/tweet?text=Family%20visits&url=http://localhost:3000/visit/family-visits"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -864,7 +867,7 @@ const FamilyVisit = () => {
                                   13.15–16.30
                                   <br />
                                   See additional&nbsp;
-                                  <a href="https://www.britishmuseum.org/visit/family-visits#family-facilities">
+                                  <a href="http://localhost:3000/visit/family-visits#family-facilities">
                                     Families Desk closures
                                   </a>
                                   .<br />
@@ -911,11 +914,14 @@ const FamilyVisit = () => {
                           </div>
                           <div className="section--intro__content">
                             {content && content.length > 0 ? (
-                              content
-                                .slice(0, 1)
-                                .map((item, index) => (
-                                  <p key={index}>{item.body}</p>
-                                ))
+                              content.slice(0, 1).map((item, index) => (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.body,
+                                  }}
+                                  key={index}
+                                ></p>
+                              ))
                             ) : (
                               <p>No content available</p>
                             )}
@@ -1272,7 +1278,7 @@ const FamilyVisit = () => {
                                     Family events
                                   </h2>
                                   <a
-                                    href="https://www.britishmuseum.org/exhibitions-events/family/family-under-5s"
+                                    href="http://localhost:3000/exhibitions-events/family/family-under-5s"
                                     className="teaser-listing__cta"
                                   >
                                     <span>Browse all family events</span>
@@ -1791,7 +1797,11 @@ const FamilyVisit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item.title}</span>
+                                            <span
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.title,
+                                              }}
+                                            ></span>
                                           </button>
                                         </h3>
                                         <div
@@ -1801,7 +1811,11 @@ const FamilyVisit = () => {
                                           aria-labelledby={`accordion-btn-${index}`} // Button id ile eşleşiyor
                                         >
                                           <ul>
-                                            <li>{item.content}</li>
+                                            <li
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.content,
+                                              }}
+                                            ></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -2082,7 +2096,7 @@ const FamilyVisit = () => {
                                       bags and rucksacks, and all wheeled
                                       suitcases) are not permitted on-site.
                                       Please see the{" "}
-                                      <a href="https://www.britishmuseum.org/visit#facilities">
+                                      <a href="http://localhost:3000/visit#facilities">
                                         Visit page&nbsp;and our facilities
                                         section
                                       </a>{" "}
@@ -2251,7 +2265,7 @@ const FamilyVisit = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2023-10/Whats_inside_gallery_backpack.pdf"
+                                          href="http://localhost:3000/sites/default/files/2023-10/Whats_inside_gallery_backpack.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -2291,7 +2305,7 @@ const FamilyVisit = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2023-12/Sensory-needs-visits-to-the-British_Museum.pdf"
+                                          href="http://localhost:3000/sites/default/files/2023-12/Sensory-needs-visits-to-the-British_Museum.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -2526,7 +2540,7 @@ const FamilyVisit = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/membership/young-friends"
+                                                      href="http://localhost:3000/membership/young-friends"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

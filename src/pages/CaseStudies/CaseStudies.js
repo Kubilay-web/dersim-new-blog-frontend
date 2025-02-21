@@ -59,17 +59,17 @@ const CaseStudies = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/support-us/supporter-case-studies"
+          href="http://localhost:3000/support-us/supporter-case-studies"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Conservator-cleaning-Parthenon-Metope.jpg?itok=Ic2VL7dM"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Conservator-cleaning-Parthenon-Metope.jpg?itok=Ic2VL7dM"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/support-us/supporter-case-studies"
+          content="http://localhost:3000/support-us/supporter-case-studies"
         />
         <meta property="og:title" content="Supporter case studies" />
         <meta
@@ -89,7 +89,7 @@ const CaseStudies = () => {
         <meta name="twitter:title" content="Supporter case studies" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Conservator-cleaning-Parthenon-Metope.jpg?itok=Ic2VL7dM"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Conservator-cleaning-Parthenon-Metope.jpg?itok=Ic2VL7dM"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -660,7 +660,7 @@ const CaseStudies = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/support-us/supporter-case-studies"
+                                href="http://localhost:3000/support-us/supporter-case-studies"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -676,7 +676,7 @@ const CaseStudies = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/support-us/supporter-case-studies"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/support-us/supporter-case-studies"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -696,7 +696,7 @@ const CaseStudies = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Supporter%20case%20studies&url=https://www.britishmuseum.org/support-us/supporter-case-studies"
+                              href="https://twitter.com/intent/tweet?text=Supporter%20case%20studies&url=http://localhost:3000/support-us/supporter-case-studies"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

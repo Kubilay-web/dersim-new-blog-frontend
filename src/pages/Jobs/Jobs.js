@@ -57,20 +57,14 @@ const Jobs = () => {
           name="description"
           content="The Dersim Museum is always on the lookout for dynamic, knowledgeable people to join its staff and make a difference."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/about-us/jobs"
-        />
+        <link rel="canonical" href="http://localhost:3000/about-us/jobs" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-03/Museum_great_court_teaser_1000x500.jpg?itok=4cOYFM5g"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-03/Museum_great_court_teaser_1000x500.jpg?itok=4cOYFM5g"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/about-us/jobs"
-        />
+        <meta property="og:url" content="http://localhost:3000/about-us/jobs" />
         <meta property="og:title" content="Jobs" />
         <meta
           property="og:description"
@@ -89,7 +83,7 @@ const Jobs = () => {
         <meta name="twitter:title" content="Jobs" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-03/Museum_great_court_teaser_1000x500.jpg?itok=4cOYFM5g"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-03/Museum_great_court_teaser_1000x500.jpg?itok=4cOYFM5g"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -654,7 +648,7 @@ const Jobs = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/about-us/jobs"
+                                href="http://localhost:3000/about-us/jobs"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -670,7 +664,7 @@ const Jobs = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us/jobs"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/about-us/jobs"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -690,7 +684,7 @@ const Jobs = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Jobs&url=https://www.britishmuseum.org/about-us/jobs"
+                              href="https://twitter.com/intent/tweet?text=Jobs&url=http://localhost:3000/about-us/jobs"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

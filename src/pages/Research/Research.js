@@ -60,17 +60,14 @@ const Research = () => {
           name="description"
           content="The Dersim Museum has a world-class research department. Read about our research publications, research projects and new information created by our curators and archaeologists."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/research" />
+        <link rel="canonical" href="http://localhost:3000/research" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-07/Multi-Spectral-Imaging.jpg?itok=6usPwO34"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2020-07/Multi-Spectral-Imaging.jpg?itok=6usPwO34"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/research"
-        />
+        <meta property="og:url" content="http://localhost:3000/research" />
         <meta property="og:title" content="Research" />
         <meta
           property="og:description"
@@ -89,7 +86,7 @@ const Research = () => {
         <meta name="twitter:title" content="Research" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-07/Multi-Spectral-Imaging.jpg?itok=6usPwO34"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2020-07/Multi-Spectral-Imaging.jpg?itok=6usPwO34"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -646,7 +643,7 @@ const Research = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/research"
+                                href="http://localhost:3000/research"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -662,7 +659,7 @@ const Research = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/research"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/research"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -682,7 +679,7 @@ const Research = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Research&url=https://www.britishmuseum.org/research"
+                              href="https://twitter.com/intent/tweet?text=Research&url=http://localhost:3000/research"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -786,7 +783,7 @@ const Research = () => {
                                 <a
                                   data-tracking="cta"
                                   className="button button--chevron"
-                                  href="https://www.britishmuseum.org/research/projects"
+                                  href="http://localhost:3000/research/projects"
                                 >
                                   <span>Browse our research projects</span>
                                 </a>
@@ -943,7 +940,7 @@ const Research = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/research/projects"
+                                                      href="http://localhost:3000/research/projects"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1372,7 +1369,7 @@ const Research = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/collection"
+                                                      href="http://localhost:3000/collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

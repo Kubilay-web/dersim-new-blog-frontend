@@ -59,17 +59,17 @@ const YoungFriend = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/membership/young-friends"
+          href="http://localhost:3000/membership/young-friends"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/children-wearing-masks-sleepover.jpg?itok=RJkGA-QS"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/children-wearing-masks-sleepover.jpg?itok=RJkGA-QS"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/membership/young-friends"
+          content="http://localhost:3000/membership/young-friends"
         />
         <meta property="og:title" content="Young Friends" />
         <meta
@@ -89,7 +89,7 @@ const YoungFriend = () => {
         <meta name="twitter:title" content="Young Friends" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/children-wearing-masks-sleepover.jpg?itok=RJkGA-QS"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/children-wearing-masks-sleepover.jpg?itok=RJkGA-QS"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -652,7 +652,7 @@ const YoungFriend = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/membership/young-friends"
+                                href="http://localhost:3000/membership/young-friends"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -668,7 +668,7 @@ const YoungFriend = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/membership/young-friends"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/membership/young-friends"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -688,7 +688,7 @@ const YoungFriend = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Young%20Friends%20&url=https://www.britishmuseum.org/membership/young-friends"
+                              href="https://twitter.com/intent/tweet?text=Young%20Friends%20&url=http://localhost:3000/membership/young-friends"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1114,7 +1114,7 @@ const YoungFriend = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/sites/default/files/2021-06/young_friends_dig_deep_sutton_hoo_trail.pdf"
+                                                      href="http://localhost:3000/sites/default/files/2021-06/young_friends_dig_deep_sutton_hoo_trail.pdf"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

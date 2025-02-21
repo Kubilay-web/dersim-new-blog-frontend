@@ -980,7 +980,7 @@ const Header = () => {
                                   </li>
                                   <li className="menu__item menu__item--level-1">
                                     <a
-                                      href="https://www.britishmuseum.org/exhibitions-events/members-exclusive"
+                                      href="http://localhost:3000/exhibitions-events/members-exclusive"
                                       className="menu__link menu__link--level-1 menu__toggle"
                                     >
                                       <span>
@@ -2270,7 +2270,7 @@ const Header = () => {
                                     </li>
                                     <li className="menu__item menu__item--level-1">
                                       <a
-                                        href="https://www.britishmuseum.org/exhibitions-events/members-exclusive"
+                                        href="http://localhost:3000/exhibitions-events/members-exclusive"
                                         className="menu__link menu__link--level-1 menu__toggle"
                                       >
                                         <span>

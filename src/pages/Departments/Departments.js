@@ -62,17 +62,17 @@ const Departments = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/our-work/departments"
+          href="http://localhost:3000/our-work/departments"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-09/Arched_room_1000x500.jpg?itok=0jhCdxJt"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-09/Arched_room_1000x500.jpg?itok=0jhCdxJt"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/our-work/departments"
+          content="http://localhost:3000/our-work/departments"
         />
         <meta property="og:title" content="Departments" />
         <meta
@@ -92,7 +92,7 @@ const Departments = () => {
         <meta name="twitter:title" content="Departments" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-09/Arched_room_1000x500.jpg?itok=0jhCdxJt"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-09/Arched_room_1000x500.jpg?itok=0jhCdxJt"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -600,7 +600,7 @@ const Departments = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/our-work/departments"
+                                href="http://localhost:3000/our-work/departments"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -616,7 +616,7 @@ const Departments = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/our-work/departments"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/our-work/departments"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -636,7 +636,7 @@ const Departments = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Departments&url=https://www.britishmuseum.org/our-work/departments"
+                              href="https://twitter.com/intent/tweet?text=Departments&url=http://localhost:3000/our-work/departments"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1491,7 +1491,7 @@ const Departments = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/collection"
+                                                      href="http://localhost:3000/collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

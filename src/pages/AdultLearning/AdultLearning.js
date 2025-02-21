@@ -59,17 +59,17 @@ const AdultLearning = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/learn/adult-learning"
+          href="http://localhost:3000/learn/adult-learning"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/Adult%20learning%20festivals%20lates%20special%20events%2C%20british%20museum_0.jpg?itok=q4CHiEkX"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/Adult%20learning%20festivals%20lates%20special%20events%2C%20british%20museum_0.jpg?itok=q4CHiEkX"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/learn/adult-learning"
+          content="http://localhost:3000/learn/adult-learning"
         />
         <meta property="og:title" content="Adult learning" />
         <meta
@@ -89,7 +89,7 @@ const AdultLearning = () => {
         <meta name="twitter:title" content="Adult learning" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/Adult%20learning%20festivals%20lates%20special%20events%2C%20british%20museum_0.jpg?itok=q4CHiEkX"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/Adult%20learning%20festivals%20lates%20special%20events%2C%20british%20museum_0.jpg?itok=q4CHiEkX"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -655,7 +655,7 @@ const AdultLearning = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/learn/adult-learning"
+                                href="http://localhost:3000/learn/adult-learning"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -671,7 +671,7 @@ const AdultLearning = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/learn/adult-learning"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/learn/adult-learning"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -691,7 +691,7 @@ const AdultLearning = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Adult%20learning&url=https://www.britishmuseum.org/learn/adult-learning"
+                              href="https://twitter.com/intent/tweet?text=Adult%20learning&url=http://localhost:3000/learn/adult-learning"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -859,7 +859,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/lectures-discussions"
+                                                      href="http://localhost:3000/exhibitions-events/lectures-discussions"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -899,7 +899,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/performance"
+                                                      href="http://localhost:3000/exhibitions-events/performance"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -938,7 +938,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/see-everything/online-events"
+                                                      href="http://localhost:3000/exhibitions-events/see-everything/online-events"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1050,7 +1050,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/festivals-special-events"
+                                                      href="http://localhost:3000/exhibitions-events/festivals-special-events"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1237,7 +1237,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/gallery-talks-tours"
+                                                      href="http://localhost:3000/exhibitions-events/gallery-talks-tours"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1276,7 +1276,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/film"
+                                                      href="http://localhost:3000/exhibitions-events/film"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1315,7 +1315,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/accessible-event"
+                                                      href="http://localhost:3000/exhibitions-events/accessible-event"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1424,7 +1424,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/research-event"
+                                                      href="http://localhost:3000/exhibitions-events/research-event"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1505,7 +1505,7 @@ const AdultLearning = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/demonstration"
+                                                      href="http://localhost:3000/exhibitions-events/demonstration"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

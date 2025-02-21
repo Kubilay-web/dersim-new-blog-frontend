@@ -19,17 +19,17 @@ const FootSteps = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/blog/footsteps-history-travelling-silk-roads-today"
+          href="http://localhost:3000/blog/footsteps-history-travelling-silk-roads-today"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Registan%20sunrise%201920x1080.jpg?itok=WEMD9iHY"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Registan%20sunrise%201920x1080.jpg?itok=WEMD9iHY"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/blog/footsteps-history-travelling-silk-roads-today"
+          content="http://localhost:3000/blog/footsteps-history-travelling-silk-roads-today"
         />
         <meta
           property="og:title"
@@ -55,7 +55,7 @@ const FootSteps = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Registan%20sunrise%201920x1080.jpg?itok=WEMD9iHY"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Registan%20sunrise%201920x1080.jpg?itok=WEMD9iHY"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -620,7 +620,7 @@ const FootSteps = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/blog/footsteps-history-travelling-silk-roads-today"
+                                href="http://localhost:3000/blog/footsteps-history-travelling-silk-roads-today"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -637,7 +637,7 @@ const FootSteps = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/blog/footsteps-history-travelling-silk-roads-today"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/blog/footsteps-history-travelling-silk-roads-today"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -657,7 +657,7 @@ const FootSteps = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=In%20the%20footsteps%20of%20history%3A%20travelling%20the%20Silk%20Roads%20today&url=https://www.britishmuseum.org/blog/footsteps-history-travelling-silk-roads-today"
+                              href="https://twitter.com/intent/tweet?text=In%20the%20footsteps%20of%20history%3A%20travelling%20the%20Silk%20Roads%20today&url=http://localhost:3000/blog/footsteps-history-travelling-silk-roads-today"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -707,7 +707,7 @@ const FootSteps = () => {
                                 The Silk Roads were in use for millennia,
                                 creating a web of overlapping networks linking
                                 communities across Asia, Africa and Europe. Our{" "}
-                                <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                <a href="http://localhost:3000/exhibitions/silk-roads">
                                   major new exhibition
                                 </a>{" "}
                                 focuses on a defining period in their history
@@ -1332,7 +1332,7 @@ const FootSteps = () => {
                                       .
                                     </p>
                                     <p>
-                                      <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                      <a href="http://localhost:3000/exhibitions/silk-roads">
                                         <em>Silks Roads</em>
                                       </a>{" "}
                                       is supported by&nbsp;

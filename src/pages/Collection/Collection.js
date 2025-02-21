@@ -111,17 +111,14 @@ const Collection = () => {
           name="description"
           content="Explore the Museum's collection and journey through two million years of human history."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/collection" />
+        <link rel="canonical" href="http://localhost:3000/collection" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-02/sutton-hoo-helmet-1920.jpg?itok=NCJgpplQ"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2021-02/sutton-hoo-helmet-1920.jpg?itok=NCJgpplQ"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/collection"
-        />
+        <meta property="og:url" content="http://localhost:3000/collection" />
         <meta property="og:title" content="Collection" />
         <meta
           property="og:description"
@@ -129,7 +126,7 @@ const Collection = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-02/sutton-hoo-helmet-1920.jpg?itok=NCJgpplQ"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2021-02/sutton-hoo-helmet-1920.jpg?itok=NCJgpplQ"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -140,7 +137,7 @@ const Collection = () => {
         <meta name="twitter:title" content="Collection" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-02/sutton-hoo-helmet-1920.jpg?itok=NCJgpplQ"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2021-02/sutton-hoo-helmet-1920.jpg?itok=NCJgpplQ"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -888,7 +885,7 @@ const Collection = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/collection"
+                                href="http://localhost:3000/collection"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -904,7 +901,7 @@ const Collection = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/collection"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/collection"
                               target="_blank"
                               rel="noopener"
                             >
@@ -928,7 +925,7 @@ const Collection = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Collection&url=https://www.britishmuseum.org/collection"
+                              href="https://twitter.com/intent/tweet?text=Collection&url=http://localhost:3000/collection"
                               target="_blank"
                               rel="noopener"
                             >
@@ -1678,7 +1675,7 @@ const Collection = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2019-10/lycurgus-cup-rome-british-museum.jpg"
                                           data-large-image-width={1500}
                                           data-large-image-height={2000}
-                                          data-description='<strong>The Lycurgus Cup, probably made in Rome, AD 300s</strong><br>This remarkable cup is the only complete example of a very special type of glass, known as dichroic, which changes colour when held up to the light. <a href="https://www.britishmuseum.org/collection/object/H_1958-1202-1"><span>Collection online</span></a>'
+                                          data-description='<strong>The Lycurgus Cup, probably made in Rome, AD 300s</strong><br>This remarkable cup is the only complete example of a very special type of glass, known as dichroic, which changes colour when held up to the light. <a href="http://localhost:3000/collection/object/H_1958-1202-1"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >

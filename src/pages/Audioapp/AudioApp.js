@@ -37,19 +37,16 @@ const AudioApp = () => {
           name="description"
           content="Explore the Dersim Museum your way with an audio guide. Whether you have an hour or the whole day, our audio guide helps you make the most of your visit. Discover more about the Museum's objects through expert commentaries from curators in your own language. The audio guide is available in 10 languages."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/visit/audio-app"
-        />
+        <link rel="canonical" href="http://localhost:3000/visit/audio-app" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-03/audio_app_hero_1920_0.jpg?itok=WYO6mOCP"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-03/audio_app_hero_1920_0.jpg?itok=WYO6mOCP"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/visit/audio-app"
+          content="http://localhost:3000/visit/audio-app"
         />
         <meta property="og:title" content="Audio app" />
         <meta
@@ -69,7 +66,7 @@ const AudioApp = () => {
         <meta name="twitter:title" content="Audio app" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-03/audio_app_hero_1920_0.jpg?itok=WYO6mOCP"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-03/audio_app_hero_1920_0.jpg?itok=WYO6mOCP"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -524,13 +521,13 @@ const AudioApp = () => {
                           {content && content.length > 0 ? (
                             content.slice(0, 1).map((item, index) => (
                               <h1
+                                dangerouslySetInnerHTML={{
+                                  __html: item.title,
+                                }}
                                 key={index}
                                 id="paragraph-2217-title"
                                 className="hero__title"
-                              >
-                                {" "}
-                                {item.title}
-                              </h1>
+                              ></h1>
                             ))
                           ) : (
                             <p>No content available</p>
@@ -638,7 +635,7 @@ const AudioApp = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit/audio-app"
+                                href="http://localhost:3000/visit/audio-app"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -654,7 +651,7 @@ const AudioApp = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit/audio-app"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit/audio-app"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -674,7 +671,7 @@ const AudioApp = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Audio%20app&url=https://www.britishmuseum.org/visit/audio-app"
+                              href="https://twitter.com/intent/tweet?text=Audio%20app&url=http://localhost:3000/visit/audio-app"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -891,11 +888,14 @@ const AudioApp = () => {
                           </div>
                           <div className="section--intro__content">
                             {content && content.length > 0 ? (
-                              content
-                                .slice(0, 1)
-                                .map((item, index) => (
-                                  <p key={index}> {item.body}</p>
-                                ))
+                              content.slice(0, 1).map((item, index) => (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.body,
+                                  }}
+                                  key={index}
+                                ></p>
+                              ))
                             ) : (
                               <p>No content available</p>
                             )}
@@ -1332,7 +1332,7 @@ const AudioApp = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit"
+                                                      href="http://localhost:3000/visit"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

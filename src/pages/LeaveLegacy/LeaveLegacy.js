@@ -39,17 +39,17 @@ const LeaveLegacy = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/support-us/leave-legacy"
+          href="http://localhost:3000/support-us/leave-legacy"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Conservation-samurai-armour.jpg?itok=0l070i0S"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Conservation-samurai-armour.jpg?itok=0l070i0S"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/support-us/leave-legacy"
+          content="http://localhost:3000/support-us/leave-legacy"
         />
         <meta property="og:title" content="Leave a legacy" />
         <meta
@@ -69,7 +69,7 @@ const LeaveLegacy = () => {
         <meta name="twitter:title" content="Leave a legacy" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Conservation-samurai-armour.jpg?itok=0l070i0S"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Conservation-samurai-armour.jpg?itok=0l070i0S"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -641,7 +641,7 @@ const LeaveLegacy = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/support-us/leave-legacy"
+                                href="http://localhost:3000/support-us/leave-legacy"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -657,7 +657,7 @@ const LeaveLegacy = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/support-us/leave-legacy"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/support-us/leave-legacy"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -677,7 +677,7 @@ const LeaveLegacy = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Leave%20a%20legacy&url=https://www.britishmuseum.org/support-us/leave-legacy"
+                              href="https://twitter.com/intent/tweet?text=Leave%20a%20legacy&url=http://localhost:3000/support-us/leave-legacy"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -995,7 +995,7 @@ const LeaveLegacy = () => {
                                         alt="Two sides of gold medal"
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/C_2012-4195-1_1">
+                                        <a href="http://localhost:3000/collection/object/C_2012-4195-1_1">
                                           Gold Royal Geographical Society medal
                                         </a>
                                         , awarded to Captain Scott in 1904.

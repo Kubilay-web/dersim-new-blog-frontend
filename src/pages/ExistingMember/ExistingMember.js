@@ -59,17 +59,17 @@ const ExistingMember = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/membership/existing-members"
+          href="http://localhost:3000/membership/existing-members"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-01/Members-glass-case-1000x681.jpg?itok=Eh0_NFU8"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-01/Members-glass-case-1000x681.jpg?itok=Eh0_NFU8"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/membership/existing-members"
+          content="http://localhost:3000/membership/existing-members"
         />
         <meta property="og:title" content="Existing Members" />
         <meta
@@ -89,7 +89,7 @@ const ExistingMember = () => {
         <meta name="twitter:title" content="Existing Members" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-01/Members-glass-case-1000x681.jpg?itok=Eh0_NFU8"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-01/Members-glass-case-1000x681.jpg?itok=Eh0_NFU8"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -555,7 +555,7 @@ const ExistingMember = () => {
                             Existing Members
                           </h1> */}
                           <a
-                            href="https://www.britishmuseum.org/membership#block-numiko-mainpagecontent"
+                            href="http://localhost:3000/membership#block-numiko-mainpagecontent"
                             className="hero__button button button--white button--chevron"
                             data-tracking="cta"
                           >
@@ -669,7 +669,7 @@ const ExistingMember = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/membership/existing-members"
+                                href="http://localhost:3000/membership/existing-members"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -685,7 +685,7 @@ const ExistingMember = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/membership/existing-members"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/membership/existing-members"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -705,7 +705,7 @@ const ExistingMember = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Existing%20Members&url=https://www.britishmuseum.org/membership/existing-members"
+                              href="https://twitter.com/intent/tweet?text=Existing%20Members&url=http://localhost:3000/membership/existing-members"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -805,7 +805,7 @@ const ExistingMember = () => {
                                 <a
                                   data-tracking="cta"
                                   className="button button--chevron"
-                                  href="https://www.britishmuseum.org/membership/existing-members/change-email-address"
+                                  href="http://localhost:3000/membership/existing-members/change-email-address"
                                 >
                                   <span>Change your email address</span>
                                 </a>
@@ -814,7 +814,7 @@ const ExistingMember = () => {
                                 <a
                                   data-tracking="cta"
                                   className="button button--chevron"
-                                  href="https://www.britishmuseum.org/membership/existing-members/change-postal-address"
+                                  href="http://localhost:3000/membership/existing-members/change-postal-address"
                                 >
                                   <span>Change your postal address</span>
                                 </a>
@@ -874,11 +874,11 @@ const ExistingMember = () => {
                               </p>
                               <p>
                                 Explore{" "}
-                                <a href="https://www.britishmuseum.org/members-exclusive-content">
+                                <a href="http://localhost:3000/members-exclusive-content">
                                   Members' exclusive online content
                                 </a>{" "}
                                 and find out about the many ways to{" "}
-                                <a href="https://www.britishmuseum.org/membership/visiting-as-a-member">
+                                <a href="http://localhost:3000/membership/visiting-as-a-member">
                                   make the most of your Membership
                                 </a>
                                 .
@@ -1039,7 +1039,7 @@ const ExistingMember = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/membership/visiting-as-a-member"
+                                                      href="http://localhost:3000/membership/visiting-as-a-member"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1079,7 +1079,7 @@ const ExistingMember = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/sites/default/files/2024-01/Little_book_big_ideas.pdf"
+                                                      href="http://localhost:3000/sites/default/files/2024-01/Little_book_big_ideas.pdf"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1120,7 +1120,7 @@ const ExistingMember = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit/food-and-drink"
+                                                      href="http://localhost:3000/visit/food-and-drink"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1186,7 +1186,7 @@ const ExistingMember = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/members-exclusive-content"
+                                                      href="http://localhost:3000/members-exclusive-content"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1305,7 +1305,7 @@ const ExistingMember = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/membership/membership-faqs"
+                                                      href="http://localhost:3000/membership/membership-faqs"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1359,7 +1359,7 @@ const ExistingMember = () => {
                                     </p>
                                     <div className="banner__button-container">
                                       <a
-                                        href="https://www.britishmuseum.org/membership/upgrade-your-membership"
+                                        href="http://localhost:3000/membership/upgrade-your-membership"
                                         className="button button--chevron"
                                         data-tracking="cta"
                                       >

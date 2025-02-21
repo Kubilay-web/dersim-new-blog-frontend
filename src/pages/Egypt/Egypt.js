@@ -24,19 +24,16 @@ const Egypt = () => {
           name="description"
           content="Some of the Dersim Museum's best-known Collection items come from Egypt each with their own unique story. "
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/collection/egypt"
-        />
+        <link rel="canonical" href="http://localhost:3000/collection/egypt" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Counting_geese_Nebamun_1000x500.jpg?itok=RDHoZYZG"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Counting_geese_Nebamun_1000x500.jpg?itok=RDHoZYZG"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/collection/egypt"
+          content="http://localhost:3000/collection/egypt"
         />
         <meta property="og:title" content="Egypt" />
         <meta
@@ -45,7 +42,7 @@ const Egypt = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Counting_geese_Nebamun_1000x500.jpg?itok=RDHoZYZG"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Counting_geese_Nebamun_1000x500.jpg?itok=RDHoZYZG"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -56,7 +53,7 @@ const Egypt = () => {
         <meta name="twitter:title" content="Egypt" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Counting_geese_Nebamun_1000x500.jpg?itok=RDHoZYZG"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Counting_geese_Nebamun_1000x500.jpg?itok=RDHoZYZG"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -593,7 +590,7 @@ const Egypt = () => {
                                 Counting the geese: fragment of wall painting
                                 from the tomb of Nebamun.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/Y_EA37978">
+                              <a href="http://localhost:3000/collection/object/Y_EA37978">
                                 <span>
                                   Counting geese painting on Collection online
                                 </span>
@@ -656,7 +653,7 @@ const Egypt = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/collection/egypt"
+                                href="http://localhost:3000/collection/egypt"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -672,7 +669,7 @@ const Egypt = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/collection/egypt"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/collection/egypt"
                               target="_blank"
                               rel="noopener"
                             >
@@ -696,7 +693,7 @@ const Egypt = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Egypt&url=https://www.britishmuseum.org/collection/egypt"
+                              href="https://twitter.com/intent/tweet?text=Egypt&url=http://localhost:3000/collection/egypt"
                               target="_blank"
                               rel="noopener"
                             >
@@ -1190,7 +1187,7 @@ const Egypt = () => {
                                           data-large-image-width={1600}
                                           data-large-image-height={1184}
                                           data-description="<strong>Amulet, Egypt, Third Intermediate, 26th Dynasty.</strong><br>
-Glazed composition 'wedjat' eye amulet.&nbsp;Its basic design is the eye and eyebrow of the lanner falcon, the bird form adopted by the celestial creator god Horus, whose right and left eyes were the sun and moon respectively.&nbsp; <a href=&quot;https://www.britishmuseum.org/collection/object/Y_EA29222&quot;><span>Collection online</span></a>"
+Glazed composition 'wedjat' eye amulet.&nbsp;Its basic design is the eye and eyebrow of the lanner falcon, the bird form adopted by the celestial creator god Horus, whose right and left eyes were the sun and moon respectively.&nbsp; <a href=&quot;http://localhost:3000/collection/object/Y_EA29222&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1229,7 +1226,7 @@ Glazed composition 'wedjat' eye amulet.&nbsp;Its basic design is the eye and eye
                                           data-large-image-width={1600}
                                           data-large-image-height={1222}
                                           data-description='<strong>Figure, Sa el-Hagar, Third Intermediate, 18th Dynasty.</strong><br>
-Black granite head: from lifesize figure of a queen or deity, wearing long striated wig, and with twin-coiled uraeus on brow. <a href="https://www.britishmuseum.org/collection/object/Y_EA956"><span>Collection online</span></a>'
+Black granite head: from lifesize figure of a queen or deity, wearing long striated wig, and with twin-coiled uraeus on brow. <a href="http://localhost:3000/collection/object/Y_EA956"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1271,7 +1268,7 @@ Black granite head: from lifesize figure of a queen or deity, wearing long stria
                                           data-description='<strong>The Rosetta Stone, stela, Fort Saint Julien, 196 BC.</strong><br>
 The inscription on the Rosetta Stone is a decree passed by a council of priests, one of a series that affirm the royal cult of the 13-year-old Ptolemy V on the first anniversary of his coronation.<br>
 <br>
-The decree is inscribed on the stone three times, in hieroglyphic (suitable for a priestly decree), demotic (the native script used for daily purposes), and Greek (the language of the administration). The importance of this to Egyptology is immense. Soon after the end of the fourth century AD, when hieroglyphs had gone out of use, the knowledge of how to read and write them disappeared. In the early years of the nineteenth century, some 1400 years later, scholars were able to use the Greek inscription on this stone as the key to decipher them.&nbsp; <a href="https://www.britishmuseum.org/collection/object/Y_EA24"><span>Collection online</span></a>'
+The decree is inscribed on the stone three times, in hieroglyphic (suitable for a priestly decree), demotic (the native script used for daily purposes), and Greek (the language of the administration). The importance of this to Egyptology is immense. Soon after the end of the fourth century AD, when hieroglyphs had gone out of use, the knowledge of how to read and write them disappeared. In the early years of the nineteenth century, some 1400 years later, scholars were able to use the Greek inscription on this stone as the key to decipher them.&nbsp; <a href="http://localhost:3000/collection/object/Y_EA24"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1323,7 +1320,7 @@ The decree is inscribed on the stone three times, in hieroglyphic (suitable for 
                                           data-large-image-width={1391}
                                           data-large-image-height={2000}
                                           data-description="<strong>Colossal granite image of King Ramesses II, from Karnak (Thebes), Egypt, about 1250 BC.</strong><br>
-The largest Egyptian sculpture in the Dersim Museum is an image of Ramesses II, whose prosperous reign lasted almost 67 years. It's the upper part of a colossal seated statue, one of a pair that flanked a gate in the king's mortuary temple (the 'Ramesseum'). The statue was carved from one block, quarried at Aswan almost 124 miles (200km)&nbsp;further south. Roughly shaped and weighing some 20 tonnes, it was transported on sleds over land and on a purpose-built boat down the river Nile. Once erected, the statue's finer sculpting was completed. Like all Egyptian statues, it was originally painted.Traces of the pigments remain.&nbsp; <a href=&quot;https://www.britishmuseum.org/collection/object/Y_EA19&quot;><span>Collection online</span></a>"
+The largest Egyptian sculpture in the Dersim Museum is an image of Ramesses II, whose prosperous reign lasted almost 67 years. It's the upper part of a colossal seated statue, one of a pair that flanked a gate in the king's mortuary temple (the 'Ramesseum'). The statue was carved from one block, quarried at Aswan almost 124 miles (200km)&nbsp;further south. Roughly shaped and weighing some 20 tonnes, it was transported on sleds over land and on a purpose-built boat down the river Nile. Once erected, the statue's finer sculpting was completed. Like all Egyptian statues, it was originally painted.Traces of the pigments remain.&nbsp; <a href=&quot;http://localhost:3000/collection/object/Y_EA19&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1374,7 +1371,7 @@ The largest Egyptian sculpture in the Dersim Museum is an image of Ramesses II, 
                                           data-large-image-width={1501}
                                           data-large-image-height={2000}
                                           data-description="<strong>Mummy mask, Egypt,</strong> <strong>about 1500 BC.</strong><br>
-Cartonnage mummy-mask of Satdjehuty: on this&nbsp;female mask, gold leaf not only covers the woman's face, but also her huge collar necklace and the vulture-headdress that embrace the front and sides of her voluminous, lapis lazuli-coloured wig. The wings are examples of protective symbolism that, like the feather patterns on many anthropoid coffins of the 17th and early 18th Dynasties, evokes the guardianship of Isis and other deities. This woman's name, once written at the bottom of each column of hieroglyphs, has been lost. There are two columns of hieroglyphic text on the chest. <a href=&quot;https://www.britishmuseum.org/collection/object/Y_EA29770&quot;><span>Collection online</span></a>"
+Cartonnage mummy-mask of Satdjehuty: on this&nbsp;female mask, gold leaf not only covers the woman's face, but also her huge collar necklace and the vulture-headdress that embrace the front and sides of her voluminous, lapis lazuli-coloured wig. The wings are examples of protective symbolism that, like the feather patterns on many anthropoid coffins of the 17th and early 18th Dynasties, evokes the guardianship of Isis and other deities. This woman's name, once written at the bottom of each column of hieroglyphs, has been lost. There are two columns of hieroglyphic text on the chest. <a href=&quot;http://localhost:3000/collection/object/Y_EA29770&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1424,7 +1421,7 @@ Cartonnage mummy-mask of Satdjehuty: on this&nbsp;female mask, gold leaf not onl
                                           data-large-image-width={1600}
                                           data-large-image-height={1811}
                                           data-description='<strong>Cat mummies, Egypt 30BC (after).</strong><br>
-Animals associated with deities were regularly mummified in the later periods of Egyptian history. The cat is associated with the goddess Bastet, whose cult centre was at Bubastis in the Delta, but there were other feline deities elsewhere in Egypt.&nbsp; <a href="https://www.britishmuseum.org/collection/object/Y_EA55614"><span>Collection online</span></a>'
+Animals associated with deities were regularly mummified in the later periods of Egyptian history. The cat is associated with the goddess Bastet, whose cult centre was at Bubastis in the Delta, but there were other feline deities elsewhere in Egypt.&nbsp; <a href="http://localhost:3000/collection/object/Y_EA55614"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >

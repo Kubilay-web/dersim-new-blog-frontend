@@ -57,19 +57,16 @@ const Press = () => {
           name="description"
           content="Read the Dersim Museum's latest press releases, news, photography and filming information, collection and object news and contact details for the Dersim Museum press team."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/about-us/press"
-        />
+        <link rel="canonical" href="http://localhost:3000/about-us/press" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/Tile-Ming-Dynasty-large.jpg?itok=FAOvLrDN"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/Tile-Ming-Dynasty-large.jpg?itok=FAOvLrDN"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/about-us/press"
+          content="http://localhost:3000/about-us/press"
         />
         <meta property="og:title" content="Press" />
         <meta
@@ -89,7 +86,7 @@ const Press = () => {
         <meta name="twitter:title" content="Press" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/Tile-Ming-Dynasty-large.jpg?itok=FAOvLrDN"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/Tile-Ming-Dynasty-large.jpg?itok=FAOvLrDN"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -604,7 +601,7 @@ const Press = () => {
                                 </span>
                               </button>
                               <p> Tile, Ming Dynasty, 15th–16th century.</p>
-                              <a href="https://www.britishmuseum.org/collection/object/A_2006-0503-1-1-20">
+                              <a href="http://localhost:3000/collection/object/A_2006-0503-1-1-20">
                                 <span>View on Collection online</span>
                               </a>
                             </div>
@@ -662,7 +659,7 @@ const Press = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/about-us/press"
+                                href="http://localhost:3000/about-us/press"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -678,7 +675,7 @@ const Press = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us/press"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/about-us/press"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -698,7 +695,7 @@ const Press = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Press&url=https://www.britishmuseum.org/about-us/press"
+                              href="https://twitter.com/intent/tweet?text=Press&url=http://localhost:3000/about-us/press"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -936,7 +933,7 @@ const Press = () => {
                                         alt="Cartonnage mummy-mask of Satdjehuty: gold leaf-covered female mask"
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/Y_EA29770">
+                                        <a href="http://localhost:3000/collection/object/Y_EA29770">
                                           Cartonnage mummy-mask of Satdjehuty
                                         </a>
                                         , early 18th Dynasty, Egypt, c. 1500 BC.
@@ -1001,7 +998,7 @@ const Press = () => {
                                         alt="Box with inlaid mosaic scenes made from shell, red limestone and lapis lazuli, set in bitumen, depicting a Sumerian army"
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/W_1928-1010-3">
+                                        <a href="http://localhost:3000/collection/object/W_1928-1010-3">
                                           The Standard of Ur
                                         </a>
                                         , box, Early Dynastic III, Royal
@@ -1048,7 +1045,7 @@ const Press = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2024-11/Speech_by_Nicholas_Cullinan_British_Museum_Annual_Trustees_Dinner_2024.pdf"
+                                          href="http://localhost:3000/sites/default/files/2024-11/Speech_by_Nicholas_Cullinan_British_Museum_Annual_Trustees_Dinner_2024.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -1090,7 +1087,7 @@ const Press = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2024-11/Speech_by_George_Osborne_British_Museum_Annual_Trustees_Dinner_2024.pdf"
+                                          href="http://localhost:3000/sites/default/files/2024-11/Speech_by_George_Osborne_British_Museum_Annual_Trustees_Dinner_2024.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -1131,7 +1128,7 @@ const Press = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2024-11/British_Museum_receive_%C2%A31bn_collection_gift_from_The_Sir_Percival_David_Foundation.pdf"
+                                          href="http://localhost:3000/sites/default/files/2024-11/British_Museum_receive_%C2%A31bn_collection_gift_from_The_Sir_Percival_David_Foundation.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -1174,7 +1171,7 @@ const Press = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2024-10/British_Museum_confirms_two_major_exhibitions_for_spring_2025.pdf"
+                                          href="http://localhost:3000/sites/default/files/2024-10/British_Museum_confirms_two_major_exhibitions_for_spring_2025.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -1215,7 +1212,7 @@ const Press = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2024-10/Norman_Conquest_coin_hoard_acquired_for_the_nation.pdf"
+                                          href="http://localhost:3000/sites/default/files/2024-10/Norman_Conquest_coin_hoard_acquired_for_the_nation.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -1272,7 +1269,7 @@ const Press = () => {
                                         alt="Fragment from sarcophagus, relief in blue-veined marble, showing Roman marriage ceremony"
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/G_1805-0703-143">
+                                        <a href="http://localhost:3000/collection/object/G_1805-0703-143">
                                           Sarcophagus, showing Roman marriage
                                           ceremony
                                         </a>
@@ -1454,7 +1451,7 @@ const Press = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/our-work/departments/human-remains"
+                                                      href="http://localhost:3000/our-work/departments/human-remains"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1823,7 +1820,7 @@ const Press = () => {
                                         alt="Detail from fritware (stonepaste) bowl, depicting enthroned royal figure and attendants "
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/W_1945-1017-261">
+                                        <a href="http://localhost:3000/collection/object/W_1945-1017-261">
                                           Bowl, Seljuq Dynasty
                                         </a>
                                         ,&nbsp;Kashan, 1187 (Muharram

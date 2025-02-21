@@ -110,17 +110,17 @@ const Accessibility = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/visit/accessibility-museum"
+          href="http://localhost:3000/visit/accessibility-museum"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/south-africa-object-handling-session.jpg?itok=VwELrelW"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/south-africa-object-handling-session.jpg?itok=VwELrelW"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/visit/accessibility-museum"
+          content="http://localhost:3000/visit/accessibility-museum"
         />
         <meta property="og:title" content="Accessibility at the Museum" />
         <meta
@@ -140,7 +140,7 @@ const Accessibility = () => {
         <meta name="twitter:title" content="Accessibility at the Museum" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/south-africa-object-handling-session.jpg?itok=VwELrelW"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/south-africa-object-handling-session.jpg?itok=VwELrelW"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -595,12 +595,13 @@ const Accessibility = () => {
                           {content && content.length > 0 ? (
                             content.slice(0, 1).map((item, index) => (
                               <h1
+                                dangerouslySetInnerHTML={{
+                                  __html: item.title,
+                                }}
                                 key={index}
                                 id="paragraph-1319-title"
                                 className="hero__title"
-                              >
-                                {item.title}
-                              </h1>
+                              ></h1>
                             ))
                           ) : (
                             <p>No content available</p>
@@ -714,7 +715,7 @@ const Accessibility = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit/accessibility-museum"
+                                href="http://localhost:3000/visit/accessibility-museum"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -730,7 +731,7 @@ const Accessibility = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit/accessibility-museum"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit/accessibility-museum"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -750,7 +751,7 @@ const Accessibility = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Accessibility%20at%20the%20Museum&url=https://www.britishmuseum.org/visit/accessibility-museum"
+                              href="https://twitter.com/intent/tweet?text=Accessibility%20at%20the%20Museum&url=http://localhost:3000/visit/accessibility-museum"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -904,11 +905,14 @@ const Accessibility = () => {
                           </div>
                           <div className="section--intro__content">
                             {content && content.length > 0 ? (
-                              content
-                                .slice(0, 1)
-                                .map((item, index) => (
-                                  <p key={index}> {item.body}</p>
-                                ))
+                              content.slice(0, 1).map((item, index) => (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.body,
+                                  }}
+                                  key={index}
+                                ></p>
+                              ))
                             ) : (
                               <p>No content available</p>
                             )}
@@ -950,11 +954,11 @@ const Accessibility = () => {
                                 team. For information on how to borrow a
                                 wheelchair or obtain on-site parking, please see
                                 the '
-                                <a href="https://www.britishmuseum.org/visit/accessibility-museum#accessibility-around-the-museum">
+                                <a href="http://localhost:3000/visit/accessibility-museum#accessibility-around-the-museum">
                                   Borrow a wheelchair
                                 </a>
                                 ' and '
-                                <a href="https://www.britishmuseum.org/visit/accessibility-museum#getting-to-the-museum">
+                                <a href="http://localhost:3000/visit/accessibility-museum#getting-to-the-museum">
                                   Accessible parking
                                 </a>
                                 ' sections below.
@@ -1297,7 +1301,7 @@ const Accessibility = () => {
                                         before closing time. Please collect
                                         items 30 minutes before closing time.
                                         More information is available on the{" "}
-                                        <a href="https://www.britishmuseum.org/visit#facilities">
+                                        <a href="http://localhost:3000/visit#facilities">
                                           Visit page
                                         </a>
                                         .
@@ -1717,7 +1721,7 @@ const Accessibility = () => {
                                     <ul>
                                       <li>
                                         View our{" "}
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2023-11/Dersim-Museum-Sensory-Map_2023.pdf">
+                                        <a href="http://localhost:3000/sites/default/files/2023-11/Dersim-Museum-Sensory-Map_2023.pdf">
                                           sensory map
                                         </a>
                                         .
@@ -2847,7 +2851,7 @@ const Accessibility = () => {
                                       <li>
                                         <a
                                           href="/sites/default/files/2023-11/Room-4-Touch-Tour-Guide.pdf"
-                                          data-gc-link="https://www.britishmuseum.org/pdf/Room_4_Touch_Tour_Guide.pdf"
+                                          data-gc-link="http://localhost:3000/pdf/Room_4_Touch_Tour_Guide.pdf"
                                         >
                                           Download large print guide
                                         </a>
@@ -2855,7 +2859,7 @@ const Accessibility = () => {
                                       <li>
                                         <a
                                           href="/sites/default/files/2019-09/Room_4_Touch_Tour_Braille_Book.pdf"
-                                          data-gc-link="https://www.britishmuseum.org/pdf/Room_4_Touch_Tour_Braille_Book.pdf"
+                                          data-gc-link="http://localhost:3000/pdf/Room_4_Touch_Tour_Braille_Book.pdf"
                                         >
                                           Download braille book with raised
                                           drawings
@@ -2876,7 +2880,7 @@ const Accessibility = () => {
                                       <li>
                                         A free self-guided tour is available for
                                         the Parthenon galleries (
-                                        <a href="https://www.britishmuseum.org/collection/galleries/greece-parthenon">
+                                        <a href="http://localhost:3000/collection/galleries/greece-parthenon">
                                           Room 18 &amp; 18b
                                         </a>
                                         ).
@@ -3103,7 +3107,7 @@ const Accessibility = () => {
                                     <blockquote>
                                       <ul>
                                         <li>
-                                          <a href="https://www.britishmuseum.org/sites/default/files/2023-11/Nereid_colouring_sheets.pdf">
+                                          <a href="http://localhost:3000/sites/default/files/2023-11/Nereid_colouring_sheets.pdf">
                                             Nereid colouring sheets
                                           </a>
                                         </li>
@@ -3128,7 +3132,7 @@ const Accessibility = () => {
                                           </a>
                                         </li>
                                         <li>
-                                          <a href="https://www.britishmuseum.org/sites/default/files/2023-11/Build_your_own_Trojan_Horse.pdf">
+                                          <a href="http://localhost:3000/sites/default/files/2023-11/Build_your_own_Trojan_Horse.pdf">
                                             Build your own Trojan Horse
                                           </a>
                                         </li>
@@ -3223,7 +3227,7 @@ const Accessibility = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit"
+                                                      href="http://localhost:3000/visit"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -3263,7 +3267,7 @@ const Accessibility = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events"
+                                                      href="http://localhost:3000/exhibitions-events"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

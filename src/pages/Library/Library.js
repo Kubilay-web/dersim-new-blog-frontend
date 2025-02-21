@@ -39,17 +39,17 @@ const Library = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/resources/library-and-archive"
+          href="http://localhost:3000/resources/library-and-archive"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Montague_House_deed_1000x500.jpg?itok=BsUvsZbC"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Montague_House_deed_1000x500.jpg?itok=BsUvsZbC"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/resources/library-and-archive"
+          content="http://localhost:3000/resources/library-and-archive"
         />
         <meta property="og:title" content="Library and Archive" />
         <meta
@@ -69,7 +69,7 @@ const Library = () => {
         <meta name="twitter:title" content="Library and Archive" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Montague_House_deed_1000x500.jpg?itok=BsUvsZbC"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Montague_House_deed_1000x500.jpg?itok=BsUvsZbC"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -635,7 +635,7 @@ const Library = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/resources/library-and-archive"
+                                href="http://localhost:3000/resources/library-and-archive"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -651,7 +651,7 @@ const Library = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/resources/library-and-archive"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/resources/library-and-archive"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -671,7 +671,7 @@ const Library = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Library%20and%20Archive&url=https://www.britishmuseum.org/resources/library-and-archive"
+                              href="https://twitter.com/intent/tweet?text=Library%20and%20Archive&url=http://localhost:3000/resources/library-and-archive"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1006,7 +1006,7 @@ const Library = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/collection"
+                                                      href="http://localhost:3000/collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

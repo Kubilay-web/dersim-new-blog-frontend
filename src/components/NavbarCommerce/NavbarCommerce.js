@@ -34,7 +34,11 @@ const NavbarCommerce = () => {
     const URL = process.env.REACT_APP_BACKEND_URL;
 
     try {
-      const response = await axios.post(`${URL}/api/user/signout`);
+      const response = await axios.post(
+        `https://dersim-new-blog-backend.vercel.app/api/user/signout`,
+        {},
+        { withCredentials: true }
+      );
 
       if (response.status === 200) {
         dispatch(signoutSuccess());

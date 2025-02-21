@@ -19,17 +19,17 @@ const Admonitions = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/exhibitions/admonitions-instructress-court-ladies"
+          href="http://localhost:3000/exhibitions/admonitions-instructress-court-ladies"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/The_Admonitions_Scroll_1000x500.jpg?itok=W5Hbeu8H"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/The_Admonitions_Scroll_1000x500.jpg?itok=W5Hbeu8H"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/exhibitions/admonitions-instructress-court-ladies"
+          content="http://localhost:3000/exhibitions/admonitions-instructress-court-ladies"
         />
         <meta
           property="og:title"
@@ -55,7 +55,7 @@ const Admonitions = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/The_Admonitions_Scroll_1000x500.jpg?itok=W5Hbeu8H"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/The_Admonitions_Scroll_1000x500.jpg?itok=W5Hbeu8H"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -566,7 +566,7 @@ const Admonitions = () => {
                                 of the Instructress to the Court Ladies').
                                 Handscroll painting, China, 5–7th century AD.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/A_1903-0408-0-1">
+                              <a href="http://localhost:3000/collection/object/A_1903-0408-0-1">
                                 <span>
                                   View the Admonitions Scroll on Collection
                                   online
@@ -630,7 +630,7 @@ const Admonitions = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/exhibitions/admonitions-instructress-court-ladies"
+                                href="http://localhost:3000/exhibitions/admonitions-instructress-court-ladies"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -647,7 +647,7 @@ const Admonitions = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/exhibitions/admonitions-instructress-court-ladies"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/exhibitions/admonitions-instructress-court-ladies"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -667,7 +667,7 @@ const Admonitions = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Admonitions%20of%20the%20instructress%20to%20the%20court%20ladies&url=https://www.britishmuseum.org/exhibitions/admonitions-instructress-court-ladies"
+                              href="https://twitter.com/intent/tweet?text=Admonitions%20of%20the%20instructress%20to%20the%20court%20ladies&url=http://localhost:3000/exhibitions/admonitions-instructress-court-ladies"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -712,7 +712,7 @@ const Admonitions = () => {
                                   <span>Daily: 10.00–17.00</span>
                                   <br />
                                   <span>See full&nbsp;</span>
-                                  <a href="https://www.britishmuseum.org/visit#opening-hours">
+                                  <a href="http://localhost:3000/visit#opening-hours">
                                     opening hours
                                   </a>
                                 </p>
@@ -731,7 +731,7 @@ const Admonitions = () => {
                                 </h3>
                                 <p>
                                   Accessed via Room 90,{" "}
-                                  <a href="https://www.britishmuseum.org/files/museum-map.pdf">
+                                  <a href="http://localhost:3000/files/museum-map.pdf">
                                     view the Museum map.
                                   </a>
                                 </p>
@@ -785,7 +785,7 @@ const Admonitions = () => {
                                 <a
                                   data-tracking="exhibition-cta"
                                   className="button button--chevron"
-                                  href="https://www.britishmuseum.org/support-us/donate-now"
+                                  href="http://localhost:3000/support-us/donate-now"
                                 >
                                   <span>Donate to British Museum</span>
                                 </a>

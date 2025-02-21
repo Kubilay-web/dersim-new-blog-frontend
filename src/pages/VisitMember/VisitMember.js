@@ -59,17 +59,17 @@ const VisitMember = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/membership/visiting-as-a-member"
+          href="http://localhost:3000/membership/visiting-as-a-member"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-01/Gayer-Anderson-cat-1920x1084.jpg?itok=enwvToqV"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-01/Gayer-Anderson-cat-1920x1084.jpg?itok=enwvToqV"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/membership/visiting-as-a-member"
+          content="http://localhost:3000/membership/visiting-as-a-member"
         />
         <meta property="og:title" content="Visiting as a Member" />
         <meta
@@ -78,7 +78,7 @@ const VisitMember = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-01/Gayer-Anderson-cat-1920x1084.jpg?itok=enwvToqV"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-01/Gayer-Anderson-cat-1920x1084.jpg?itok=enwvToqV"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -89,7 +89,7 @@ const VisitMember = () => {
         <meta name="twitter:title" content="Visiting as a Member" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-01/Gayer-Anderson-cat-1920x1084.jpg?itok=enwvToqV"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-01/Gayer-Anderson-cat-1920x1084.jpg?itok=enwvToqV"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -558,7 +558,7 @@ const VisitMember = () => {
                             Visiting as a Member
                           </h1> */}
                           <a
-                            href="https://www.britishmuseum.org/membership#block-numiko-mainpagecontent"
+                            href="http://localhost:3000/membership#block-numiko-mainpagecontent"
                             className="hero__button button button--white button--chevron"
                             data-tracking="cta"
                           >
@@ -613,7 +613,7 @@ const VisitMember = () => {
                                 one form of the goddess Bastet. Photo
                                 ©&nbsp;Benedict Johnson Photography Limited.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/animals/gayer-anderson-cat">
+                              <a href="http://localhost:3000/collection/animals/gayer-anderson-cat">
                                 <span>Read about the Gayer-Anderson cat</span>
                               </a>
                             </div>
@@ -674,7 +674,7 @@ const VisitMember = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/membership/visiting-as-a-member"
+                                href="http://localhost:3000/membership/visiting-as-a-member"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -690,7 +690,7 @@ const VisitMember = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/membership/visiting-as-a-member"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/membership/visiting-as-a-member"
                               target="_blank"
                               rel="noopener"
                             >
@@ -714,7 +714,7 @@ const VisitMember = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Visiting%20as%20a%20Member&url=https://www.britishmuseum.org/membership/visiting-as-a-member"
+                              href="https://twitter.com/intent/tweet?text=Visiting%20as%20a%20Member&url=http://localhost:3000/membership/visiting-as-a-member"
                               target="_blank"
                               rel="noopener"
                             >
@@ -875,7 +875,7 @@ const VisitMember = () => {
                                 <a
                                   data-tracking="cta"
                                   className="button button--chevron"
-                                  href="https://www.britishmuseum.org/sites/default/files/2024-01/Little_book_big_ideas.pdf"
+                                  href="http://localhost:3000/sites/default/files/2024-01/Little_book_big_ideas.pdf"
                                   target="_blank"
                                 >
                                   <span>Get ideas for your next visit</span>
@@ -1061,7 +1061,7 @@ const VisitMember = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events/members-exclusive"
+                                                      href="http://localhost:3000/exhibitions-events/members-exclusive"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1108,7 +1108,7 @@ const VisitMember = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/sites/default/files/2024-01/Little_book_big_ideas.pdf"
+                                                      href="http://localhost:3000/sites/default/files/2024-01/Little_book_big_ideas.pdf"
                                                       className="teaser__anchor"
                                                       target="_blank"
                                                     >
@@ -1383,7 +1383,7 @@ const VisitMember = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit/museum-map"
+                                                      href="http://localhost:3000/visit/museum-map"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1617,15 +1617,15 @@ const VisitMember = () => {
                                   <div className="section--slice-content__wysiwyg wysiwyg">
                                     <p>
                                       You won't need to book to visit{" "}
-                                      <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                      <a href="http://localhost:3000/exhibitions/silk-roads">
                                         <em>Silk Roads</em>
                                       </a>{" "}
                                       (until 23 February 2025),{" "}
-                                      <a href="https://www.britishmuseum.org/exhibitions/hew-locke-what-have-we-here">
+                                      <a href="http://localhost:3000/exhibitions/hew-locke-what-have-we-here">
                                         <em>Hew Locke: what have we here?</em>
                                       </a>{" "}
                                       (until 9 February 2025) or{" "}
-                                      <a href="https://www.britishmuseum.org/exhibitions/picasso-printmaker">
+                                      <a href="http://localhost:3000/exhibitions/picasso-printmaker">
                                         <em>Picasso: printmaker</em>
                                       </a>{" "}
                                       (until 30 March 2025). However, you'll
@@ -1729,7 +1729,7 @@ const VisitMember = () => {
                                     </p>
                                     <div className="banner__button-container">
                                       <a
-                                        href="https://www.britishmuseum.org/membership/young-friends"
+                                        href="http://localhost:3000/membership/young-friends"
                                         className="button button--chevron"
                                         data-tracking="cta"
                                       >

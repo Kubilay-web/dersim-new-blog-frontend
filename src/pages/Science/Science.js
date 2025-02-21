@@ -76,17 +76,17 @@ const Science = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/scientific-study-dersim-museum-collection"
+          href="http://localhost:3000/scientific-study-dersim-museum-collection"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Mummy-Mask-scientific-study-british-museum.jpg?itok=BNrac_aa"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Mummy-Mask-scientific-study-british-museum.jpg?itok=BNrac_aa"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/scientific-study-dersim-museum-collection"
+          content="http://localhost:3000/scientific-study-dersim-museum-collection"
         />
         <meta
           property="og:title"
@@ -112,7 +112,7 @@ const Science = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Mummy-Mask-scientific-study-british-museum.jpg?itok=BNrac_aa"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Mummy-Mask-scientific-study-british-museum.jpg?itok=BNrac_aa"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -628,7 +628,7 @@ const Science = () => {
                                 Scientific research being carried out on an
                                 Egyptian mummy-mask.&nbsp;
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/Y_EA29472">
+                              <a href="http://localhost:3000/collection/object/Y_EA29472">
                                 <span>
                                   Cartonnage mummy-mask on Collection online
                                 </span>
@@ -675,7 +675,7 @@ const Science = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/scientific-study-dersim-museum-collection"
+                                href="http://localhost:3000/scientific-study-dersim-museum-collection"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -691,7 +691,7 @@ const Science = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/scientific-study-dersim-museum-collection"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/scientific-study-dersim-museum-collection"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -711,7 +711,7 @@ const Science = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Scientific%20study%20of%20the%20British%20Museum%20collection&url=https://www.britishmuseum.org/scientific-study-dersim-museum-collection"
+                              href="https://twitter.com/intent/tweet?text=Scientific%20study%20of%20the%20British%20Museum%20collection&url=http://localhost:3000/scientific-study-dersim-museum-collection"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1160,7 +1160,7 @@ const Science = () => {
                                         data-entity-type="media"
                                         data-entity-uuid="0bafb0e5-6245-47ef-96e6-a416368fbc77"
                                         data-entity-substitution="media"
-                                        data-gc-link="https://www.britishmuseum.org/pdf/DCMS%20Guide.pdf"
+                                        data-gc-link="http://localhost:3000/pdf/DCMS%20Guide.pdf"
                                         target="_blank"
                                         title="DCMS-Guide_0.pdf"
                                       >
@@ -1206,7 +1206,7 @@ const Science = () => {
                                     </p>
                                     <p>
                                       <a
-                                        href="https://www.britishmuseum.org/sites/default/files/2022-02/Scientific_study_collection_form_EE1_%28standard%29_2022.docx"
+                                        href="http://localhost:3000/sites/default/files/2022-02/Scientific_study_collection_form_EE1_%28standard%29_2022.docx"
                                         data-gc-link="https://britishmuseum.org/docs/Scientific_study_of_the_collection_form_EE1_(standard)_2017_version.doc"
                                       >
                                         Application form EE1 (standard)
@@ -1214,7 +1214,7 @@ const Science = () => {
                                     </p>
                                     <p>
                                       <a
-                                        href="https://www.britishmuseum.org/sites/default/files/2022-02/Scientific_study_of_the_collection_form_EE2_%28human_remains%29_2022.docx"
+                                        href="http://localhost:3000/sites/default/files/2022-02/Scientific_study_of_the_collection_form_EE2_%28human_remains%29_2022.docx"
                                         data-gc-link="https://britishmuseum.org/docs/Scientific_study_of_the_collection_form_EE2_(human_remains)_2017_version.doc"
                                       >
                                         Application form EE2 (human remains)

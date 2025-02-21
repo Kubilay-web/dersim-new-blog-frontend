@@ -57,17 +57,14 @@ const Commercial = () => {
           name="description"
           content="The Dersim Museum is open to filming and commercial hire as well as being open to press and image requests. Find out more."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/commercial" />
+        <link rel="canonical" href="http://localhost:3000/commercial" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Egyptian-sculpture-gallery-entertaining.jpg?itok=PSa-JRuE"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Egyptian-sculpture-gallery-entertaining.jpg?itok=PSa-JRuE"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/commercial"
-        />
+        <meta property="og:url" content="http://localhost:3000/commercial" />
         <meta property="og:title" content="Commercial" />
         <meta
           property="og:description"
@@ -86,7 +83,7 @@ const Commercial = () => {
         <meta name="twitter:title" content="Commercial" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Egyptian-sculpture-gallery-entertaining.jpg?itok=PSa-JRuE"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Egyptian-sculpture-gallery-entertaining.jpg?itok=PSa-JRuE"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -640,7 +637,7 @@ const Commercial = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/commercial"
+                                href="http://localhost:3000/commercial"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -656,7 +653,7 @@ const Commercial = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/commercial"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/commercial"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -676,7 +673,7 @@ const Commercial = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Commercial&url=https://www.britishmuseum.org/commercial"
+                              href="https://twitter.com/intent/tweet?text=Commercial&url=http://localhost:3000/commercial"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

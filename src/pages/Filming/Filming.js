@@ -57,19 +57,16 @@ const Filming = () => {
           name="description"
           content="The Dersim Museum is the perfect location for a film, advert, radio or television programme and can help with resources. View locations in our prestigious galleries and submit filming requests."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/commercial/filming"
-        />
+        <link rel="canonical" href="http://localhost:3000/commercial/filming" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/spectre03.jpg?itok=NGk9IZ2G"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/spectre03.jpg?itok=NGk9IZ2G"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/commercial/filming"
+          content="http://localhost:3000/commercial/filming"
         />
         <meta property="og:title" content="Filming" />
         <meta
@@ -86,7 +83,7 @@ const Filming = () => {
         <meta name="twitter:title" content="Filming" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/spectre03.jpg?itok=NGk9IZ2G"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/spectre03.jpg?itok=NGk9IZ2G"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -659,7 +656,7 @@ const Filming = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/commercial/filming"
+                                href="http://localhost:3000/commercial/filming"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -675,7 +672,7 @@ const Filming = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/commercial/filming"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/commercial/filming"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -695,7 +692,7 @@ const Filming = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Filming&url=https://www.britishmuseum.org/commercial/filming"
+                              href="https://twitter.com/intent/tweet?text=Filming&url=http://localhost:3000/commercial/filming"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

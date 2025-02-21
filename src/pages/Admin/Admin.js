@@ -61,10 +61,12 @@ function Admin() {
   };
 
   const handleSignout = async () => {
-    const URL = process.env.REACT_APP_BACKEND_URL;
-
     try {
-      const response = await axios.post(`${URL}/api/user/signout`);
+      const response = await axios.post(
+        `https://dersim-new-blog-backend.vercel.app/api/user/signout`,
+        {},
+        { withCredentials: true }
+      );
 
       // Başarılı çıkış
       if (response.status === 200) {
@@ -304,7 +306,7 @@ function Admin() {
                     </span>
                     <img
                       className="img-profile rounded-circle"
-                      src="img/undraw_profile.svg"
+                      src={currentUser.profilePicture}
                       alt="User Profile"
                     />
                   </a>
@@ -312,7 +314,7 @@ function Admin() {
                     className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                     aria-labelledby="userDropdown"
                   >
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="/profile">
                       <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                       Profile
                     </a>

@@ -57,19 +57,16 @@ const Patrons = () => {
           name="description"
           content="Would you like to become a Patron of the Dersim Museum? Explore our programme of diverse activities, partnerships and Special Interest Groups that champion our cultural impact around the world."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/support-us/patrons"
-        />
+        <link rel="canonical" href="http://localhost:3000/support-us/patrons" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-06/Troy_Patrons_private_view_2019_British_Museum.jpg?itok=ysgQauD7"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-06/Troy_Patrons_private_view_2019_British_Museum.jpg?itok=ysgQauD7"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/support-us/patrons"
+          content="http://localhost:3000/support-us/patrons"
         />
         <meta property="og:title" content="Become a Patron" />
         <meta
@@ -89,7 +86,7 @@ const Patrons = () => {
         <meta name="twitter:title" content="Become a Patron" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-06/Troy_Patrons_private_view_2019_British_Museum.jpg?itok=ysgQauD7"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-06/Troy_Patrons_private_view_2019_British_Museum.jpg?itok=ysgQauD7"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -658,7 +655,7 @@ const Patrons = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/support-us/patrons"
+                                href="http://localhost:3000/support-us/patrons"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -674,7 +671,7 @@ const Patrons = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/support-us/patrons"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/support-us/patrons"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -694,7 +691,7 @@ const Patrons = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Become%20a%20Patron&url=https://www.britishmuseum.org/support-us/patrons"
+                              href="https://twitter.com/intent/tweet?text=Become%20a%20Patron&url=http://localhost:3000/support-us/patrons"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

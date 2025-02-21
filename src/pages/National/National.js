@@ -57,19 +57,16 @@ const National = () => {
           name="description"
           content="Information about national programmes at the Dersim Museum. See how our work across the Dersim has impacted over 250 cultural institutions through object loans, exhibition tours and cultural schemes."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/our-work/national"
-        />
+        <link rel="canonical" href="http://localhost:3000/our-work/national" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-11/Hieroglyphs_at_Ferens_Art_Gallery_Hull.jpg?itok=GBTIJFxK"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-11/Hieroglyphs_at_Ferens_Art_Gallery_Hull.jpg?itok=GBTIJFxK"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/our-work/national"
+          content="http://localhost:3000/our-work/national"
         />
         <meta property="og:title" content="National" />
         <meta
@@ -89,7 +86,7 @@ const National = () => {
         <meta name="twitter:title" content="National" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-11/Hieroglyphs_at_Ferens_Art_Gallery_Hull.jpg?itok=GBTIJFxK"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-11/Hieroglyphs_at_Ferens_Art_Gallery_Hull.jpg?itok=GBTIJFxK"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -658,7 +655,7 @@ const National = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/our-work/national"
+                                href="http://localhost:3000/our-work/national"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -674,7 +671,7 @@ const National = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/our-work/national"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/our-work/national"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -694,7 +691,7 @@ const National = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=National&url=https://www.britishmuseum.org/our-work/national"
+                              href="https://twitter.com/intent/tweet?text=National&url=http://localhost:3000/our-work/national"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -744,7 +741,7 @@ const National = () => {
                                 <a
                                   data-tracking="cta"
                                   className="button button--chevron"
-                                  href="https://www.britishmuseum.org/sites/default/files/2024-12/National_Partnerships_2023_24.pdf"
+                                  href="http://localhost:3000/sites/default/files/2024-12/National_Partnerships_2023_24.pdf"
                                 >
                                   <span>
                                     Read the National Programmes brochure

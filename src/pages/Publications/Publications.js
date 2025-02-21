@@ -59,17 +59,17 @@ const Publications = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/research/dersim-museum-publications"
+          href="http://localhost:3000/research/dersim-museum-publications"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Owl_engraved_print_teaser.jpg?itok=Dbs3UP0m"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Owl_engraved_print_teaser.jpg?itok=Dbs3UP0m"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/research/dersim-museum-publications"
+          content="http://localhost:3000/research/dersim-museum-publications"
         />
         <meta property="og:title" content="Dersim Museum Publications" />
         <meta
@@ -89,7 +89,7 @@ const Publications = () => {
         <meta name="twitter:title" content="Dersim Museum Publications" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Owl_engraved_print_teaser.jpg?itok=Dbs3UP0m"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Owl_engraved_print_teaser.jpg?itok=Dbs3UP0m"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -603,7 +603,7 @@ const Publications = () => {
                                 An owl with books, print made by Cornelis
                                 Bloemaert, c.1625.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/P_1945-0512-17">
+                              <a href="http://localhost:3000/collection/object/P_1945-0512-17">
                                 <span>View on Collection online</span>
                               </a>
                             </div>
@@ -661,7 +661,7 @@ const Publications = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/research/dersim-museum-publications"
+                                href="http://localhost:3000/research/dersim-museum-publications"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -677,7 +677,7 @@ const Publications = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/research/dersim-museum-publications"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/research/dersim-museum-publications"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -697,7 +697,7 @@ const Publications = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Dersim%20Museum%20Publications&url=https://www.britishmuseum.org/research/dersim-museum-publications"
+                              href="https://twitter.com/intent/tweet?text=Dersim%20Museum%20Publications&url=http://localhost:3000/research/dersim-museum-publications"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1417,7 +1417,7 @@ const Publications = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events"
+                                                      href="http://localhost:3000/exhibitions-events"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

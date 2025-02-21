@@ -39,17 +39,17 @@ const ExistPatron = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/support-us/existing-patrons"
+          href="http://localhost:3000/support-us/existing-patrons"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-06/Hokusai_Patrons_visit_2021.jpg?itok=mRzNy_Xj"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-06/Hokusai_Patrons_visit_2021.jpg?itok=mRzNy_Xj"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/support-us/existing-patrons"
+          content="http://localhost:3000/support-us/existing-patrons"
         />
         <meta property="og:title" content="Existing Patrons" />
         <meta
@@ -69,7 +69,7 @@ const ExistPatron = () => {
         <meta name="twitter:title" content="Existing Patrons" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2022-06/Hokusai_Patrons_visit_2021.jpg?itok=mRzNy_Xj"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2022-06/Hokusai_Patrons_visit_2021.jpg?itok=mRzNy_Xj"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -642,7 +642,7 @@ const ExistPatron = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/support-us/existing-patrons"
+                                href="http://localhost:3000/support-us/existing-patrons"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -658,7 +658,7 @@ const ExistPatron = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/support-us/existing-patrons"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/support-us/existing-patrons"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -678,7 +678,7 @@ const ExistPatron = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Existing%20Patrons&url=https://www.britishmuseum.org/support-us/existing-patrons"
+                              href="https://twitter.com/intent/tweet?text=Existing%20Patrons&url=http://localhost:3000/support-us/existing-patrons"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1111,7 +1111,7 @@ const ExistPatron = () => {
                                       />
                                       <figcaption>
                                         A curator handling{" "}
-                                        <a href="https://www.britishmuseum.org/collection/object/A_1954-1019-1">
+                                        <a href="http://localhost:3000/collection/object/A_1954-1019-1">
                                           a bronze <em>jia</em>
                                         </a>{" "}
                                         from the 12th century BC, China. Photo
@@ -1182,7 +1182,7 @@ const ExistPatron = () => {
                                     <div className="listing__buttons">
                                       <a
                                         className="button"
-                                        href="https://www.britishmuseum.org/collection/object/Y_EA26847"
+                                        href="http://localhost:3000/collection/object/Y_EA26847"
                                       >
                                         See object on Collection online
                                       </a>
@@ -1245,7 +1245,7 @@ const ExistPatron = () => {
                                     <div className="listing__buttons">
                                       <a
                                         className="button"
-                                        href="https://www.britishmuseum.org/collection/object/H_2020-8006-1"
+                                        href="http://localhost:3000/collection/object/H_2020-8006-1"
                                       >
                                         See object on Collection online
                                       </a>

@@ -17,15 +17,12 @@ const Projects = () => {
           name="description"
           content="Crossing different academic disciplines and parts of the world, our research provides new information and perspectives on the collection and the ancient and modern cultures it represents."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/research/projects"
-        />
+        <link rel="canonical" href="http://localhost:3000/research/projects" />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/research/projects"
+          content="http://localhost:3000/research/projects"
         />
         <meta property="og:title" content="Research projects" />
         <meta
@@ -608,7 +605,7 @@ const Projects = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://webarchive.nationalarchives.gov.uk/20190801105141/https://www.britishmuseum.org/research/projects.aspx"
+                                                      href="https://webarchive.nationalarchives.gov.uk/20190801105141/http://localhost:3000/research/projects.aspx"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

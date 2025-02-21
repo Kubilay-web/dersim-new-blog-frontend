@@ -59,17 +59,17 @@ const CollectionGalery = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/collection/galleries"
+          href="http://localhost:3000/collection/galleries"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R04%2006%20Egyptian%20sculpture.jpg?itok=c-JdgZuW"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R04%2006%20Egyptian%20sculpture.jpg?itok=c-JdgZuW"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/collection/galleries"
+          content="http://localhost:3000/collection/galleries"
         />
         <meta property="og:title" content="Galleries" />
         <meta
@@ -89,7 +89,7 @@ const CollectionGalery = () => {
         <meta name="twitter:title" content="Galleries" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R04%2006%20Egyptian%20sculpture.jpg?itok=c-JdgZuW"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R04%2006%20Egyptian%20sculpture.jpg?itok=c-JdgZuW"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -659,7 +659,7 @@ const CollectionGalery = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/collection/galleries"
+                                href="http://localhost:3000/collection/galleries"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -675,7 +675,7 @@ const CollectionGalery = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/collection/galleries"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/collection/galleries"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -695,7 +695,7 @@ const CollectionGalery = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Galleries&url=https://www.britishmuseum.org/collection/galleries"
+                              href="https://twitter.com/intent/tweet?text=Galleries&url=http://localhost:3000/collection/galleries"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -814,7 +814,7 @@ const CollectionGalery = () => {
                                   Daily: 10.00–17.00
                                   <br />
                                   See full&nbsp;
-                                  <a href="https://www.britishmuseum.org/visit#opening-hours">
+                                  <a href="http://localhost:3000/visit#opening-hours">
                                     opening hours
                                   </a>
                                 </p>
@@ -857,11 +857,11 @@ const CollectionGalery = () => {
                                 the lower floor, ground floor and&nbsp;upper
                                 floors, together with two galleries created
                                 especially for our online audience,&nbsp;
-                                <a href="https://www.britishmuseum.org/collection/galleries/oceania">
+                                <a href="http://localhost:3000/collection/galleries/oceania">
                                   Oceania
                                 </a>
                                 &nbsp;and&nbsp;
-                                <a href="https://www.britishmuseum.org/collection/galleries/prints-and-drawings-virtual-gallery">
+                                <a href="http://localhost:3000/collection/galleries/prints-and-drawings-virtual-gallery">
                                   Prints and Drawings
                                 </a>
                                 .
@@ -871,7 +871,7 @@ const CollectionGalery = () => {
                                 closed for maintenance, refurbishment or private
                                 events. All planned closures will be listed on
                                 the{" "}
-                                <a href="https://www.britishmuseum.org/visit#gallery-information">
+                                <a href="http://localhost:3000/visit#gallery-information">
                                   Visit page
                                 </a>
                                 .&nbsp;Occasionally we may need to close
@@ -1018,7 +1018,7 @@ const CollectionGalery = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/collection/galleries/africa"
+                                                      href="http://localhost:3000/collection/galleries/africa"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

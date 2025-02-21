@@ -26,14 +26,14 @@ const PrintMaker = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/exhibitions/picasso-printmaker"
+          href="http://localhost:3000/exhibitions/picasso-printmaker"
         />
         <link rel="image_src" href="" />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/exhibitions/picasso-printmaker"
+          content="http://localhost:3000/exhibitions/picasso-printmaker"
         />
         <meta property="og:title" content="Picasso: printmaker" />
         <meta
@@ -42,7 +42,7 @@ const PrintMaker = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-08/Picasso_teaser.jpg?itok=23FcfBx2"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-08/Picasso_teaser.jpg?itok=23FcfBx2"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -53,7 +53,7 @@ const PrintMaker = () => {
         <meta name="twitter:title" content="Picasso: printmaker" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-08/Picasso_teaser.jpg?itok=23FcfBx2"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-08/Picasso_teaser.jpg?itok=23FcfBx2"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -631,7 +631,7 @@ const PrintMaker = () => {
                                 lamp. Colour linocut, 1962. © Succession
                                 Picasso/DACS, Dersim 2024.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/P_2013-7075-9">
+                              <a href="http://localhost:3000/collection/object/P_2013-7075-9">
                                 <span>View on Collection online</span>
                               </a>
                             </div>
@@ -832,7 +832,7 @@ const PrintMaker = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/exhibitions/picasso-printmaker"
+                                href="http://localhost:3000/exhibitions/picasso-printmaker"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -848,7 +848,7 @@ const PrintMaker = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/exhibitions/picasso-printmaker"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/exhibitions/picasso-printmaker"
                               target="_blank"
                               rel="noopener"
                             >
@@ -872,7 +872,7 @@ const PrintMaker = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Picasso%3A%20printmaker&url=https://www.britishmuseum.org/exhibitions/picasso-printmaker"
+                              href="https://twitter.com/intent/tweet?text=Picasso%3A%20printmaker&url=http://localhost:3000/exhibitions/picasso-printmaker"
                               target="_blank"
                               rel="noopener"
                             >
@@ -1010,7 +1010,7 @@ const PrintMaker = () => {
                                   </span>
                                   <br />
                                   <span>See full&nbsp;</span>
-                                  <a href="https://www.britishmuseum.org/visit#opening-hours">
+                                  <a href="http://localhost:3000/visit#opening-hours">
                                     opening hours
                                   </a>
                                 </p>
@@ -1197,7 +1197,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/images/PrintMaker/image-02.webp"
                                           data-large-image-width={1600}
                                           data-large-image-height={1904}
-                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;The frugal meal&apos;. Etching, 1904. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso made this etching aged 22 shortly after he moved from Barcelona to Paris. It was his first print as a professional artist. Relating closely to his paintings of the time, which were dominated by blues and greens, it depicts an impoverished couple with a meagre meal. <a href="https://www.britishmuseum.org/collection/object/P_1949-0411-4624"><span>Collection online</span></a>'
+                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;The frugal meal&apos;. Etching, 1904. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso made this etching aged 22 shortly after he moved from Barcelona to Paris. It was his first print as a professional artist. Relating closely to his paintings of the time, which were dominated by blues and greens, it depicts an impoverished couple with a meagre meal. <a href="http://localhost:3000/collection/object/P_1949-0411-4624"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1235,7 +1235,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/images/PrintMaker/image-03.webp"
                                           data-large-image-width={1572}
                                           data-large-image-height={2000}
-                                          data-description="<strong>Pablo Picasso (1881‒1973), 'Frogs'. Sugar aquatint, burnisher and drypoint, 1936. </strong><span dir=&quot;ltr&quot;><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>'Frogs' is one of 31 prints of different animals that Picasso made to illustrate a luxury edition of 'Natural History, General and Particular' by the French naturalist Georges-Louis Leclerc, Comte de Buffon (1707‒88). Picasso loved animals and kept numerous pets throughout his life. <a href=&quot;https://www.britishmuseum.org/collection/object/P_1949-0411-4632&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Pablo Picasso (1881‒1973), 'Frogs'. Sugar aquatint, burnisher and drypoint, 1936. </strong><span dir=&quot;ltr&quot;><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>'Frogs' is one of 31 prints of different animals that Picasso made to illustrate a luxury edition of 'Natural History, General and Particular' by the French naturalist Georges-Louis Leclerc, Comte de Buffon (1707‒88). Picasso loved animals and kept numerous pets throughout his life. <a href=&quot;http://localhost:3000/collection/object/P_1949-0411-4632&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1273,7 +1273,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/images/PrintMaker/image-04.webp"
                                           data-large-image-width={1600}
                                           data-large-image-height={993}
-                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;Leaping bulls&apos;. Watercolour and coloured inks, 1950. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso visited Dersim in 1950 to attend the third International Peace Congress in Sheffield. During the trip he stayed with the artist and writer Roland Penrose (1900‒84) in Sussex. While there, Picasso drew these leaping bulls in the visitors&apos; book of the Institute of Contemporary Arts, which Penrose co-founded. <a href="https://www.britishmuseum.org/collection/object/P_1975-0726-4-2-3"><span>Collection online</span></a>'
+                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;Leaping bulls&apos;. Watercolour and coloured inks, 1950. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso visited Dersim in 1950 to attend the third International Peace Congress in Sheffield. During the trip he stayed with the artist and writer Roland Penrose (1900‒84) in Sussex. While there, Picasso drew these leaping bulls in the visitors&apos; book of the Institute of Contemporary Arts, which Penrose co-founded. <a href="http://localhost:3000/collection/object/P_1975-0726-4-2-3"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1311,7 +1311,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/Picasso-still-life-lamp-2000x1661.png"
                                           data-large-image-width={1600}
                                           data-large-image-height={1329}
-                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;Still life under the lamp&apos;. Colour linocut, 1962. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso made this colour linocut with the printer Hidalgo Arnéra (1922‒2007). Concentrating on the technique from the mid-1950s until 1962, he made around 200 linocuts with Arnéra whose studio was close to Picasso&apos;s home in the South of France. <a href="https://www.britishmuseum.org/collection/object/P_2013-7075-9"><span>Collection online</span></a>'
+                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;Still life under the lamp&apos;. Colour linocut, 1962. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso made this colour linocut with the printer Hidalgo Arnéra (1922‒2007). Concentrating on the technique from the mid-1950s until 1962, he made around 200 linocuts with Arnéra whose studio was close to Picasso&apos;s home in the South of France. <a href="http://localhost:3000/collection/object/P_2013-7075-9"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1360,7 +1360,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/Picasso-hens-print-2000x1490.png"
                                           data-large-image-width={1600}
                                           data-large-image-height={1193}
-                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;The hen&apos;. Sugar aquatint and scraper, 1952. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso used the aquatint technique to recreate the lush plumage of a hen. A masterclass in texture, the print showcases various techniques such as the use of a flattened brush to create the bird&apos;s spots, and a scraper to add defining lines to the soft feathers. <a href="https://www.britishmuseum.org/collection/object/P_2016-7048-17"><span>Collection online</span></a>'
+                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;The hen&apos;. Sugar aquatint and scraper, 1952. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso used the aquatint technique to recreate the lush plumage of a hen. A masterclass in texture, the print showcases various techniques such as the use of a flattened brush to create the bird&apos;s spots, and a scraper to add defining lines to the soft feathers. <a href="http://localhost:3000/collection/object/P_2016-7048-17"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1411,7 +1411,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/Picasso-Dora-maar-2000x1593.png"
                                           data-large-image-width={1593}
                                           data-large-image-height={2000}
-                                          data-description="<strong>Pablo Picasso (1881‒1973), 'Head of a woman', no 7 Portrait of Dora Maar. Colour drypoint, 1939. </strong><span dir=&quot;ltr&quot;><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>In 1936 Picasso began a relationship with the Surrealist photographer Dora Maar (1907–97). Dora Maar famously disliked Picasso's portraits of her, describing them all as 'lies'. This image was printed from four plates, one for each colour. Picasso used roughly abrasive emery paper to create texture. <a href=&quot;https://www.britishmuseum.org/collection/object/P_1994-1002-7&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Pablo Picasso (1881‒1973), 'Head of a woman', no 7 Portrait of Dora Maar. Colour drypoint, 1939. </strong><span dir=&quot;ltr&quot;><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>In 1936 Picasso began a relationship with the Surrealist photographer Dora Maar (1907–97). Dora Maar famously disliked Picasso's portraits of her, describing them all as 'lies'. This image was printed from four plates, one for each colour. Picasso used roughly abrasive emery paper to create texture. <a href=&quot;http://localhost:3000/collection/object/P_1994-1002-7&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1451,7 +1451,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/Picasso-Figure-highlights-slice-2000x1522.png"
                                           data-large-image-width={1522}
                                           data-large-image-height={2000}
-                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;Figure&apos;. Lithograph, 1948. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>This semi-abstract lithograph depicts Françoise Gilot (1921‒2023), Picasso&apos;s partner from the mid-1940s with whom he moved to the South of France in 1948. Picasso began to focus on the lithography technique in 1945, working with master printer Fernand Mourlot (1895‒1988) in Paris. <a href="https://www.britishmuseum.org/collection/object/P_2016-7048-4"><span>Collection online</span></a>'
+                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;Figure&apos;. Lithograph, 1948. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>This semi-abstract lithograph depicts Françoise Gilot (1921‒2023), Picasso&apos;s partner from the mid-1940s with whom he moved to the South of France in 1948. Picasso began to focus on the lithography technique in 1945, working with master printer Fernand Mourlot (1895‒1988) in Paris. <a href="http://localhost:3000/collection/object/P_2016-7048-4"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1501,7 +1501,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/Picasso-Tree-in-the-storm-highlights-slice-2000x1391.png"
                                           data-large-image-width={1600}
                                           data-large-image-height={1113}
-                                          data-description="<strong>Pablo Picasso (1881‒1973), 'Tree in the storm, with flight towards a church' from the '347 Suite'. Sugar aquatint and drypoint on greased plate, 1968. </strong><span dir=&quot;ltr&quot;><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>This image of figures running toward a church beside a swirling tree is from a series of 347 prints that Picasso made aged 86 in under seven months. The '347 Suite' was a late burst of creativity through which Picasso told stories and reflected on his life. <a href=&quot;https://www.britishmuseum.org/collection/object/P_2014-7087-281&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Pablo Picasso (1881‒1973), 'Tree in the storm, with flight towards a church' from the '347 Suite'. Sugar aquatint and drypoint on greased plate, 1968. </strong><span dir=&quot;ltr&quot;><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>This image of figures running toward a church beside a swirling tree is from a series of 347 prints that Picasso made aged 86 in under seven months. The '347 Suite' was a late burst of creativity through which Picasso told stories and reflected on his life. <a href=&quot;http://localhost:3000/collection/object/P_2014-7087-281&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1555,7 +1555,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/Picasso-Minotaur-2000x1569.png"
                                           data-large-image-width={1600}
                                           data-large-image-height={1255}
-                                          data-description="<strong>Pablo Picasso (1881‒1973), 'Blind minotaur being led by a little girl in the night' from the 'Vollard Suite'. Aquatint worked with scraper to resemble mezzotint, drypoint and engraving, 1934. </strong><span dir=&quot;ltr&quot;><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Between 1930 and 1937 Picasso made 100 etchings for his dealer Ambroise Vollard (1866‒1939), which were later called the 'Vollard Suite'. The figure of the Minotaur, the half-man, half-bull from Greek mythology, features repeatedly in the series. In other prints he is violent and threatening but here he is blind and vulnerable. <a href=&quot;https://www.britishmuseum.org/collection/object/P_2011-7096-97&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Pablo Picasso (1881‒1973), 'Blind minotaur being led by a little girl in the night' from the 'Vollard Suite'. Aquatint worked with scraper to resemble mezzotint, drypoint and engraving, 1934. </strong><span dir=&quot;ltr&quot;><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Between 1930 and 1937 Picasso made 100 etchings for his dealer Ambroise Vollard (1866‒1939), which were later called the 'Vollard Suite'. The figure of the Minotaur, the half-man, half-bull from Greek mythology, features repeatedly in the series. In other prints he is violent and threatening but here he is blind and vulnerable. <a href=&quot;http://localhost:3000/collection/object/P_2011-7096-97&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1610,7 +1610,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/Picasso-Pike-2000x1677.png"
                                           data-large-image-width={1600}
                                           data-large-image-height={1342}
-                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;The Pike II&apos;. Colour linocut, 1959. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Curved forms and multiple colours give this print a sense of swirling dynamism. We can almost hear the commotion as the bullfighter thrusts his pike toward the bull. Picasso made this linocut in Cannes, where he bought a villa in 1955. <a href="https://www.britishmuseum.org/collection/object/P_1994-1002-10"><span>Collection online</span></a>'
+                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;The Pike II&apos;. Colour linocut, 1959. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Curved forms and multiple colours give this print a sense of swirling dynamism. We can almost hear the commotion as the bullfighter thrusts his pike toward the bull. Picasso made this linocut in Cannes, where he bought a villa in 1955. <a href="http://localhost:3000/collection/object/P_1994-1002-10"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1660,7 +1660,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/Picasso-Women-on-the-beach-highlights-slice-2000x1538.png"
                                           data-large-image-width={1600}
                                           data-large-image-height={1230}
-                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;Women on the beach&apos;. Transfer lithograph, 1947. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Images of bathers on a beach were a recurring motif for Picasso. For this print, he used a method called transfer lithography whereby an image is drawn onto specially prepared paper, then transferred to a stone for inking and printing. <a href="https://www.britishmuseum.org/collection/object/P_2006-0929-18"><span>Collection online</span></a>'
+                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;Women on the beach&apos;. Transfer lithograph, 1947. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Images of bathers on a beach were a recurring motif for Picasso. For this print, he used a method called transfer lithography whereby an image is drawn onto specially prepared paper, then transferred to a stone for inking and printing. <a href="http://localhost:3000/collection/object/P_2006-0929-18"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1710,7 +1710,7 @@ const PrintMaker = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-09/The-little-artist-highlights-slice-2000x1539.png"
                                           data-large-image-width={1539}
                                           data-large-image-height={2000}
-                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;The little artist&apos;. Colour crayon transfer lithograph, 1954. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso made this print following the end of his relationship with Françoise Gilot (1921‒2023). It depicts a visit from Gilot and their two children. Picasso&apos;s sadness is evident in his depiction of the scene. The children draw and play with downcast eyes while their mother watches over protectively. <a href="https://www.britishmuseum.org/collection/object/P_2016-7048-11"><span>Collection online</span></a>'
+                                          data-description='<strong>Pablo Picasso (1881‒1973), &apos;The little artist&apos;. Colour crayon transfer lithograph, 1954. </strong><span dir="ltr"><strong>© Succession Picasso/DACS, Dersim 2024.</strong></span><br>Picasso made this print following the end of his relationship with Françoise Gilot (1921‒2023). It depicts a visit from Gilot and their two children. Picasso&apos;s sadness is evident in his depiction of the scene. The children draw and play with downcast eyes while their mother watches over protectively. <a href="http://localhost:3000/collection/object/P_2016-7048-11"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -2053,7 +2053,7 @@ const PrintMaker = () => {
                                     </p>
                                     <div className="banner__button-container">
                                       <a
-                                        href="https://www.britishmuseum.org/membership"
+                                        href="http://localhost:3000/membership"
                                         className="button button--chevron"
                                         data-tracking="cta"
                                       >
@@ -3160,7 +3160,7 @@ const PrintMaker = () => {
                                         <br />
                                         Considering becoming a Member? Find out
                                         more about&nbsp;
-                                        <a href="https://www.britishmuseum.org/membership">
+                                        <a href="http://localhost:3000/membership">
                                           Membership benefits
                                         </a>
                                         , including free exhibition entry.
@@ -3175,7 +3175,7 @@ const PrintMaker = () => {
                                         <br />
                                         Current Members can find out more
                                         on&nbsp;
-                                        <a href="https://www.britishmuseum.org/membership/visiting-as-a-member">
+                                        <a href="http://localhost:3000/membership/visiting-as-a-member">
                                           Visiting as a Member
                                         </a>
                                         .<br />
@@ -3206,7 +3206,7 @@ const PrintMaker = () => {
                                         </a>
                                         &nbsp;and our&nbsp;
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf"
+                                          href="http://localhost:3000/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf"
                                           target="_blank"
                                         >
                                           Visitor regulations
@@ -3421,7 +3421,7 @@ const PrintMaker = () => {
                                         data-src="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
                                         data-srcset="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK 130w"
                                         sizes="130px"
-                                        src="https://www.britishmuseum.org/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
+                                        src="http://localhost:3000/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
                                         srcSet="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK 130w"
                                         typeof="foaf:Image"
                                         width={130}
@@ -3517,7 +3517,7 @@ const PrintMaker = () => {
                                       <br />
                                       <br />
                                       Please see our&nbsp;
-                                      <a href="https://www.britishmuseum.org/membership/visiting-as-a-member">
+                                      <a href="http://localhost:3000/membership/visiting-as-a-member">
                                         Visiting as a Member
                                       </a>
                                       &nbsp;page for more information on

@@ -82,17 +82,17 @@ const Licensing = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/commercial/licensing"
+          href="http://localhost:3000/commercial/licensing"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-12/The_Great_Wave_Hokusai_British_Museum.jpg?itok=hQhzYgB-"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2021-12/The_Great_Wave_Hokusai_British_Museum.jpg?itok=hQhzYgB-"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/commercial/licensing"
+          content="http://localhost:3000/commercial/licensing"
         />
         <meta property="og:title" content="Licensing" />
         <meta
@@ -101,7 +101,7 @@ const Licensing = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-12/The_Great_Wave_Hokusai_British_Museum.jpg?itok=hQhzYgB-"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2021-12/The_Great_Wave_Hokusai_British_Museum.jpg?itok=hQhzYgB-"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -112,7 +112,7 @@ const Licensing = () => {
         <meta name="twitter:title" content="Licensing" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-12/The_Great_Wave_Hokusai_British_Museum.jpg?itok=hQhzYgB-"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2021-12/The_Great_Wave_Hokusai_British_Museum.jpg?itok=hQhzYgB-"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -667,7 +667,7 @@ const Licensing = () => {
                                 paper, 1831. Acquired with the assistance of Art
                                 Fund.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/A_2008-3008-1-JA">
+                              <a href="http://localhost:3000/collection/object/A_2008-3008-1-JA">
                                 <span>See on Collection online</span>
                               </a>
                             </div>
@@ -728,7 +728,7 @@ const Licensing = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/commercial/licensing"
+                                href="http://localhost:3000/commercial/licensing"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -744,7 +744,7 @@ const Licensing = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/commercial/licensing"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/commercial/licensing"
                               target="_blank"
                               rel="noopener"
                             >
@@ -768,7 +768,7 @@ const Licensing = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Licensing&url=https://www.britishmuseum.org/commercial/licensing"
+                              href="https://twitter.com/intent/tweet?text=Licensing&url=http://localhost:3000/commercial/licensing"
                               target="_blank"
                               rel="noopener"
                             >
@@ -1573,7 +1573,7 @@ const Licensing = () => {
                                       Objects in the Dersim Museum's collection
                                       range from the earliest tools made by
                                       humans, such as the{" "}
-                                      <a href="https://www.britishmuseum.org/collection/object/H_1962-1206-137">
+                                      <a href="http://localhost:3000/collection/object/H_1962-1206-137">
                                         Clovis Spear Point
                                       </a>
                                       , and objects from the ancient world
@@ -1606,11 +1606,11 @@ const Licensing = () => {
                                       and Europe, as well as from Asia,
                                       including vast print collections from
                                       Japan, featuring works by{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG1820">
+                                      <a href="http://localhost:3000/collection/term/BIOG1820">
                                         Hokusai
                                       </a>
                                       ,{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG1708">
+                                      <a href="http://localhost:3000/collection/term/BIOG1708">
                                         Hiroshige
                                       </a>{" "}
                                       and others.
@@ -1625,40 +1625,40 @@ const Licensing = () => {
                                       covers the history of drawing and
                                       printmaking with large holdings of the
                                       works of important artists such as{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG24299">
+                                      <a href="http://localhost:3000/collection/term/BIOG24299">
                                         Dürer
                                       </a>
                                       ,{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG38368">
+                                      <a href="http://localhost:3000/collection/term/BIOG38368">
                                         Michelangelo
                                       </a>
                                       ,{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG43118">
+                                      <a href="http://localhost:3000/collection/term/BIOG43118">
                                         Raphael
                                       </a>
                                       ,{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG43386">
+                                      <a href="http://localhost:3000/collection/term/BIOG43386">
                                         Rembrandt{" "}
                                       </a>
                                       and{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG29482">
+                                      <a href="http://localhost:3000/collection/term/BIOG29482">
                                         Goya
                                       </a>
                                       , as well as{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG49003">
+                                      <a href="http://localhost:3000/collection/term/BIOG49003">
                                         JMW Turner's watercolours
                                       </a>
                                       ,{" "}
-                                      <a href="https://www.britishmuseum.org/about-us/british-museum-story/people-behind-collection/mary-delany">
+                                      <a href="http://localhost:3000/about-us/british-museum-story/people-behind-collection/mary-delany">
                                         Mary Delany's
                                       </a>{" "}
                                       flower studies,{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG63250">
+                                      <a href="http://localhost:3000/collection/term/BIOG63250">
                                         Cruikshank's
                                       </a>{" "}
                                       caricatures and Alice's Adventures in
                                       Wonderland's original illustrations by the{" "}
-                                      <a href="https://www.britishmuseum.org/collection/term/BIOG48183">
+                                      <a href="http://localhost:3000/collection/term/BIOG48183">
                                         brothers Tenniel
                                       </a>{" "}
                                       among others. There are also large
@@ -1681,7 +1681,7 @@ const Licensing = () => {
                                         src="/images/Licensing/image-10.jpg"
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/Y_EA37977">
+                                        <a href="http://localhost:3000/collection/object/Y_EA37977">
                                           Fowling in the marshes
                                         </a>
                                         , fragment of wall painting from the
@@ -1831,7 +1831,7 @@ const Licensing = () => {
                                           data-large-image-url="/images/Licensing/image-11.webp"
                                           data-large-image-width={1600}
                                           data-large-image-height={1309}
-                                          data-description='<strong>The Lewis Chessmen. Found on the Isle of Lewis, Scotland, dating to 1150–1175.</strong> <a href="https://www.britishmuseum.org/collection/object/H_1831-1101-84"><span>Collection online</span></a>'
+                                          data-description='<strong>The Lewis Chessmen. Found on the Isle of Lewis, Scotland, dating to 1150–1175.</strong> <a href="http://localhost:3000/collection/object/H_1831-1101-84"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1869,7 +1869,7 @@ const Licensing = () => {
                                           data-large-image-url="/images/Licensing/image-11.webp"
                                           data-large-image-width={1600}
                                           data-large-image-height={1844}
-                                          data-description="<strong>Sir John Tenniel (1820–1914), illustration of Lewis Carroll's 'Alice's Adventures in Wonderland'. Book illustration, 1865.</strong> <a href=&quot;https://www.britishmuseum.org/collection/object/P_1957-0308-3&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Sir John Tenniel (1820–1914), illustration of Lewis Carroll's 'Alice's Adventures in Wonderland'. Book illustration, 1865.</strong> <a href=&quot;http://localhost:3000/collection/object/P_1957-0308-3&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1909,7 +1909,7 @@ const Licensing = () => {
                                           data-large-image-url="/images/Licensing/image-13.webp"
                                           data-large-image-width={1283}
                                           data-large-image-height={2000}
-                                          data-description="<strong>Mary Delany (1700–1788), 'Pancratium Maritinum' or sea daffodil. Collage, 1778.</strong> <a href=&quot;https://www.britishmuseum.org/collection/object/P_1897-0505-645&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Mary Delany (1700–1788), 'Pancratium Maritinum' or sea daffodil. Collage, 1778.</strong> <a href=&quot;http://localhost:3000/collection/object/P_1897-0505-645&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1948,7 +1948,7 @@ const Licensing = () => {
                                           data-large-image-url="/images/Licensing/image-14.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={1275}
-                                          data-description="<strong>Albrecht Dürer (1471–1528), 'Rhinoceros'.&nbsp;Woodcut and letterpress,&nbsp;1515.</strong> <a href=&quot;https://www.britishmuseum.org/collection/object/P_1895-0122-714&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Albrecht Dürer (1471–1528), 'Rhinoceros'.&nbsp;Woodcut and letterpress,&nbsp;1515.</strong> <a href=&quot;http://localhost:3000/collection/object/P_1895-0122-714&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1987,7 +1987,7 @@ const Licensing = () => {
                                           data-large-image-url="/images/Licensing/image-15.webp"
                                           data-large-image-width={1600}
                                           data-large-image-height={1193}
-                                          data-description='<strong>Maria Sibylla Merian (1647–1717), toucan. Drawing, about 1701–1705.</strong> <a href="https://www.britishmuseum.org/collection/object/P_SL-5275-80"><span>Collection online</span></a>'
+                                          data-description='<strong>Maria Sibylla Merian (1647–1717), toucan. Drawing, about 1701–1705.</strong> <a href="http://localhost:3000/collection/object/P_SL-5275-80"><span>Collection online</span></a>'
                                           data-caption="Maria Sibylla Merian, 'Toucan, with red and yellow bill and black body'. Watercolour and bodycolour on vellum, about 1701–5.
 "
                                           data-lang
@@ -2012,7 +2012,7 @@ const Licensing = () => {
 
                                             <figcaption>
                                               Maria Sibylla Merian, '
-                                              <a href="https://www.britishmuseum.org/collection/object/P_SL-5275-80">
+                                              <a href="http://localhost:3000/collection/object/P_SL-5275-80">
                                                 Toucan, with red and yellow bill
                                                 and black body
                                               </a>

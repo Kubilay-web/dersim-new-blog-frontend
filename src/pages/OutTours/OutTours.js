@@ -74,17 +74,17 @@ const OutTours = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/visit/out-hours-tours"
+          href="http://localhost:3000/visit/out-hours-tours"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R01%2031%20Enlightenment%20Themes%20Room%201%202%202a%20copy.jpg?itok=msuKw1Rg"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R01%2031%20Enlightenment%20Themes%20Room%201%202%202a%20copy.jpg?itok=msuKw1Rg"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/visit/out-hours-tours"
+          content="http://localhost:3000/visit/out-hours-tours"
         />
         <meta property="og:title" content="Out-of-hours tours" />
         <meta
@@ -104,7 +104,7 @@ const OutTours = () => {
         <meta name="twitter:title" content="Out-of-hours tours" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/R01%2031%20Enlightenment%20Themes%20Room%201%202%202a%20copy.jpg?itok=msuKw1Rg"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/R01%2031%20Enlightenment%20Themes%20Room%201%202%202a%20copy.jpg?itok=msuKw1Rg"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -554,13 +554,13 @@ const OutTours = () => {
                           {content && content.length > 0 ? (
                             content.slice(0, 1).map((item, index) => (
                               <h1
+                                dangerouslySetInnerHTML={{
+                                  __html: item.title,
+                                }}
                                 key={index}
                                 id="paragraph-2880-title"
                                 className="hero__title"
-                              >
-                                {" "}
-                                {item.title}
-                              </h1>
+                              ></h1>
                             ))
                           ) : (
                             <p>No content available</p>
@@ -615,7 +615,7 @@ const OutTours = () => {
                                 {" "}
                                 View of the Enlightenment gallery (Room 1).
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/galleries/enlightenment">
+                              <a href="http://localhost:3000/collection/galleries/enlightenment">
                                 <span>Explore the Enlightenment gallery</span>
                               </a>
                             </div>
@@ -673,7 +673,7 @@ const OutTours = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit/out-hours-tours"
+                                href="http://localhost:3000/visit/out-hours-tours"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -689,7 +689,7 @@ const OutTours = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit/out-hours-tours"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit/out-hours-tours"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -709,7 +709,7 @@ const OutTours = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Out-of-hours%20tours&url=https://www.britishmuseum.org/visit/out-hours-tours"
+                              href="https://twitter.com/intent/tweet?text=Out-of-hours%20tours&url=http://localhost:3000/visit/out-hours-tours"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -909,11 +909,14 @@ const OutTours = () => {
                           </div>
                           <div className="section--intro__content">
                             {content && content.length > 0 ? (
-                              content
-                                .slice(0, 1)
-                                .map((item, index) => (
-                                  <p key={index}> {item.body}</p>
-                                ))
+                              content.slice(0, 1).map((item, index) => (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.body,
+                                  }}
+                                  key={index}
+                                ></p>
+                              ))
                             ) : (
                               <p>No content available</p>
                             )}
@@ -1057,7 +1060,7 @@ const OutTours = () => {
                                     <div>
                                       <a
                                         className="button"
-                                        href="https://www.britishmuseum.org/events/out-hours-tour-introduction-british-museum"
+                                        href="http://localhost:3000/events/out-hours-tour-introduction-british-museum"
                                       >
                                         <span>Book now</span>
                                       </a>
@@ -1079,7 +1082,7 @@ const OutTours = () => {
                                       />
                                       <figcaption>
                                         View of the{" "}
-                                        <a href="https://www.britishmuseum.org/collection/galleries/enlightenment">
+                                        <a href="http://localhost:3000/collection/galleries/enlightenment">
                                           Enlightenment gallery (Room 1)
                                         </a>
                                         .
@@ -1171,7 +1174,7 @@ const OutTours = () => {
                                     <div>
                                       <a
                                         className="button"
-                                        href="https://www.britishmuseum.org/events/out-hours-tour-introduction-ancient-egypt"
+                                        href="http://localhost:3000/events/out-hours-tour-introduction-ancient-egypt"
                                       >
                                         <span>Book now</span>
                                       </a>
@@ -1192,7 +1195,7 @@ const OutTours = () => {
                                         alt="Statue of Ramesses II in the Egyptian sculpture gallery "
                                       />
                                       <figcaption>
-                                        <a href="https://www.britishmuseum.org/collection/object/Y_EA19">
+                                        <a href="http://localhost:3000/collection/object/Y_EA19">
                                           Statue of Ramesses II
                                         </a>{" "}
                                         in the Egyptian sculpture gallery (Room
@@ -1313,7 +1316,7 @@ const OutTours = () => {
                                     <div>
                                       <a
                                         className="button"
-                                        href="https://www.britishmuseum.org/events/out-hours-tour-life-and-death-ancient-egypt"
+                                        href="http://localhost:3000/events/out-hours-tour-life-and-death-ancient-egypt"
                                       >
                                         <span>Book now</span>
                                       </a>
@@ -1381,7 +1384,7 @@ const OutTours = () => {
                                     <p>
                                       In the Sir Joseph Hotung Gallery of China
                                       (
-                                      <a href="https://www.britishmuseum.org/collection/galleries/china-and-south-asia">
+                                      <a href="http://localhost:3000/collection/galleries/china-and-south-asia">
                                         Room 33
                                       </a>
                                       ), you will gain an insight into the
@@ -1402,7 +1405,7 @@ const OutTours = () => {
                                     </p>
                                     <ul type="disc">
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/china-and-south-asia">
+                                        <a href="http://localhost:3000/collection/galleries/china-and-south-asia">
                                           Room 33: China (
                                           <em>Sir Joseph Hotung Gallery</em>)
                                         </a>
@@ -1411,7 +1414,7 @@ const OutTours = () => {
                                     <div>
                                       <a
                                         className="button"
-                                        href="https://www.britishmuseum.org/events/out-hours-tour-introduction-china"
+                                        href="http://localhost:3000/events/out-hours-tour-introduction-china"
                                       >
                                         <span>Book now</span>
                                       </a>
@@ -2029,7 +2032,7 @@ const OutTours = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit"
+                                                      href="http://localhost:3000/visit"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

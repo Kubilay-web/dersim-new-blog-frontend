@@ -95,17 +95,17 @@ const LateOpen = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/visit/late-opening-on-fridays"
+          href="http://localhost:3000/visit/late-opening-on-fridays"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-12/Great_Court_2020_landscape.jpg?itok=ol3YADvQ"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2020-12/Great_Court_2020_landscape.jpg?itok=ol3YADvQ"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/visit/late-opening-on-fridays"
+          content="http://localhost:3000/visit/late-opening-on-fridays"
         />
         <meta property="og:title" content="Late opening on Fridays" />
         <meta
@@ -125,7 +125,7 @@ const LateOpen = () => {
         <meta name="twitter:title" content="Late opening on Fridays" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2020-12/Great_Court_2020_landscape.jpg?itok=ol3YADvQ"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2020-12/Great_Court_2020_landscape.jpg?itok=ol3YADvQ"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -682,7 +682,7 @@ const LateOpen = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit/late-opening-on-fridays"
+                                href="http://localhost:3000/visit/late-opening-on-fridays"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -698,7 +698,7 @@ const LateOpen = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit/late-opening-on-fridays"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit/late-opening-on-fridays"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -718,7 +718,7 @@ const LateOpen = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Late%20opening%20on%20Fridays&url=https://www.britishmuseum.org/visit/late-opening-on-fridays"
+                              href="https://twitter.com/intent/tweet?text=Late%20opening%20on%20Fridays&url=http://localhost:3000/visit/late-opening-on-fridays"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1710,13 +1710,13 @@ const LateOpen = () => {
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/india-amaravati">
+                                        <a href="http://localhost:3000/collection/galleries/india-amaravati">
                                           Room 33a:&nbsp;India: Amaravati (
                                           <em>The Asahi Shimbun Gallery</em>)
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/chinese-jade">
+                                        <a href="http://localhost:3000/collection/galleries/chinese-jade">
                                           Room 33b: Chinese jade&nbsp;(
                                           <em>
                                             The Selwyn and Ellie Alleyne Gallery
@@ -1881,52 +1881,52 @@ const LateOpen = () => {
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/ancient-south-arabia">
+                                        <a href="http://localhost:3000/collection/galleries/ancient-south-arabia">
                                           Room 53: Ancient South Arabia
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/anatolia-and-urartu-7000-300-bc">
+                                        <a href="http://localhost:3000/collection/galleries/anatolia-and-urartu-7000-300-bc">
                                           Room 54: Anatolia and Urartu, 7000–300
                                           BC
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/mesopotamia-1500-539-bc">
+                                        <a href="http://localhost:3000/collection/galleries/mesopotamia-1500-539-bc">
                                           Room 55: Mesopotamia, 1500–539 BC
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/mesopotamia">
+                                        <a href="http://localhost:3000/collection/galleries/mesopotamia">
                                           Room 56: Mesopotamia, 6000–1500 BC
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/ancient-levant">
+                                        <a href="http://localhost:3000/collection/galleries/ancient-levant">
                                           Room&nbsp;59: Ancient Levant
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/egyptian-life-and-death">
+                                        <a href="http://localhost:3000/collection/galleries/egyptian-life-and-death">
                                           Room 61: Egyptian life and death: the
                                           tomb-chapel of Nebamun (
                                           <em>The Michael Cohen Gallery</em>)
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/egyptian-death-and-afterlife-mummies">
+                                        <a href="http://localhost:3000/collection/galleries/egyptian-death-and-afterlife-mummies">
                                           Rooms 62–63: Egyptian death and
                                           afterlife: mummies (
                                           <em>The Roxie Walker Galleries</em>)
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/early-egypt">
+                                        <a href="http://localhost:3000/collection/galleries/early-egypt">
                                           Room 64: Early Egypt&nbsp;
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/sudan-egypt-and-nubia">
+                                        <a href="http://localhost:3000/collection/galleries/sudan-egypt-and-nubia">
                                           Room 65: Sudan, Egypt and Nubia&nbsp;
                                         </a>
                                       </li>
@@ -2050,7 +2050,7 @@ const LateOpen = () => {
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/assyria-nineveh">
+                                        <a href="http://localhost:3000/collection/galleries/assyria-nineveh">
                                           Room 9: Assyria: Nineveh
                                         </a>
                                       </li>
@@ -2125,7 +2125,7 @@ const LateOpen = () => {
                                         </a>
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/ancient-levant">
+                                        <a href="http://localhost:3000/collection/galleries/ancient-levant">
                                           Rooms 57–58: Ancient Levant
                                         </a>
                                       </li>
@@ -2223,7 +2223,7 @@ const LateOpen = () => {
                                       events. Where possible, we'll list the
                                       time and date of the closures, see
                                       our&nbsp;
-                                      <a href="https://www.britishmuseum.org/visit#gallery-information">
+                                      <a href="http://localhost:3000/visit#gallery-information">
                                         Visit page
                                       </a>
                                       &nbsp;for more information.
@@ -2309,7 +2309,7 @@ const LateOpen = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events"
+                                                      href="http://localhost:3000/exhibitions-events"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -2387,7 +2387,7 @@ const LateOpen = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit"
+                                                      href="http://localhost:3000/visit"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

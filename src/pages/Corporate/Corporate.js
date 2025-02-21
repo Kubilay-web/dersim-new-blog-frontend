@@ -59,17 +59,17 @@ const Corporate = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/support-us/corporate-support"
+          href="http://localhost:3000/support-us/corporate-support"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/event_default.png?itok=d1iPPzdW"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/event_default.png?itok=d1iPPzdW"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/support-us/corporate-support"
+          content="http://localhost:3000/support-us/corporate-support"
         />
         <meta property="og:title" content="Corporate support" />
         <meta
@@ -89,7 +89,7 @@ const Corporate = () => {
         <meta name="twitter:title" content="Corporate support" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/event_default.png?itok=d1iPPzdW"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/event_default.png?itok=d1iPPzdW"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -657,7 +657,7 @@ const Corporate = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/support-us/corporate-support"
+                                href="http://localhost:3000/support-us/corporate-support"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -673,7 +673,7 @@ const Corporate = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/support-us/corporate-support"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/support-us/corporate-support"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -693,7 +693,7 @@ const Corporate = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Corporate%20support&url=https://www.britishmuseum.org/support-us/corporate-support"
+                              href="https://twitter.com/intent/tweet?text=Corporate%20support&url=http://localhost:3000/support-us/corporate-support"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

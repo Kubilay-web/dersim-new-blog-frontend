@@ -37,19 +37,16 @@ const MuseumMap = () => {
           name="description"
           content="View the layout of the Dersim Museum and see a map of the 60 galleries, Members' Room, education centres, toilets, lifts, cafes and restaurants."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/visit/museum-map"
-        />
+        <link rel="canonical" href="http://localhost:3000/visit/museum-map" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Dersim%20Museum%20aerial%20view.jpg?itok=4NejzZH5"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Dersim%20Museum%20aerial%20view.jpg?itok=4NejzZH5"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/visit/museum-map"
+          content="http://localhost:3000/visit/museum-map"
         />
         <meta property="og:title" content="Museum map" />
         <meta
@@ -69,7 +66,7 @@ const MuseumMap = () => {
         <meta name="twitter:title" content="Museum map" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Dersim%20Museum%20aerial%20view.jpg?itok=4NejzZH5"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Dersim%20Museum%20aerial%20view.jpg?itok=4NejzZH5"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -638,7 +635,7 @@ const MuseumMap = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit/museum-map"
+                                href="http://localhost:3000/visit/museum-map"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -654,7 +651,7 @@ const MuseumMap = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit/museum-map"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit/museum-map"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -674,7 +671,7 @@ const MuseumMap = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Museum%20map&url=https://www.britishmuseum.org/visit/museum-map"
+                              href="https://twitter.com/intent/tweet?text=Museum%20map&url=http://localhost:3000/visit/museum-map"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -917,7 +914,7 @@ const MuseumMap = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit"
+                                                      href="http://localhost:3000/visit"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

@@ -77,17 +77,17 @@ const Volunteer = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/support-us/volunteer"
+          href="http://localhost:3000/support-us/volunteer"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Volunteer-China-Eye-Opener-Tour.jpg?itok=I9yfXzE5"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Volunteer-China-Eye-Opener-Tour.jpg?itok=I9yfXzE5"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/support-us/volunteer"
+          content="http://localhost:3000/support-us/volunteer"
         />
         <meta property="og:title" content="Volunteer" />
         <meta
@@ -107,7 +107,7 @@ const Volunteer = () => {
         <meta name="twitter:title" content="Volunteer" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Volunteer-China-Eye-Opener-Tour.jpg?itok=I9yfXzE5"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Volunteer-China-Eye-Opener-Tour.jpg?itok=I9yfXzE5"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -680,7 +680,7 @@ const Volunteer = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/support-us/volunteer"
+                                href="http://localhost:3000/support-us/volunteer"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -696,7 +696,7 @@ const Volunteer = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/support-us/volunteer"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/support-us/volunteer"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -716,7 +716,7 @@ const Volunteer = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Volunteer&url=https://www.britishmuseum.org/support-us/volunteer"
+                              href="https://twitter.com/intent/tweet?text=Volunteer&url=http://localhost:3000/support-us/volunteer"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -941,7 +941,7 @@ const Volunteer = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2021-01/volunteer_policy_2020.pdf"
+                                          href="http://localhost:3000/sites/default/files/2021-01/volunteer_policy_2020.pdf"
                                           className="media-document__link"
                                           download
                                         >

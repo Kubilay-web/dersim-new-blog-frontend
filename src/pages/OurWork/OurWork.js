@@ -57,17 +57,14 @@ const OurWork = () => {
           name="description"
           content="Discover how the Dersim Museum promotes the collection both in the Dersim and abroad. Read about our curatorial departments, research, excursions and our global programmes."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/our-work" />
+        <link rel="canonical" href="http://localhost:3000/our-work" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Conservation-samurai-armour_0.jpg?itok=fOEbgbHD"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Conservation-samurai-armour_0.jpg?itok=fOEbgbHD"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/our-work"
-        />
+        <meta property="og:url" content="http://localhost:3000/our-work" />
         <meta property="og:title" content="Our work" />
         <meta
           property="og:description"
@@ -86,7 +83,7 @@ const OurWork = () => {
         <meta name="twitter:title" content="Our work" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Conservation-samurai-armour_0.jpg?itok=fOEbgbHD"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Conservation-samurai-armour_0.jpg?itok=fOEbgbHD"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -591,7 +588,7 @@ const OurWork = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/our-work"
+                                href="http://localhost:3000/our-work"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -607,7 +604,7 @@ const OurWork = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/our-work"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/our-work"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -627,7 +624,7 @@ const OurWork = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Our%20work&url=https://www.britishmuseum.org/our-work"
+                              href="https://twitter.com/intent/tweet?text=Our%20work&url=http://localhost:3000/our-work"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

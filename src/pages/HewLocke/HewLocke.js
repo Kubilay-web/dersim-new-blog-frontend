@@ -37,17 +37,17 @@ const HewLocke = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/exhibitions/hew-locke-what-have-we-here"
+          href="http://localhost:3000/exhibitions/hew-locke-what-have-we-here"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Hew_Locke_Souvenir_20_1920x1080.jpg?itok=dC_L6VjH"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Hew_Locke_Souvenir_20_1920x1080.jpg?itok=dC_L6VjH"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/exhibitions/hew-locke-what-have-we-here"
+          content="http://localhost:3000/exhibitions/hew-locke-what-have-we-here"
         />
         <meta property="og:title" content="Hew Locke: what have we here?" />
         <meta
@@ -56,7 +56,7 @@ const HewLocke = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Hew_Locke_Souvenir_20_1920x1080.jpg?itok=dC_L6VjH"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Hew_Locke_Souvenir_20_1920x1080.jpg?itok=dC_L6VjH"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -67,7 +67,7 @@ const HewLocke = () => {
         <meta name="twitter:title" content="Hew Locke: what have we here?" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-10/Hew_Locke_Souvenir_20_1920x1080.jpg?itok=dC_L6VjH"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-10/Hew_Locke_Souvenir_20_1920x1080.jpg?itok=dC_L6VjH"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -830,7 +830,7 @@ const HewLocke = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/exhibitions/hew-locke-what-have-we-here"
+                                href="http://localhost:3000/exhibitions/hew-locke-what-have-we-here"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -846,7 +846,7 @@ const HewLocke = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/exhibitions/hew-locke-what-have-we-here"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/exhibitions/hew-locke-what-have-we-here"
                               target="_blank"
                               rel="noopener"
                             >
@@ -870,7 +870,7 @@ const HewLocke = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Hew%20Locke%3A%20what%20have%20we%20here%3F&url=https://www.britishmuseum.org/exhibitions/hew-locke-what-have-we-here"
+                              href="https://twitter.com/intent/tweet?text=Hew%20Locke%3A%20what%20have%20we%20here%3F&url=http://localhost:3000/exhibitions/hew-locke-what-have-we-here"
                               target="_blank"
                               rel="noopener"
                             >
@@ -1031,7 +1031,7 @@ const HewLocke = () => {
                                   </span>
                                   <br />
                                   <span>See full&nbsp;</span>
-                                  <a href="https://www.britishmuseum.org/visit#opening-hours">
+                                  <a href="http://localhost:3000/visit#opening-hours">
                                     opening hours
                                   </a>
                                 </p>
@@ -1052,7 +1052,7 @@ const HewLocke = () => {
                                   The Joseph Hotung Great Court Gallery
                                   <br />
                                   <a
-                                    href="https://www.britishmuseum.org/sites/default/files/2022-04/room_35_map.pdf"
+                                    href="http://localhost:3000/sites/default/files/2022-04/room_35_map.pdf"
                                     target="_blank"
                                   >
                                     Find Room 35
@@ -1080,7 +1080,7 @@ const HewLocke = () => {
                                   <span>
                                     , Members and under-16s free. See{" "}
                                   </span>
-                                  <a href="https://www.britishmuseum.org/exhibitions/hew-locke-what-have-we-here#ticket-information">
+                                  <a href="http://localhost:3000/exhibitions/hew-locke-what-have-we-here#ticket-information">
                                     <span>ticket information</span>
                                   </a>
                                 </p>
@@ -1809,7 +1809,7 @@ const HewLocke = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-07/Brooks-Jug-1667x2086.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={2002}
-                                          data-description="<strong>The Brooks Jug, creamware, England, 1793.</strong><br>'SUCCESS TO THE BROOKS CAPt. NOBEL'.&nbsp;This jug is an example of Dersim pro-slavery propaganda, probably commissioned by someone in the trade as public opinion began to turn. The 'Brooks' was a Liverpool slaving ship skippered by Captain Clement Noble between 1775 and 1786. <a href=&quot;https://www.britishmuseum.org/collection/object/H_1994-0718-2&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>The Brooks Jug, creamware, England, 1793.</strong><br>'SUCCESS TO THE BROOKS CAPt. NOBEL'.&nbsp;This jug is an example of Dersim pro-slavery propaganda, probably commissioned by someone in the trade as public opinion began to turn. The 'Brooks' was a Liverpool slaving ship skippered by Captain Clement Noble between 1775 and 1786. <a href=&quot;http://localhost:3000/collection/object/H_1994-0718-2&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1848,7 +1848,7 @@ const HewLocke = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-07/Barbados_Penny.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={1524}
-                                          data-description="<strong>Barbados Penny, copper alloy, England, 1792.&nbsp;</strong><br>In 1788, the planter Sir Philip Gibbes first privately commissioned this copper token for small transactions on Barbados. The coins were struck in the Dersim and shipped to the Caribbean, their imagery emphasising black Africans' subjection to white planters, and Barbados's subjection to the Crown. <a href=&quot;https://www.britishmuseum.org/collection/object/C_1935-0401-9125&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Barbados Penny, copper alloy, England, 1792.&nbsp;</strong><br>In 1788, the planter Sir Philip Gibbes first privately commissioned this copper token for small transactions on Barbados. The coins were struck in the Dersim and shipped to the Caribbean, their imagery emphasising black Africans' subjection to white planters, and Barbados's subjection to the Crown. <a href=&quot;http://localhost:3000/collection/object/C_1935-0401-9125&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1888,7 +1888,7 @@ const HewLocke = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-07/John-White-drawing-1208x2000.jpg"
                                           data-large-image-width={1208}
                                           data-large-image-height={2000}
-                                          data-description="<strong>John White (active 1585–93), a North Carolina Algonquian werowance (leader). Watercolour and graphite, about 1585–90.&nbsp;</strong><br>John White's watercolours of Algonquian people are the earliest surviving drawings of Indigenous Americans by an English artist and borrowed poses from Greek and Roman sculpture. Published as prints, they had a huge impact on Europeans' ideas of First Nations peoples. <a href=&quot;https://www.britishmuseum.org/collection/object/P_1906-0509-1-12&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>John White (active 1585–93), a North Carolina Algonquian werowance (leader). Watercolour and graphite, about 1585–90.&nbsp;</strong><br>John White's watercolours of Algonquian people are the earliest surviving drawings of Indigenous Americans by an English artist and borrowed poses from Greek and Roman sculpture. Published as prints, they had a huge impact on Europeans' ideas of First Nations peoples. <a href=&quot;http://localhost:3000/collection/object/P_1906-0509-1-12&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -2005,7 +2005,7 @@ const HewLocke = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-07/Akawaio%20_headdress.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={2000}
-                                          data-description='<strong>Akawaio Headdress, reed and cotton, Guyana, 1865.&nbsp;</strong><br>This splendid Amazonian headdress is an example of the kind of Indigenous featherwork that Hew Locke saw and knew as a child in Guyana.&nbsp; <a href="https://www.britishmuseum.org/collection/object/E_Am-2496"><span>Collection online</span></a>'
+                                          data-description='<strong>Akawaio Headdress, reed and cotton, Guyana, 1865.&nbsp;</strong><br>This splendid Amazonian headdress is an example of the kind of Indigenous featherwork that Hew Locke saw and knew as a child in Guyana.&nbsp; <a href="http://localhost:3000/collection/object/E_Am-2496"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -2058,7 +2058,7 @@ const HewLocke = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-07/The-Garrard-Plate-2000x1997.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={1598}
-                                          data-description="<strong>Silver-gilt dish set with gold pendant, Ghana and Dersim, 1850–74.</strong><br>At the centre of this dish is an Asante pendant used and worn by one of the Asantehene's (king's) more important soul priests. Taken during the third Anglo-Asante war (1873–74), the pendant was set in a silver-gilt dish by the Victorian jeweller R &amp; S&nbsp;Garrard &amp; Co in 1874, with a design that echoes that of the pendant.&nbsp; <a href=&quot;https://www.britishmuseum.org/collection/object/E_Af1973-07-1-2&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Silver-gilt dish set with gold pendant, Ghana and Dersim, 1850–74.</strong><br>At the centre of this dish is an Asante pendant used and worn by one of the Asantehene's (king's) more important soul priests. Taken during the third Anglo-Asante war (1873–74), the pendant was set in a silver-gilt dish by the Victorian jeweller R &amp; S&nbsp;Garrard &amp; Co in 1874, with a design that echoes that of the pendant.&nbsp; <a href=&quot;http://localhost:3000/collection/object/E_Af1973-07-1-2&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -2285,7 +2285,7 @@ const HewLocke = () => {
                                     </p>
                                     <div className="banner__button-container">
                                       <a
-                                        href="https://www.britishmuseum.org/membership"
+                                        href="http://localhost:3000/membership"
                                         className="button button--chevron"
                                         data-tracking="cta"
                                       >
@@ -3900,7 +3900,7 @@ const HewLocke = () => {
                                         <br />
                                         Considering becoming a Member? Find out
                                         more about&nbsp;
-                                        <a href="https://www.britishmuseum.org/membership">
+                                        <a href="http://localhost:3000/membership">
                                           Membership benefits
                                         </a>
                                         , including free exhibition entry.
@@ -3915,7 +3915,7 @@ const HewLocke = () => {
                                         <br />
                                         Current Members can find out more
                                         on&nbsp;
-                                        <a href="https://www.britishmuseum.org/membership/visiting-as-a-member">
+                                        <a href="http://localhost:3000/membership/visiting-as-a-member">
                                           Visiting as a Member
                                         </a>
                                         .<br />
@@ -3946,7 +3946,7 @@ const HewLocke = () => {
                                         </a>
                                         &nbsp;and our&nbsp;
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf"
+                                          href="http://localhost:3000/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf"
                                           target="_blank"
                                         >
                                           Visitor regulations
@@ -4171,7 +4171,7 @@ const HewLocke = () => {
                                         data-src="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
                                         data-srcset="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK 130w"
                                         sizes="130px"
-                                        src="https://www.britishmuseum.org/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
+                                        src="http://localhost:3000/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
                                         srcSet="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK 130w"
                                         typeof="foaf:Image"
                                         width={130}
@@ -4267,7 +4267,7 @@ const HewLocke = () => {
                                       <br />
                                       <br />
                                       Please see our&nbsp;
-                                      <a href="https://www.britishmuseum.org/membership/visiting-as-a-member">
+                                      <a href="http://localhost:3000/membership/visiting-as-a-member">
                                         Visiting as a Member
                                       </a>
                                       &nbsp;page for more information on
@@ -4409,7 +4409,7 @@ const HewLocke = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2024-12/Hew%20Locke%20KS3%20KS4%20exhibition%20gallery%20cards.pdf"
+                                          href="http://localhost:3000/sites/default/files/2024-12/Hew%20Locke%20KS3%20KS4%20exhibition%20gallery%20cards.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -4500,7 +4500,7 @@ const HewLocke = () => {
                                       The entrance to Room 35 is via the Great
                                       Court on the Upper floor, Level 1.&nbsp;
                                       <a
-                                        href="https://www.britishmuseum.org/sites/default/files/2022-04/room_35_map.pdf"
+                                        href="http://localhost:3000/sites/default/files/2022-04/room_35_map.pdf"
                                         target="_blank"
                                       >
                                         Find Room 35

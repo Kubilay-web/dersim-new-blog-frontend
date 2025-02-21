@@ -33,17 +33,17 @@ const SilkRoad = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/exhibitions/silk-roads"
+          href="http://localhost:3000/exhibitions/silk-roads"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-06/Silk-Roads-teaser-2000x1159.jpg?itok=iTaGumhk"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-06/Silk-Roads-teaser-2000x1159.jpg?itok=iTaGumhk"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/exhibitions/silk-roads"
+          content="http://localhost:3000/exhibitions/silk-roads"
         />
         <meta property="og:title" content="Silk Roads" />
         <meta
@@ -52,7 +52,7 @@ const SilkRoad = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-06/Silk-Roads-teaser-2000x1159.jpg?itok=iTaGumhk"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-06/Silk-Roads-teaser-2000x1159.jpg?itok=iTaGumhk"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -63,7 +63,7 @@ const SilkRoad = () => {
         <meta name="twitter:title" content="Silk Roads" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-06/Silk-Roads-teaser-2000x1159.jpg?itok=iTaGumhk"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-06/Silk-Roads-teaser-2000x1159.jpg?itok=iTaGumhk"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -776,7 +776,7 @@ const SilkRoad = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/exhibitions/silk-roads"
+                                href="http://localhost:3000/exhibitions/silk-roads"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -792,7 +792,7 @@ const SilkRoad = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/exhibitions/silk-roads"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/exhibitions/silk-roads"
                               target="_blank"
                               rel="noopener"
                             >
@@ -816,7 +816,7 @@ const SilkRoad = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Silk%20Roads&url=https://www.britishmuseum.org/exhibitions/silk-roads"
+                              href="https://twitter.com/intent/tweet?text=Silk%20Roads&url=http://localhost:3000/exhibitions/silk-roads"
                               target="_blank"
                               rel="noopener"
                             >
@@ -975,7 +975,7 @@ const SilkRoad = () => {
                                   Daily: 10.00–17.00 (Fridays 20.30)
                                   <br />
                                   See full&nbsp;
-                                  <a href="https://www.britishmuseum.org/visit#opening-hours">
+                                  <a href="http://localhost:3000/visit#opening-hours">
                                     opening hours
                                   </a>
                                 </p>
@@ -996,7 +996,7 @@ const SilkRoad = () => {
                                   The Sainsbury Exhibitions Gallery
                                   <br />
                                   <a
-                                    href="https://www.britishmuseum.org/sites/default/files/2022-03/directions_room_30_map.pdf"
+                                    href="http://localhost:3000/sites/default/files/2022-03/directions_room_30_map.pdf"
                                     target="_blank"
                                   >
                                     Find Room 30
@@ -1269,7 +1269,7 @@ const SilkRoad = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-06/glazed-earthenware-camel-1530x2000.jpg"
                                           data-large-image-width={1530}
                                           data-large-image-height={2000}
-                                          data-description='<strong>Ceramic figure of a camel from the tomb of Liu Tingxun, China, AD 728.</strong><br>Ceramic figurines made for burials in Tang-dynasty China (618–907) include lively representations of camels bearing goods that were imported and exported from the realm. This example from Luoyang depicts a dual-humped Bactrian camel laden with coiled silk, folded fabric, a West or Central Asian ewer and possibly a piece of rib meat, next to bags covered with monster masks. <a href="https://www.britishmuseum.org/collection/object/A_1936-1012-228"><span>Collection online</span></a>'
+                                          data-description='<strong>Ceramic figure of a camel from the tomb of Liu Tingxun, China, AD 728.</strong><br>Ceramic figurines made for burials in Tang-dynasty China (618–907) include lively representations of camels bearing goods that were imported and exported from the realm. This example from Luoyang depicts a dual-humped Bactrian camel laden with coiled silk, folded fabric, a West or Central Asian ewer and possibly a piece of rib meat, next to bags covered with monster masks. <a href="http://localhost:3000/collection/object/A_1936-1012-228"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1463,7 +1463,7 @@ const SilkRoad = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-06/Gold_shoulder_clasp_with_garnets_glass.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={1684}
-                                          data-description='<strong>Gold shoulder clasp with garnets and glass, England, late AD 500s–early AD 600s.</strong>&nbsp;<br>The famous ship burial at Sutton Hoo in Suffolk contained the finest known examples of garnet cloisonné metalwork. Scientific analysis undertaken for this exhibition has traced the gems on this shoulder clasp to distant sources. In the curved part of the clasp, the bodies of two boars are formed by purple-red Indian garnets. Their bristly backs are tiny orange-red Bohemian (Czech) and Sri Lankan gems. <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-5-a"><span>Collection online</span></a>'
+                                          data-description='<strong>Gold shoulder clasp with garnets and glass, England, late AD 500s–early AD 600s.</strong>&nbsp;<br>The famous ship burial at Sutton Hoo in Suffolk contained the finest known examples of garnet cloisonné metalwork. Scientific analysis undertaken for this exhibition has traced the gems on this shoulder clasp to distant sources. In the curved part of the clasp, the bodies of two boars are formed by purple-red Indian garnets. Their bristly backs are tiny orange-red Bohemian (Czech) and Sri Lankan gems. <a href="http://localhost:3000/collection/object/H_1939-1010-5-a"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1505,7 +1505,7 @@ const SilkRoad = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-06/sketch-horse-camel-2000x742.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={594}
-                                          data-description='<strong>Sketch on paper of envoys with horse and camel, China, AD 966.</strong><br>This lively sketch was made in Dunhuang, a Buddhist centre in northwest China, when it was under the rule of local forces that pledged allegiance to Chinese imperial dynasties. Envoys, wearing the headdress of government officials, are shown travelling with a horse and a camel that were probably intended as a tribute, since they carry no burdens. The sketch evokes the frequent diplomatic missions that were exchanged between rulers along the eastern ends of the Silk Roads. It was preserved in a cave sealed in the early 11th century and accidentally discovered in 1900. <a href="https://www.britishmuseum.org/collection/object/A_1919-0101-0-77"><span>Collection online</span></a>'
+                                          data-description='<strong>Sketch on paper of envoys with horse and camel, China, AD 966.</strong><br>This lively sketch was made in Dunhuang, a Buddhist centre in northwest China, when it was under the rule of local forces that pledged allegiance to Chinese imperial dynasties. Envoys, wearing the headdress of government officials, are shown travelling with a horse and a camel that were probably intended as a tribute, since they carry no burdens. The sketch evokes the frequent diplomatic missions that were exchanged between rulers along the eastern ends of the Silk Roads. It was preserved in a cave sealed in the early 11th century and accidentally discovered in 1900. <a href="http://localhost:3000/collection/object/A_1919-0101-0-77"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1547,7 +1547,7 @@ const SilkRoad = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-06/The_Franks_Casket_whalebone_casket.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={960}
-                                          data-description="<strong>'The Franks Casket', whalebone casket, probably made in northern England, found in France, early AD 700s.&nbsp;</strong><br>The imagery on this casket draws on Christian traditions, northern-European mythology and Jewish and Roman history, and is captioned in Latin and runic Old English, all evoking the designer's worldly knowledge. The inscription on the front panel commemorates the whale from whose bones it was carved. <a href=&quot;https://www.britishmuseum.org/collection/object/H_1867-0120-1&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>'The Franks Casket', whalebone casket, probably made in northern England, found in France, early AD 700s.&nbsp;</strong><br>The imagery on this casket draws on Christian traditions, northern-European mythology and Jewish and Roman history, and is captioned in Latin and runic Old English, all evoking the designer's worldly knowledge. The inscription on the front panel commemorates the whale from whose bones it was carved. <a href=&quot;http://localhost:3000/collection/object/H_1867-0120-1&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1588,7 +1588,7 @@ const SilkRoad = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-06/wooden-painted-panel-silk-princess-2310x992.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={687}
-                                          data-description="<strong>Painting on a wooden panel of the 'silk princess', China, probably about AD 600–800.</strong><br>The image on this votive panel from Dandan Uiliq, Khotan in northwest China, is believed to tell the story of a Chinese princess who smuggled silkworm eggs and mulberry seeds in her headdress as she travelled to marry the king of Khotan. The princess is shown with a basket of what may be silkworm cocoons, and to her right is a female figure at a loom. Between them is a figure with four arms who is perhaps the patron deity of weaving. By the AD 600s, the secrets of silk farming had spread to Khotan, where there was a flourishing textile industry. <a href=&quot;https://www.britishmuseum.org/collection/object/A_1907-1111-73&quot;><span>Collection online</span></a>"
+                                          data-description="<strong>Painting on a wooden panel of the 'silk princess', China, probably about AD 600–800.</strong><br>The image on this votive panel from Dandan Uiliq, Khotan in northwest China, is believed to tell the story of a Chinese princess who smuggled silkworm eggs and mulberry seeds in her headdress as she travelled to marry the king of Khotan. The princess is shown with a basket of what may be silkworm cocoons, and to her right is a female figure at a loom. Between them is a figure with four arms who is perhaps the patron deity of weaving. By the AD 600s, the secrets of silk farming had spread to Khotan, where there was a flourishing textile industry. <a href=&quot;http://localhost:3000/collection/object/A_1907-1111-73&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1710,7 +1710,7 @@ const SilkRoad = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-06/Glass_drinking_horn_Italy.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={960}
-                                          data-description='<strong>Glass drinking horn, Italy, AD 550–600.</strong>&nbsp;<br>The Lombards, who had migrated to Italy from Pannonia (Central Europe) in AD 568, assumed and adapted many aspects of Byzantine life, from political infrastructure to fashions and tableware. This elegant drinking horn, found at Sutri in Italy, is a characteristically northern European form but crafted in cobalt-blue Mediterranean glass. <a href="https://www.britishmuseum.org/collection/object/H_1887-0108-2"><span>Collection online</span></a>'
+                                          data-description='<strong>Glass drinking horn, Italy, AD 550–600.</strong>&nbsp;<br>The Lombards, who had migrated to Italy from Pannonia (Central Europe) in AD 568, assumed and adapted many aspects of Byzantine life, from political infrastructure to fashions and tableware. This elegant drinking horn, found at Sutri in Italy, is a characteristically northern European form but crafted in cobalt-blue Mediterranean glass. <a href="http://localhost:3000/collection/object/H_1887-0108-2"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1748,7 +1748,7 @@ const SilkRoad = () => {
                                           data-large-image-url="/sites/default/files/styles/uncropped_huge/public/2024-06/Silk_sleeve_panel_equestrian_figures_0.jpg"
                                           data-large-image-width={1600}
                                           data-large-image-height={2000}
-                                          data-description='<strong>Silk sleeve panel showing equestrian figures, Egypt, about AD 600–900.&nbsp;</strong><br>Tunics were part of typical dress for men and women in the Byzantine empire. Decorative elements could be woven into the fabric or applied as panels and trimmings. Raw silk and fabric were imported from the east until about the AD 500s, when sericulture (the cultivation of silkworms to produce silk) was established in Byzantium. This fragment of a silk panel, from Akhmim in Egypt, embellished a tunic sleeve. It shows two horsemen trampling armed soldiers, framed by verdant plants. <a href="https://www.britishmuseum.org/collection/object/H_1904-0706-41"><span>Collection online</span></a>'
+                                          data-description='<strong>Silk sleeve panel showing equestrian figures, Egypt, about AD 600–900.&nbsp;</strong><br>Tunics were part of typical dress for men and women in the Byzantine empire. Decorative elements could be woven into the fabric or applied as panels and trimmings. Raw silk and fabric were imported from the east until about the AD 500s, when sericulture (the cultivation of silkworms to produce silk) was established in Byzantium. This fragment of a silk panel, from Akhmim in Egypt, embellished a tunic sleeve. It shows two horsemen trampling armed soldiers, framed by verdant plants. <a href="http://localhost:3000/collection/object/H_1904-0706-41"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -2004,7 +2004,7 @@ const SilkRoad = () => {
                                     </p>
                                     <div className="banner__button-container">
                                       <a
-                                        href="https://www.britishmuseum.org/membership"
+                                        href="http://localhost:3000/membership"
                                         className="button button--chevron"
                                         data-tracking="cta"
                                       >
@@ -3873,7 +3873,7 @@ const SilkRoad = () => {
                                         <br />
                                         Considering becoming a Member? Find out
                                         more about&nbsp;
-                                        <a href="https://www.britishmuseum.org/membership">
+                                        <a href="http://localhost:3000/membership">
                                           Membership benefits
                                         </a>
                                         , including free exhibition entry.
@@ -3887,7 +3887,7 @@ const SilkRoad = () => {
                                         <br />
                                         Current Members can find out more
                                         on&nbsp;
-                                        <a href="https://www.britishmuseum.org/membership/visiting-as-a-member">
+                                        <a href="http://localhost:3000/membership/visiting-as-a-member">
                                           Visiting as a Member
                                         </a>
                                         .<br />
@@ -3918,7 +3918,7 @@ const SilkRoad = () => {
                                         </a>
                                         &nbsp;and our&nbsp;
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf"
+                                          href="http://localhost:3000/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf"
                                           target="_blank"
                                         >
                                           Visitor regulations
@@ -4132,7 +4132,7 @@ const SilkRoad = () => {
                                         data-src="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
                                         data-srcset="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK 130w"
                                         sizes="130px"
-                                        src="https://www.britishmuseum.org/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
+                                        src="http://localhost:3000/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK"
                                         srcSet="/sites/default/files/styles/uncropped_tiny/public/2022-10/gift%20aid%20white%20on%20black_1.png?itok=lBCLmxVK 130w"
                                         typeof="foaf:Image"
                                         width={130}
@@ -4446,7 +4446,7 @@ const SilkRoad = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2024-09/Silk_Roads_Exhibition_activity_cards_KS2.pdf"
+                                          href="http://localhost:3000/sites/default/files/2024-09/Silk_Roads_Exhibition_activity_cards_KS2.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -4488,7 +4488,7 @@ const SilkRoad = () => {
                                     >
                                       <div className="media media-full media-document js-media">
                                         <a
-                                          href="https://www.britishmuseum.org/sites/default/files/2024-09/Silk_Roads_Exhibition_activity_cards_KS3.pdf"
+                                          href="http://localhost:3000/sites/default/files/2024-09/Silk_Roads_Exhibition_activity_cards_KS3.pdf"
                                           className="media-document__link"
                                           download
                                         >
@@ -4579,7 +4579,7 @@ const SilkRoad = () => {
                                       The entrance to Room 30 is in the Great
                                       Court.{" "}
                                       <a
-                                        href="https://www.britishmuseum.org/sites/default/files/2022-03/directions_room_30_map.pdf"
+                                        href="http://localhost:3000/sites/default/files/2022-03/directions_room_30_map.pdf"
                                         target="_blank"
                                       >
                                         Find Room 30 on our map

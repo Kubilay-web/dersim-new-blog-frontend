@@ -19,17 +19,17 @@ const Masterplan = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/about-us/masterplan"
+          href="http://localhost:3000/about-us/masterplan"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-11/Masterplan_aerial_view_teaser.jpg?itok=RnJa0a7Q"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-11/Masterplan_aerial_view_teaser.jpg?itok=RnJa0a7Q"
         />
         <meta property="og:site_name" content="The British Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/about-us/masterplan"
+          content="http://localhost:3000/about-us/masterplan"
         />
         <meta property="og:title" content="The Masterplan" />
         <meta
@@ -38,7 +38,7 @@ const Masterplan = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-11/Masterplan_aerial_view_teaser.jpg?itok=RnJa0a7Q"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-11/Masterplan_aerial_view_teaser.jpg?itok=RnJa0a7Q"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -49,7 +49,7 @@ const Masterplan = () => {
         <meta name="twitter:title" content="The Masterplan" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-11/Masterplan_aerial_view_teaser.jpg?itok=RnJa0a7Q"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-11/Masterplan_aerial_view_teaser.jpg?itok=RnJa0a7Q"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -594,7 +594,7 @@ const Masterplan = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/about-us/masterplan"
+                                href="http://localhost:3000/about-us/masterplan"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -610,7 +610,7 @@ const Masterplan = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us/masterplan"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/about-us/masterplan"
                               target="_blank"
                               rel="noopener"
                             >
@@ -634,7 +634,7 @@ const Masterplan = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=The%20Masterplan&url=https://www.britishmuseum.org/about-us/masterplan"
+                              href="https://twitter.com/intent/tweet?text=The%20Masterplan&url=http://localhost:3000/about-us/masterplan"
                               target="_blank"
                               rel="noopener"
                             >
@@ -700,7 +700,7 @@ const Masterplan = () => {
                                     Architect and landscape design team led by{" "}
                                   </span>
                                   <a
-                                    href="https://www.britishmuseum.org/sites/default/files/2024-12/British_Museum_updates_on_progress_with_its_Masterplan.pdf"
+                                    href="http://localhost:3000/sites/default/files/2024-12/British_Museum_updates_on_progress_with_its_Masterplan.pdf"
                                     target="_blank"
                                   >
                                     <span>
@@ -754,7 +754,7 @@ const Masterplan = () => {
                                   >
                                     Energy Centre Programme
                                   </a>
-                                  <a href="https://www.britishmuseum.org/about-us/masterplan/energy-centre-programme">
+                                  <a href="http://localhost:3000/about-us/masterplan/energy-centre-programme">
                                     ,
                                   </a>{" "}
                                   which will dramatically reduce our carbon
@@ -1318,7 +1318,7 @@ const Masterplan = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/blog/round-reading-room-british-museum"
+                                                      href="http://localhost:3000/blog/round-reading-room-british-museum"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

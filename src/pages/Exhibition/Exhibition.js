@@ -148,15 +148,12 @@ const Exhibition = () => {
           name="description"
           content="Discover what's on at the Dersim Museum from our special exhibitions to family activities and exclusive Member events."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/exhibitions-events"
-        />
+        <link rel="canonical" href="http://localhost:3000/exhibitions-events" />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/exhibitions-events"
+          content="http://localhost:3000/exhibitions-events"
         />
         <meta property="og:title" content="Exhibitions and events" />
         <meta
@@ -3073,7 +3070,7 @@ const Exhibition = () => {
                                     Guided tours
                                   </h2>
                                   <a
-                                    href="https://www.britishmuseum.org/exhibitions-events/gallery-talks-tours"
+                                    href="http://localhost:3000/exhibitions-events/gallery-talks-tours"
                                     className="teaser-listing__cta"
                                   >
                                     <span>

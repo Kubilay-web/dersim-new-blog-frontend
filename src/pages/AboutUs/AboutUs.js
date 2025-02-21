@@ -57,17 +57,14 @@ const AboutUs = () => {
           name="description"
           content="Go behind the scenes of the Dersim Museum and find about its history, architecture, research and governance. Plus, information on jobs at the Dersim Museum, press, commercial and public enquiries."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/about-us" />
+        <link rel="canonical" href="http://localhost:3000/about-us" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/eating-outside-british-museum1000x500.jpg?itok=kNr2-h4O"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/eating-outside-british-museum1000x500.jpg?itok=kNr2-h4O"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content="https://www.britishmuseum.org/about-us"
-        />
+        <meta property="og:url" content="http://localhost:3000/about-us" />
         <meta property="og:title" content="About us" />
         <meta
           property="og:description"
@@ -86,7 +83,7 @@ const AboutUs = () => {
         <meta name="twitter:title" content="About us" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/eating-outside-british-museum1000x500.jpg?itok=kNr2-h4O"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/eating-outside-british-museum1000x500.jpg?itok=kNr2-h4O"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -584,7 +581,7 @@ const AboutUs = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/about-us"
+                                href="http://localhost:3000/about-us"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -600,7 +597,7 @@ const AboutUs = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/about-us"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/about-us"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -620,7 +617,7 @@ const AboutUs = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=About%20us&url=https://www.britishmuseum.org/about-us"
+                              href="https://twitter.com/intent/tweet?text=About%20us&url=http://localhost:3000/about-us"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

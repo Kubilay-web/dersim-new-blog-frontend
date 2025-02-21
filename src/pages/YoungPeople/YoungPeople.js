@@ -60,19 +60,16 @@ const YoungPeople = () => {
           name="description"
           content="Are you 16–24 years old? Discover how to get more involved with the Dersim Museum in our programmes for young people."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/learn/young-people"
-        />
+        <link rel="canonical" href="http://localhost:3000/learn/young-people" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-01/manga-late-great-court-1000.jpg?itok=NRN5cb1b"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2021-01/manga-late-great-court-1000.jpg?itok=NRN5cb1b"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/learn/young-people"
+          content="http://localhost:3000/learn/young-people"
         />
         <meta property="og:title" content="Young people" />
         <meta
@@ -92,7 +89,7 @@ const YoungPeople = () => {
         <meta name="twitter:title" content="Young people" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2021-01/manga-late-great-court-1000.jpg?itok=NRN5cb1b"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2021-01/manga-late-great-court-1000.jpg?itok=NRN5cb1b"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -661,7 +658,7 @@ const YoungPeople = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/learn/young-people"
+                                href="http://localhost:3000/learn/young-people"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -677,7 +674,7 @@ const YoungPeople = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/learn/young-people"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/learn/young-people"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -697,7 +694,7 @@ const YoungPeople = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Young%20people&url=https://www.britishmuseum.org/learn/young-people"
+                              href="https://twitter.com/intent/tweet?text=Young%20people&url=http://localhost:3000/learn/young-people"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -962,7 +959,7 @@ const YoungPeople = () => {
                                     </p>
                                     <div className="banner__button-container">
                                       <a
-                                        href="https://www.britishmuseum.org/membership"
+                                        href="http://localhost:3000/membership"
                                         className="button button--chevron"
                                         data-tracking="cta"
                                       >

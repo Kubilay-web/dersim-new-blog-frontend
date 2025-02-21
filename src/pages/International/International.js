@@ -69,17 +69,17 @@ const International = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/our-work/international"
+          href="http://localhost:3000/our-work/international"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-03/Asante_ceremonial_cap_1000x500.jpg?itok=Pb_S0bKb"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-03/Asante_ceremonial_cap_1000x500.jpg?itok=Pb_S0bKb"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/our-work/international"
+          content="http://localhost:3000/our-work/international"
         />
         <meta property="og:title" content="International" />
         <meta
@@ -99,7 +99,7 @@ const International = () => {
         <meta name="twitter:title" content="International" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-03/Asante_ceremonial_cap_1000x500.jpg?itok=Pb_S0bKb"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-03/Asante_ceremonial_cap_1000x500.jpg?itok=Pb_S0bKb"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -617,7 +617,7 @@ const International = () => {
                                 War, 1895–6. This formed part of official
                                 government loot.
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/E_Af1900-0427-1">
+                              <a href="http://localhost:3000/collection/object/E_Af1900-0427-1">
                                 <span>View on Collection online</span>
                               </a>
                             </div>
@@ -675,7 +675,7 @@ const International = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/our-work/international"
+                                href="http://localhost:3000/our-work/international"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -691,7 +691,7 @@ const International = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/our-work/international"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/our-work/international"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -711,7 +711,7 @@ const International = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=International&url=https://www.britishmuseum.org/our-work/international"
+                              href="https://twitter.com/intent/tweet?text=International&url=http://localhost:3000/our-work/international"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1399,7 +1399,7 @@ const International = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/research/projects"
+                                                      href="http://localhost:3000/research/projects"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

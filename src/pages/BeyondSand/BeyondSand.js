@@ -19,17 +19,17 @@ const BeyondSand = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/blog/beyond-sand-and-spices-introduction-silk-roads"
+          href="http://localhost:3000/blog/beyond-sand-and-spices-introduction-silk-roads"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-06/Silk%20princess%201920x1080.jpg?itok=RL02ilwA"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-06/Silk%20princess%201920x1080.jpg?itok=RL02ilwA"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/blog/beyond-sand-and-spices-introduction-silk-roads"
+          content="http://localhost:3000/blog/beyond-sand-and-spices-introduction-silk-roads"
         />
         <meta
           property="og:title"
@@ -55,7 +55,7 @@ const BeyondSand = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2024-06/Silk%20princess%201920x1080.jpg?itok=RL02ilwA"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2024-06/Silk%20princess%201920x1080.jpg?itok=RL02ilwA"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -564,7 +564,7 @@ const BeyondSand = () => {
                                 princess', China, probably about AD
                                 600–800.&nbsp;
                               </p>
-                              <a href="https://www.britishmuseum.org/collection/object/A_1907-1111-73">
+                              <a href="http://localhost:3000/collection/object/A_1907-1111-73">
                                 <span>View panel on Collection online</span>
                               </a>
                             </div>
@@ -622,7 +622,7 @@ const BeyondSand = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/blog/beyond-sand-and-spices-introduction-silk-roads"
+                                href="http://localhost:3000/blog/beyond-sand-and-spices-introduction-silk-roads"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -639,7 +639,7 @@ const BeyondSand = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/blog/beyond-sand-and-spices-introduction-silk-roads"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/blog/beyond-sand-and-spices-introduction-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -659,7 +659,7 @@ const BeyondSand = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Beyond%20sand%20and%20spices%3A%20introduction%20to%20%27Silk%20Roads%27&url=https://www.britishmuseum.org/blog/beyond-sand-and-spices-introduction-silk-roads"
+                              href="https://twitter.com/intent/tweet?text=Beyond%20sand%20and%20spices%3A%20introduction%20to%20%27Silk%20Roads%27&url=http://localhost:3000/blog/beyond-sand-and-spices-introduction-silk-roads"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -717,7 +717,7 @@ const BeyondSand = () => {
                               <div className="paragraph paragraph--type--info-content paragraph--view-mode--default section--intro__info-content wysiwyg">
                                 <p>
                                   See these objects at the special exhibition{" "}
-                                  <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                  <a href="http://localhost:3000/exhibitions/silk-roads">
                                     <em>Silk Roads</em>
                                   </a>{" "}
                                   (26 September 2024 – 23 February 2025)
@@ -842,7 +842,7 @@ const BeyondSand = () => {
                                           alt="White-haired camel figure with patches of brown hair shown holding it's neck and head up high"
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/A_1936-1012-228">
+                                          <a href="http://localhost:3000/collection/object/A_1936-1012-228">
                                             Ceramic tomb figure
                                           </a>{" "}
                                           of a camel, Luoyang, China, about AD
@@ -1053,7 +1053,7 @@ const BeyondSand = () => {
                                           alt="Sketching showing a horse and camel being led by two figures wearing the headdress of government officials."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/A_1919-0101-0-77">
+                                          <a href="http://localhost:3000/collection/object/A_1919-0101-0-77">
                                             Sketch showing envoys with horse and
                                             camel
                                           </a>
@@ -1187,7 +1187,7 @@ const BeyondSand = () => {
                                           alt="Thin loop of silver with a clasp."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/H_1924-0108-1">
+                                          <a href="http://localhost:3000/collection/object/H_1924-0108-1">
                                             Silver neck-ring
                                           </a>
                                           , Estonia, late AD 900s.
@@ -1251,7 +1251,7 @@ const BeyondSand = () => {
                                           alt="A fragment of a marble chancel screen."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/H_OA-11008">
+                                          <a href="http://localhost:3000/collection/object/H_OA-11008">
                                             Fragment of a marble chancel screen
                                           </a>
                                           , Eritrea, AD 500s.
@@ -1291,7 +1291,7 @@ const BeyondSand = () => {
                                           alt="Gold clasp with enamel and garnet decoration."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/H_1939-1010-5-a">
+                                          <a href="http://localhost:3000/collection/object/H_1939-1010-5-a">
                                             Gold shoulder clasp
                                           </a>{" "}
                                           with garnets and glass, England, late
@@ -1355,7 +1355,7 @@ const BeyondSand = () => {
                                           alt="Blue-glass drinking horn."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/H_1887-0108-2">
+                                          <a href="http://localhost:3000/collection/object/H_1887-0108-2">
                                             Glass drinking-horn
                                           </a>
                                           , Italy, AD 550–600.
@@ -1395,7 +1395,7 @@ const BeyondSand = () => {
                                           alt="Animal-headed stoneware cup."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/A_1968-0422-21">
+                                          <a href="http://localhost:3000/collection/object/A_1968-0422-21">
                                             Ceramic cup
                                           </a>{" "}
                                           modelled after a <em>rhyton</em>,
@@ -1510,7 +1510,7 @@ const BeyondSand = () => {
                                           alt="Cross-shaped gilt brooch set with an Islamic seal. "
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/H_1875-1211-1">
+                                          <a href="http://localhost:3000/collection/object/H_1875-1211-1">
                                             Cross-shaped brooch
                                           </a>{" "}
                                           with an Islamic seal, gilt
@@ -1578,7 +1578,7 @@ const BeyondSand = () => {
                                           alt="Wooden painted panel of a princess with a basket of silk worm cocoons."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/A_1907-1111-73">
+                                          <a href="http://localhost:3000/collection/object/A_1907-1111-73">
                                             Painting on a wooden panel
                                           </a>{" "}
                                           of the 'silk princess', China,
@@ -1653,7 +1653,7 @@ const BeyondSand = () => {
                                           alt="Whalebone casket decorated with Christian scenes, northern-European mythology and Jewish and Roman history."
                                         />
                                         <figcaption>
-                                          <a href="https://www.britishmuseum.org/collection/object/H_1867-0120-1">
+                                          <a href="http://localhost:3000/collection/object/H_1867-0120-1">
                                             'The Franks Casket'
                                           </a>
                                           : whalebone casket, probably made in
@@ -1663,7 +1663,7 @@ const BeyondSand = () => {
                                       </figure>
                                     </div>
                                     <p>
-                                      <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                      <a href="http://localhost:3000/exhibitions/silk-roads">
                                         Book your ticket now
                                       </a>{" "}
                                       to see over 300 objects from the length

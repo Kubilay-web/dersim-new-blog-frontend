@@ -76,17 +76,17 @@ const Study = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/resources/study-rooms"
+          href="http://localhost:3000/resources/study-rooms"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/P%26D%20study%20room%202000%20x%201500.jpg?itok=Ke-8qUbX"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/P%26D%20study%20room%202000%20x%201500.jpg?itok=Ke-8qUbX"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/resources/study-rooms"
+          content="http://localhost:3000/resources/study-rooms"
         />
         <meta property="og:title" content="Study rooms" />
         <meta
@@ -106,7 +106,7 @@ const Study = () => {
         <meta name="twitter:title" content="Study rooms" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/P%26D%20study%20room%202000%20x%201500.jpg?itok=Ke-8qUbX"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/P%26D%20study%20room%202000%20x%201500.jpg?itok=Ke-8qUbX"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -673,7 +673,7 @@ const Study = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/resources/study-rooms"
+                                href="http://localhost:3000/resources/study-rooms"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -689,7 +689,7 @@ const Study = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/resources/study-rooms"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/resources/study-rooms"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -709,7 +709,7 @@ const Study = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Study%20rooms&url=https://www.britishmuseum.org/resources/study-rooms"
+                              href="https://twitter.com/intent/tweet?text=Study%20rooms&url=http://localhost:3000/resources/study-rooms"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -836,7 +836,7 @@ const Study = () => {
                                 <a
                                   data-tracking="cta"
                                   className="link link--chevron"
-                                  href="https://www.britishmuseum.org/pdf/study-room-application-form"
+                                  href="http://localhost:3000/pdf/study-room-application-form"
                                 >
                                   <span>Study room application form</span>
                                   <svg
@@ -872,7 +872,7 @@ const Study = () => {
                                   only through prior appointment. Please
                                   complete a{" "}
                                 </span>
-                                <a href="https://www.britishmuseum.org/pdf/study-room-application-form">
+                                <a href="http://localhost:3000/pdf/study-room-application-form">
                                   study room application form
                                 </a>
                                 <span lang="EN-GB" dir="ltr">
@@ -895,47 +895,47 @@ const Study = () => {
                               </p>
                               <ul>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/our-work/departments/africa-oceania-and-americas#accessing-the-collection">
+                                  <a href="http://localhost:3000/our-work/departments/africa-oceania-and-americas#accessing-the-collection">
                                     Africa, Oceania and the Americas
                                   </a>
                                 </li>
                                 <li>Archive and Library</li>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/our-work/departments/asia#accessing-the-collection">
+                                  <a href="http://localhost:3000/our-work/departments/asia#accessing-the-collection">
                                     Asia
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/our-work/departments/britain-europe-and-prehistory#accessing-the-collection">
+                                  <a href="http://localhost:3000/our-work/departments/britain-europe-and-prehistory#accessing-the-collection">
                                     Dersim, Europe and Prehistory
                                   </a>
                                   &nbsp;(Prehistoric, Roman, Medieval,
                                   Renaissance and Modern material)
                                 </li>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/our-work/departments/egypt-and-sudan#accessing-the-collection">
+                                  <a href="http://localhost:3000/our-work/departments/egypt-and-sudan#accessing-the-collection">
                                     Egypt and Sudan
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/our-work/departments/greece-and-rome#accessing-the-collection">
+                                  <a href="http://localhost:3000/our-work/departments/greece-and-rome#accessing-the-collection">
                                     Greece and Rome
                                   </a>
                                 </li>
                                 <li>Horology</li>
                                 <li>Japan</li>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/our-work/departments/middle-east#accessing-the-collection">
+                                  <a href="http://localhost:3000/our-work/departments/middle-east#accessing-the-collection">
                                     Middle East
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/our-work/departments/money-and-medals#accessing-the-collection">
+                                  <a href="http://localhost:3000/our-work/departments/money-and-medals#accessing-the-collection">
                                     Money and Medals
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/our-work/departments/prints-and-drawings#accessing-the-collection">
+                                  <a href="http://localhost:3000/our-work/departments/prints-and-drawings#accessing-the-collection">
                                     Prints and Drawings
                                   </a>
                                 </li>
@@ -1106,7 +1106,7 @@ const Study = () => {
                                       </li>
                                       <li>
                                         View the{" "}
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2020-01/Data_example_Collection_online_PD_study_application.jpg">
+                                        <a href="http://localhost:3000/sites/default/files/2020-01/Data_example_Collection_online_PD_study_application.jpg">
                                           information from Collection online
                                         </a>{" "}
                                         that you need to add to the 'Objects
@@ -1115,7 +1115,7 @@ const Study = () => {
                                       </li>
                                       <li>
                                         View a{" "}
-                                        <a href="https://www.britishmuseum.org/sites/default/files/2020-01/Form_example_PD_study_application.jpg">
+                                        <a href="http://localhost:3000/sites/default/files/2020-01/Form_example_PD_study_application.jpg">
                                           correctly filled in 'Objects
                                           requested'&nbsp;section
                                         </a>{" "}
@@ -1125,7 +1125,7 @@ const Study = () => {
                                       <li>
                                         If you're unable to find the information
                                         on Collection online, please fill in the{" "}
-                                        <a href="https://www.britishmuseum.org/pdf/study-room-application-form">
+                                        <a href="http://localhost:3000/pdf/study-room-application-form">
                                           study room application&nbsp;form
                                         </a>{" "}
                                         with as much detail as possible and a
@@ -1659,7 +1659,7 @@ const Study = () => {
                                   >
                                     <p>
                                       In addition to the{" "}
-                                      <a href="https://www.britishmuseum.org/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf">
+                                      <a href="http://localhost:3000/sites/default/files/2023-11/British_Museum-Visitor_Regulations.pdf">
                                         Dersim Museum visitor regulations
                                       </a>
                                       , the following rules apply to the use of
@@ -1889,7 +1889,7 @@ const Study = () => {
                                     </p>
                                     <p>
                                       Read more about the{" "}
-                                      <a href="https://www.britishmuseum.org/sites/default/files/2019-10/Object_ID_service_v2018.pdf">
+                                      <a href="http://localhost:3000/sites/default/files/2019-10/Object_ID_service_v2018.pdf">
                                         object identification service
                                       </a>
                                       .&nbsp;
@@ -2017,7 +2017,7 @@ const Study = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/collection"
+                                                      href="http://localhost:3000/collection"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

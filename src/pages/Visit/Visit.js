@@ -188,14 +188,14 @@ const Visit = () => {
           name="description"
           content="Find out the latest information on visiting the Dersim Museum."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/visit" />
+        <link rel="canonical" href="http://localhost:3000/visit" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Great%20Court%2004.jpg?itok=PKKEIUbn"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Great%20Court%2004.jpg?itok=PKKEIUbn"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://www.britishmuseum.org/visit" />
+        <meta property="og:url" content="http://localhost:3000/visit" />
         <meta property="og:title" content="Visit" />
         <meta
           property="og:description"
@@ -214,7 +214,7 @@ const Visit = () => {
         <meta name="twitter:title" content="Visit" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-10/Great%20Court%2004.jpg?itok=PKKEIUbn"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-10/Great%20Court%2004.jpg?itok=PKKEIUbn"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -654,11 +654,14 @@ const Visit = () => {
                           <h1 id="paragraph-1329-title" className="hero__title">
                             {" "}
                             {content && content.length > 0 ? (
-                              content
-                                .slice(0, 2)
-                                .map((item, index) => (
-                                  <p key={index}>{item.title}</p>
-                                ))
+                              content.slice(0, 2).map((item, index) => (
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.title,
+                                  }}
+                                  key={index}
+                                ></p>
+                              ))
                             ) : (
                               <p>No content available</p>
                             )}
@@ -755,7 +758,7 @@ const Visit = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/visit"
+                                href="http://localhost:3000/visit"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -771,7 +774,7 @@ const Visit = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/visit"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/visit"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -791,7 +794,7 @@ const Visit = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Visit&url=https://www.britishmuseum.org/visit"
+                              href="https://twitter.com/intent/tweet?text=Visit&url=http://localhost:3000/visit"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -958,7 +961,7 @@ const Visit = () => {
                                   )&nbsp;
                                   <br />
                                   See full{" "}
-                                  <a href="https://www.britishmuseum.org/visit#opening-hours">
+                                  <a href="http://localhost:3000/visit#opening-hours">
                                     opening hours
                                   </a>
                                   <br />
@@ -1029,7 +1032,7 @@ const Visit = () => {
                                 </h3>
                                 <p>
                                   See{" "}
-                                  <a href="https://www.britishmuseum.org/visit#ticket-information">
+                                  <a href="http://localhost:3000/visit#ticket-information">
                                     ticket information
                                   </a>
                                 </p>
@@ -1099,7 +1102,7 @@ const Visit = () => {
                                   Egyptian mummies
                                 </a>
                                 .&nbsp;Please see the&nbsp;
-                                <a href="https://www.britishmuseum.org/visit#gallery-information">
+                                <a href="http://localhost:3000/visit#gallery-information">
                                   list of available galleries
                                 </a>
                                 &nbsp;to visit.
@@ -1109,7 +1112,7 @@ const Visit = () => {
                               </p>
                               <ul>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                  <a href="http://localhost:3000/exhibitions/silk-roads">
                                     <em>Silk Roads</em>
                                   </a>{" "}
                                   (26 September 2024 – 23 February 2025)
@@ -1126,7 +1129,7 @@ const Visit = () => {
                                   <em> </em>(17 October 2024 – 9 February 2025)
                                 </li>
                                 <li>
-                                  <a href="https://www.britishmuseum.org/exhibitions/picasso-printmaker">
+                                  <a href="http://localhost:3000/exhibitions/picasso-printmaker">
                                     <em>Picasso: printmaker</em>
                                   </a>{" "}
                                   (7 November 2024 – 30 March 2025)
@@ -1319,7 +1322,7 @@ const Visit = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/exhibitions-events"
+                                                      href="http://localhost:3000/exhibitions-events"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>
@@ -1426,12 +1429,13 @@ const Visit = () => {
                                     .slice(0, 1)
                                     .map((item, index) => (
                                       <h2
+                                        dangerouslySetInnerHTML={{
+                                          __html: item.categoryId,
+                                        }}
                                         key={index}
                                         id="paragraph-18453-title"
                                         className="section__title"
-                                      >
-                                        {item.categoryId}
-                                      </h2>
+                                      ></h2>
                                     ))
                                 ) : (
                                   <p>No content available</p>
@@ -1460,7 +1464,12 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item.title}</span>
+                                            <span
+                                              style={{ height: "38px" }}
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.title,
+                                              }}
+                                            ></span>
                                           </button>
                                         </h3>
                                         <div
@@ -1659,7 +1668,7 @@ const Visit = () => {
                                         permanent collection or our exhibitions:
                                         <ul>
                                           <li>
-                                            <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                            <a href="http://localhost:3000/exhibitions/silk-roads">
                                               <em>Silk Roads</em>
                                             </a>{" "}
                                             (26 September 2024 – 23 February
@@ -1681,7 +1690,7 @@ const Visit = () => {
                                             February 2025)
                                           </li>
                                           <li>
-                                            <a href="https://www.britishmuseum.org/exhibitions/picasso-printmaker">
+                                            <a href="http://localhost:3000/exhibitions/picasso-printmaker">
                                               <em>Picasso: printmaker</em>
                                             </a>{" "}
                                             (7 November 2024 – 30 March 2025)
@@ -1874,12 +1883,13 @@ const Visit = () => {
                                     .slice(0, 1)
                                     .map((item, index) => (
                                       <h2
+                                        dangerouslySetInnerHTML={{
+                                          __html: item.categoryId,
+                                        }}
                                         key={index}
                                         id="paragraph-18453-title"
                                         className="section__title"
-                                      >
-                                        {item.categoryId}
-                                      </h2>
+                                      ></h2>
                                     ))
                                 ) : (
                                   <p>No content available</p>
@@ -1908,7 +1918,11 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item.title}</span>
+                                            <span
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.title,
+                                              }}
+                                            ></span>
                                           </button>
                                         </h3>
                                         <div
@@ -1918,7 +1932,11 @@ const Visit = () => {
                                           aria-labelledby={`accordion-btn-${index}-second`} // Button id ile eşleşiyor
                                         >
                                           <ul>
-                                            <li>{item.content}</li>
+                                            <li
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.content,
+                                              }}
+                                            ></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -2175,7 +2193,7 @@ const Visit = () => {
                                         *
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/assyria-nineveh">
+                                        <a href="http://localhost:3000/collection/galleries/assyria-nineveh">
                                           Room 9: Assyria: Nineveh
                                         </a>
                                         *
@@ -2911,7 +2929,7 @@ const Visit = () => {
                                         from 27 January – 7 February 2025
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/enlightenment">
+                                        <a href="http://localhost:3000/collection/galleries/enlightenment">
                                           Room 1: Enlightenment
                                         </a>{" "}
                                         from 27 January – 14 February 2025
@@ -2930,7 +2948,7 @@ const Visit = () => {
                                         from 10–21 February 2025
                                       </li>
                                       <li>
-                                        <a href="https://www.britishmuseum.org/collection/galleries/assyria-nimrud">
+                                        <a href="http://localhost:3000/collection/galleries/assyria-nimrud">
                                           Rooms 7–8: Assyria: Nimrud
                                         </a>
                                         * from 10–21 February 2025
@@ -3158,7 +3176,7 @@ const Visit = () => {
                                   <div className="section--slice-content__wysiwyg wysiwyg">
                                     <p>
                                       Tickets are available to book for{" "}
-                                      <a href="https://www.britishmuseum.org/exhibitions/silk-roads">
+                                      <a href="http://localhost:3000/exhibitions/silk-roads">
                                         <em>Silk Roads</em>
                                       </a>{" "}
                                       (26 September 2024 – 23 February 2025),{" "}
@@ -3173,7 +3191,7 @@ const Visit = () => {
                                       </a>
                                       <em> </em>(17 October 2024 – 9 February
                                       2025) and{" "}
-                                      <a href="https://www.britishmuseum.org/exhibitions/picasso-printmaker">
+                                      <a href="http://localhost:3000/exhibitions/picasso-printmaker">
                                         <em>Picasso: printmaker</em>
                                       </a>{" "}
                                       (7 November 2024 – 30 March 2025).
@@ -3486,12 +3504,13 @@ const Visit = () => {
                                     .slice(0, 1)
                                     .map((item, index) => (
                                       <h2
+                                        dangerouslySetInnerHTML={{
+                                          __html: item.categoryId,
+                                        }}
                                         key={index}
                                         id="paragraph-18453-title"
                                         className="section__title"
-                                      >
-                                        {item.categoryId}
-                                      </h2>
+                                      ></h2>
                                     ))
                                 ) : (
                                   <p>No content available</p>
@@ -3520,7 +3539,11 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item.title}</span>
+                                            <span
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.title,
+                                              }}
+                                            ></span>
                                           </button>
                                         </h3>
                                         <div
@@ -3530,7 +3553,11 @@ const Visit = () => {
                                           aria-labelledby={`accordion-btn-${index}-third`} // Button id ile eşleşiyor
                                         >
                                           <ul>
-                                            <li>{item.content}</li>
+                                            <li
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.content,
+                                              }}
+                                            ></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -3689,7 +3716,7 @@ const Visit = () => {
                                     aria-labelledby="accordion-18455"
                                   >
                                     <p>
-                                      <a href="https://www.britishmuseum.org/exhibitions-events">
+                                      <a href="http://localhost:3000/exhibitions-events">
                                         Special exhibitions
                                       </a>
                                       &nbsp;are open daily 10.00–17.00 (last
@@ -4020,7 +4047,11 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item.title}</span>
+                                            <span
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.title,
+                                              }}
+                                            ></span>
                                           </button>
                                         </h3>
                                         <div
@@ -4030,7 +4061,11 @@ const Visit = () => {
                                           aria-labelledby={`accordion-btn-${index}-fourth`} // Button id ile eşleşiyor
                                         >
                                           <ul>
-                                            <li>{item.content}</li>
+                                            <li
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.content,
+                                              }}
+                                            ></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -4469,7 +4504,11 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item.title}</span>
+                                            <span
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.title,
+                                              }}
+                                            ></span>
                                           </button>
                                         </h3>
                                         <div
@@ -4479,7 +4518,11 @@ const Visit = () => {
                                           aria-labelledby={`accordion-btn-${index}-fifth`} // Button id ile eşleşiyor
                                         >
                                           <ul>
-                                            <li>{item.content}</li>
+                                            <li
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.content,
+                                              }}
+                                            ></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -4568,12 +4611,13 @@ const Visit = () => {
                                     .slice(0, 1)
                                     .map((item, index) => (
                                       <h2
+                                        dangerouslySetInnerHTML={{
+                                          __html: item.categoryId,
+                                        }}
                                         key={index}
                                         id="paragraph-18453-title"
                                         className="section__title"
-                                      >
-                                        {item.categoryId}
-                                      </h2>
+                                      ></h2>
                                     ))
                                 ) : (
                                   <p>No content available</p>
@@ -4602,7 +4646,11 @@ const Visit = () => {
                                             >
                                               <use xlinkHref="#sprite-icon-plus" />
                                             </svg>
-                                            <span>{item.title}</span>
+                                            <span
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.title,
+                                              }}
+                                            ></span>
                                           </button>
                                         </h3>
                                         <div
@@ -4612,7 +4660,11 @@ const Visit = () => {
                                           aria-labelledby={`accordion-btn-${index}-sixth`} // Button id ile eşleşiyor
                                         >
                                           <ul>
-                                            <li>{item.content}</li>
+                                            <li
+                                              dangerouslySetInnerHTML={{
+                                                __html: item.content,
+                                              }}
+                                            ></li>
                                           </ul>
                                         </div>
                                       </div>

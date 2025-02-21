@@ -76,17 +76,17 @@ const CommercialPress = () => {
         />
         <link
           rel="canonical"
-          href="https://www.britishmuseum.org/commercial/dersim-museum-press"
+          href="http://localhost:3000/commercial/dersim-museum-press"
         />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-09/mountain_pushing_paper_hero.jpg?itok=NY4GRqke"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-09/mountain_pushing_paper_hero.jpg?itok=NY4GRqke"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/commercial/dersim-museum-press"
+          content="http://localhost:3000/commercial/dersim-museum-press"
         />
         <meta property="og:title" content="Dersim Museum Press" />
         <meta
@@ -106,7 +106,7 @@ const CommercialPress = () => {
         <meta name="twitter:title" content="Dersim Museum Press" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-09/mountain_pushing_paper_hero.jpg?itok=NY4GRqke"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-09/mountain_pushing_paper_hero.jpg?itok=NY4GRqke"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -676,7 +676,7 @@ const CommercialPress = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/commercial/dersim-museum-press"
+                                href="http://localhost:3000/commercial/dersim-museum-press"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -692,7 +692,7 @@ const CommercialPress = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/commercial/dersim-museum-press"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/commercial/dersim-museum-press"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -712,7 +712,7 @@ const CommercialPress = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Dersim%20Museum%20Press&url=https://www.britishmuseum.org/commercial/dersim-museum-press"
+                              href="https://twitter.com/intent/tweet?text=Dersim%20Museum%20Press&url=http://localhost:3000/commercial/dersim-museum-press"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >

@@ -60,14 +60,14 @@ const Learn = () => {
           name="description"
           content="The Dersim Museum's learning team create and deliver accessible world class cultural learning experiences for all ages and levels."
         />
-        <link rel="canonical" href="https://www.britishmuseum.org/learn" />
+        <link rel="canonical" href="http://localhost:3000/learn" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/140-BM_MangaLate-Jul19.jpg?itok=JM3_hIUb"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/140-BM_MangaLate-Jul19.jpg?itok=JM3_hIUb"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://www.britishmuseum.org/learn" />
+        <meta property="og:url" content="http://localhost:3000/learn" />
         <meta property="og:title" content="Learn" />
         <meta
           property="og:description"
@@ -86,7 +86,7 @@ const Learn = () => {
         <meta name="twitter:title" content="Learn" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2019-11/140-BM_MangaLate-Jul19.jpg?itok=JM3_hIUb"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2019-11/140-BM_MangaLate-Jul19.jpg?itok=JM3_hIUb"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -573,7 +573,7 @@ const Learn = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/learn"
+                                href="http://localhost:3000/learn"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -589,7 +589,7 @@ const Learn = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/learn"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/learn"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -609,7 +609,7 @@ const Learn = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link"
-                              href="https://twitter.com/intent/tweet?text=Learn&url=https://www.britishmuseum.org/learn"
+                              href="https://twitter.com/intent/tweet?text=Learn&url=http://localhost:3000/learn"
                               target="_blank"
                               rel="nofollow noopener noreferrer"
                             >
@@ -1150,7 +1150,7 @@ const Learn = () => {
                                                 <div className="teaser__content-push">
                                                   <h3 className="teaser__title">
                                                     <a
-                                                      href="https://www.britishmuseum.org/visit"
+                                                      href="http://localhost:3000/visit"
                                                       className="teaser__anchor"
                                                     >
                                                       <span>

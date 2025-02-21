@@ -24,19 +24,16 @@ const Animals = () => {
           name="description"
           content="Explore the many wild and wonderful depictions of animals found in the Museum's collection."
         />
-        <link
-          rel="canonical"
-          href="https://www.britishmuseum.org/collection/animals"
-        />
+        <link rel="canonical" href="http://localhost:3000/collection/animals" />
         <link
           rel="image_src"
-          href="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Bronze_figure_mounted_Amazon_1000x500.jpg?itok=XdX12_Uq"
+          href="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Bronze_figure_mounted_Amazon_1000x500.jpg?itok=XdX12_Uq"
         />
         <meta property="og:site_name" content="The Dersim Museum" />
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content="https://www.britishmuseum.org/collection/animals"
+          content="http://localhost:3000/collection/animals"
         />
         <meta property="og:title" content="Animals" />
         <meta
@@ -45,7 +42,7 @@ const Animals = () => {
         />
         <meta
           property="og:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Bronze_figure_mounted_Amazon_1000x500.jpg?itok=XdX12_Uq"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Bronze_figure_mounted_Amazon_1000x500.jpg?itok=XdX12_Uq"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -56,7 +53,7 @@ const Animals = () => {
         <meta name="twitter:title" content="Animals" />
         <meta
           name="twitter:image"
-          content="https://www.britishmuseum.org/sites/default/files/styles/uncropped_large/public/2023-12/Bronze_figure_mounted_Amazon_1000x500.jpg?itok=XdX12_Uq"
+          content="http://localhost:3000/sites/default/files/styles/uncropped_large/public/2023-12/Bronze_figure_mounted_Amazon_1000x500.jpg?itok=XdX12_Uq"
         />
         <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
         <meta name="MobileOptimized" content="width" />
@@ -628,7 +625,7 @@ const Animals = () => {
                                 <use xlinkHref="#sprite-icon-chevron" />
                               </svg>
                               <a
-                                href="https://www.britishmuseum.org/collection/animals"
+                                href="http://localhost:3000/collection/animals"
                                 className="breadcrumb__current"
                                 aria-current="page"
                               >
@@ -644,7 +641,7 @@ const Animals = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="http://www.facebook.com/share.php?u=https://www.britishmuseum.org/collection/animals"
+                              href="http://www.facebook.com/share.php?u=http://localhost:3000/collection/animals"
                               target="_blank"
                               rel="noopener"
                             >
@@ -668,7 +665,7 @@ const Animals = () => {
                           <li className="social-share__item">
                             <a
                               className="social-share__link external-link"
-                              href="https://twitter.com/intent/tweet?text=Animals&url=https://www.britishmuseum.org/collection/animals"
+                              href="https://twitter.com/intent/tweet?text=Animals&url=http://localhost:3000/collection/animals"
                               target="_blank"
                               rel="noopener"
                             >
@@ -1256,7 +1253,7 @@ const Animals = () => {
                                           data-large-image-width={1233}
                                           data-large-image-height={2000}
                                           data-description='<strong>Fragment of colossal horse&nbsp;from&nbsp;the Mausoleum at Halikarnassus, f</strong><strong>rom Bodrum, modern Turkey. Greek, about 350 BC.</strong><br>
-A four-horse chariot group (quadriga) was positioned on the top of the stepped pyramid that crowned the Mausoleum.&nbsp;Attributed to Pytheos of Priene. <a href="https://www.britishmuseum.org/collection/object/G_1857-1220-239"><span>Collection online</span></a>'
+A four-horse chariot group (quadriga) was positioned on the top of the stepped pyramid that crowned the Mausoleum.&nbsp;Attributed to Pytheos of Priene. <a href="http://localhost:3000/collection/object/G_1857-1220-239"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1297,7 +1294,7 @@ A four-horse chariot group (quadriga) was positioned on the top of the stepped p
                                           data-large-image-width={1600}
                                           data-large-image-height={1275}
                                           data-description="<strong>Albrecht Durer,&nbsp;'The Rhinoceros'. Woodcut, about 1515.</strong><br>
-A woodcut of a rhinoceros standing in profile to the right, and five and a half lines of letterpress above. Print made by Albrecht Dürer. <a href=&quot;https://www.britishmuseum.org/collection/object/P_1895-0122-714&quot;><span>Collection online</span></a>"
+A woodcut of a rhinoceros standing in profile to the right, and five and a half lines of letterpress above. Print made by Albrecht Dürer. <a href=&quot;http://localhost:3000/collection/object/P_1895-0122-714&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1337,7 +1334,7 @@ A woodcut of a rhinoceros standing in profile to the right, and five and a half 
                                           data-large-image-width={1600}
                                           data-large-image-height={1387}
                                           data-description='<strong>Porcelain elephant, Japan, Edo Period, 1655–1670.</strong><br>
-One of a pair of model elephants. Made of porcelain in a mould and decorated in overglaze enamels in red, yellow, green and blue with nigoshide (milky white) body. <a href="https://www.britishmuseum.org/collection/object/A_1980-0325-1-2"><span>Collection online</span></a>'
+One of a pair of model elephants. Made of porcelain in a mould and decorated in overglaze enamels in red, yellow, green and blue with nigoshide (milky white) body. <a href="http://localhost:3000/collection/object/A_1980-0325-1-2"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >
@@ -1378,7 +1375,7 @@ One of a pair of model elephants. Made of porcelain in a mould and decorated in 
                                           data-large-image-width={1600}
                                           data-large-image-height={1244}
                                           data-description="<strong>Maria Sibylla Merian, Studies of beetles, with a blue-flowered plant. Watercolour on vellum, about 1701–1705.</strong><br>
-From an album entitled 'Merian's Drawings of Surinam Insects and&nbsp;Amphibians'. It shows one black beetle resembling a stag-beetle, the other green. Watercolour, strengthened with gum, and bodycolour, heightened with white, on vellum.&nbsp; <a href=&quot;https://www.britishmuseum.org/collection/object/P_SL-5275-75&quot;><span>Collection online</span></a>"
+From an album entitled 'Merian's Drawings of Surinam Insects and&nbsp;Amphibians'. It shows one black beetle resembling a stag-beetle, the other green. Watercolour, strengthened with gum, and bodycolour, heightened with white, on vellum.&nbsp; <a href=&quot;http://localhost:3000/collection/object/P_SL-5275-75&quot;><span>Collection online</span></a>"
                                           data-caption
                                           data-lang
                                         >
@@ -1431,7 +1428,7 @@ From an album entitled 'Merian's Drawings of Surinam Insects and&nbsp;Amphibians
                                           data-large-image-width={1600}
                                           data-large-image-height={1201}
                                           data-description='<strong>Wall pane, Neo-Assyria,&nbsp;645–635 BC.</strong><br>
-Detail of gypsum wall panel relief from the North Palace, showing king Ashurbanipal hunting on horseback and on foot with attendants. <a href="https://www.britishmuseum.org/collection/object/W_1856-0909-48_6"><span>Collection online</span></a>'
+Detail of gypsum wall panel relief from the North Palace, showing king Ashurbanipal hunting on horseback and on foot with attendants. <a href="http://localhost:3000/collection/object/W_1856-0909-48_6"><span>Collection online</span></a>'
                                           data-caption
                                           data-lang
                                         >

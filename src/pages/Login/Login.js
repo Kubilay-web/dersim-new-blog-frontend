@@ -230,17 +230,34 @@ export default function Login() {
     }
   };
 
+  // Bootstrap CSS'i dinamik olarak yükle
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href =
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
-    <div className="mt-5 mb-5 h-[100vh]">
-      <div className="container d-flex justify-content-center align-items-center flex-column flex-md-row gap-5">
-        {/* Right Section */}
+    <div className="mt-5 mb-5 vh-100 bg-white">
+      <div className="container d-flex justify-content-center align-items-center flex-column flex-lg-row gap-5">
+        {/* Left Section - Image or Illustration */}
+
+        {/* Right Section - Login Form */}
         <div className="flex-1 d-flex justify-content-center align-items-center flex-column">
           <form
-            className="d-flex flex-column gap-3"
+            className="d-flex flex-column gap-3 p-4 border shadow rounded-3"
             onSubmit={handleSubmit}
-            style={{ maxWidth: "400px", width: "100%" }}
+            style={{ maxWidth: "450px", width: "100%" }}
           >
-            <div>
+            <h2 className="text-center mb-4">Sign In</h2>
+
+            <div className="form-group">
               <label htmlFor="email" className="form-label">
                 Your email
               </label>
@@ -250,9 +267,11 @@ export default function Login() {
                 id="email"
                 placeholder="name@company.com"
                 onChange={handleChange}
+                required
               />
             </div>
-            <div>
+
+            <div className="form-group">
               <label htmlFor="password" className="form-label">
                 Your password
               </label>
@@ -262,10 +281,12 @@ export default function Login() {
                 id="password"
                 placeholder="**********"
                 onChange={handleChange}
+                required
               />
             </div>
+
             <button
-              className="btn btn-primary mt-3"
+              className="btn btn-primary mt-3 w-100"
               type="submit"
               disabled={loading}
             >
