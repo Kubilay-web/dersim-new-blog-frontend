@@ -6,6 +6,7 @@ import storage from "redux-persist/lib/storage";
 import persistStore from "redux-persist/es/persistStore";
 import { productsApi } from "./products/productsApi";
 import cartReducer, { getTotals } from "./products/cartSlice";
+import languageReducer from "./languageSlice";
 
 // Combine the reducers
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   products: productsReducer,
   [productsApi.reducerPath]: productsApi.reducer, // Add the productsApi reducer
   cart: cartReducer,
+  language: languageReducer,
 });
 
 // Persist configuration

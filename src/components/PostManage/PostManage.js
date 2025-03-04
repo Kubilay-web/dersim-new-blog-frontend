@@ -26,12 +26,14 @@ const PostManage = () => {
     price: "",
     slug: "",
     color: "#ffffff", // Varsayılan renk
+    language: "turkish", // Varsayılan dil
   });
   const [imagePreview, setImagePreview] = useState(null);
   const [isEditMode, setIsEditMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState(""); // Arama sorgusu
   const [currentPage, setCurrentPage] = useState(0); // Sayfa numarası
   const [postsPerPage] = useState(5); // Sayfa başına post sayısı
+  const [languageFilter, setLanguageFilter] = useState("all"); // Dil filtresi
 
   // API'ye postları almak için istek gönder
   const fetchPosts = async () => {
@@ -59,6 +61,7 @@ const PostManage = () => {
     formData.append("price", postDetails.price);
     formData.append("slug", postDetails.slug);
     formData.append("color", postDetails.color); // Renk bilgisi eklendi
+    formData.append("language", postDetails.language); // Dil bilgisi eklendi
 
     if (postDetails.image) {
       formData.append("image", postDetails.image); // Resim ekleme
@@ -89,6 +92,7 @@ const PostManage = () => {
     formData.append("price", postDetails.price);
     formData.append("slug", postDetails.slug);
     formData.append("color", postDetails.color); // Yeni renk bilgisi eklendi
+    formData.append("language", postDetails.language); // Dil bilgisi eklendi
 
     if (postDetails.image) {
       formData.append("image", postDetails.image); // Yeni resim ekleme
@@ -142,6 +146,7 @@ const PostManage = () => {
         price: "",
         slug: "",
         color: "#ffffff", // Yeni post için varsayılan renk
+        language: "turkish", // Varsayılan dil
       });
       setImagePreview(null);
       setIsEditMode(false);
@@ -165,15 +170,16 @@ const PostManage = () => {
 
   // Arama filtreleme fonksiyonu
   const filterPosts = () => {
-    return posts.filter(
+    let filtered = posts.filter(
       (post) =>
-        post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.content.toLowerCase().includes(searchQuery.toLowerCase())
+        (post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.content.toLowerCase().includes(searchQuery.toLowerCase())) &&
+        (languageFilter === "all" || post.language === languageFilter)
     );
+    return filtered;
   };
 
   // Pagination hesaplamaları
-
   const filteredPosts = filterPosts();
   const offset = currentPage * postsPerPage;
   const currentPosts = filteredPosts.slice(offset, offset + postsPerPage);
@@ -196,6 +202,23 @@ const PostManage = () => {
         className="mb-4"
       />
 
+      {/* Dil Filtreleme */}
+      <Form.Group controlId="languageFilter" className="mb-4">
+        <Form.Label>Dil Seçin</Form.Label>
+        <Form.Control
+          as="select"
+          value={languageFilter}
+          onChange={(e) => setLanguageFilter(e.target.value)}
+        >
+          <option value="all">Tüm Diller</option>
+          <option value="turkish">Türkçe</option>
+          <option value="english">İngilizce</option>
+          <option value="german">Almanca</option>
+          <option value="kurdish">Kürtçe</option>
+          <option value="zazaki">Zazaca</option>
+        </Form.Control>
+      </Form.Group>
+
       {/* Post Listesi */}
       {loading ? (
         <div className="d-flex justify-content-center">
@@ -208,6 +231,7 @@ const PostManage = () => {
               <th>Başlık</th>
               <th>İçerik</th>
               <th>Kategori</th>
+              <th>Dil</th>
               <th>İşlemler</th>
             </tr>
           </thead>
@@ -217,6 +241,7 @@ const PostManage = () => {
                 <td>{post.title}</td>
                 <td>{post.content.slice(0, 50)}...</td>
                 <td>{post.category}</td>
+                <td>{post.language}</td>
                 <td>
                   <Button
                     variant="warning"
@@ -237,12 +262,17 @@ const PostManage = () => {
         </Table>
       )}
 
-      {/* Yeni Post Modalı */}
-      <Button variant="primary" onClick={() => handleShowModal()}>
-        Yeni Yazı Ekle
-      </Button>
+      {/* Sayfalama */}
+      <ReactPaginate
+        pageCount={Math.ceil(filteredPosts.length / postsPerPage)}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={2}
+        onPageChange={handlePageChange}
+        containerClassName="pagination"
+        activeClassName="active"
+      />
 
-      {/* Modal */}
+      {/* Post Modal */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>
@@ -251,56 +281,48 @@ const PostManage = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group controlId="title">
+            <Form.Group>
               <Form.Label>Başlık</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Yazı başlığını girin"
                 value={postDetails.title}
                 onChange={(e) =>
                   setPostDetails({ ...postDetails, title: e.target.value })
                 }
               />
             </Form.Group>
-
-            <Form.Group controlId="content">
+            <Form.Group>
               <Form.Label>İçerik</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
-                placeholder="Yazı içeriğini girin"
                 value={postDetails.content}
                 onChange={(e) =>
                   setPostDetails({ ...postDetails, content: e.target.value })
                 }
               />
             </Form.Group>
-
-            <Form.Group controlId="category">
+            <Form.Group>
               <Form.Label>Kategori</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Kategori girin"
                 value={postDetails.category}
                 onChange={(e) =>
                   setPostDetails({ ...postDetails, category: e.target.value })
                 }
               />
             </Form.Group>
-
-            <Form.Group controlId="event">
+            <Form.Group>
               <Form.Label>Etkinlik</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Etkinlik adı"
                 value={postDetails.event}
                 onChange={(e) =>
                   setPostDetails({ ...postDetails, event: e.target.value })
                 }
               />
             </Form.Group>
-
-            <Form.Group controlId="date">
+            <Form.Group>
               <Form.Label>Tarih</Form.Label>
               <Form.Control
                 type="date"
@@ -310,8 +332,17 @@ const PostManage = () => {
                 }
               />
             </Form.Group>
-
-            <Form.Group controlId="slug">
+            <Form.Group>
+              <Form.Label>Fiyat</Form.Label>
+              <Form.Control
+                type="number"
+                value={postDetails.price}
+                onChange={(e) =>
+                  setPostDetails({ ...postDetails, price: e.target.value })
+                }
+              />
+            </Form.Group>
+            <Form.Group>
               <Form.Label>Slug</Form.Label>
               <Form.Control
                 type="text"
@@ -321,20 +352,7 @@ const PostManage = () => {
                 }
               />
             </Form.Group>
-
-            <Form.Group controlId="price">
-              <Form.Label>Fiyat</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Fiyat"
-                value={postDetails.price}
-                onChange={(e) =>
-                  setPostDetails({ ...postDetails, price: e.target.value })
-                }
-              />
-            </Form.Group>
-
-            <Form.Group controlId="color">
+            <Form.Group>
               <Form.Label>Renk</Form.Label>
               <Form.Control
                 type="color"
@@ -344,18 +362,36 @@ const PostManage = () => {
                 }
               />
             </Form.Group>
-
-            <Form.Group controlId="image">
+            <Form.Group>
+              <Form.Label>Dil</Form.Label>
+              <Form.Control
+                as="select"
+                value={postDetails.language}
+                onChange={(e) =>
+                  setPostDetails({ ...postDetails, language: e.target.value })
+                }
+              >
+                <option value="turkish">Türkçe</option>
+                <option value="english">İngilizce</option>
+                <option value="german">Almanca</option>
+                <option value="kurdish">Kürtçe</option>
+                <option value="zazaki">Zazaca</option>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group>
               <Form.Label>Görsel</Form.Label>
-              <Form.Control type="file" onChange={handleImageChange} />
+              <Form.Control
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+              />
               {imagePreview && (
-                <div className="mt-3">
-                  <img
-                    src={imagePreview}
-                    alt="Görsel Önizleme"
-                    style={{ maxWidth: "100%", height: "auto" }}
-                  />
-                </div>
+                <img
+                  src={imagePreview}
+                  alt="Preview"
+                  className="img-fluid mt-3"
+                  style={{ maxHeight: "200px" }}
+                />
               )}
             </Form.Group>
           </Form>
@@ -372,15 +408,6 @@ const PostManage = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <ReactPaginate
-        previousLabel={"Önceki"}
-        nextLabel={"Sonraki"}
-        pageCount={Math.ceil(filteredPosts.length / postsPerPage)}
-        onPageChange={handlePageChange}
-        containerClassName={"pagination justify-content-center mt-4"}
-        activeClassName={"active"}
-      />
     </div>
   );
 };

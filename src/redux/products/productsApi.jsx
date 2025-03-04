@@ -8,8 +8,9 @@ export const productsApi = createApi({
     baseUrl: `https://dersim-new-blog-backend.vercel.app/api/`,
   }),
   endpoints: (builder) => ({
+    // Modify this to accept a `language` parameter
     getAllProducts: builder.query({
-      query: () => `products`, // Make sure this matches your API endpoint
+      query: (language) => `products/language/${language}`, // Adjust endpoint to include the language
     }),
   }),
 });

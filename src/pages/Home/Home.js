@@ -12,29 +12,12 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Navigation } from "swiper/modules";
 
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../../redux/languageSlice";
+
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
-  const [isOpen4, setIsOpen4] = useState(false);
-  const [isOpen5, setIsOpen5] = useState(false);
-  // Dropdown menüsünü toggle (aç/kapa) etmek için fonksiyon
-  const toggleDropDown = () => {
-    setIsOpen(!isOpen);
-  };
-  const toggleDropDown2 = () => {
-    setIsOpen2(!isOpen2);
-  };
-  const toggleDropDown3 = () => {
-    setIsOpen3(!isOpen3);
-  };
-  const toggleDropDown4 = () => {
-    setIsOpen4(!isOpen4);
-  };
-  const toggleDropDown5 = () => {
-    setIsOpen5(!isOpen5);
-  };
 
   const [posts, setPosts] = useState([]);
   const [posts2, setPosts2] = useState([]);
@@ -42,10 +25,31 @@ const Home = () => {
   const [posts4, setPosts4] = useState([]);
   const [posts5, setPosts5] = useState([]);
 
+  const { t } = useTranslation();
+  const currentLanguage = useSelector(selectLanguage); // Kullanıcı dilini al
+  console.log(currentLanguage); // Dilin doğru şekilde alındığından emin ol
+
+  // Dil haritası (Koddan Ad'a Çevirme)
+  const languageMap = {
+    tr: "turkish", // Türkçe
+    en: "english", // İngilizce
+    ku: "kurdish", // Kürtçe
+    de: "german", // Almanca
+    zaz: "zazaki",
+  };
+
+  // `ger`'i `de`'ye dönüştürmek için bir fonksiyon
+  const getLanguageParam = (language) => {
+    if (language === "ger") return "german"; // `ger` gelirse, `german` döndür
+    return languageMap[language] || "turkish"; // Eğer başka bir dil kodu ise, dil haritasına göre döndür
+  };
+
+  // fetchPosts fonksiyonunu güncelleyelim
   const fetchPosts = async (category, setPostFunc) => {
     try {
+      const language = getLanguageParam(currentLanguage); // Dil parametresini al
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/categoryIdAndLanguage?categoryId=${category}&language=${language}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -54,19 +58,25 @@ const Home = () => {
     }
   };
 
+  // useEffect ile verileri çek
   useEffect(() => {
-    const category1 = "Konferanslar ve Etkinlikler";
-    const category2 = "Müzemizi Ziyaret Edin";
-    const category3 = "Demokrasi Çalışmaları";
-    const category4 = "Dersim Vakfından Haberler";
-    const category5 = "Koleksiyonlarımızı Keşfedin";
+    const categoryPrefix = getLanguageParam(currentLanguage); // Dil kodunu al
+    console.log(categoryPrefix);
+    console.log(currentLanguage);
+
+    // Kategoriler dil bazında dinamik olarak ayarlanıyor
+    const category1 = `${categoryPrefix}-34`;
+    const category2 = `${categoryPrefix}-40`;
+    const category3 = `${categoryPrefix}-12`;
+    const category4 = `${categoryPrefix}-14`;
+    const category5 = `${categoryPrefix}-33`;
 
     fetchPosts(category1, setPosts);
     fetchPosts(category2, setPosts2);
     fetchPosts(category3, setPosts3);
     fetchPosts(category4, setPosts4);
     fetchPosts(category5, setPosts5);
-  }, []);
+  }, [currentLanguage]); // currentLanguage değiştiğinde yeniden veri çekilecek
 
   const { refetch } = useGetAllProductsQuery();
 
@@ -544,8 +554,7 @@ const Home = () => {
                             id="paragraph-39949-title"
                             className="hero__title"
                           >
-                            {" "}
-                            Dersim Müzesine Hoşgeldiniz
+                            {t("welcome")}
                           </h2>
                           <div className="hero__content">
                             <p>

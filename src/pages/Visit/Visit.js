@@ -2,32 +2,45 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
-import "react-quill-new/dist/quill.snow.css"; // Quill için stil dosyasını import ettik
+import "react-quill-new/dist/quill.snow.css"; // Quill için stil dosyasını import ettik,
+
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../../redux/languageSlice";
 
 const Visit = () => {
+  const { t } = useTranslation();
+  const currentLanguage = useSelector(selectLanguage); // Kullanıcı dilini al
+  console.log(currentLanguage); // Dilin doğru şekilde alındığından emin ol
+
+  // Dil haritası (Koddan Ad'a Çevirme)
+  const languageMap = {
+    tr: "turkish", // Türkçe
+    en: "english", // İngilizce
+    ku: "kurdish", // Kürtçe
+    de: "german", // Almanca
+    zaz: "zazaki",
+  };
+
+  // `ger`'i `de`'ye dönüştürmek için bir fonksiyon
+  const getLanguageParam = (language) => {
+    if (language === "ger") {
+      return "german";
+    } else if (language === "zza") {
+      return "zazaki";
+    } else return languageMap[language] || "turkish"; // Eğer başka bir dil kodu ise, dil haritasına göre döndür
+  };
+
+  //Post area
   const [posts, setPosts] = useState([]);
   const [posts2, setPosts2] = useState([]);
   const [posts3, setPosts3] = useState([]);
-  const [content, setContent] = useState([]);
-  const [accordionData, setAccordionData] = useState([]); // Accordion verileri
-  const [accordionData2, setAccordionData2] = useState([]); // Accordion verileri
-  const [accordionData3, setAccordionData3] = useState([]); // Accordion verileri
-  const [accordionData4, setAccordionData4] = useState([]); // Accordion verileri
-  const [accordionData5, setAccordionData5] = useState([]); // Accordion verileri
-  const [accordionData6, setAccordionData6] = useState([]); // Accordion verileri
-
-  // Her bir accordion öğesinin durumunu tutacak state
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleAccordion = (index2) => {
-    // Eğer tıklanan accordion zaten açıksa, kapatıyoruz. Aksi takdirde açıyoruz.
-    setOpenIndex(openIndex === index2 ? null : index2);
-  };
 
   const fetchPosts = async (category, setPostFunc) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/category?category=${category}`
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/categoryIdAndLanguage?categoryId=${category}&language=${language}`
       );
       const data = await res.json();
       setPostFunc(data.posts);
@@ -36,131 +49,201 @@ const Visit = () => {
     }
   };
 
-  const fetchContentById = async (id, setPostFunc) => {
+  // useEffect ile verileri çek
+  useEffect(() => {
+    const categoryPrefix = getLanguageParam(currentLanguage); // Dil kodunu al
+    console.log(categoryPrefix);
+    console.log(currentLanguage);
+
+    // Kategoriler dil bazında dinamik olarak ayarlanıyor
+    const category1 = `${categoryPrefix}-57`;
+    const category2 = `${categoryPrefix}-40`;
+    const category3 = `${categoryPrefix}-16`;
+
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+    fetchPosts(category3, setPosts3);
+  }, [currentLanguage]); // currentLanguage değiştiğinde yeniden veri çekilecek
+
+  //Content area
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (categoryId, setPostFunc) => {
     try {
+      const language = getLanguageParam(currentLanguage);
+
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/contents/${id}`
+        `https://dersim-new-blog-backend.vercel.app/api/contents/${categoryId}/${language}`
       );
       const data = await res.json();
       setPostFunc([data]); // Eğer bir içerik döndürüyorsa array içinde tek bir içerik döndürüyoruz
     } catch (error) {
-      console.error(`Failed to fetch content for ID ${id}:`, error);
+      console.error(`Failed to fetch content for ID ${categoryId}:`, error);
     }
   };
 
-  const fetchAccordionData = async (categoryId) => {
+  // useEffect ile verileri çek
+  useEffect(() => {
+    const contentPrefix = getLanguageParam(currentLanguage); // Dil kodunu al
+    console.log(contentPrefix);
+    console.log(currentLanguage);
+
+    // Kategoriler dil bazında dinamik olarak ayarlanıyor
+    const category1 = `${contentPrefix}-content-2`;
+
+    fetchContentById(category1, setContent);
+  }, [currentLanguage]); // currentLanguage değiştiğinde yeniden veri çekilecek
+
+  //Accordion area
+
+  const [accordionData, setAccordionData] = useState([]); // Accordion verileri
+  const [accordionData2, setAccordionData2] = useState([]); // Accordion verileri
+  const [accordionData3, setAccordionData3] = useState([]); // Accordion verileri
+  const [accordionData4, setAccordionData4] = useState([]); // Accordion verileri
+  const [accordionData5, setAccordionData5] = useState([]); // Accordion verileri
+  const [accordionData6, setAccordionData6] = useState([]); // Accordion verileri
+
+  const fetchAccordionData = async (accordionId) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion/${accordionId}/${language}`
       );
       const data = await res.json();
       setAccordionData(data); // Accordion verilerini güncelliyoruz
     } catch (error) {
       console.error(
-        `Failed to fetch accordion data for category ${categoryId}:`,
+        `Failed to fetch accordion data for category ${accordionId}:`,
         error
       );
     }
   };
 
-  const fetchAccordionData2 = async (categoryId2) => {
+  const fetchAccordionData2 = async (accordionId2) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId2}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion/${accordionId2}/${language}`
       );
       const data2 = await res.json();
       setAccordionData2(data2); // Accordion verilerini güncelliyoruz
     } catch (error) {
       console.error(
-        `Failed to fetch accordion data for category ${categoryId2}:`,
+        `Failed to fetch accordion data for category ${accordionId2}:`,
         error
       );
     }
   };
 
-  const fetchAccordionData3 = async (categoryId3) => {
+  const fetchAccordionData3 = async (accordionId3) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId3}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion/${accordionId3}/${language}`
       );
       const data3 = await res.json();
       setAccordionData3(data3); // Accordion verilerini güncelliyoruz
     } catch (error) {
       console.error(
-        `Failed to fetch accordion data for category ${categoryId3}:`,
+        `Failed to fetch accordion data for category ${accordionId3}:`,
         error
       );
     }
   };
 
-  const fetchAccordionData4 = async (categoryId4) => {
+  const fetchAccordionData4 = async (accordionId4) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId4}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion/${accordionId4}/${language}`
       );
       const data4 = await res.json();
       setAccordionData4(data4); // Accordion verilerini güncelliyoruz
     } catch (error) {
       console.error(
-        `Failed to fetch accordion data for category ${categoryId4}:`,
+        `Failed to fetch accordion data for category ${accordionId4}:`,
         error
       );
     }
   };
 
-  const fetchAccordionData5 = async (categoryId5) => {
+  const fetchAccordionData5 = async (accordionId5) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId5}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion/${accordionId5}/${language}`
       );
       const data5 = await res.json();
       setAccordionData5(data5); // Accordion verilerini güncelliyoruz
     } catch (error) {
       console.error(
-        `Failed to fetch accordion data for category ${categoryId5}:`,
+        `Failed to fetch accordion data for category ${accordionId5}:`,
         error
       );
     }
   };
 
-  const fetchAccordionData6 = async (categoryId6) => {
+  const fetchAccordionData6 = async (accordionId6) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId6}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion/${accordionId6}/${language}`
       );
       const data6 = await res.json();
       setAccordionData6(data6); // Accordion verilerini güncelliyoruz
     } catch (error) {
       console.error(
-        `Failed to fetch accordion data for category ${categoryId6}:`,
+        `Failed to fetch accordion data for category ${accordionId6}:`,
         error
       );
     }
   };
 
   useEffect(() => {
-    const category1 = "Ways to explore";
-    const category2 = "Exhibitions";
-    const category3 = "Eat, drink, shop and enjoy";
-    const someContentId = "67af1d658b2864c833c098f1";
-    const categoryId = "Ticket information";
-    const categoryId2 = "Gallery information";
-    const categoryId3 = "Full opening hours";
-    const categoryId4 = "Visit";
-    const categoryId5 = "Entering the museum";
-    const categoryId6 = "Facilities";
-
-    fetchPosts(category1, setPosts);
-    fetchPosts(category2, setPosts2);
-    fetchPosts(category3, setPosts3);
-    fetchContentById(someContentId, setContent);
-    fetchAccordionData(categoryId, setAccordionData);
-    fetchAccordionData2(categoryId2, setAccordionData2);
-    fetchAccordionData3(categoryId3, setAccordionData3);
-    fetchAccordionData4(categoryId4, setAccordionData4);
-    fetchAccordionData5(categoryId5, setAccordionData5);
-    fetchAccordionData6(categoryId6, setAccordionData6);
+    // const category1 = "Ways to explore";
+    // const category2 = "Exhibitions";
+    // const category3 = "Eat, drink, shop and enjoy";
+    // const someContentId = "67af1d658b2864c833c098f1";
+    // const categoryId = "Ticket information";
+    // const categoryId2 = "Gallery information";
+    // const categoryId3 = "Full opening hours";
+    // const categoryId4 = "Visit";
+    // const categoryId5 = "Entering the museum";
+    // const categoryId6 = "Facilities";
+    // fetchPosts(category1, setPosts);
+    // fetchPosts(category2, setPosts2);
+    // fetchPosts(category3, setPosts3);
+    // fetchContentById(someContentId, setContent);
+    // fetchAccordionData(categoryId, setAccordionData);
+    // fetchAccordionData2(categoryId2, setAccordionData2);
+    // fetchAccordionData3(categoryId3, setAccordionData3);
+    // fetchAccordionData4(categoryId4, setAccordionData4);
+    // fetchAccordionData5(categoryId5, setAccordionData5);
+    // fetchAccordionData6(categoryId6, setAccordionData6);
   }, []);
+
+  // useEffect ile verileri çek
+  useEffect(() => {
+    const accordionPrefix = getLanguageParam(currentLanguage); // Dil kodunu al
+    console.log(accordionPrefix);
+    console.log(currentLanguage);
+
+    // Kategoriler dil bazında dinamik olarak ayarlanıyor
+    const accordion1 = `${accordionPrefix}-accordion-24`;
+    const accordion2 = `${accordionPrefix}-accordion-15`;
+    const accordion3 = `${accordionPrefix}-accordion-13`;
+    const accordion4 = `${accordionPrefix}-accordion-25`;
+    const accordion5 = `${accordionPrefix}-accordion-17`;
+    const accordion6 = `${accordionPrefix}-accordion-11`;
+
+    fetchAccordionData(accordion1, setAccordionData);
+    fetchAccordionData2(accordion2, setAccordionData2);
+    fetchAccordionData3(accordion3, setAccordionData3);
+    fetchAccordionData4(accordion4, setAccordionData4);
+    fetchAccordionData5(accordion5, setAccordionData5);
+    fetchAccordionData6(accordion6, setAccordionData6);
+  }, [currentLanguage]);
 
   return (
     <>
@@ -1430,7 +1513,7 @@ const Visit = () => {
                                     .map((item, index) => (
                                       <h2
                                         dangerouslySetInnerHTML={{
-                                          __html: item.categoryId,
+                                          __html: item.accordionId,
                                         }}
                                         key={index}
                                         id="paragraph-18453-title"
@@ -1884,7 +1967,7 @@ const Visit = () => {
                                     .map((item, index) => (
                                       <h2
                                         dangerouslySetInnerHTML={{
-                                          __html: item.categoryId,
+                                          __html: item.accordionId,
                                         }}
                                         key={index}
                                         id="paragraph-18453-title"
@@ -3505,7 +3588,7 @@ const Visit = () => {
                                     .map((item, index) => (
                                       <h2
                                         dangerouslySetInnerHTML={{
-                                          __html: item.categoryId,
+                                          __html: item.accordionId,
                                         }}
                                         key={index}
                                         id="paragraph-18453-title"
@@ -4612,7 +4695,7 @@ const Visit = () => {
                                     .map((item, index) => (
                                       <h2
                                         dangerouslySetInnerHTML={{
-                                          __html: item.categoryId,
+                                          __html: item.accordionId,
                                         }}
                                         key={index}
                                         id="paragraph-18453-title"

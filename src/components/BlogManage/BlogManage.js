@@ -7,40 +7,17 @@ const BlogManage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
+  const [language, setLanguage] = useState("turkish");
+  const [slug, setSlug] = useState(""); // Slug alanı ekledik
   const [image, setImage] = useState(null);
   const [blogs, setBlogs] = useState([]);
   const [editMode, setEditMode] = useState(false);
   const [editBlogId, setEditBlogId] = useState(null);
 
   useEffect(() => {
-    // Bootstrap CSS dosyasını dinamik olarak ekleyelim
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href =
-      "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
-    document.head.appendChild(link);
-
-    // Bootstrap JS dosyasını dinamik olarak ekleyelim
-    const script = document.createElement("script");
-    script.src =
-      "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js";
-    script.integrity =
-      "sha384-pzjw8f+ua7Kw1TIq0p6n6YDpU7tQAxpfe4EdT9B5o8TJOz1IpD7mf6p7r5pXj/Ud";
-    script.crossOrigin = "anonymous";
-    document.body.appendChild(script);
-
-    // Temizleme fonksiyonu, component unmount olduğunda link ve scripti kaldırır
-    return () => {
-      document.head.removeChild(link);
-      document.body.removeChild(script);
-    };
-  }, []); // Boş array, yalnızca component mount olduğunda çalışır
-
-  useEffect(() => {
     fetchBlogs();
   }, []);
 
-  // Blogları listele
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(`${URL}/api/blogs`);
@@ -50,7 +27,6 @@ const BlogManage = () => {
     }
   };
 
-  // Blog oluştur veya güncelle
   const handleCreateOrUpdateBlog = async (e) => {
     e.preventDefault();
 
@@ -58,13 +34,14 @@ const BlogManage = () => {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("category", category);
+    formData.append("language", language);
+    formData.append("slug", slug); // Slug'ı da formData'ya ekliyoruz
     if (image) {
       formData.append("image", image);
     }
 
     try {
       if (editMode) {
-        // Blog güncelle
         await axios.put(`${URL}/api/blogs/${editBlogId}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -73,7 +50,6 @@ const BlogManage = () => {
         setEditMode(false);
         setEditBlogId(null);
       } else {
-        // Blog oluştur
         await axios.post(`${URL}/api/blogs`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -90,7 +66,6 @@ const BlogManage = () => {
     }
   };
 
-  // Blogu sil
   const handleDeleteBlog = async (id) => {
     const confirmDelete = window.confirm(
       "Bu blogu silmek istediğinizden emin misiniz?"
@@ -105,29 +80,24 @@ const BlogManage = () => {
     }
   };
 
-  // Blogu düzenleme moduna al
   const handleEditBlog = (blog) => {
     setTitle(blog.title);
     setContent(blog.content);
     setCategory(blog.category);
-    setImage(null); // Görseli yeniden seçmek gerekebilir
+    setLanguage(blog.language);
+    setSlug(blog.slug); // Slug'ı da ayarlıyoruz
+    setImage(null);
     setEditBlogId(blog._id);
     setEditMode(true);
   };
 
-  // Formu sıfırla
   const resetForm = () => {
     setTitle("");
     setContent("");
     setCategory("");
+    setLanguage("turkish");
+    setSlug(""); // Slug'ı temizliyoruz
     setImage(null);
-  };
-
-  // Formu sıfırlayıp düzenleme moduna geç
-  const handleCreateNewBlog = () => {
-    resetForm();
-    setEditMode(false); // Reset to create mode
-    setEditBlogId(null);
   };
 
   return (
@@ -146,6 +116,21 @@ const BlogManage = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Blog başlığını girin..."
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="slug" className="font-weight-bold">
+                Slug:
+              </label>
+              <input
+                type="text"
+                id="slug"
+                className="form-control"
+                value={slug}
+                onChange={(e) => setSlug(e.target.value)} // Slug'ı düzenleyebilme
+                placeholder="Slug girin..."
                 required
               />
             </div>
@@ -180,6 +165,21 @@ const BlogManage = () => {
             </div>
 
             <div className="form-group">
+              <label htmlFor="language" className="font-weight-bold">
+                Dil:
+              </label>
+              <input
+                type="text"
+                id="language"
+                className="form-control"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                placeholder="Dil girin..."
+                required
+              />
+            </div>
+
+            <div className="form-group">
               <label htmlFor="image" className="font-weight-bold">
                 Resim:
               </label>
@@ -198,7 +198,7 @@ const BlogManage = () => {
               <button
                 type="button"
                 className="btn btn-secondary btn-block mt-2"
-                onClick={handleCreateNewBlog}
+                onClick={resetForm}
               >
                 Yeni Blog Oluştur
               </button>

@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home/Home";
 import Visit from "./pages/Visit/Visit";
 import FamilyVisit from "./pages/FamilyVisit/FamilyVisit";
@@ -81,16 +85,12 @@ import Admin from "./pages/Admin/Admin";
 import PrivateRoute from "./PrivateRoute";
 import Masterplan from "./pages/Masterplan/Masterplan";
 import BlogDetail from "./components/BlogDetail/BlogDetail";
-
 import NavbarCommerce from "./components/NavbarCommerce/NavbarCommerce";
 import CartCommerce from "./components/CartCommerce/CartCommerce";
 import HomeCommerce from "./components/HomeCommerce/HomeCommerce";
 import Checkout from "./components/Checkout/Checkout";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile/Profile";
 import PostDetail from "./components/PostDetail/PostDetail";
 

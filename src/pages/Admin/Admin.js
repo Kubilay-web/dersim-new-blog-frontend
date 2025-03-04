@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Admin.css";
 import { Helmet } from "react-helmet";
-import BlogManage from "../../components/BlogManage/BlogManage";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import PaymentManage from "../../components/PaymentManage/PaymentManage";
 import ProductManage from "../../components/ProductManage/ProductManage";
@@ -14,6 +13,7 @@ import axios from "axios";
 import ContactManage from "../../components/ContactManage/ContactManage";
 import ContentManage from "../../components/ContentManage/ContentManage";
 import AccordionManage from "../../components/AccordionManage/AccordionManage";
+import BlogManage from "../../components/BlogManage/BlogManage";
 
 function Admin() {
   const { currentUser } = useSelector((state) => state.user);
@@ -217,6 +217,21 @@ function Admin() {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
+                handlePageChange("blog");
+              }}
+            >
+              <i className="fas fa-fw fa-clipboard-list"></i>{" "}
+              {/* Subscription icon */}
+              <span>BlogManage</span>
+            </a>
+          </li>
+
+          <li className="nav-item active">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
                 handlePageChange("contact");
               }}
             >
@@ -362,6 +377,8 @@ function Admin() {
                     ? "Contents"
                     : currentPage === "accordion"
                     ? "Accordion"
+                    : currentPage === "blog"
+                    ? "BlogManage"
                     : ""}
                 </h1>
               </div>
@@ -381,6 +398,8 @@ function Admin() {
                 <ContentManage />
               ) : currentPage === "accordion" ? (
                 <AccordionManage />
+              ) : currentPage === "blog" ? (
+                <BlogManage />
               ) : null}
             </div>
           </div>

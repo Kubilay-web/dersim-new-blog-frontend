@@ -1,4 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { setLanguage, selectLanguage } from "../../redux/languageSlice";
+import "./Header.css";
+
 const Header = () => {
   // Dropdown menüsünün açılma/kapanma durumunu tutan state
   const [isOpen, setIsOpen] = useState(false);
@@ -80,27 +85,100 @@ const Header = () => {
     };
   }, []);
 
+  const { i18n } = useTranslation();
+  const dispatch = useDispatch();
+  const currentLanguage = useSelector(selectLanguage);
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    dispatch(setLanguage(lang));
+  };
+
   return (
     <div>
       <header className="[ region region-header ] header print-none | js-header-main js-col-offset-item js-col-offset-item--main-header">
         <div className="container">
           <div className="header__inner">
             <div>
-              <div id="block-numiko-sitebranding">
-                <a
-                  href="/"
-                  title="Home"
-                  rel="home"
-                  className="header__logo-container"
-                >
-                  <img
-                    src="/images/Header/dersim_logo.png"
-                    alt="dersim_logo"
-                    width={100}
-                    height={100}
-                    className="header__logo"
-                  />
-                </a>
+              <div
+                style={{ display: "flex", alignItems: "center" }}
+                id="block-numiko-sitebranding"
+              >
+                <div>
+                  <nav className="p-4 bg-gray-800 text-white">
+                    <div className="dropdown">
+                      <button className="dropdown-button">
+                        Language
+                        <span className="arrow">&#9662;</span>
+                      </button>
+
+                      <ul className="dropdown-menu">
+                        <li
+                          onClick={(e) => {
+                            e.preventDefault();
+                            changeLanguage("tr");
+                          }}
+                          className="dropdown-item cursor-pointer"
+                        >
+                          TR
+                        </li>
+                        <li
+                          onClick={(e) => {
+                            e.preventDefault();
+                            changeLanguage("en");
+                          }}
+                          className="dropdown-item cursor-pointer"
+                        >
+                          EN
+                        </li>
+                        <li
+                          onClick={(e) => {
+                            e.preventDefault();
+                            changeLanguage("ku");
+                          }}
+                          className="dropdown-item cursor-pointer"
+                        >
+                          KU
+                        </li>
+                        <li
+                          onClick={(e) => {
+                            e.preventDefault();
+                            changeLanguage("ger");
+                          }}
+                          className="dropdown-item cursor-pointer"
+                        >
+                          GER
+                        </li>
+                        <li
+                          onClick={(e) => {
+                            e.preventDefault();
+                            changeLanguage("zza");
+                          }}
+                          className="dropdown-item cursor-pointer"
+                        >
+                          ZAZ
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+
+                <div>
+                  <a
+                    href="/"
+                    title="Home"
+                    rel="home"
+                    className="header__logo-container"
+                  >
+                    <img
+                      src="/images/Header/dersim_logo.png"
+                      alt="dersim_logo"
+                      width={100}
+                      height={100}
+                      className="header__logo"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
 
