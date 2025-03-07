@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../../redux/languageSlice";
 
 const Projects = () => {
   return (
@@ -54,12 +57,6 @@ const Projects = () => {
           media="print"
           href="css/css_i1O0tjo3bjgkU5-alNhpaD4VyRDHezJx1RhRnDHIExI.css"
         />
-        {/* Google Consent Mode */}
-        {/* End Google Consent Mode */}
-        {/* Google Tag Manager */}
-        {/* End Google Tag Manager */}
-        {/* Cookiebot */}
-        {/* End Cookiebot */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"

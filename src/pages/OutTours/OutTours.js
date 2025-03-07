@@ -2,49 +2,129 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
-const OutTours = () => {
-  const [content, setContent] = useState([]);
 
-  const fetchContentById = async (id, setPostFunc) => {
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../../redux/languageSlice";
+
+const OutTours = () => {
+  const { t } = useTranslation();
+  const currentLanguage = useSelector(selectLanguage); // Kullanıcı dilini al
+  console.log(currentLanguage); // Dilin doğru şekilde alındığından emin ol
+
+  // Dil haritası (Koddan Ad'a Çevirme)
+  const languageMap = {
+    tr: "turkish", // Türkçe
+    en: "english", // İngilizce
+    ku: "kurdish", // Kürtçe
+    de: "german", // Almanca
+    zaz: "zazaki",
+  };
+
+  // `ger`'i `de`'ye dönüştürmek için bir fonksiyon
+  const getLanguageParam = (language) => {
+    if (language === "ger") {
+      return "german";
+    } else if (language === "zza") {
+      return "zazaki";
+    } else return languageMap[language] || "turkish"; // Eğer başka bir dil kodu ise, dil haritasına göre döndür
+  };
+
+  //Post area
+  const [posts, setPosts] = useState([]);
+  const [posts2, setPosts2] = useState([]);
+  const [posts3, setPosts3] = useState([]);
+
+  const fetchPosts = async (category, setPostFunc) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/contents/${id}`
+        `https://dersim-new-blog-backend.vercel.app/api/post/getposts/categoryIdAndLanguage?categoryId=${category}&language=${language}`
       );
       const data = await res.json();
-      setPostFunc([data]);
+      setPostFunc(data.posts);
     } catch (error) {
-      console.error(`Failed to fetch content for ID ${id}:`, error);
+      console.error(`Failed to fetch posts for category ${category}:`, error);
     }
   };
 
+  // useEffect ile verileri çek
   useEffect(() => {
-    const someContentId = "67af1deb8b2864c833c098fd";
+    const categoryPrefix = getLanguageParam(currentLanguage); // Dil kodunu al
+    console.log(categoryPrefix);
+    console.log(currentLanguage);
 
-    fetchContentById(someContentId, setContent);
-  }, []);
+    // Kategoriler dil bazında dinamik olarak ayarlanıyor
+    const category1 = `${categoryPrefix}-57`;
+    const category2 = `${categoryPrefix}-40`;
+    const category3 = `${categoryPrefix}-16`;
+
+    fetchPosts(category1, setPosts);
+    fetchPosts(category2, setPosts2);
+    fetchPosts(category3, setPosts3);
+  }, [currentLanguage]); // currentLanguage değiştiğinde yeniden veri çekilecek
+
+  //Content area
+
+  const [content, setContent] = useState([]);
+
+  const fetchContentById = async (categoryId, setPostFunc) => {
+    try {
+      const language = getLanguageParam(currentLanguage);
+
+      const res = await fetch(
+        `https://dersim-new-blog-backend.vercel.app/api/contents/${categoryId}/${language}`
+      );
+      const data = await res.json();
+      setPostFunc([data]); // Eğer bir içerik döndürüyorsa array içinde tek bir içerik döndürüyoruz
+    } catch (error) {
+      console.error(`Failed to fetch content for ID ${categoryId}:`, error);
+    }
+  };
+
+  // useEffect ile verileri çek
+  useEffect(() => {
+    const contentPrefix = getLanguageParam(currentLanguage); // Dil kodunu al
+    console.log(contentPrefix);
+    console.log(currentLanguage);
+
+    // Kategoriler dil bazında dinamik olarak ayarlanıyor
+    const category1 = `${contentPrefix}-content-39`;
+
+    fetchContentById(category1, setContent);
+  }, [currentLanguage]); // currentLanguage değiştiğinde yeniden veri çekilecek
+
+  //Accordion area
 
   const [accordionData, setAccordionData] = useState([]); // Accordion verileri
 
-  const fetchAccordionData = async (categoryId) => {
+  const fetchAccordionData = async (accordionId) => {
     try {
+      const language = getLanguageParam(currentLanguage);
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion-category/${categoryId}`
+        `https://dersim-new-blog-backend.vercel.app/api/accordion/accordion/${accordionId}/${language}`
       );
       const data = await res.json();
       setAccordionData(data); // Accordion verilerini güncelliyoruz
     } catch (error) {
       console.error(
-        `Failed to fetch accordion data for category ${categoryId}:`,
+        `Failed to fetch accordion data for category ${accordionId}:`,
         error
       );
     }
   };
 
+  // useEffect ile verileri çek
   useEffect(() => {
-    const categoryId = "FAQs-Out-of-hours";
+    const accordionPrefix = getLanguageParam(currentLanguage); // Dil kodunu al
+    console.log(accordionPrefix);
+    console.log(currentLanguage);
 
-    fetchAccordionData(categoryId, setAccordionData);
-  }, []);
+    // Kategoriler dil bazında dinamik olarak ayarlanıyor
+    const accordion1 = `${accordionPrefix}-accordion-9`;
+
+    fetchAccordionData(accordion1, setAccordionData);
+  }, [currentLanguage]);
 
   return (
     <div>

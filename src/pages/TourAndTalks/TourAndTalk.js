@@ -1,27 +1,62 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../../redux/languageSlice";
 
 const TourAndTalk = () => {
+  const { t } = useTranslation();
+  const currentLanguage = useSelector(selectLanguage); // Kullanıcı dilini al
+  console.log(currentLanguage); // Dilin doğru şekilde alındığından emin ol
+
+  // Dil haritası (Koddan Ad'a Çevirme)
+  const languageMap = {
+    tr: "turkish", // Türkçe
+    en: "english", // İngilizce
+    ku: "kurdish", // Kürtçe
+    de: "german", // Almanca
+    zaz: "zazaki",
+  };
+
+  // `ger`'i `de`'ye dönüştürmek için bir fonksiyon
+  const getLanguageParam = (language) => {
+    if (language === "ger") {
+      return "german";
+    } else if (language === "zza") {
+      return "zazaki";
+    } else return languageMap[language] || "turkish"; // Eğer başka bir dil kodu ise, dil haritasına göre döndür
+  };
+
+  //Content area
+
   const [content, setContent] = useState([]);
 
-  const fetchContentById = async (id, setPostFunc) => {
+  const fetchContentById = async (categoryId, setPostFunc) => {
     try {
+      const language = getLanguageParam(currentLanguage);
+
       const res = await fetch(
-        `https://dersim-new-blog-backend.vercel.app/api/contents/${id}`
+        `https://dersim-new-blog-backend.vercel.app/api/contents/${categoryId}/${language}`
       );
       const data = await res.json();
-      setPostFunc([data]);
+      setPostFunc([data]); // Eğer bir içerik döndürüyorsa array içinde tek bir içerik döndürüyoruz
     } catch (error) {
-      console.error(`Failed to fetch content for ID ${id}:`, error);
+      console.error(`Failed to fetch content for ID ${categoryId}:`, error);
     }
   };
 
+  // useEffect ile verileri çek
   useEffect(() => {
-    const someContentId = "67af1e188b2864c833c09901";
+    const contentPrefix = getLanguageParam(currentLanguage); // Dil kodunu al
+    console.log(contentPrefix);
+    console.log(currentLanguage);
 
-    fetchContentById(someContentId, setContent);
-  }, []);
+    // Kategoriler dil bazında dinamik olarak ayarlanıyor
+    const category1 = `${contentPrefix}-content-49`;
+
+    fetchContentById(category1, setContent);
+  }, [currentLanguage]); // currentLanguage değiştiğinde yeniden veri çekilecek
 
   return (
     <div>
